@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spartan Industrial Marine - Brand Guidelines (Editorial Print)</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        spartan: {
+                            teal: '#00B3A6',
+                            navy: '#0C1B24',
+                            charcoal: '#1D2228',
+                            steel: '#6B737B',
+                            'teal-light': '#BDEFEA',
+                            'navy-light': '#383F4C',
+                            'gray-light': '#E6E9EC',
+                            'light-gray': '#F3F5F6',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        oswald: ['Oswald', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Editorial print layout setting */
+        .page-container {
+            width: 8.5in;
+            height: 11in;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: #ffffff;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 3.25rem;
+            margin-bottom: 3.5rem;
+            border: 1px solid rgba(226, 232, 240, 0.8);
+            box-shadow: 0 25px 50px -12px rgba(12, 27, 36, 0.12);
+        }
+
+        /* Running editorial print rules */
+        .print-only-border {
+            border: 1px solid #0C1B24;
+        }
+
+        /* Print Media Styles */
+        @media print {
+            body {
+                background: white !important;
+                color: black !important;
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+            .no-print {
+                display: none !important;
+            }
+            .page-container {
+                width: 8.5in !important;
+                height: 11in !important;
+                padding: 0.5in !important;
+                margin: 0 !important;
+                box-shadow: none !important;
+                border: none !important;
+                border-radius: 0 !important;
+                page-break-after: always !important;
+                page-break-inside: avoid !important;
+                display: flex !important;
+                flex-direction: column !important;
+                justify-content: space-between !important;
+                background-color: #ffffff !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-200 min-h-screen pt-20 pb-12 transition-colors duration-300 font-sans">
+
+    <!-- Header Navigation (Interactive Browser Only) -->
+    <header class="fixed top-0 left-0 right-0 h-16 bg-white/95 dark:bg-slate-900/95 backdrop-blur border-b border-slate-200/80 dark:border-slate-800/80 flex items-center justify-between px-8 z-40 no-print shadow-sm">
+        <div class="flex items-center space-x-3">
+            <div class="w-6 h-6 rounded-none bg-spartan-navy flex items-center justify-center p-1">
+                <svg viewBox="0 0 100 100" fill="none" class="w-full h-full fill-white">
+                    <path d="M25,35 C35,20 60,15 80,30 C70,38 55,42 45,40 C35,38 28,36 25,35 Z" fill="#00B3A6" />
+                    <path d="M40,35 C32,35 28,42 28,50 C28,62 38,70 42,72 C42,65 44,58 50,55 C53,53 58,55 58,62 C58,72 48,82 45,85 C60,85 70,72 70,55 C70,42 60,35 40,35 Z" />
+                </svg>
+            </div>
+            <span class="font-oswald font-bold tracking-widest text-spartan-navy dark:text-white text-xs">SPARTAN INDUSTRIAL MARINE</span>
+        </div>
+
+        <nav class="hidden lg:flex items-center space-x-6 text-xs font-semibold tracking-wider text-slate-600 dark:text-slate-400">
+            <a href="#page-1" class="hover:text-spartan-teal transition-colors">COVER</a>
+            <a href="#page-2" class="hover:text-spartan-teal transition-colors">ASSETS</a>
+            <a href="#page-3" class="hover:text-spartan-teal transition-colors">TYPOGRAPHY</a>
+            <a href="#page-4" class="hover:text-spartan-teal transition-colors">TYPE USE</a>
+            <a href="#page-5" class="hover:text-spartan-teal transition-colors">IMAGERY</a>
+            <a href="#page-6" class="hover:text-spartan-teal transition-colors">ELEMENTS</a>
+            <a href="#page-7" class="hover:text-spartan-teal transition-colors">LOGO/WAVE</a>
+            <a href="#page-8" class="hover:text-spartan-teal transition-colors">SHOPIFY</a>
+        </nav>
+
+        <div class="flex items-center space-x-4">
+            <!-- Dark Mode Toggle -->
+            <button onclick="toggleTheme()" class="p-2 rounded-none bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors" title="Toggle Theme">
+                <svg class="w-3.5 h-3.5 dark:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m0-12.728l.707.707m12.728 12.728l.707.707M12 8a4 4 0 100 8 4 4 0 000-8z" />
+                </svg>
+                <svg class="w-3.5 h-3.5 hidden dark:block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                </svg>
+            </button>
+
+            <!-- Print Button -->
+            <button onclick="window.print()" class="px-5 py-2.5 bg-spartan-teal text-white rounded-none text-[10px] font-bold tracking-[0.25em] hover:bg-opacity-95 shadow-md transition-all flex items-center space-x-1.5">
+                <span>PRINT BOOKLET</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Page Stack -->
+    <div id="main-container">
+
+        <!-- ================= PAGE 1: EDITORIAL COVER ================= -->
+        <section id="page-1" class="page-container text-white select-none !p-0">
+            <!-- Full bleed image container -->
+            <div class="w-full h-full relative overflow-hidden bg-cover bg-center flex flex-col justify-between p-12" style="background-image: url('spartan/spartan-1.png');">
+                <!-- Dark gradient overlay for text legibility -->
+                <div class="absolute inset-0 bg-gradient-to-b from-spartan-navy/60 via-spartan-navy/70 to-spartan-navy/95"></div>
+
+                <!-- Spacer instead of running header -->
+                <div class="z-10"></div>
+
+                <!-- Main Cover Typography & Layout -->
+                <div class="flex-grow flex flex-col justify-between pt-10 pb-8 select-text z-10">
+                    <!-- Large brand block -->
+                    <div class="flex justify-center items-center py-6">
+                        <img src="spartan/Spartan Industrial Marine White.png" alt="Spartan Logo" class="h-36 object-contain filter drop-shadow-md opacity-95 -translate-x-4">
+                    </div>
+
+                    <!-- Core title block -->
+                    <div class="text-center my-6">
+                        <h1 class="font-oswald text-5xl font-bold tracking-[0.15em] text-white leading-none select-text uppercase">
+                            BRAND <span class="text-spartan-teal">GUIDELINES</span>
+                        </h1>
+                        <p class="font-oswald text-sm font-bold text-white tracking-[0.15em] uppercase mt-4 select-text">
+                            DON'T LEAVE SHORE WITHOUT US
+                        </p>
+                    </div>
+
+                    <!-- Large Purpose statement -->
+                    <div class="max-w-2xl mx-auto text-center border-t border-white/10 pt-8">
+                        <p class="text-lg text-slate-200 leading-relaxed font-light select-text">
+                            We equip those who work on and around the water with trusted gear, expertise, and unwavering support. Built for the harshest conditions.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Spacer instead of running footer -->
+                <div class="z-10"></div>
+            </div>
+        </section>
+
+
+        <!-- ================= PAGE 2: CORE ASSETS ================= -->
+        <section id="page-2" class="page-container text-slate-800 bg-white">
+
+            <!-- Content Area -->
+            <div class="flex-grow flex flex-col justify-between py-4">
+                <!-- Section 01: LOGO -->
+                <div>
+                    <div class="flex items-baseline space-x-3 mb-2">
+                        <h2 class="font-oswald text-xs text-spartan-navy font-bold tracking-[0.25em] uppercase">PRIMARY LOGO</h2>
+                    </div>
+
+                    <!-- Clean logo centered on plain white field (Print style) -->
+                    <div class="h-48 flex items-center justify-center py-8 select-all">
+                        <img src="spartan/Spartan Industrial Marine Black.png" alt="Primary Logo" class="h-24 object-contain">
+                    </div>
+
+                    <!-- Navy band for alternative lockup (within page margins) -->
+                    <div class="bg-spartan-navy py-16 flex items-center justify-center my-6">
+                        <img src="spartan/Spartan Industrial Marine White.png" alt="White Logo Alternative" class="h-24 object-contain opacity-95">
+                    </div>
+                </div>
+
+                <!-- Section 02: COLOR SYSTEM -->
+                <div>
+                    <div class="flex items-baseline space-x-3 mb-6">
+                        <h2 class="font-oswald text-xs text-spartan-navy font-bold tracking-[0.25em] uppercase">COLOR SYSTEM</h2>
+                    </div>
+
+                    <!-- Colors grid without boxes/cards -->
+                    <div class="grid grid-cols-4 gap-6 select-text">
+                        <!-- TEAL -->
+                        <div onclick="copyToClipboard('#00B3A6', 'Teal')" class="space-y-2 group cursor-pointer">
+                            <div class="h-32 w-full bg-[#00B3A6]"></div>
+                            <div>
+                                <span class="font-oswald text-[9px] font-bold text-slate-900 tracking-wider block">TEAL</span>
+                                <span class="text-[8px] font-mono text-slate-400 block group-hover:text-spartan-teal transition-colors">#00B3A6</span>
+                            </div>
+                        </div>
+                        <!-- DEEP NAVY -->
+                        <div onclick="copyToClipboard('#0C1B24', 'Deep Navy')" class="space-y-2 group cursor-pointer">
+                            <div class="h-32 w-full bg-[#0C1B24]"></div>
+                            <div>
+                                <span class="font-oswald text-[9px] font-bold text-slate-900 tracking-wider block">DEEP NAVY</span>
+                                <span class="text-[8px] font-mono text-slate-400 block group-hover:text-spartan-teal transition-colors">#0C1B24</span>
+                            </div>
+                        </div>
+                        <!-- CHARCOAL -->
+                        <div onclick="copyToClipboard('#1D2228', 'Charcoal')" class="space-y-2 group cursor-pointer">
+                            <div class="h-32 w-full bg-[#1D2228]"></div>
+                            <div>
+                                <span class="font-oswald text-[9px] font-bold text-slate-900 tracking-wider block">CHARCOAL</span>
+                                <span class="text-[8px] font-mono text-slate-400 block group-hover:text-spartan-teal transition-colors">#1D2228</span>
+                            </div>
+                        </div>
+                        <!-- STEEL -->
+                        <div onclick="copyToClipboard('#6B737B', 'Steel')" class="space-y-2 group cursor-pointer">
+                            <div class="h-32 w-full bg-[#6B737B]"></div>
+                            <div>
+                                <span class="font-oswald text-[9px] font-bold text-slate-900 tracking-wider block">STEEL</span>
+                                <span class="text-[8px] font-mono text-slate-400 block group-hover:text-spartan-teal transition-colors">#6B737B</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Secondary Row -->
+                    <div class="grid grid-cols-4 gap-6 mt-4 select-text">
+                        <!-- TEAL LIGHT -->
+                        <div onclick="copyToClipboard('#BDEFEA', 'Teal Light')" class="space-y-2 group cursor-pointer">
+                            <div class="h-32 w-full bg-[#BDEFEA]"></div>
+                            <div>
+                                <span class="font-oswald text-[9px] font-bold text-slate-900 tracking-wider block">TEAL LIGHT</span>
+                                <span class="text-[8px] font-mono text-slate-400 block group-hover:text-spartan-teal transition-colors">#BDEFEA</span>
+                            </div>
+                        </div>
+                        <!-- NAVY LIGHT -->
+                        <div onclick="copyToClipboard('#383F4C', 'Navy Light')" class="space-y-2 group cursor-pointer">
+                            <div class="h-32 w-full bg-[#383F4C]"></div>
+                            <div>
+                                <span class="font-oswald text-[9px] font-bold text-slate-900 tracking-wider block">NAVY LIGHT</span>
+                                <span class="text-[8px] font-mono text-slate-400 block group-hover:text-spartan-teal transition-colors">#383F4C</span>
+                            </div>
+                        </div>
+                        <!-- GRAY LIGHT -->
+                        <div onclick="copyToClipboard('#E6E9EC', 'Gray Light')" class="space-y-2 group cursor-pointer">
+                            <div class="h-32 w-full bg-[#E6E9EC]"></div>
+                            <div>
+                                <span class="font-oswald text-[9px] font-bold text-slate-900 tracking-wider block">GRAY LIGHT</span>
+                                <span class="text-[8px] font-mono text-slate-400 block group-hover:text-spartan-teal transition-colors">#E6E9EC</span>
+                            </div>
+                        </div>
+                        <!-- LIGHT GRAY -->
+                        <div onclick="copyToClipboard('#F3F5F6', 'Light Gray')" class="space-y-2 group cursor-pointer">
+                            <div class="h-32 w-full bg-[#F3F5F6]"></div>
+                            <div>
+                                <span class="font-oswald text-[9px] font-bold text-slate-900 tracking-wider block">LIGHT GRAY</span>
+                                <span class="text-[8px] font-mono text-slate-400 block group-hover:text-spartan-teal transition-colors">#F3F5F6</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Base Footer -->
+            <div class="flex justify-between items-center text-[8px] font-mono tracking-[0.3em] text-slate-400">
+                <span>PRIMARY ASSETS</span>
+                <span></span>
+            </div>
+        </section>
+
+
+        <!-- ================= PAGE 3: TYPOGRAPHY SPECIMENS ================= -->
+        <section id="page-3" class="page-container text-slate-800 bg-white">
+
+            <!-- Content Area -->
+            <div class="flex-grow flex flex-col justify-between py-6">
+                <div>
+                    <div class="flex items-baseline space-x-3 mb-4">
+                        <h2 class="font-oswald text-xs text-spartan-navy font-bold tracking-[0.25em] uppercase">TYPOGRAPHY HIERARCHY</h2>
+                    </div>
+                    <div class="space-y-6 select-text">
+                        <!-- Top horizontal metadata block -->
+                        <div class="grid grid-cols-3 gap-8 pb-6 border-b border-slate-100">
+                            <div>
+                                <span class="font-oswald text-[9px] font-bold text-spartan-teal tracking-widest block uppercase mb-1">OSWALD SYSTEM</span>
+                                <p class="font-sans text-[9.5px] text-slate-500 leading-relaxed font-light">
+                                    Primary heading typeface. Use 700 weight, set tracking to 0.15em (0.25em for labels), and present exclusively in uppercase.
+                                </p>
+                            </div>
+                            <div>
+                                <span class="font-oswald text-[9px] font-bold text-spartan-teal tracking-widest block uppercase mb-1">INTER SYSTEM</span>
+                                <p class="font-sans text-[9.5px] text-slate-500 leading-relaxed font-light">
+                                    Primary body text and interfaces typeface. Highly readable sans-serif optimized for specifications and caption systems.
+                                </p>
+                            </div>
+                            <div>
+                                <span class="font-oswald text-[9px] font-bold text-spartan-navy tracking-widest block uppercase mb-1">INTER CHARACTER MAP</span>
+                                <p class="font-sans text-[9.5px] text-slate-700 tracking-wider font-semibold uppercase truncate">
+                                    ABCDEFGHIJKLMNOPQ
+                                </p>
+                                <p class="font-sans text-[9px] text-slate-500 tracking-wider font-light mt-0.5">
+                                    abcdefghijklmnopqrstuvwxyz 0123456789
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Oswald Specimen Stack -->
+                        <div class="space-y-4 pb-6 border-b border-slate-100">
+                            <span class="text-[7.5px] font-mono text-slate-400 tracking-widest uppercase block mb-2">HEADING SPECIMENS</span>
+                            <div class="space-y-5">
+                                <h1 class="font-oswald text-5xl font-bold tracking-wider text-spartan-navy leading-none select-text uppercase">H1 / OSWALD BOLD / 48PX</h1>
+                                <h2 class="font-oswald text-3xl font-bold tracking-wider text-spartan-navy leading-none select-text uppercase">H2 / OSWALD BOLD / 30PX</h2>
+                                <h3 class="font-oswald text-xl font-bold tracking-wider text-spartan-teal leading-none select-text uppercase">H3 / OSWALD BOLD / 20PX</h3>
+                                <h4 class="font-oswald text-sm font-bold tracking-wide text-spartan-navy leading-none select-text uppercase">H4 / OSWALD BOLD / 14PX</h4>
+                                <div class="flex flex-col space-y-4 text-slate-500">
+                                    <h5 class="font-oswald text-xs font-bold tracking-wide text-spartan-steel select-text uppercase">H5 / OSWALD BOLD / 12PX</h5>
+                                    <h6 class="font-oswald text-[10px] font-bold tracking-wider text-slate-400 select-text uppercase">H6 / OSWALD BOLD / 10PX</h6>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Accents and label text styling -->
+                        <div class="pb-6 border-b border-slate-100 space-y-2">
+                            <span class="text-[7.5px] font-mono text-slate-400 tracking-widest uppercase block">ACCENTS & LABELS</span>
+                            <div class="flex items-center space-x-6">
+                                <span class="font-oswald text-[9px] font-bold text-spartan-teal tracking-[0.25em] uppercase select-text">Accent Label Style</span>
+                                <span class="font-mono text-[8px] text-slate-400 tracking-widest uppercase select-text">SYSTEM CODE STYLE EXAMPLE</span>
+                            </div>
+                        </div>
+
+                        <!-- Inter Paragraph specimens -->
+                        <div class="space-y-3">
+                            <span class="text-[7.5px] font-mono text-slate-400 tracking-widest uppercase block">BODY & PARAGRAPH SPECIMENS</span>
+                            <div class="space-y-3">
+                                <p class="font-sans text-sm text-slate-700 leading-relaxed font-light select-text">
+                                    <strong class="font-bold text-slate-900">Lead Paragraph / 14px:</strong> We equip those who work on and around the water with trusted marine gear, expertise, and unwavering support. Built for the harshest conditions.
+                                </p>
+                                <p class="font-sans text-xs text-slate-600 leading-relaxed font-light select-text">
+                                    <strong class="font-bold text-slate-800">Body Paragraph / 12px:</strong> Our products are engineered and tested in heavy sea conditions, ensuring absolute performance, reliability, and security when it matters most.
+                                </p>
+                                <span class="font-sans text-[9.5px] italic text-slate-400 block select-text">
+                                    <strong class="font-bold text-slate-500">Caption / 9.5px Italic:</strong> Light italic caption styling for technical labels and detail specifications.
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Base Footer -->
+            <div class="flex justify-between items-center text-[8px] font-mono tracking-[0.3em] text-slate-400">
+                <span>TYPOGRAPHY HIERARCHY</span>
+                <span></span>
+            </div>
+        </section>
+
+        <!-- ================= PAGE 4: TYPOGRAPHY APPLICATIONS ================= -->
+        <section id="page-4" class="page-container text-slate-800 bg-white !p-0">
+            <div class="grid grid-cols-2 grid-rows-2 w-full h-full select-text">
+                        <div class="bg-spartan-teal p-12 flex flex-col justify-end relative overflow-hidden">
+                            <div class="absolute -bottom-4 -left-8 w-[118%] h-28 bg-[#007C8A] opacity-35 pointer-events-none" style="-webkit-mask: url('spartan/full-wave.svg') center / contain no-repeat; mask: url('spartan/full-wave.svg') center / contain no-repeat;" aria-hidden="true"></div>
+                            <img src="spartan/Spartan Industrial Marine White Full.png" alt="Spartan Industrial Marine" class="absolute left-12 top-12 h-14 object-contain opacity-95 pointer-events-none">
+                            <h3 class="relative z-10 font-sans text-[42px] font-bold leading-[1.08] text-white tracking-normal max-w-[320px]">
+                                Working on the water means relying on gear.
+                            </h3>
+                        </div>
+
+                        <div class="bg-[#383F4C] p-12 flex flex-col justify-between relative overflow-hidden">
+                            <div class="absolute right-0 top-10 h-28 w-72 bg-spartan-teal opacity-15 pointer-events-none" style="-webkit-mask: url('spartan/right-wave.svg') right center / contain no-repeat; mask: url('spartan/right-wave.svg') right center / contain no-repeat;" aria-hidden="true"></div>
+                            <div class="relative z-10">
+                                <h3 class="font-oswald text-[48px] font-bold leading-[1.05] text-spartan-teal tracking-[0.08em] uppercase">
+                                    Built for harsh weather.
+                                </h3>
+                            </div>
+                            <p class="relative z-10 font-sans text-[13px] leading-relaxed text-white/80 max-w-[330px]">
+                                Use teal type on navy light for sharp section openers, campaign headlines, and technical category moments.
+                            </p>
+                        </div>
+
+                        <div class="bg-spartan-navy p-12 flex flex-col justify-between relative overflow-hidden">
+                            <div class="absolute left-0 top-5 h-28 w-72 bg-spartan-teal opacity-25 pointer-events-none" style="-webkit-mask: url('spartan/left-wave.svg') left center / contain no-repeat; mask: url('spartan/left-wave.svg') left center / contain no-repeat;" aria-hidden="true"></div>
+                            <div class="relative z-10 mt-20">
+                                <h3 class="font-oswald text-[40px] font-bold leading-[1.08] text-white tracking-[0.1em] uppercase">
+                                    Trusted gear, ready when conditions turn.
+                                </h3>
+                            </div>
+                            <div class="relative z-10 border-t border-white/10 pt-5">
+                                <p class="font-sans text-[13px] leading-relaxed text-slate-300">
+                                    Pair condensed uppercase headings with smaller Inter body copy for confident editorial layouts.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="bg-spartan-light-gray p-12 flex flex-col justify-between relative overflow-hidden">
+                            <div class="absolute -right-16 -bottom-1 w-[112%] h-28 bg-spartan-teal opacity-5 pointer-events-none" style="-webkit-mask: url('spartan/full-wave.svg') center / contain no-repeat; mask: url('spartan/full-wave.svg') center / contain no-repeat;" aria-hidden="true"></div>
+                            <div class="relative z-10">
+                                <div class="h-40 w-full overflow-hidden mb-6 flex items-center justify-start">
+                                    <img src="spartan/float-jacket.webp" alt="Offshore float jacket product sample" class="h-full w-auto object-contain object-left">
+                                </div>
+                                <h3 class="font-oswald text-[36px] font-bold leading-tight text-spartan-navy tracking-[0.04em] uppercase mb-5">
+                                    Offshore Float Jacket
+                                </h3>
+                                <p class="font-sans text-[13px] leading-relaxed text-slate-600">
+                                    High-visibility protection with reinforced seams, quick-drain pockets, and a fit built for long shifts.
+                                </p>
+                            </div>
+                            <div class="relative z-10 grid grid-cols-3 gap-4 border-t border-slate-200 pt-5">
+                                <div>
+                                    <span class="font-mono text-[7px] text-slate-400 tracking-widest uppercase block">Weight</span>
+                                    <span class="font-sans text-[11px] font-semibold text-spartan-navy">2.4 lb</span>
+                                </div>
+                                <div>
+                                    <span class="font-mono text-[7px] text-slate-400 tracking-widest uppercase block">Shell</span>
+                                    <span class="font-sans text-[11px] font-semibold text-spartan-navy">Nylon</span>
+                                </div>
+                                <div>
+                                    <span class="font-mono text-[7px] text-slate-400 tracking-widest uppercase block">Use</span>
+                                    <span class="font-sans text-[11px] font-semibold text-spartan-navy">Deck</span>
+                                </div>
+                            </div>
+                        </div>
+            </div>
+        </section>
+
+        <!-- ================= PAGE 5: EDITORIAL IMAGERY SPREAD ================= -->
+        <section id="page-5" class="page-container text-white select-none !p-0">
+            <div class="w-full h-full relative p-2 bg-slate-950">
+                <!-- 2x2 Grid of colorized high-contrast images -->
+                <div class="w-full h-full grid grid-cols-2 grid-rows-2 gap-2">
+                    <!-- Top Left (Stormy Vessel) -->
+                    <div class="bg-cover bg-center bg-no-repeat brightness-95 hover:brightness-100 transition-all duration-300" style="background-image: url('spartan/spartan-1.png'); background-position: -370px center;"></div>
+                    
+                    <!-- Top Right (Crew in Orange) -->
+                    <div class="bg-cover bg-center bg-no-repeat brightness-95 hover:brightness-100 transition-all duration-300" style="background-image: url('spartan/spartan-2.png');"></div>
+
+                    <!-- Bottom Left (Rigging Cables) -->
+                    <div class="bg-cover bg-center bg-no-repeat brightness-95 hover:brightness-100 transition-all duration-300" style="background-image: url('spartan/spartan-3.png');"></div>
+
+                    <!-- Bottom Right (Boot Splashing) -->
+                    <div class="bg-cover bg-center bg-no-repeat brightness-95 hover:brightness-100 transition-all duration-300" style="background-image: url('spartan/spartan-4.png');"></div>
+                </div>
+
+                <!-- Small Centered Teal Text Overlay Card -->
+                <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-[#00B3A6] text-slate-950 p-6 max-w-[280px] w-full text-center border border-slate-950/10 shadow-2xl select-text">
+                    <span class="font-oswald text-[8px] font-bold tracking-[0.2em] block uppercase mb-1.5 text-slate-900 opacity-80">IMAGERY SYSTEM</span>
+                    <h2 class="font-oswald text-xl font-bold tracking-wide uppercase leading-tight mb-2.5 text-slate-950">
+                        AUTHENTIC &<br>HIGH-CONTRAST
+                    </h2>
+                    <p class="font-sans text-[10px] leading-relaxed font-semibold text-slate-950 opacity-95">
+                        Use high-contrast, colorized marine photography to convey real conditions while keeping a friendly, approachable e-commerce feel.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ================= PAGE 6: DIGITAL & INTERFACE ELEMENTS ================= -->
+        <section id="page-6" class="page-container text-slate-800 bg-white">
+
+            <!-- Content Area -->
+            <div class="flex-grow flex flex-col justify-between py-6 select-text">
+                
+                <!-- STACKED TOP SECTION: Buttons -->
+                <div class="space-y-4 pb-8 border-b border-slate-100">
+                    <div class="flex items-baseline space-x-3 mb-2">
+                        <h2 class="font-oswald text-sm text-spartan-navy font-bold tracking-[0.25em] uppercase">INTERFACE BUTTON SPECS</h2>
+                    </div>
+
+                    <div class="border border-slate-100 bg-white select-none">
+                        <div class="grid grid-cols-[90px_1fr_1fr_1fr] border-b border-slate-100">
+                            <div class="bg-white p-4 flex items-center">
+                                <span class="text-[7.5px] font-mono text-slate-400 tracking-widest uppercase">Default</span>
+                            </div>
+                            <div class="p-4 border-l border-slate-100 space-y-2">
+                                <button class="w-full bg-spartan-teal text-white py-2.5 px-4 text-[10px] font-bold tracking-[0.18em] flex items-center justify-between rounded-none border border-spartan-teal shadow-none">
+                                    <span>SHOP WORK GEAR</span>
+                                    <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7"/></svg>
+                                </button>
+                                <span class="text-[7.5px] font-mono text-slate-400 block tracking-widest uppercase">Primary Teal</span>
+                            </div>
+                            <div class="p-4 border-l border-slate-100 space-y-2">
+                                <button class="w-full bg-spartan-navy text-white py-2.5 px-4 text-[10px] font-bold tracking-[0.18em] flex items-center justify-between rounded-none border border-spartan-navy shadow-none">
+                                    <span>VIEW SERVICES</span>
+                                    <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7"/></svg>
+                                </button>
+                                <span class="text-[7.5px] font-mono text-slate-400 block tracking-widest uppercase">Primary Navy</span>
+                            </div>
+                            <div class="p-4 border-l border-slate-100 space-y-2">
+                                <button class="w-full border border-slate-300 bg-white text-spartan-navy py-2.5 px-4 text-[10px] font-bold tracking-[0.18em] flex items-center justify-between rounded-none shadow-none">
+                                    <span>VIEW ITEM</span>
+                                    <svg class="w-3 h-3 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7"/></svg>
+                                </button>
+                                <span class="text-[7.5px] font-mono text-slate-400 block tracking-widest uppercase">Outline</span>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-[90px_1fr_1fr_1fr] border-b border-slate-100">
+                            <div class="bg-white p-4 flex items-center">
+                                <span class="text-[7.5px] font-mono text-slate-400 tracking-widest uppercase">Hover</span>
+                            </div>
+                            <div class="p-4 border-l border-slate-100 space-y-2">
+                                <button class="w-full bg-spartan-teal-light text-spartan-navy py-2.5 px-4 text-[10px] font-bold tracking-[0.18em] flex items-center justify-between rounded-none border border-spartan-teal-light shadow-none">
+                                    <span>SHOP WORK GEAR</span>
+                                    <svg class="w-3 h-3 translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7"/></svg>
+                                </button>
+                                <span class="text-[7.5px] font-mono text-slate-400 block tracking-widest uppercase">Teal Light Hover</span>
+                            </div>
+                            <div class="p-4 border-l border-slate-100 space-y-2">
+                                <button class="w-full bg-spartan-charcoal text-white py-2.5 px-4 text-[10px] font-bold tracking-[0.18em] flex items-center justify-between rounded-none border border-spartan-charcoal shadow-none">
+                                    <span>VIEW SERVICES</span>
+                                    <svg class="w-3 h-3 translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7"/></svg>
+                                </button>
+                                <span class="text-[7.5px] font-mono text-slate-400 block tracking-widest uppercase">Navy Lift</span>
+                            </div>
+                            <div class="p-4 border-l border-slate-100 space-y-2">
+                                <button class="w-full border border-spartan-navy bg-spartan-light-gray text-spartan-navy py-2.5 px-4 text-[10px] font-bold tracking-[0.18em] flex items-center justify-between rounded-none shadow-none">
+                                    <span>VIEW ITEM</span>
+                                    <svg class="w-3 h-3 text-spartan-navy translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7"/></svg>
+                                </button>
+                                <span class="text-[7.5px] font-mono text-slate-400 block tracking-widest uppercase">Outline Fill</span>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-[90px_1fr_1fr_1fr]">
+                            <div class="bg-white p-4 flex items-center">
+                                <span class="text-[7.5px] font-mono text-slate-400 tracking-widest uppercase">Small</span>
+                            </div>
+                            <div class="p-4 border-l border-slate-100 space-y-2">
+                                <button class="inline-flex bg-spartan-teal text-white py-1.5 px-3 text-[7.5px] font-bold tracking-[0.16em] rounded-none border border-spartan-teal shadow-none">
+                                    ADD TO CART
+                                </button>
+                                <span class="text-[7.5px] font-mono text-slate-400 block tracking-widest uppercase">Commerce CTA</span>
+                            </div>
+                            <div class="p-4 border-l border-slate-100 space-y-2">
+                                <button class="inline-flex bg-spartan-navy text-white py-1.5 px-3 text-[7.5px] font-bold tracking-[0.16em] rounded-none border border-spartan-navy shadow-none">
+                                    VIEW ITEM
+                                </button>
+                                <span class="text-[7.5px] font-mono text-slate-400 block tracking-widest uppercase">Secondary Small</span>
+                            </div>
+                            <div class="p-4 border-l border-slate-100 space-y-2">
+                                <button class="inline-flex bg-slate-100 text-slate-400 py-1.5 px-3 text-[7.5px] font-bold tracking-[0.16em] rounded-none border border-slate-200 shadow-none">
+                                    SOLD OUT
+                                </button>
+                                <span class="text-[7.5px] font-mono text-slate-400 block tracking-widest uppercase">Disabled</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BOTTOM ROW: E-commerce Product Grid -->
+                <div class="pt-8 flex-grow">
+                    <div class="flex items-baseline space-x-3 mb-4">
+                        <h2 class="font-oswald text-sm text-spartan-navy font-bold tracking-[0.25em] uppercase">UI GEAR COMPONENTS MOCKUP</h2>
+                    </div>
+
+                    <!-- Product card grid with standard, sale, and featured states -->
+                    <div class="grid grid-cols-3 gap-6 items-start select-none">
+                        <!-- Standard Product -->
+                        <div class="space-y-3">
+                            <div class="bg-white border border-slate-100 rounded-none h-44 flex items-center justify-center relative overflow-hidden group">
+                                <img src="spartan/the-boots.png" alt="Waterproof deck boot" class="h-full w-full object-contain">
+                            </div>
+                            <div class="space-y-1.5 select-text">
+                                <span class="font-oswald text-[8px] font-bold text-spartan-charcoal tracking-widest uppercase">FOOTWEAR / DECK WEAR</span>
+                                <h3 class="font-oswald text-[13px] font-bold text-spartan-navy uppercase tracking-normal leading-tight">FIERCE FRONTIER WATERPROOF BOOT</h3>
+                                <div class="flex items-center justify-between border-t border-slate-100 pt-3">
+                                    <span class="font-sans text-sm font-bold text-slate-800">$129.00 <span class="text-[9px] text-slate-400 font-normal">CAD</span></span>
+                                    <button class="bg-spartan-teal text-white py-2 px-3 text-[8px] font-bold tracking-wider hover:bg-opacity-90 transition-colors rounded-none">
+                                        ADD TO CART
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Sale Product -->
+                        <div class="space-y-3">
+                            <div class="bg-white border border-slate-100 rounded-none h-44 flex items-center justify-center relative overflow-hidden group">
+                                <img src="spartan/jacket.webp" alt="Offshore safety jacket" class="h-full w-full object-contain">
+                                <div class="absolute top-3 left-3 bg-spartan-teal text-white text-[7px] px-2 py-0.5 font-mono font-bold tracking-wider uppercase">ON SALE</div>
+                            </div>
+                            <div class="space-y-1.5 select-text">
+                                <span class="font-oswald text-[8px] font-bold text-spartan-charcoal tracking-widest uppercase">SAFETY / OUTERWEAR</span>
+                                <h3 class="font-oswald text-[13px] font-bold text-spartan-navy uppercase tracking-normal leading-tight">STORMWATCH FLOAT JACKET</h3>
+                                <div class="flex items-center justify-between border-t border-slate-100 pt-3">
+                                    <div class="space-x-1">
+                                        <span class="font-sans text-sm font-bold text-slate-800">$149.99 <span class="text-[9px] text-slate-400 font-normal">CAD</span></span>
+                                        <span class="font-sans text-[10px] text-slate-400 line-through">$199.99</span>
+                                    </div>
+                                    <button class="bg-spartan-teal text-white py-2 px-3 text-[8px] font-bold tracking-wider hover:bg-opacity-90 transition-colors rounded-none">
+                                        ADD TO CART
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Featured Product -->
+                        <div class="space-y-3">
+                            <div class="bg-white border border-spartan-teal rounded-none h-44 flex items-center justify-center relative overflow-hidden group">
+                                <img src="spartan/gloves.jpg" alt="Marine work gloves" class="h-full w-full object-contain">
+                                <div class="absolute top-3 left-3 bg-spartan-navy text-white text-[7px] px-2 py-0.5 font-mono font-bold tracking-wider uppercase">FEATURED</div>
+                            </div>
+                            <div class="space-y-1.5 select-text">
+                                <span class="font-oswald text-[8px] font-bold text-spartan-charcoal tracking-widest uppercase">GEAR / WORKWEAR</span>
+                                <h3 class="font-oswald text-[13px] font-bold text-spartan-navy uppercase tracking-normal leading-tight">DOCKLINE GRIP GLOVES</h3>
+                                <div class="flex items-center justify-between border-t border-slate-100 pt-3">
+                                    <span class="font-sans text-sm font-bold text-slate-800">$64.99 <span class="text-[9px] text-slate-400 font-normal">CAD</span></span>
+                                    <button class="bg-spartan-navy text-white py-2 px-3 text-[8px] font-bold tracking-wider hover:bg-opacity-90 transition-colors rounded-none">
+                                        VIEW ITEM
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Base Footer -->
+            <div class="flex justify-between items-center text-[8px] font-mono tracking-[0.3em] text-slate-400">
+                <span>DIGITAL ELEMENTS</span>
+                <span></span>
+            </div>
+        </section>
+
+        <!-- ================= PAGE 7: LOGO & WAVE SYSTEM ================= -->
+        <section id="page-7" class="page-container text-slate-800 bg-white">
+            <div class="flex-grow flex flex-col justify-between py-6 select-text">
+                <div>
+                    <div class="flex items-baseline space-x-3 mb-6">
+                        <h2 class="font-oswald text-xs text-spartan-navy font-bold tracking-[0.25em] uppercase">LOGO + WAVE SYSTEM</h2>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-8">
+                        <div>
+                            <div class="h-52 border border-slate-100 bg-white relative flex items-center justify-center">
+                                <div class="absolute inset-10 border border-dashed border-spartan-teal/70"></div>
+                                <img src="spartan/Spartan Industrial Marine Black.png" alt="Spartan primary logo clear space" class="relative z-10 h-20 object-contain">
+                            </div>
+                            <h3 class="font-oswald text-sm font-bold text-spartan-navy tracking-[0.16em] uppercase mt-5 mb-2">Primary Logo</h3>
+                            <p class="font-sans text-[11px] leading-relaxed text-slate-600">
+                                Use the full logo as the default brand signature. Keep clear space around it equal to the height of the logo mark and avoid placing it over busy image detail.
+                            </p>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="h-32 border border-slate-100 bg-white flex items-center justify-center p-5">
+                                <img src="spartan/Spartan Industrial Marine Black.png" alt="Black Spartan logo" class="max-h-14 object-contain">
+                            </div>
+                            <div class="h-32 bg-spartan-navy flex items-center justify-center p-5">
+                                <img src="spartan/Spartan Industrial Marine White.png" alt="White Spartan logo" class="max-h-14 object-contain">
+                            </div>
+                            <div class="h-32 bg-spartan-light-gray border border-slate-100 flex items-center justify-center p-5">
+                                <img src="spartan/Spartan Industrial Marine Black.png" alt="Minimum Spartan logo size example" class="h-8 object-contain">
+                            </div>
+                            <div class="h-32 bg-spartan-teal flex items-center justify-center">
+                                <div class="w-40 h-12 bg-white opacity-70" style="-webkit-mask: url('spartan/full-wave.svg') center / contain no-repeat; mask: url('spartan/full-wave.svg') center / contain no-repeat;" aria-hidden="true"></div>
+                            </div>
+                            <div class="col-span-2">
+                                <h3 class="font-oswald text-sm font-bold text-spartan-navy tracking-[0.16em] uppercase mb-2">Logo Variants</h3>
+                                <p class="font-sans text-[11px] leading-relaxed text-slate-600">
+                                    Black logo belongs on white and light gray. White logo belongs on navy, charcoal, teal, or controlled photo overlays. Use the full lockup consistently across primary brand surfaces.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8 grid grid-cols-12 gap-6 border-t border-slate-100 pt-6">
+                        <div class="col-span-5 bg-spartan-navy relative overflow-hidden min-h-[150px] p-6 flex items-end">
+                            <div class="absolute -bottom-3 -left-6 w-[112%] h-20 bg-spartan-teal opacity-20" style="-webkit-mask: url('spartan/full-wave.svg') center / contain no-repeat; mask: url('spartan/full-wave.svg') center / contain no-repeat;" aria-hidden="true"></div>
+                            <h3 class="relative z-10 font-oswald text-2xl font-bold text-white tracking-[0.12em] uppercase">Wave Asset</h3>
+                        </div>
+                        <div class="col-span-7 grid grid-cols-3 gap-5">
+                            <div>
+                                <h4 class="font-oswald text-[10px] font-bold tracking-[0.18em] uppercase text-spartan-navy mb-2">Use For</h4>
+                                <p class="font-sans text-[10px] leading-relaxed text-slate-600">Image masks, section dividers, category card bottoms, footer edges, and subtle background marks.</p>
+                            </div>
+                            <div>
+                                <h4 class="font-oswald text-[10px] font-bold tracking-[0.18em] uppercase text-spartan-navy mb-2">Avoid</h4>
+                                <p class="font-sans text-[10px] leading-relaxed text-slate-600">Do not use it under every heading, as a logo replacement, or so large that it feels decorative and playful.</p>
+                            </div>
+                            <div>
+                                <h4 class="font-oswald text-[10px] font-bold tracking-[0.18em] uppercase text-spartan-navy mb-2">Do Not</h4>
+                                <p class="font-sans text-[10px] leading-relaxed text-slate-600">Do not stretch, rotate, recolor outside the palette, add shadows, outline, or crowd the primary logo.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex justify-between items-center text-[8px] font-mono tracking-[0.3em] text-slate-400">
+                <span>LOGO + WAVE SYSTEM</span>
+                <span></span>
+            </div>
+        </section>
+
+        <!-- ================= PAGE 8: SHOPIFY STOREFRONT EXAMPLE ================= -->
+        <section id="page-8" class="page-container text-slate-800 bg-white">
+            <div class="flex-grow flex flex-col py-5 select-text">
+                <div class="flex items-baseline space-x-3 mb-5">
+                    <h2 class="font-oswald text-xs text-spartan-navy font-bold tracking-[0.25em] uppercase">SHOPIFY STOREFRONT EXAMPLE</h2>
+                </div>
+
+                <div class="border border-slate-100 bg-white overflow-hidden">
+                    <div class="relative mb-8">
+                        <img src="spartan/homepage-hero-2.jpg" alt="Spartan homepage hero example" class="block w-full h-auto">
+                    </div>
+                    <img src="spartan/category-images.jpg" alt="Spartan category image examples" class="block w-full h-auto border-t border-slate-100">
+                </div>
+            </div>
+
+            <div class="flex justify-between items-center text-[8px] font-mono tracking-[0.3em] text-slate-400">
+                <span>SHOPIFY STOREFRONT</span>
+                <span></span>
+            </div>
+        </section>
+
+
+    </div>
+
+    <!-- Color Clipboard Swatch Toast Notification -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 bg-spartan-navy text-white px-5 py-3.5 rounded-none shadow-2xl border border-spartan-teal/30 transform translate-y-24 opacity-0 transition-all duration-300 flex items-center space-x-3 pointer-events-none no-print">
+        <svg class="w-5 h-5 text-spartan-teal" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+        </svg>
+        <span id="toast-text" class="text-xs font-semibold tracking-wide">Copied to clipboard!</span>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        // Copy hex code to clipboard
+        function copyToClipboard(text, colorName) {
+            navigator.clipboard.writeText(text).then(() => {
+                showToast(`Copied ${colorName} hex code: ${text}`);
+            }).catch(err => {
+                console.error('Failed to copy text: ', err);
+            });
+        }
+
+        // Show toast notification
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            const toastText = document.getElementById('toast-text');
+            toastText.innerText = message;
+            toast.classList.remove('translate-y-24', 'opacity-0');
+            toast.classList.add('translate-y-0', 'opacity-100');
+            
+            setTimeout(() => {
+                toast.classList.remove('translate-y-0', 'opacity-100');
+                toast.classList.add('translate-y-24', 'opacity-0');
+            }, 3000);
+        }
+
+        // Toggle dark theme
+        function toggleTheme() {
+            const html = document.documentElement;
+            if (html.classList.contains('dark')) {
+                html.classList.remove('dark');
+                localStorage.setItem('spartan-theme', 'light');
+            } else {
+                html.classList.add('dark');
+                localStorage.setItem('spartan-theme', 'dark');
+            }
+        }
+
+        // Initialize theme preference
+        document.addEventListener('DOMContentLoaded', () => {
+            const themePreference = localStorage.getItem('spartan-theme');
+            if (themePreference === 'dark' || (!themePreference && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spartan Industrial Marine - Internal Hero Template</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        spartan: {
+                            teal: '#00B3A6',
+                            navy: '#0C1B24',
+                            charcoal: '#1D2228',
+                            steel: '#6B737B',
+                            'teal-light': '#BDEFEA',
+                            'navy-light': '#383F4C',
+                            'gray-light': '#E6E9EC',
+                            'light-gray': '#F3F5F6',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        oswald: ['Oswald', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom scrollbar and animations */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-white text-slate-800 font-sans min-h-screen flex flex-col justify-between">
+
+    <!-- ======================================================= -->
+    <!-- ================== HEADER / NAVIGATION ================ -->
+    <!-- ======================================================= -->
+    <header class="w-full bg-spartan-navy text-white py-4 z-40 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+            <div class="flex items-center space-x-2">
+                <a href="index.html" class="flex items-center space-x-2">
+                    <span class="font-oswald text-xl font-bold tracking-[0.2em] text-white">SPARTAN</span>
+                    <span class="font-oswald text-xl font-light tracking-[0.2em] text-spartan-teal">MARINE</span>
+                </a>
+            </div>
+            <nav class="hidden md:flex space-x-8 text-xs font-bold tracking-[0.2em] uppercase">
+                <a href="index.html" class="hover:text-spartan-teal transition-colors">Home</a>
+                <a href="#" class="hover:text-spartan-teal transition-colors text-spartan-teal">Templates</a>
+                <a href="brand-guidelines.html" class="hover:text-spartan-teal transition-colors">Guidelines</a>
+            </nav>
+            <div>
+                <a href="index.html#contact-section" class="border border-white/60 hover:border-white py-2 px-5 text-[10px] font-bold tracking-widest hover:bg-white/10 transition-all uppercase rounded-none">
+                    Go Back
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ======================================================= -->
+    <!-- ============= TEMPLATE PREVIEW CONTAINER ============== -->
+    <!-- ======================================================= -->
+    <main class="flex-grow">
+        
+        <!-- Instructional Note banner -->
+        <div class="bg-spartan-teal text-white py-3 text-center text-xs font-semibold tracking-wider uppercase select-none">
+            <i class="fa-solid fa-code mr-2"></i> Previewing Centered Background Hero Template for Internal Pages
+        </div>
+
+        <!-- ========================================== -->
+        <!-- START HERO TEMPLATE PREVIEW -->
+        <!-- ========================================== -->
+        <section class="relative h-[380px] md:h-[450px] w-full overflow-hidden bg-spartan-navy flex items-center justify-center">
+            <!-- Background Image -->
+            <div class="absolute inset-0 z-0">
+                <img src="assets/images/spartan-2.png" alt="Rigging crew or safety services" class="w-full h-full object-cover object-center filter brightness-[0.4] contrast-[1.05]">
+                <!-- Dark Radial Gradient for text legibility -->
+                <div class="absolute inset-0 bg-gradient-to-b from-spartan-navy/30 via-spartan-navy/70 to-spartan-navy"></div>
+            </div>
+
+            <!-- Centered Content -->
+            <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-5 select-text mt-8">
+                <!-- Breadcrumbs -->
+                <nav class="flex items-center justify-center space-x-2 text-[10px] md:text-xs font-mono font-bold tracking-widest text-spartan-teal uppercase">
+                    <a href="index.html" class="hover:text-spartan-teal-light transition-colors">HOME</a>
+                    <span class="text-slate-500 font-light">/</span>
+                    <a href="#" class="hover:text-spartan-teal-light transition-colors">SERVICES</a>
+                    <span class="text-slate-500 font-light">/</span>
+                    <span class="text-slate-300">LIFERAFT SERVICING</span>
+                </nav>
+
+                <!-- Page Heading -->
+                <h1 class="font-oswald text-4xl sm:text-5xl md:text-6xl font-bold uppercase tracking-wider text-white leading-tight">
+                    LIFERAFT INSPECTION & REPACKING
+                </h1>
+
+                <!-- Brief Page Subtitle -->
+                <p class="font-sans text-xs sm:text-sm md:text-base text-slate-300 leading-relaxed max-w-2xl mx-auto font-light">
+                    Transport Canada certified inspection, pressure testing, and annual recertification for SOLAS, commercial, and recreational survival vessels.
+                </p>
+
+                <!-- Small Wave Divider Accent -->
+                <div class="flex justify-center pt-2">
+                    <div class="w-12 h-3 bg-spartan-teal" style="-webkit-mask: url('assets/images/full-wave.svg') center / contain no-repeat; mask: url('assets/images/full-wave.svg') center / contain no-repeat;" aria-hidden="true"></div>
+                </div>
+            </div>
+
+            <!-- Stretched Wave Mask Divider (Blends into White body) -->
+            <div class="absolute bottom-0 inset-x-0 z-10 overflow-hidden leading-[0] pointer-events-none">
+                <svg viewBox="0 0 176.23 11.78" preserveAspectRatio="none" class="relative block w-full h-8 md:h-12 text-white fill-current">
+                    <path d="M175.37,11.19S152.97,0,121.72,0c-26.26,0-36.05,6.77-71.07,6.77C25.36,6.77,6.95,2.88,1.14,1.46c-.55-.13-.99-.18-1.14-.14l.04,10.46h176.19l-.86-.59Z"></path>
+                </svg>
+            </div>
+        </section>
+        <!-- ========================================== -->
+        <!-- END HERO TEMPLATE PREVIEW -->
+        <!-- ========================================== -->
+
+
+        <!-- ========================================== -->
+        <!-- CODE SNIPPET SECTION (visuals only) -->
+        <!-- ========================================== -->
+        <section class="py-16 bg-white max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="space-y-6">
+                <div>
+                    <h2 class="font-oswald text-2xl font-bold tracking-widest text-spartan-navy uppercase">HTML / TAILWIND CODE</h2>
+                    <p class="text-sm text-slate-500 font-light mt-1">Copy and paste this code to use this centered background image hero section template on any internal page.</p>
+                </div>
+
+                <div class="relative bg-spartan-navy border border-slate-800 p-6 rounded-none overflow-x-auto font-mono text-xs text-slate-300 space-y-4">
+                    <button onclick="copyHeroCode()" class="absolute top-4 right-4 bg-slate-800 hover:bg-spartan-teal hover:text-white text-slate-300 py-1.5 px-3 rounded-none text-[10px] font-bold tracking-widest transition-colors uppercase">
+                        <i class="fa-solid fa-copy mr-1.5"></i>Copy Code
+                    </button>
+                    <pre id="code-block" class="overflow-x-auto select-all pr-12">&lt;!-- Centered Background Hero Section Template --&gt;
+&lt;section class="relative h-[380px] md:h-[450px] w-full overflow-hidden bg-spartan-navy flex items-center justify-center"&gt;
+    &lt;!-- Background Image --&gt;
+    &lt;div class="absolute inset-0 z-0"&gt;
+        &lt;img src="assets/images/spartan-2.png" alt="Hero background" class="w-full h-full object-cover object-center filter brightness-[0.4] contrast-[1.05]"&gt;
+        &lt;!-- Dark overlay gradient --&gt;
+        &lt;div class="absolute inset-0 bg-gradient-to-b from-spartan-navy/30 via-spartan-navy/70 to-spartan-navy"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Centered Content --&gt;
+    &lt;div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-5 mt-8"&gt;
+        &lt;!-- Breadcrumbs --&gt;
+        &lt;nav class="flex items-center justify-center space-x-2 text-[10px] md:text-xs font-mono font-bold tracking-widest text-spartan-teal uppercase"&gt;
+            &lt;a href="index.html" class="hover:text-spartan-teal-light transition-colors"&gt;HOME&lt;/a&gt;
+            &lt;span class="text-slate-500 font-light"&gt;/&lt;/span&gt;
+            &lt;a href="#" class="hover:text-spartan-teal-light transition-colors"&gt;SERVICES&lt;/a&gt;
+            &lt;span class="text-slate-500 font-light"&gt;/&lt;/span&gt;
+            &lt;span class="text-slate-300"&gt;LIFERAFT SERVICING&lt;/span&gt;
+        &lt;/nav&gt;
+
+        &lt;!-- Page Heading --&gt;
+        &lt;h1 class="font-oswald text-4xl sm:text-5xl md:text-6xl font-bold uppercase tracking-wider text-white leading-tight"&gt;
+            LIFERAFT INSPECTION &amp;amp; REPACKING
+        &lt;/h1&gt;
+
+        &lt;!-- Subtitle --&gt;
+        &lt;p class="font-sans text-xs sm:text-sm md:text-base text-slate-300 leading-relaxed max-w-2xl mx-auto font-light"&gt;
+            Transport Canada certified inspection, pressure testing, and annual recertification for SOLAS, commercial, and recreational survival vessels.
+        &lt;/p&gt;
+
+        &lt;!-- Wave Divider Accent --&gt;
+        &lt;div class="flex justify-center pt-2"&gt;
+            &lt;div class="w-12 h-3 bg-spartan-teal" style="-webkit-mask: url('assets/images/full-wave.svg') center / contain no-repeat; mask: url('assets/images/full-wave.svg') center / contain no-repeat;" aria-hidden="true"&gt;&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Stretched Wave Mask Divider (Blends into White body) --&gt;
+    &lt;div class="absolute bottom-0 inset-x-0 z-10 overflow-hidden leading-[0] pointer-events-none"&gt;
+        &lt;svg viewBox="0 0 176.23 11.78" preserveAspectRatio="none" class="relative block w-full h-8 md:h-12 text-white fill-current"&gt;
+            &lt;path d="M175.37,11.19S152.97,0,121.72,0c-26.26,0-36.05,6.77-71.07,6.77C25.36,6.77,6.95,2.88,1.14,1.46c-.55-.13-.99-.18-1.14-.14l.04,10.46h176.19l-.86-.59Z"&gt;&lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/div&gt;
+&lt;/section&gt;</pre>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ======================================================= -->
+    <!-- ======================= FOOTER ======================== -->
+    <!-- ======================================================= -->
+    <footer class="bg-spartan-navy text-slate-500 border-t border-slate-800 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-xs select-text">
+            <p>&copy; 2026 Spartan Industrial Marine. All rights reserved. For template visual reference and copy purposes.</p>
+        </div>
+    </footer>
+
+    <!-- Notification Toast -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 bg-spartan-navy text-white border border-spartan-teal/30 px-5 py-3 text-xs font-semibold tracking-wider uppercase transform translate-y-24 opacity-0 transition-all duration-300">
+        Code Copied to Clipboard
+    </div>
+
+    <!-- JS Helper -->
+    <script>
+        function copyHeroCode() {
+            const code = document.getElementById('code-block').innerText;
+            navigator.clipboard.writeText(code).then(() => {
+                const toast = document.getElementById('toast');
+                toast.classList.remove('translate-y-24', 'opacity-0');
+                toast.classList.add('translate-y-0', 'opacity-100');
+                setTimeout(() => {
+                    toast.classList.remove('translate-y-0', 'opacity-100');
+                    toast.classList.add('translate-y-24', 'opacity-0');
+                }, 3000);
+            });
+        }
+    </script>
+</body>
+</html>
