@@ -6,7 +6,7 @@ require_once __DIR__ . '/partials/header.php';
 $hero = [
     'title' => 'Frequently Asked Questions',
     'subtitle' => 'Turnaround times, certificates, pricing, and shipping. If it is not answered here, call the counter.',
-    'image' => 'assets/images/spartan-3.png',
+    'image' => 'assets/images/j9/spartan-store-interior.webp',
     'breadcrumbs' => [
         ['label' => 'Home', 'url' => 'index.php'],
         ['label' => 'FAQ'],

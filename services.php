@@ -6,7 +6,7 @@ require_once __DIR__ . '/partials/header.php';
 $hero = [
     'title' => 'Certified Marine Services',
     'subtitle' => 'Raft inspections, suit testing, splicing, pull testing, and compliance checks. Performed in-house by Transport Canada certified technicians.',
-    'image' => 'assets/images/PFDS.jpg',
+    'image' => 'assets/images/j9/spartan-service-workshop.webp',
     'breadcrumbs' => [
         ['label' => 'Home', 'url' => 'index.php'],
         ['label' => 'Services'],
@@ -34,7 +34,7 @@ require_once __DIR__ . '/components/page-hero.php';
                 'text' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.',
                 'button_label' => 'Book a Service',
                 'button_url' => 'contact.php',
-                'image' => 'assets/images/spartan-4.png',
+                'image' => 'assets/images/j9/spartan-service-workshop.webp',
                 'image_alt' => 'Service drop-off at the counter',
                 'reverse' => true,
             ];

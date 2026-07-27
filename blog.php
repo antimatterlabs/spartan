@@ -1,11 +1,12 @@
 <?php
 $page_title = 'Blog & Guides | Spartan Industrial Marine';
+$active_nav = 'resources';
 require_once __DIR__ . '/partials/header.php';
 
 $hero = [
     'title' => 'Blog & Guides',
     'subtitle' => 'Practical gear guides, service schedules, and compliance advice from the people behind the counter.',
-    'image' => 'assets/images/spartan-3.png',
+    'image' => 'assets/images/j9/marine-rigging.webp',
     'breadcrumbs' => [
         ['label' => 'Home', 'url' => 'index.php'],
         ['label' => 'Blog'],

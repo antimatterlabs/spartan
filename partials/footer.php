@@ -2,6 +2,49 @@
 /**
  * Global footer: newsletter band, footer columns, toast, and shared JS.
  */
+require_once __DIR__ . '/data.php';
+
+$footer_menu_sections = [
+    [
+        'title' => 'ABOUT',
+        'links' => [
+            ['label' => 'Why Spartan', 'url' => 'about.php'],
+            ['label' => 'Careers', 'url' => 'contact.php'],
+            ['label' => 'Delivery Information', 'url' => 'terms.php'],
+            ['label' => 'Privacy Policy', 'url' => 'terms.php'],
+            ['label' => 'Terms & Conditions', 'url' => 'terms.php'],
+            ['label' => 'Contact Us', 'url' => 'contact.php'],
+        ],
+    ],
+    [
+        'title' => 'Products',
+        'links' => [
+            ['label' => 'Catalogue', 'url' => 'products.php'],
+            ['label' => 'Top Sellers', 'url' => 'products.php'],
+            ['label' => 'On Sale', 'url' => 'products.php'],
+            ['label' => 'PAUL', 'url' => 'brands.php', 'class' => 'font-bold text-[#7DC4FF]'],
+            ['label' => 'Fierce Workwear', 'url' => 'products.php?cat=workwear', 'class' => 'font-bold italic text-[#FF6B00]'],
+        ],
+    ],
+    [
+        'title' => 'Services',
+        'links' => [
+            ['label' => 'Inspections & Repairs', 'url' => 'services.php'],
+            ['label' => 'Rental Equipment', 'url' => 'services.php'],
+            ['label' => 'Product Recall', 'url' => 'services.php'],
+        ],
+    ],
+    [
+        'title' => 'Resources',
+        'links' => [
+            ['label' => 'Definitions & Warnings', 'url' => 'terms.php'],
+            ['label' => 'Industry Articles', 'url' => 'blog.php'],
+            ['label' => 'Safety & Training', 'url' => 'services.php'],
+            ['label' => 'CertTracker', 'url' => 'contact.php'],
+            ['label' => 'FAQs', 'url' => 'faq.php'],
+        ],
+    ],
+];
 ?>
 
     <!-- ======================================================= -->
@@ -27,60 +70,44 @@
             </div>
         </div>
 
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-5 gap-8 pb-12 border-b border-slate-800">
-            <!-- Col 1: Brand Info -->
-            <div class="md:col-span-2 space-y-4 select-text">
-                <img src="assets/images/Spartan Industrial Marine White.png" alt="Spartan Industrial Marine" class="h-14 object-contain mb-2">
-                <p class="text-xs font-light leading-relaxed max-w-sm text-slate-400">
-                    Spartan Industrial Marine supplies and services commercial fishing, aquaculture, shipyard, offshore, and government fleets across Atlantic Canada, with certified safety servicing, a full rigging shop, and stock that's actually on the shelf.
-                </p>
-                <div class="flex items-center space-x-4 pt-2 text-white">
-                    <a href="#" class="hover:text-spartan-teal transition-colors" aria-label="Facebook">
-                        <i class="fa-brands fa-facebook-f text-lg"></i>
-                    </a>
-                    <a href="#" class="hover:text-spartan-teal transition-colors" aria-label="Instagram">
-                        <i class="fa-brands fa-instagram text-lg"></i>
-                    </a>
-                    <a href="#" class="hover:text-spartan-teal transition-colors" aria-label="LinkedIn">
-                        <i class="fa-brands fa-linkedin-in text-lg"></i>
-                    </a>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 border-b border-slate-800">
+            <div class="grid grid-cols-1 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,2fr)] gap-10 lg:gap-14">
+                <div class="space-y-4 select-text">
+                    <img src="assets/images/Spartan Industrial Marine White.png" alt="Spartan Industrial Marine" class="h-14 object-contain mb-2">
+                    <p class="text-xs font-light leading-relaxed max-w-sm text-slate-400">
+                        Spartan Industrial Marine supplies and services commercial fishing, aquaculture, shipyard, offshore, and government fleets across Atlantic Canada, with certified safety servicing, a full rigging shop, and stock that's actually on the shelf.
+                    </p>
+                    <div class="flex items-center space-x-4 pt-2 text-white">
+                        <a href="#" class="hover:text-spartan-teal transition-colors" aria-label="Facebook">
+                            <i class="fa-brands fa-facebook-f text-lg"></i>
+                        </a>
+                        <a href="#" class="hover:text-spartan-teal transition-colors" aria-label="Instagram">
+                            <i class="fa-brands fa-instagram text-lg"></i>
+                        </a>
+                        <a href="#" class="hover:text-spartan-teal transition-colors" aria-label="LinkedIn">
+                            <i class="fa-brands fa-linkedin-in text-lg"></i>
+                        </a>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Col 2: Products Links -->
-            <div class="select-text">
-                <h4 class="font-oswald text-xs font-bold text-white tracking-[0.25em] uppercase mb-4">PRODUCTS</h4>
-                <ul class="space-y-2 text-xs font-light">
-                    <li><a href="products.php?cat=safety" class="hover:text-spartan-teal transition-colors">Marine Safety Equipment</a></li>
-                    <li><a href="products.php?cat=rope" class="hover:text-spartan-teal transition-colors">Rope & Rigging</a></li>
-                    <li><a href="products.php?cat=fishing" class="hover:text-spartan-teal transition-colors">Commercial Fishing Gear</a></li>
-                    <li><a href="products.php?cat=workwear" class="hover:text-spartan-teal transition-colors">Workwear & Footwear</a></li>
-                    <li><a href="brands.php" class="hover:text-spartan-teal transition-colors">Brands We Carry</a></li>
-                </ul>
-            </div>
-
-            <!-- Col 3: Services Links -->
-            <div class="select-text">
-                <h4 class="font-oswald text-xs font-bold text-white tracking-[0.25em] uppercase mb-4">SERVICES</h4>
-                <ul class="space-y-2 text-xs font-light">
-                    <li><a href="service-single.php" class="hover:text-spartan-teal transition-colors">Life Raft Inspection & Repack</a></li>
-                    <li><a href="service-single.php" class="hover:text-spartan-teal transition-colors">Immersion Suit Testing</a></li>
-                    <li><a href="service-single.php" class="hover:text-spartan-teal transition-colors">Splicing & Custom Rigging</a></li>
-                    <li><a href="service-single.php" class="hover:text-spartan-teal transition-colors">Certified Pull Testing</a></li>
-                    <li><a href="services.php" class="hover:text-spartan-teal transition-colors">View All Services</a></li>
-                </ul>
-            </div>
-
-            <!-- Col 4: Company Links -->
-            <div class="select-text">
-                <h4 class="font-oswald text-xs font-bold text-white tracking-[0.25em] uppercase mb-4">COMPANY</h4>
-                <ul class="space-y-2 text-xs font-light">
-                    <li><a href="about.php" class="hover:text-spartan-teal transition-colors">About Spartan</a></li>
-                    <li><a href="blog.php" class="hover:text-spartan-teal transition-colors">Blog & Guides</a></li>
-                    <li><a href="locations.php" class="hover:text-spartan-teal transition-colors">Locations & Hours</a></li>
-                    <li><a href="contact.php" class="hover:text-spartan-teal transition-colors">Contact Us</a></li>
-                    <li><a href="faq.php" class="hover:text-spartan-teal transition-colors">FAQ</a></li>
-                </ul>
+                <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-8 select-text">
+                    <?php foreach ($footer_menu_sections as $section): ?>
+                    <div class="border-t border-slate-700/70 pt-3">
+                        <h4 class="font-oswald text-sm font-bold text-white tracking-[0.08em] uppercase mb-3">
+                            <?php echo site_escape($section['title']); ?>
+                        </h4>
+                        <ul class="space-y-2 text-sm font-medium">
+                            <?php foreach ($section['links'] as $link): ?>
+                            <li>
+                                <a href="<?php echo site_escape($link['url']); ?>" class="<?php echo site_escape($link['class'] ?? 'text-slate-300'); ?> hover:text-spartan-teal transition-colors">
+                                    <?php echo site_escape($link['label']); ?>
+                                </a>
+                            </li>
+                            <?php endforeach; ?>
+                        </ul>
+                    </div>
+                    <?php endforeach; ?>
+                </div>
             </div>
         </div>
 
@@ -114,32 +141,30 @@
         let subtotalVal = 0.00;
 
         // Mega Menu mouseover functionality
-        const servicesTrigger = document.getElementById('services-menu-trigger');
-        const servicesMenu = document.getElementById('services-mega-menu');
-        const productsTrigger = document.getElementById('products-menu-trigger');
-        const productsMenu = document.getElementById('products-mega-menu');
-
-        if (servicesTrigger && servicesMenu && productsTrigger && productsMenu) {
-            servicesTrigger.addEventListener('mouseenter', () => openMenu(servicesMenu, productsMenu));
-            servicesMenu.addEventListener('mouseenter', () => openMenu(servicesMenu, productsMenu));
-            servicesTrigger.addEventListener('mouseleave', () => scheduleCloseMenu(servicesMenu));
-            servicesMenu.addEventListener('mouseleave', () => scheduleCloseMenu(servicesMenu));
-
-            productsTrigger.addEventListener('mouseenter', () => openMenu(productsMenu, servicesMenu));
-            productsMenu.addEventListener('mouseenter', () => openMenu(productsMenu, servicesMenu));
-            productsTrigger.addEventListener('mouseleave', () => scheduleCloseMenu(productsMenu));
-            productsMenu.addEventListener('mouseleave', () => scheduleCloseMenu(productsMenu));
-        }
-
         let closeTimers = {};
+        const megaPairs = Array.from(document.querySelectorAll('[data-mega-trigger]'))
+            .map(trigger => ({
+                trigger,
+                menu: document.getElementById(trigger.dataset.megaTrigger)
+            }))
+            .filter(pair => pair.menu);
 
-        function openMenu(menuToShow, menuToHide) {
+        megaPairs.forEach(({ trigger, menu }) => {
+            trigger.addEventListener('mouseenter', () => openMenu(menu));
+            menu.addEventListener('mouseenter', () => openMenu(menu));
+            trigger.addEventListener('mouseleave', () => scheduleCloseMenu(menu));
+            menu.addEventListener('mouseleave', () => scheduleCloseMenu(menu));
+        });
+
+        function openMenu(menuToShow) {
             if (closeTimers[menuToShow.id]) {
                 clearTimeout(closeTimers[menuToShow.id]);
             }
-            closeMenuImmediately(menuToHide);
+            megaPairs.forEach(({ menu }) => {
+                if (menu !== menuToShow) closeMenuImmediately(menu);
+            });
             menuToShow.classList.remove('scale-y-0', 'opacity-0', 'pointer-events-none');
-            menuToShow.classList.add('scale-y-100', 'opacity-100', 'pointer-events-all');
+            menuToShow.classList.add('scale-y-100', 'opacity-100', 'pointer-events-auto');
         }
 
         function scheduleCloseMenu(menu) {
@@ -149,7 +174,8 @@
         }
 
         function closeMenuImmediately(menu) {
-            menu.classList.remove('scale-y-100', 'opacity-100', 'pointer-events-all');
+            if (!menu) return;
+            menu.classList.remove('scale-y-100', 'opacity-100', 'pointer-events-auto');
             menu.classList.add('scale-y-0', 'opacity-0', 'pointer-events-none');
         }
 
@@ -305,13 +331,16 @@
         }
 
         // Product Filter switcher (homepage tabs + shop sidebar links)
-        function filterProducts(category) {
+        function filterProducts(filter) {
             const cards = document.querySelectorAll('.product-card-element');
             if (!cards.length) return;
+            const isPrefixedFilter = typeof filter === 'string' && filter.includes(':');
+            const [filterType, rawFilterValue] = isPrefixedFilter ? filter.split(':', 2) : ['category', filter];
+            const filterValue = rawFilterValue || filter;
 
             // Homepage-style tab buttons (id="tab-xxx")
             document.querySelectorAll('[id^="tab-"]').forEach(btn => {
-                if (btn.id === `tab-${category}`) {
+                if (filterType === 'category' && btn.id === `tab-${filterValue}`) {
                     btn.className = "bg-spartan-navy text-white px-4 py-2 hover:bg-spartan-teal transition-colors";
                 } else {
                     btn.className = "bg-spartan-light-gray text-slate-700 px-4 py-2 hover:bg-spartan-teal hover:text-white transition-colors";
@@ -320,7 +349,7 @@
 
             // Shop sidebar links (.filter-cat with data-cat)
             document.querySelectorAll('.filter-cat').forEach(el => {
-                const active = el.dataset.cat === category;
+                const active = (el.dataset.filter || el.dataset.cat) === filter;
                 el.classList.toggle('text-spartan-teal', active);
                 el.classList.toggle('font-bold', active);
                 el.classList.toggle('border-spartan-teal', active);
@@ -331,7 +360,16 @@
             // Show/hide cards + live result count
             let visible = 0;
             cards.forEach(card => {
-                const show = category === 'all' || card.getAttribute('data-category') === category;
+                let show = filter === 'all';
+                if (!show) {
+                    if (filterType === 'group') {
+                        show = card.getAttribute('data-group') === filterValue;
+                    } else if (filterType === 'brand') {
+                        show = card.getAttribute('data-brand') === filterValue;
+                    } else {
+                        show = card.getAttribute('data-category') === filterValue;
+                    }
+                }
                 card.style.display = show ? 'block' : 'none';
                 if (show) visible++;
             });

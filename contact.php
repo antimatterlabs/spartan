@@ -1,12 +1,13 @@
 <?php
 $page_title = 'Contact | Spartan Industrial Marine';
+$meta_description = 'Contact Spartan Industrial Marine for marine safety equipment, inspection support, service bookings, and branch locations across Atlantic Canada.';
 $active_nav = 'contact';
 require_once __DIR__ . '/partials/header.php';
 
 $hero = [
-    'title' => 'Talk To A Real Person',
+    'title' => 'Contact Us',
     'subtitle' => 'Phone, email, or walk up to the counter. Describe the job and we will spec it with you.',
-    'image' => 'assets/images/spartan-4.png',
+    'image' => 'assets/images/j9/spartan-store-interior.webp',
     'breadcrumbs' => [
         ['label' => 'Home', 'url' => 'index.php'],
         ['label' => 'Contact'],
@@ -72,10 +73,10 @@ require_once __DIR__ . '/components/page-hero.php';
                             <?php foreach ($site_locations as $loc): ?>
                             <li class="flex items-start justify-between border-b border-slate-800 pb-4 last:border-0 last:pb-0">
                                 <div>
-                                    <span class="font-oswald text-xs font-bold text-white tracking-[0.12em] uppercase block mb-1"><?php echo $loc['city']; ?></span>
-                                    <span class="block"><?php echo $loc['address']; ?></span>
+                                    <a href="<?php echo site_escape(site_location_url($loc)); ?>" class="font-oswald text-xs font-bold text-white hover:text-spartan-teal tracking-[0.12em] uppercase block mb-1 transition-colors"><?php echo site_escape($loc['city']); ?></a>
+                                    <span class="block"><?php echo site_escape($loc['address']); ?></span>
                                 </div>
-                                <a href="<?php echo $loc['phone_href']; ?>" class="text-spartan-teal hover:text-spartan-teal-light transition-colors font-semibold shrink-0 ml-4"><?php echo $loc['phone']; ?></a>
+                                <a href="<?php echo site_escape($loc['phone_href']); ?>" class="text-spartan-teal hover:text-spartan-teal-light transition-colors font-semibold shrink-0 ml-4"><?php echo site_escape($loc['phone_label'] ?? $loc['phone']); ?></a>
                             </li>
                             <?php endforeach; ?>
                         </ul>

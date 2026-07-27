@@ -1,24 +1,22 @@
 <?php
 /**
- * Component: Brand Pillars strip (Reliability / Service / Expertise / Availability)
+ * Component: Brand Pillars strip (Reliability / Expertise / Service / Readiness)
  */
 $pillars = [
-    ['icon' => 'fa-anchor', 'title' => 'Reliability', 'text' => "Gear that holds up in real conditions. If we stock it, we'd trust it on our own boat."],
-    ['icon' => 'fa-screwdriver-wrench', 'title' => 'Service', 'text' => 'Certified raft, suit, and rigging service in-house, with turnaround you can plan a season around.'],
-    ['icon' => 'fa-compass', 'title' => 'Expertise', 'text' => 'Staff who have worked the wharf, the deck, and the yard. Ask a question, get a straight answer.'],
-    ['icon' => 'fa-warehouse', 'title' => 'Availability', 'text' => "Deep stock across three locations. When the season opens, the shelf isn't empty."],
+    ['icon' => 'fa-anchor', 'title' => 'Reliability', 'text' => 'Harshest environments demand proven performance. We deliver certified, battle-tested marine safety gear that never fails.'],
+    ['icon' => 'fa-compass', 'title' => 'Expertise', 'text' => 'Decades of deep maritime knowledge. We guide your fleet through complex Transport Canada and DFO regulations.'],
+    ['icon' => 'fa-screwdriver-wrench', 'title' => 'Service', 'text' => 'Your schedule is our priority. Our rapid-turnaround maintenance ensures you pass every inspection seamlessly.'],
+    ['icon' => 'fa-warehouse', 'title' => 'Readiness', 'text' => 'Always stocked, local, and prepared. We deploy inventory and rapid service tech teams when you need them.'],
 ];
 ?>
-<section class="border-b border-slate-100 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 select-text">
+<section class="bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-10 gap-y-12 select-text">
         <?php foreach ($pillars as $pillar): ?>
-        <div class="flex items-start space-x-4">
-            <div class="w-11 h-11 shrink-0 bg-spartan-light-gray text-spartan-teal flex items-center justify-center">
-                <i class="fa-solid <?php echo $pillar['icon']; ?> text-lg"></i>
-            </div>
+        <div class="flex flex-col">
+            <i class="fa-solid <?php echo $pillar['icon']; ?> text-4xl text-spartan-teal mb-8"></i>
             <div>
-                <h3 class="font-oswald text-sm font-bold text-spartan-navy tracking-[0.15em] uppercase mb-1.5"><?php echo $pillar['title']; ?></h3>
-                <p class="text-xs text-slate-500 font-light leading-relaxed"><?php echo $pillar['text']; ?></p>
+                <h3 class="font-oswald text-lg font-bold text-spartan-navy tracking-[0.15em] uppercase mb-4"><?php echo $pillar['title']; ?></h3>
+                <p class="text-sm text-slate-600 font-light leading-relaxed"><?php echo $pillar['text']; ?></p>
             </div>
         </div>
         <?php endforeach; ?>

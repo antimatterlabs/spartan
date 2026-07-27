@@ -6,7 +6,7 @@ require_once __DIR__ . '/partials/header.php';
 $hero = [
     'title' => 'Life Raft Inspection & Repacking',
     'subtitle' => 'Transport Canada certified inspection, pressure testing, and annual recertification for SOLAS, commercial, and recreational survival vessels.',
-    'image' => 'assets/images/spartan-2.png',
+    'image' => 'assets/images/j9/life-raft-inspection.webp',
     'breadcrumbs' => [
         ['label' => 'Home', 'url' => 'index.php'],
         ['label' => 'Services', 'url' => 'services.php'],
@@ -113,7 +113,7 @@ require_once __DIR__ . '/components/page-hero.php';
                 <div class="border border-slate-100 p-8">
                     <h3 class="font-oswald text-sm font-bold text-spartan-navy tracking-[0.2em] uppercase mb-5">Often Needed With This</h3>
                     <a href="product-single.php" class="flex items-center space-x-4 group">
-                        <img src="assets/images/PFDS.jpg" alt="Hydrostatic release unit" class="w-16 h-16 object-cover border border-slate-100">
+                        <img src="assets/images/j9/marine-safety.webp" alt="Hydrostatic release unit" class="w-16 h-16 object-cover border border-slate-100">
                         <div>
                             <h4 class="font-oswald text-xs font-bold text-spartan-navy uppercase leading-tight group-hover:text-spartan-teal transition-colors">Hammar H20 Hydrostatic Release</h4>
                             <span class="font-sans text-xs font-semibold text-slate-700 mt-1 block">$129.50 CAD</span>

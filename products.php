@@ -3,26 +3,78 @@ $page_title = 'Products | Spartan Industrial Marine';
 $active_nav = 'products';
 require_once __DIR__ . '/partials/header.php';
 
-$hero = [
-    'title' => 'Shop Products',
-    'subtitle' => 'Safety equipment, rope and rigging, fishing gear, and workwear. Stocked deep across three Atlantic Canada locations.',
-    'image' => 'assets/images/EQUIPMENT.jpg',
-    'size' => 'short',
-    'breadcrumbs' => [
+// Optional initial filters, e.g. products.php?cat=boots, products.php?group=workwear-footwear, or products.php?brand=grundens
+$selected_brand = null;
+$initial_brand = '';
+if (isset($_GET['brand'])) {
+    $selected_brand = site_brand_by_slug(site_brand_slug($_GET['brand']));
+    if ($selected_brand !== null) {
+        $initial_brand = $selected_brand['slug'];
+    }
+}
+
+$initial_group = $initial_brand === '' && isset($_GET['group']) && array_key_exists($_GET['group'], $site_product_category_groups) ? $_GET['group'] : '';
+$initial_cat = $initial_brand === '' && $initial_group === '' && isset($_GET['cat']) && array_key_exists($_GET['cat'], $site_product_categories) ? $_GET['cat'] : 'all';
+$initial_filter = $initial_brand !== '' ? 'brand:' . $initial_brand : ($initial_group !== '' ? 'group:' . $initial_group : $initial_cat);
+$brand_filters = array_values(array_filter($site_brand_catalog, function ($brand) {
+    return ($brand['count'] ?? 0) > 0;
+}));
+
+// Category/group counts for the sidebar
+$cat_counts = array_fill_keys(array_keys($site_product_categories), 0);
+$group_counts = array_fill_keys(array_keys($site_product_category_groups), 0);
+foreach ($site_products as $p) {
+    $cat_key = $p['category'] ?? '';
+    if ($cat_key !== '') {
+        $cat_counts[$cat_key] = ($cat_counts[$cat_key] ?? 0) + 1;
+    }
+
+    $group_key = $p['category_group'] ?? '';
+    if ($group_key !== '') {
+        $group_counts[$group_key] = ($group_counts[$group_key] ?? 0) + 1;
+    }
+}
+$total_products = count($site_products);
+$initial_count = $initial_brand !== ''
+    ? ($selected_brand['count'] ?? 0)
+    : ($initial_group !== ''
+        ? ($group_counts[$initial_group] ?? 0)
+        : ($initial_cat === 'all' ? $total_products : ($cat_counts[$initial_cat] ?? 0)));
+
+$selected_filter_label = '';
+if ($selected_brand !== null) {
+    $selected_filter_label = $selected_brand['label'];
+} elseif ($initial_group !== '') {
+    $selected_filter_label = $site_product_category_groups[$initial_group]['label'];
+} elseif ($initial_cat !== 'all') {
+    $selected_filter_label = $site_product_categories[$initial_cat];
+}
+
+$product_breadcrumbs = [
+    ['label' => 'Home', 'url' => 'index.php'],
+    ['label' => 'Products'],
+];
+if ($selected_filter_label !== '') {
+    $product_breadcrumbs = [
         ['label' => 'Home', 'url' => 'index.php'],
-        ['label' => 'Products'],
-    ],
+        ['label' => $selected_brand !== null ? 'Brands' : 'Products', 'url' => $selected_brand !== null ? 'brands.php' : 'products.php'],
+        ['label' => $selected_filter_label],
+    ];
+}
+
+$hero_subtitle = 'Safety equipment, rope and rigging, fishing gear, and workwear. Stocked deep across Atlantic Canada.';
+if ($selected_brand !== null) {
+    $hero_subtitle = number_format($initial_count) . ' catalogue product' . ($initial_count === 1 ? '' : 's') . ' from ' . $selected_brand['label'] . '.';
+}
+
+$hero = [
+    'title' => $selected_filter_label !== '' ? $selected_filter_label : 'Shop Products',
+    'subtitle' => $hero_subtitle,
+    'image' => 'assets/images/j9/spartan-warehouse-fulfillment.webp',
+    'size' => 'short',
+    'breadcrumbs' => $product_breadcrumbs,
 ];
 require_once __DIR__ . '/components/page-hero.php';
-
-// Optional initial category filter, e.g. products.php?cat=rope
-$initial_cat = isset($_GET['cat']) && array_key_exists($_GET['cat'], $site_product_categories) ? $_GET['cat'] : 'all';
-
-// Category counts for the sidebar
-$cat_counts = array_fill_keys(array_keys($site_product_categories), 0);
-foreach ($site_products as $p) { $cat_counts[$p['category']]++; }
-$total_products = count($site_products);
-$initial_count = $initial_cat === 'all' ? $total_products : $cat_counts[$initial_cat];
 ?>
 
     <!-- Archive: sidebar filters + product grid -->
@@ -42,20 +94,36 @@ $initial_count = $initial_cat === 'all' ? $total_products : $cat_counts[$initial
             <aside id="filters-sidebar" class="hidden lg:block lg:col-span-1 select-text">
                 <div class="lg:sticky lg:top-32 space-y-8">
 
-                    <!-- Department filter (functional) -->
+                    <!-- Top category filter (functional) -->
                     <div>
-                        <h2 class="font-oswald text-xs font-bold text-spartan-navy tracking-[0.25em] uppercase pb-3 border-b border-slate-200 mb-1">Department</h2>
+                        <h2 class="font-oswald text-xs font-bold text-spartan-navy tracking-[0.25em] uppercase pb-3 border-b border-slate-200 mb-1">Top Categories</h2>
                         <ul class="text-[13px] font-medium">
                             <li>
-                                <button onclick="filterProducts('all')" data-cat="all" class="filter-cat w-full text-left py-2.5 pl-3 border-l-2 <?php echo $initial_cat === 'all' ? 'text-spartan-teal font-bold border-spartan-teal' : 'text-slate-600 border-transparent'; ?> hover:text-spartan-teal transition-colors flex items-center justify-between">
+                                <button onclick="filterProducts('all')" data-filter="all" data-cat="all" class="filter-cat w-full text-left py-2.5 pl-3 border-l-2 <?php echo $initial_filter === 'all' ? 'text-spartan-teal font-bold border-spartan-teal' : 'text-slate-600 border-transparent'; ?> hover:text-spartan-teal transition-colors flex items-center justify-between">
                                     <span>All Products</span>
                                     <span class="text-[10px] font-mono text-slate-400"><?php echo $total_products; ?></span>
                                 </button>
                             </li>
+                            <?php foreach ($site_product_category_groups as $group_key => $group): ?>
+                            <?php $group_filter = 'group:' . $group_key; ?>
+                            <li>
+                                <button onclick="filterProducts('<?php echo site_escape($group_filter); ?>')" data-filter="<?php echo site_escape($group_filter); ?>" class="filter-cat w-full text-left py-2.5 pl-3 border-l-2 <?php echo $initial_filter === $group_filter ? 'text-spartan-teal font-bold border-spartan-teal' : 'text-slate-600 border-transparent'; ?> hover:text-spartan-teal transition-colors flex items-center justify-between">
+                                    <span><?php echo site_escape($group['label']); ?></span>
+                                    <span class="text-[10px] font-mono text-slate-400"><?php echo $group_counts[$group_key] ?? 0; ?></span>
+                                </button>
+                            </li>
+                            <?php endforeach; ?>
+                        </ul>
+                    </div>
+
+                    <!-- Product category filter (functional) -->
+                    <div>
+                        <h2 class="font-oswald text-xs font-bold text-spartan-navy tracking-[0.25em] uppercase pb-3 border-b border-slate-200 mb-1">Product Categories</h2>
+                        <ul class="text-[13px] font-medium max-h-[520px] overflow-y-auto pr-1">
                             <?php foreach ($site_product_categories as $cat_key => $cat_label): ?>
                             <li>
-                                <button onclick="filterProducts('<?php echo $cat_key; ?>')" data-cat="<?php echo $cat_key; ?>" class="filter-cat w-full text-left py-2.5 pl-3 border-l-2 <?php echo $initial_cat === $cat_key ? 'text-spartan-teal font-bold border-spartan-teal' : 'text-slate-600 border-transparent'; ?> hover:text-spartan-teal transition-colors flex items-center justify-between">
-                                    <span><?php echo $cat_label; ?></span>
+                                <button onclick="filterProducts('<?php echo site_escape($cat_key); ?>')" data-filter="<?php echo site_escape($cat_key); ?>" data-cat="<?php echo site_escape($cat_key); ?>" class="filter-cat w-full text-left py-2.5 pl-3 border-l-2 <?php echo $initial_filter === $cat_key ? 'text-spartan-teal font-bold border-spartan-teal' : 'text-slate-600 border-transparent'; ?> hover:text-spartan-teal transition-colors flex items-center justify-between">
+                                    <span><?php echo site_escape($cat_label); ?></span>
                                     <span class="text-[10px] font-mono text-slate-400"><?php echo $cat_counts[$cat_key]; ?></span>
                                 </button>
                             </li>
@@ -88,22 +156,20 @@ $initial_count = $initial_cat === 'all' ? $total_products : $cat_counts[$initial
                         </ul>
                     </div>
 
-                    <!-- Brand filter (visual mockup) -->
+                    <!-- Brand filter (functional) -->
                     <div>
-                        <h2 class="font-oswald text-xs font-bold text-spartan-navy tracking-[0.25em] uppercase pb-3 border-b border-slate-200 mb-4">Brand</h2>
-                        <ul class="space-y-3 text-[13px] text-slate-600 font-medium">
-                            <?php foreach (array_slice($site_brands, 0, 6) as $brand): ?>
+                        <h2 class="font-oswald text-xs font-bold text-spartan-navy tracking-[0.25em] uppercase pb-3 border-b border-slate-200 mb-1">Brand</h2>
+                        <ul class="text-[13px] font-medium max-h-[360px] overflow-y-auto pr-1">
+                            <?php foreach ($brand_filters as $brand): ?>
+                            <?php $brand_filter = 'brand:' . $brand['slug']; ?>
                             <li>
-                                <label class="flex items-center space-x-3 cursor-pointer hover:text-spartan-teal transition-colors">
-                                    <input type="checkbox" class="w-4 h-4 accent-[#00B3A6] rounded-none">
-                                    <span><?php echo ucwords(strtolower($brand)); ?></span>
-                                </label>
+                                <button onclick="filterProducts('<?php echo site_escape($brand_filter); ?>')" data-filter="<?php echo site_escape($brand_filter); ?>" class="filter-cat w-full text-left py-2.5 pl-3 border-l-2 <?php echo $initial_filter === $brand_filter ? 'text-spartan-teal font-bold border-spartan-teal' : 'text-slate-600 border-transparent'; ?> hover:text-spartan-teal transition-colors flex items-center justify-between">
+                                    <span class="pr-3 leading-snug"><?php echo site_escape($brand['label']); ?></span>
+                                    <span class="text-[10px] font-mono text-slate-400"><?php echo $brand['count']; ?></span>
+                                </button>
                             </li>
                             <?php endforeach; ?>
                         </ul>
-                        <button onclick="alert('Show all brands mockup!')" class="mt-4 text-spartan-teal hover:text-spartan-navy text-[10px] font-bold tracking-[0.2em] uppercase transition-colors">
-                            + Show All Brands
-                        </button>
                     </div>
 
                     <!-- Price filter (visual mockup) -->
@@ -198,5 +264,5 @@ $initial_count = $initial_cat === 'all' ? $total_products : $cat_counts[$initial
     <!-- CTA -->
     <?php require_once __DIR__ . '/components/cta-band.php'; ?>
 
-    <script>window.SPARTAN_INITIAL_FILTER = '<?php echo $initial_cat; ?>';</script>
+    <script>window.SPARTAN_INITIAL_FILTER = '<?php echo site_escape($initial_filter); ?>';</script>
 <?php require_once __DIR__ . '/partials/footer.php'; ?>

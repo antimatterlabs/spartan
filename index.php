@@ -1,5 +1,6 @@
 <?php
 $page_title = 'Spartan Industrial Marine | Commercial Marine Supply & Certified Service';
+$active_nav = 'home';
 require_once __DIR__ . '/partials/header.php';
 ?>
 
@@ -9,7 +10,7 @@ require_once __DIR__ . '/partials/header.php';
     <section class="relative h-[700px] md:h-[800px] w-full overflow-hidden bg-spartan-navy">
         <!-- Hero Background Image -->
         <div class="absolute inset-0 z-0">
-            <img src="assets/images/hero-upscale.jpg" alt="Crew working on a commercial vessel in heavy seas" class="w-full h-full object-cover object-top contrast-[1.05]">
+            <img src="assets/images/hero-upscale.jpg" alt="Commercial marine gear built for harsh weather" class="w-full h-full object-cover object-top contrast-[1.05]">
             <div class="absolute inset-0 bg-gradient-to-r from-spartan-navy/85 from-[30%] via-spartan-navy/55 via-[48%] to-transparent to-[70%]"></div>
             <div class="absolute inset-0 bg-gradient-to-t from-spartan-navy via-transparent to-transparent opacity-60"></div>
         </div>
@@ -146,7 +147,7 @@ require_once __DIR__ . '/partials/header.php';
             <!-- Department 1: Marine Safety -->
             <a href="products.php" class="relative group h-[540px] w-[300px] sm:w-[340px] shrink-0 snap-start overflow-hidden bg-spartan-navy">
                 <div class="absolute inset-0">
-                    <img src="assets/images/PFDS.jpg" alt="Marine safety equipment" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 ease-in-out brightness-90">
+                    <img src="assets/images/j9/marine-safety.webp" alt="Marine safety equipment" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 ease-in-out brightness-90">
                     <div class="absolute inset-0 bg-gradient-to-t from-spartan-navy/95 via-spartan-navy/25 to-transparent"></div>
                 </div>
                 <div class="absolute inset-x-0 bottom-0 p-7 flex flex-col justify-end">
@@ -162,7 +163,7 @@ require_once __DIR__ . '/partials/header.php';
             <!-- Department 2: Rope & Rigging -->
             <a href="products.php" class="relative group h-[540px] w-[300px] sm:w-[340px] shrink-0 snap-start overflow-hidden bg-spartan-navy">
                 <div class="absolute inset-0">
-                    <img src="assets/images/spartan-3.png" alt="Rope and rigging" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 ease-in-out brightness-90">
+                    <img src="assets/images/j9/department-rope-rigging.webp" alt="Rope and rigging department" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 ease-in-out brightness-90">
                     <div class="absolute inset-0 bg-gradient-to-t from-spartan-navy/95 via-spartan-navy/25 to-transparent"></div>
                 </div>
                 <div class="absolute inset-x-0 bottom-0 p-7 flex flex-col justify-end">
@@ -178,7 +179,7 @@ require_once __DIR__ . '/partials/header.php';
             <!-- Department 3: Commercial Fishing -->
             <a href="products.php" class="relative group h-[540px] w-[300px] sm:w-[340px] shrink-0 snap-start overflow-hidden bg-spartan-navy">
                 <div class="absolute inset-0">
-                    <img src="assets/images/EQUIPMENT.jpg" alt="Commercial fishing gear" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 ease-in-out brightness-90">
+                    <img src="assets/images/j9/department-commercial-fishing.webp" alt="Commercial fishing gear and supplies" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 ease-in-out brightness-90">
                     <div class="absolute inset-0 bg-gradient-to-t from-spartan-navy/95 via-spartan-navy/25 to-transparent"></div>
                 </div>
                 <div class="absolute inset-x-0 bottom-0 p-7 flex flex-col justify-end">
@@ -194,7 +195,7 @@ require_once __DIR__ . '/partials/header.php';
             <!-- Department 4: Workwear -->
             <a href="products.php" class="relative group h-[540px] w-[300px] sm:w-[340px] shrink-0 snap-start overflow-hidden bg-spartan-navy">
                 <div class="absolute inset-0">
-                    <img src="assets/images/WORKWEAR.jpg" alt="Commercial marine workwear" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 ease-in-out brightness-90">
+                    <img src="assets/images/j9/department-workwear.webp" alt="Commercial marine workwear" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 ease-in-out brightness-90">
                     <div class="absolute inset-0 bg-gradient-to-t from-spartan-navy/95 via-spartan-navy/25 to-transparent"></div>
                 </div>
                 <div class="absolute inset-x-0 bottom-0 p-7 flex flex-col justify-end">
@@ -210,7 +211,7 @@ require_once __DIR__ . '/partials/header.php';
             <!-- Department 5: Footwear -->
             <a href="products.php" class="relative group h-[540px] w-[300px] sm:w-[340px] shrink-0 snap-start overflow-hidden bg-spartan-navy">
                 <div class="absolute inset-0">
-                    <img src="assets/images/FOOTWEAR.jpg" alt="Deck boots and marine footwear" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 ease-in-out brightness-90">
+                    <img src="assets/images/j9/marine-footwear.webp" alt="Deck boots and marine footwear" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 ease-in-out brightness-90">
                     <div class="absolute inset-0 bg-gradient-to-t from-spartan-navy/95 via-spartan-navy/25 to-transparent"></div>
                 </div>
                 <div class="absolute inset-x-0 bottom-0 p-7 flex flex-col justify-end">
@@ -226,7 +227,7 @@ require_once __DIR__ . '/partials/header.php';
             <!-- Department 6: Industrial & Shipyard -->
             <a href="products.php" class="relative group h-[540px] w-[300px] sm:w-[340px] shrink-0 snap-start overflow-hidden bg-spartan-navy">
                 <div class="absolute inset-0">
-                    <img src="assets/images/spartan-2.png" alt="Industrial and shipyard crew supplies" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 ease-in-out brightness-90">
+                    <img src="assets/images/j9/department-industrial-shipyard.webp" alt="Industrial and shipyard marine supplies" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 ease-in-out brightness-90">
                     <div class="absolute inset-0 bg-gradient-to-t from-spartan-navy/95 via-spartan-navy/25 to-transparent"></div>
                 </div>
                 <div class="absolute inset-x-0 bottom-0 p-7 flex flex-col justify-end">
@@ -234,6 +235,134 @@ require_once __DIR__ . '/partials/header.php';
                     <p class="text-sm text-slate-300 font-light mb-5">Lifting hardware, fall protection, PPE, and site supply.</p>
                     <span class="inline-flex items-center text-xs font-bold tracking-[0.2em] text-spartan-teal group-hover:text-spartan-teal-light transition-colors uppercase">
                         <span>SHOP INDUSTRIAL</span>
+                        <i class="fa-solid fa-arrow-right text-xs ml-1.5 transition-transform duration-300 group-hover:translate-x-1"></i>
+                    </span>
+                </div>
+            </a>
+
+            <!-- Department 7: Marine Life Safety -->
+            <a href="products.php" class="relative group h-[540px] w-[300px] sm:w-[340px] shrink-0 snap-start overflow-hidden bg-spartan-navy">
+                <div class="absolute inset-0">
+                    <img src="assets/images/j9/other-marine-life-safety.webp" alt="Marine life safety equipment" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 ease-in-out brightness-90">
+                    <div class="absolute inset-0 bg-gradient-to-t from-spartan-navy/95 via-spartan-navy/25 to-transparent"></div>
+                </div>
+                <div class="absolute inset-x-0 bottom-0 p-7 flex flex-col justify-end">
+                    <h3 class="font-oswald text-2xl font-bold tracking-widest text-white uppercase mb-1.5">Marine Life Safety</h3>
+                    <p class="text-sm text-slate-300 font-light mb-5">Certified safety gear, survival equipment, and vessel readiness supplies.</p>
+                    <span class="inline-flex items-center text-xs font-bold tracking-[0.2em] text-spartan-teal group-hover:text-spartan-teal-light transition-colors uppercase">
+                        <span>SHOP LIFE SAFETY</span>
+                        <i class="fa-solid fa-arrow-right text-xs ml-1.5 transition-transform duration-300 group-hover:translate-x-1"></i>
+                    </span>
+                </div>
+            </a>
+
+            <!-- Department 8: Buoys & Floats -->
+            <a href="products.php" class="relative group h-[540px] w-[300px] sm:w-[340px] shrink-0 snap-start overflow-hidden bg-spartan-navy">
+                <div class="absolute inset-0">
+                    <img src="assets/images/j9/other-buoys-floats.webp" alt="Buoys and floats" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 ease-in-out brightness-90">
+                    <div class="absolute inset-0 bg-gradient-to-t from-spartan-navy/95 via-spartan-navy/25 to-transparent"></div>
+                </div>
+                <div class="absolute inset-x-0 bottom-0 p-7 flex flex-col justify-end">
+                    <h3 class="font-oswald text-2xl font-bold tracking-widest text-white uppercase mb-1.5">Buoys & Floats</h3>
+                    <p class="text-sm text-slate-300 font-light mb-5">Trap buoys, float systems, markers, and working-water visibility gear.</p>
+                    <span class="inline-flex items-center text-xs font-bold tracking-[0.2em] text-spartan-teal group-hover:text-spartan-teal-light transition-colors uppercase">
+                        <span>SHOP BUOYS</span>
+                        <i class="fa-solid fa-arrow-right text-xs ml-1.5 transition-transform duration-300 group-hover:translate-x-1"></i>
+                    </span>
+                </div>
+            </a>
+
+            <!-- Department 9: Scallop Fishing -->
+            <a href="products.php" class="relative group h-[540px] w-[300px] sm:w-[340px] shrink-0 snap-start overflow-hidden bg-spartan-navy">
+                <div class="absolute inset-0">
+                    <img src="assets/images/j9/other-scallop-fishing.webp" alt="Scallop fishing gear" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 ease-in-out brightness-90">
+                    <div class="absolute inset-0 bg-gradient-to-t from-spartan-navy/95 via-spartan-navy/25 to-transparent"></div>
+                </div>
+                <div class="absolute inset-x-0 bottom-0 p-7 flex flex-col justify-end">
+                    <h3 class="font-oswald text-2xl font-bold tracking-widest text-white uppercase mb-1.5">Scallop Fishing</h3>
+                    <p class="text-sm text-slate-300 font-light mb-5">Fleet supplies, deck gear, and seasonal support for scallop crews.</p>
+                    <span class="inline-flex items-center text-xs font-bold tracking-[0.2em] text-spartan-teal group-hover:text-spartan-teal-light transition-colors uppercase">
+                        <span>SHOP SCALLOP GEAR</span>
+                        <i class="fa-solid fa-arrow-right text-xs ml-1.5 transition-transform duration-300 group-hover:translate-x-1"></i>
+                    </span>
+                </div>
+            </a>
+
+            <!-- Department 10: Trawling Gear -->
+            <a href="products.php" class="relative group h-[540px] w-[300px] sm:w-[340px] shrink-0 snap-start overflow-hidden bg-spartan-navy">
+                <div class="absolute inset-0">
+                    <img src="assets/images/j9/other-trawling-gear.webp" alt="Trawling gear" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 ease-in-out brightness-90">
+                    <div class="absolute inset-0 bg-gradient-to-t from-spartan-navy/95 via-spartan-navy/25 to-transparent"></div>
+                </div>
+                <div class="absolute inset-x-0 bottom-0 p-7 flex flex-col justify-end">
+                    <h3 class="font-oswald text-2xl font-bold tracking-widest text-white uppercase mb-1.5">Trawling Gear</h3>
+                    <p class="text-sm text-slate-300 font-light mb-5">Nets, hardware, handling gear, and supply support for trawlers.</p>
+                    <span class="inline-flex items-center text-xs font-bold tracking-[0.2em] text-spartan-teal group-hover:text-spartan-teal-light transition-colors uppercase">
+                        <span>SHOP TRAWLING</span>
+                        <i class="fa-solid fa-arrow-right text-xs ml-1.5 transition-transform duration-300 group-hover:translate-x-1"></i>
+                    </span>
+                </div>
+            </a>
+
+            <!-- Department 11: Pumps & Plumbing -->
+            <a href="products.php" class="relative group h-[540px] w-[300px] sm:w-[340px] shrink-0 snap-start overflow-hidden bg-spartan-navy">
+                <div class="absolute inset-0">
+                    <img src="assets/images/j9/other-pumps-plumbing.webp" alt="Marine pumps and plumbing supplies" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 ease-in-out brightness-90">
+                    <div class="absolute inset-0 bg-gradient-to-t from-spartan-navy/95 via-spartan-navy/25 to-transparent"></div>
+                </div>
+                <div class="absolute inset-x-0 bottom-0 p-7 flex flex-col justify-end">
+                    <h3 class="font-oswald text-2xl font-bold tracking-widest text-white uppercase mb-1.5">Pumps & Plumbing</h3>
+                    <p class="text-sm text-slate-300 font-light mb-5">Bilge, deck, hose, fittings, and marine plumbing essentials.</p>
+                    <span class="inline-flex items-center text-xs font-bold tracking-[0.2em] text-spartan-teal group-hover:text-spartan-teal-light transition-colors uppercase">
+                        <span>SHOP PUMPS</span>
+                        <i class="fa-solid fa-arrow-right text-xs ml-1.5 transition-transform duration-300 group-hover:translate-x-1"></i>
+                    </span>
+                </div>
+            </a>
+
+            <!-- Department 12: Cabin & Navigation -->
+            <a href="products.php" class="relative group h-[540px] w-[300px] sm:w-[340px] shrink-0 snap-start overflow-hidden bg-spartan-navy">
+                <div class="absolute inset-0">
+                    <img src="assets/images/j9/other-cabin-navigation.webp" alt="Cabin and navigation supplies" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 ease-in-out brightness-90">
+                    <div class="absolute inset-0 bg-gradient-to-t from-spartan-navy/95 via-spartan-navy/25 to-transparent"></div>
+                </div>
+                <div class="absolute inset-x-0 bottom-0 p-7 flex flex-col justify-end">
+                    <h3 class="font-oswald text-2xl font-bold tracking-widest text-white uppercase mb-1.5">Cabin & Navigation</h3>
+                    <p class="text-sm text-slate-300 font-light mb-5">Wheelhouse essentials, navigation support, and onboard supplies.</p>
+                    <span class="inline-flex items-center text-xs font-bold tracking-[0.2em] text-spartan-teal group-hover:text-spartan-teal-light transition-colors uppercase">
+                        <span>SHOP NAVIGATION</span>
+                        <i class="fa-solid fa-arrow-right text-xs ml-1.5 transition-transform duration-300 group-hover:translate-x-1"></i>
+                    </span>
+                </div>
+            </a>
+
+            <!-- Department 13: Industrial Safety -->
+            <a href="products.php" class="relative group h-[540px] w-[300px] sm:w-[340px] shrink-0 snap-start overflow-hidden bg-spartan-navy">
+                <div class="absolute inset-0">
+                    <img src="assets/images/j9/other-industrial-safety.webp" alt="Industrial safety supplies" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 ease-in-out brightness-90">
+                    <div class="absolute inset-0 bg-gradient-to-t from-spartan-navy/95 via-spartan-navy/25 to-transparent"></div>
+                </div>
+                <div class="absolute inset-x-0 bottom-0 p-7 flex flex-col justify-end">
+                    <h3 class="font-oswald text-2xl font-bold tracking-widest text-white uppercase mb-1.5">Industrial Safety</h3>
+                    <p class="text-sm text-slate-300 font-light mb-5">PPE, jobsite safety, fall protection, and yard-ready equipment.</p>
+                    <span class="inline-flex items-center text-xs font-bold tracking-[0.2em] text-spartan-teal group-hover:text-spartan-teal-light transition-colors uppercase">
+                        <span>SHOP SAFETY</span>
+                        <i class="fa-solid fa-arrow-right text-xs ml-1.5 transition-transform duration-300 group-hover:translate-x-1"></i>
+                    </span>
+                </div>
+            </a>
+
+            <!-- Department 14: Military & Coast Guard -->
+            <a href="products.php" class="relative group h-[540px] w-[300px] sm:w-[340px] shrink-0 snap-start overflow-hidden bg-spartan-navy">
+                <div class="absolute inset-0">
+                    <img src="assets/images/j9/other-military-coast-guard.webp" alt="Military and coast guard marine supplies" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 ease-in-out brightness-90">
+                    <div class="absolute inset-0 bg-gradient-to-t from-spartan-navy/95 via-spartan-navy/25 to-transparent"></div>
+                </div>
+                <div class="absolute inset-x-0 bottom-0 p-7 flex flex-col justify-end">
+                    <h3 class="font-oswald text-2xl font-bold tracking-widest text-white uppercase mb-1.5">Military & Coast Guard</h3>
+                    <p class="text-sm text-slate-300 font-light mb-5">Reliable marine supply for government, defence, and response crews.</p>
+                    <span class="inline-flex items-center text-xs font-bold tracking-[0.2em] text-spartan-teal group-hover:text-spartan-teal-light transition-colors uppercase">
+                        <span>SHOP GOVERNMENT</span>
                         <i class="fa-solid fa-arrow-right text-xs ml-1.5 transition-transform duration-300 group-hover:translate-x-1"></i>
                     </span>
                 </div>
@@ -278,7 +407,9 @@ require_once __DIR__ . '/partials/header.php';
                 </div>
                 <div class="space-y-2">
                     <span class="font-oswald text-[9px] font-bold text-spartan-charcoal tracking-widest uppercase">MARINE SAFETY / SURVIVAL</span>
-                    <h3 class="font-oswald text-sm font-bold text-spartan-navy uppercase tracking-normal leading-tight min-h-[44px]">COASTLINE SOLAS IMMERSION SUIT</h3>
+                    <h3 class="font-oswald text-sm font-bold text-spartan-navy uppercase tracking-normal leading-tight min-h-[44px]">
+                        <a href="product-single.php?slug=coastline-solas-immersion-suit" class="hover:text-spartan-teal transition-colors">COASTLINE SOLAS IMMERSION SUIT</a>
+                    </h3>
                     <div class="flex items-center justify-between border-t border-slate-100 pt-3">
                         <span class="font-sans text-sm font-bold text-slate-800">$689.00 <span class="text-[9.5px] text-slate-400 font-normal">CAD</span></span>
                         <button onclick="addToCart('Coastline SOLAS Immersion Suit, Universal Adult', 689.00, 'assets/images/jacket.webp')" class="bg-spartan-teal text-white hover:bg-spartan-teal-light hover:text-spartan-navy py-1.5 px-3 text-[8px] font-bold tracking-widest transition-colors rounded-none uppercase">
@@ -291,10 +422,10 @@ require_once __DIR__ . '/partials/header.php';
             <!-- Product 2: Pot Warp Rope -->
             <div class="space-y-4 group transition-all duration-300 hover:bg-slate-50 p-2 w-[280px] shrink-0 snap-start select-text">
                 <div class="relative bg-white border border-slate-100 rounded-none h-60 flex items-center justify-center overflow-hidden">
-                    <img src="assets/images/spartan-3.png" alt="Sinking pot warp rope coil" class="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out">
+                    <img src="assets/images/j9/marine-rigging.webp" alt="Sinking pot warp rope coil" class="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out">
                     <span class="absolute top-3 left-3 bg-spartan-navy text-white text-[8px] px-2 py-0.5 font-mono font-bold tracking-wider uppercase">BEST SELLER</span>
                     <div class="absolute inset-0 bg-spartan-navy/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                        <button onclick="addToCart('Sinking Pot Warp, 3/8 in x 1,200 ft Coil', 189.00, 'assets/images/spartan-3.png')" class="bg-spartan-teal text-white hover:bg-spartan-teal-light hover:text-spartan-navy px-4 py-2.5 text-[10px] font-bold tracking-widest transition-colors duration-300 uppercase flex items-center space-x-2 rounded-none">
+                        <button onclick="addToCart('Sinking Pot Warp, 3/8 in x 1,200 ft Coil', 189.00, 'assets/images/j9/marine-rigging.webp')" class="bg-spartan-teal text-white hover:bg-spartan-teal-light hover:text-spartan-navy px-4 py-2.5 text-[10px] font-bold tracking-widest transition-colors duration-300 uppercase flex items-center space-x-2 rounded-none">
                             <i class="fa-solid fa-cart-plus text-xs"></i>
                             <span>QUICK ADD</span>
                         </button>
@@ -302,10 +433,12 @@ require_once __DIR__ . '/partials/header.php';
                 </div>
                 <div class="space-y-2">
                     <span class="font-oswald text-[9px] font-bold text-spartan-charcoal tracking-widest uppercase">ROPE & RIGGING / POT WARP</span>
-                    <h3 class="font-oswald text-sm font-bold text-spartan-navy uppercase tracking-normal leading-tight min-h-[44px]">SINKING POT WARP 3/8″ × 1,200 FT</h3>
+                    <h3 class="font-oswald text-sm font-bold text-spartan-navy uppercase tracking-normal leading-tight min-h-[44px]">
+                        <a href="product-single.php?slug=sinking-pot-warp-38" class="hover:text-spartan-teal transition-colors">SINKING POT WARP 3/8″ × 1,200 FT</a>
+                    </h3>
                     <div class="flex items-center justify-between border-t border-slate-100 pt-3">
                         <span class="font-sans text-sm font-bold text-slate-800">$189.00 <span class="text-[9.5px] text-slate-400 font-normal">CAD</span></span>
-                        <button onclick="addToCart('Sinking Pot Warp, 3/8 in x 1,200 ft Coil', 189.00, 'assets/images/spartan-3.png')" class="bg-spartan-teal text-white hover:bg-spartan-teal-light hover:text-spartan-navy py-1.5 px-3 text-[8px] font-bold tracking-widest transition-colors rounded-none uppercase">
+                        <button onclick="addToCart('Sinking Pot Warp, 3/8 in x 1,200 ft Coil', 189.00, 'assets/images/j9/marine-rigging.webp')" class="bg-spartan-teal text-white hover:bg-spartan-teal-light hover:text-spartan-navy py-1.5 px-3 text-[8px] font-bold tracking-widest transition-colors rounded-none uppercase">
                             ADD TO ORDER
                         </button>
                     </div>
@@ -315,10 +448,10 @@ require_once __DIR__ . '/partials/header.php';
             <!-- Product 3: Spartan Deck Boots -->
             <div class="space-y-4 group transition-all duration-300 hover:bg-slate-50 p-2 w-[280px] shrink-0 snap-start select-text">
                 <div class="relative bg-white border border-slate-100 rounded-none h-60 flex items-center justify-center overflow-hidden p-4">
-                    <img src="assets/images/the-boots.png" alt="Commercial deck boots" class="h-full w-auto object-contain group-hover:scale-105 transition-transform duration-500 ease-in-out">
+                    <img src="assets/images/j9/marine-footwear.webp" alt="Commercial deck boots" class="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out">
                     <span class="absolute top-3 left-3 bg-spartan-teal text-white text-[8px] px-2 py-0.5 font-mono font-bold tracking-wider uppercase">NEW ARRIVAL</span>
                     <div class="absolute inset-0 bg-spartan-navy/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                        <button onclick="addToCart('Spartan Commercial Pro Deck Boots', 139.50, 'assets/images/the-boots.png')" class="bg-spartan-teal text-white hover:bg-spartan-teal-light hover:text-spartan-navy px-4 py-2.5 text-[10px] font-bold tracking-widest transition-colors duration-300 uppercase flex items-center space-x-2 rounded-none">
+                        <button onclick="addToCart('Spartan Commercial Pro Deck Boots', 139.50, 'assets/images/j9/marine-footwear.webp')" class="bg-spartan-teal text-white hover:bg-spartan-teal-light hover:text-spartan-navy px-4 py-2.5 text-[10px] font-bold tracking-widest transition-colors duration-300 uppercase flex items-center space-x-2 rounded-none">
                             <i class="fa-solid fa-cart-plus text-xs"></i>
                             <span>QUICK ADD</span>
                         </button>
@@ -326,10 +459,12 @@ require_once __DIR__ . '/partials/header.php';
                 </div>
                 <div class="space-y-2">
                     <span class="font-oswald text-[9px] font-bold text-spartan-charcoal tracking-widest uppercase">FOOTWEAR / DECK BOOTS</span>
-                    <h3 class="font-oswald text-sm font-bold text-spartan-navy uppercase tracking-normal leading-tight min-h-[44px]">SPARTAN COMMERCIAL DECK BOOTS</h3>
+                    <h3 class="font-oswald text-sm font-bold text-spartan-navy uppercase tracking-normal leading-tight min-h-[44px]">
+                        <a href="product-single.php?slug=fierce-frontier-deck-boot" class="hover:text-spartan-teal transition-colors">SPARTAN COMMERCIAL DECK BOOTS</a>
+                    </h3>
                     <div class="flex items-center justify-between border-t border-slate-100 pt-3">
                         <span class="font-sans text-sm font-bold text-slate-800">$139.50 <span class="text-[9.5px] text-slate-400 font-normal">CAD</span></span>
-                        <button onclick="addToCart('Spartan Commercial Pro Deck Boots', 139.50, 'assets/images/the-boots.png')" class="bg-spartan-teal text-white hover:bg-spartan-teal-light hover:text-spartan-navy py-1.5 px-3 text-[8px] font-bold tracking-widest transition-colors rounded-none uppercase">
+                        <button onclick="addToCart('Spartan Commercial Pro Deck Boots', 139.50, 'assets/images/j9/marine-footwear.webp')" class="bg-spartan-teal text-white hover:bg-spartan-teal-light hover:text-spartan-navy py-1.5 px-3 text-[8px] font-bold tracking-widest transition-colors rounded-none uppercase">
                             ADD TO ORDER
                         </button>
                     </div>
@@ -350,7 +485,9 @@ require_once __DIR__ . '/partials/header.php';
                 </div>
                 <div class="space-y-2">
                     <span class="font-oswald text-[9px] font-bold text-spartan-charcoal tracking-widest uppercase">WORKWEAR / FLOTATION</span>
-                    <h3 class="font-oswald text-sm font-bold text-spartan-navy uppercase tracking-normal leading-tight min-h-[44px]">HIGH-VIS LOBSTER FLOAT JACKET</h3>
+                    <h3 class="font-oswald text-sm font-bold text-spartan-navy uppercase tracking-normal leading-tight min-h-[44px]">
+                        <a href="product-single.php?slug=stormwatch-float-jacket" class="hover:text-spartan-teal transition-colors">HIGH-VIS LOBSTER FLOAT JACKET</a>
+                    </h3>
                     <div class="flex items-center justify-between border-t border-slate-100 pt-3">
                         <span class="font-sans text-sm font-bold text-slate-800">$249.00 <span class="text-[9.5px] text-slate-400 font-normal">CAD</span></span>
                         <button onclick="addToCart('High-Vis Lobster Float Jacket', 249.00, 'assets/images/float-jacket.webp')" class="bg-spartan-teal text-white hover:bg-spartan-teal-light hover:text-spartan-navy py-1.5 px-3 text-[8px] font-bold tracking-widest transition-colors rounded-none uppercase">
@@ -363,10 +500,10 @@ require_once __DIR__ . '/partials/header.php';
             <!-- Product 5: Lobster Trap Kit -->
             <div class="space-y-4 group transition-all duration-300 hover:bg-slate-50 p-2 w-[280px] shrink-0 snap-start select-text">
                 <div class="relative bg-white border border-slate-100 rounded-none h-60 flex items-center justify-center overflow-hidden">
-                    <img src="assets/images/EQUIPMENT.jpg" alt="Lobster trap hardware kit" class="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out">
+                    <img src="assets/images/j9/commercial-fishing.webp" alt="Lobster trap hardware kit" class="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out">
                     <span class="absolute top-3 left-3 bg-spartan-teal text-white text-[8px] px-2 py-0.5 font-mono font-bold tracking-wider uppercase">SEASON STOCK</span>
                     <div class="absolute inset-0 bg-spartan-navy/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                        <button onclick="addToCart('Lobster Trap Kit, Vents, Rings & Bait Bags (25 Pack)', 74.50, 'assets/images/EQUIPMENT.jpg')" class="bg-spartan-teal text-white hover:bg-spartan-teal-light hover:text-spartan-navy px-4 py-2.5 text-[10px] font-bold tracking-widest transition-colors duration-300 uppercase flex items-center space-x-2 rounded-none">
+                        <button onclick="addToCart('Lobster Trap Kit, Vents, Rings & Bait Bags (25 Pack)', 74.50, 'assets/images/j9/commercial-fishing.webp')" class="bg-spartan-teal text-white hover:bg-spartan-teal-light hover:text-spartan-navy px-4 py-2.5 text-[10px] font-bold tracking-widest transition-colors duration-300 uppercase flex items-center space-x-2 rounded-none">
                             <i class="fa-solid fa-cart-plus text-xs"></i>
                             <span>QUICK ADD</span>
                         </button>
@@ -374,10 +511,12 @@ require_once __DIR__ . '/partials/header.php';
                 </div>
                 <div class="space-y-2">
                     <span class="font-oswald text-[9px] font-bold text-spartan-charcoal tracking-widest uppercase">COMMERCIAL FISHING / HARDWARE</span>
-                    <h3 class="font-oswald text-sm font-bold text-spartan-navy uppercase tracking-normal leading-tight min-h-[44px]">LOBSTER TRAP HARDWARE KIT</h3>
+                    <h3 class="font-oswald text-sm font-bold text-spartan-navy uppercase tracking-normal leading-tight min-h-[44px]">
+                        <a href="product-single.php?slug=lobster-trap-kit" class="hover:text-spartan-teal transition-colors">LOBSTER TRAP HARDWARE KIT</a>
+                    </h3>
                     <div class="flex items-center justify-between border-t border-slate-100 pt-3">
                         <span class="font-sans text-sm font-bold text-slate-800">$74.50 <span class="text-[9.5px] text-slate-400 font-normal">CAD</span></span>
-                        <button onclick="addToCart('Lobster Trap Kit, Vents, Rings & Bait Bags (25 Pack)', 74.50, 'assets/images/EQUIPMENT.jpg')" class="bg-spartan-teal text-white hover:bg-spartan-teal-light hover:text-spartan-navy py-1.5 px-3 text-[8px] font-bold tracking-widest transition-colors rounded-none uppercase">
+                        <button onclick="addToCart('Lobster Trap Kit, Vents, Rings & Bait Bags (25 Pack)', 74.50, 'assets/images/j9/commercial-fishing.webp')" class="bg-spartan-teal text-white hover:bg-spartan-teal-light hover:text-spartan-navy py-1.5 px-3 text-[8px] font-bold tracking-widest transition-colors rounded-none uppercase">
                             ADD TO ORDER
                         </button>
                     </div>
@@ -387,10 +526,10 @@ require_once __DIR__ . '/partials/header.php';
             <!-- Product 6: Heavy Duty Bibs -->
             <div class="space-y-4 group transition-all duration-300 hover:bg-slate-50 p-2 w-[280px] shrink-0 snap-start select-text">
                 <div class="relative bg-white border border-slate-100 rounded-none h-60 flex items-center justify-center overflow-hidden">
-                    <img src="assets/images/WORKWEAR.jpg" alt="Commercial marine foul weather bibs" class="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out">
+                    <img src="assets/images/j9/spartan-workwear-woman.webp" alt="Commercial marine foul weather bibs" class="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out">
                     <span class="absolute top-3 left-3 bg-spartan-navy text-white text-[8px] px-2 py-0.5 font-mono font-bold tracking-wider uppercase">HEAVY DUTY</span>
                     <div class="absolute inset-0 bg-spartan-navy/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                        <button onclick="addToCart('Commercial Pro Foul Weather Bib Pants', 119.00, 'assets/images/WORKWEAR.jpg')" class="bg-spartan-teal text-white hover:bg-spartan-teal-light hover:text-spartan-navy px-4 py-2.5 text-[10px] font-bold tracking-widest transition-colors duration-300 uppercase flex items-center space-x-2 rounded-none">
+                        <button onclick="addToCart('Commercial Pro Foul Weather Bib Pants', 119.00, 'assets/images/j9/spartan-workwear-woman.webp')" class="bg-spartan-teal text-white hover:bg-spartan-teal-light hover:text-spartan-navy px-4 py-2.5 text-[10px] font-bold tracking-widest transition-colors duration-300 uppercase flex items-center space-x-2 rounded-none">
                             <i class="fa-solid fa-cart-plus text-xs"></i>
                             <span>QUICK ADD</span>
                         </button>
@@ -398,10 +537,12 @@ require_once __DIR__ . '/partials/header.php';
                 </div>
                 <div class="space-y-2">
                     <span class="font-oswald text-[9px] font-bold text-spartan-charcoal tracking-widest uppercase">WORKWEAR / FOUL WEATHER</span>
-                    <h3 class="font-oswald text-sm font-bold text-spartan-navy uppercase tracking-normal leading-tight min-h-[44px]">COMMERCIAL PRO BIB PANTS</h3>
+                    <h3 class="font-oswald text-sm font-bold text-spartan-navy uppercase tracking-normal leading-tight min-h-[44px]">
+                        <a href="product-single.php?slug=noreaster-rain-bibs" class="hover:text-spartan-teal transition-colors">COMMERCIAL PRO BIB PANTS</a>
+                    </h3>
                     <div class="flex items-center justify-between border-t border-slate-100 pt-3">
                         <span class="font-sans text-sm font-bold text-slate-800">$119.00 <span class="text-[9.5px] text-slate-400 font-normal">CAD</span></span>
-                        <button onclick="addToCart('Commercial Pro Foul Weather Bib Pants', 119.00, 'assets/images/WORKWEAR.jpg')" class="bg-spartan-teal text-white hover:bg-spartan-teal-light hover:text-spartan-navy py-1.5 px-3 text-[8px] font-bold tracking-widest transition-colors rounded-none uppercase">
+                        <button onclick="addToCart('Commercial Pro Foul Weather Bib Pants', 119.00, 'assets/images/j9/spartan-workwear-woman.webp')" class="bg-spartan-teal text-white hover:bg-spartan-teal-light hover:text-spartan-navy py-1.5 px-3 text-[8px] font-bold tracking-widest transition-colors rounded-none uppercase">
                             ADD TO ORDER
                         </button>
                     </div>
@@ -421,7 +562,7 @@ require_once __DIR__ . '/partials/header.php';
             <!-- Aisle 1: Image (Commercial Fishing) -->
             <a href="products.php" class="relative group h-[460px] overflow-hidden bg-spartan-navy">
                 <div class="absolute inset-0">
-                    <img src="assets/images/EQUIPMENT.jpg" alt="Commercial fishing season gear" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 ease-in-out brightness-[0.65]">
+                    <img src="assets/images/j9/commercial-fishing.webp" alt="Commercial fishing gear and crew supplies" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 ease-in-out brightness-[0.65]">
                     <div class="absolute inset-0 bg-gradient-to-t from-spartan-navy/90 via-transparent to-transparent"></div>
                 </div>
                 <div class="absolute inset-x-0 bottom-0 p-8">
@@ -437,7 +578,7 @@ require_once __DIR__ . '/partials/header.php';
             <!-- Aisle 2: Image (Marine Safety) -->
             <a href="products.php" class="relative group h-[460px] overflow-hidden bg-spartan-navy">
                 <div class="absolute inset-0">
-                    <img src="assets/images/spartan-2.png" alt="Crew in survival suits" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 ease-in-out brightness-[0.65]">
+                    <img src="assets/images/j9/marine-safety.webp" alt="Marine safety equipment and service supplies" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 ease-in-out brightness-[0.65]">
                     <div class="absolute inset-0 bg-gradient-to-t from-spartan-navy/90 via-transparent to-transparent"></div>
                 </div>
                 <div class="absolute inset-x-0 bottom-0 p-8">
@@ -498,7 +639,7 @@ require_once __DIR__ . '/partials/header.php';
             <!-- Split Media 1: Image left, content right -->
             <div class="grid grid-cols-1 md:grid-cols-2 bg-white">
                 <div class="relative h-[300px] md:h-auto md:min-h-[420px] overflow-hidden">
-                    <img src="assets/images/PFDS.jpg" alt="Life raft and safety equipment servicing" class="absolute inset-0 w-full h-full object-cover">
+                    <img src="assets/images/j9/spartan-service-workshop.webp" alt="Spartan marine service workshop" class="absolute inset-0 w-full h-full object-cover">
                     <!-- Wave accent bleeding off the image edge -->
                     <div class="absolute -bottom-2 -left-8 w-[120%] h-16 bg-spartan-teal opacity-60 pointer-events-none" style="-webkit-mask: url('assets/images/full-wave.svg') center / contain no-repeat; mask: url('assets/images/full-wave.svg') center / contain no-repeat;" aria-hidden="true"></div>
                 </div>
@@ -539,7 +680,7 @@ require_once __DIR__ . '/partials/header.php';
                     </div>
                 </div>
                 <div class="relative h-[300px] md:h-auto md:min-h-[420px] overflow-hidden order-1 md:order-2">
-                    <img src="assets/images/hero.png" alt="Commercial fleet vessel at sea" class="absolute inset-0 w-full h-full object-cover">
+                    <img src="assets/images/j9/spartan-warehouse-fulfillment.webp" alt="Spartan warehouse fulfillment and account orders" class="absolute inset-0 w-full h-full object-cover">
                     <div class="absolute -bottom-2 -right-8 w-[120%] h-16 bg-spartan-teal opacity-60 pointer-events-none" style="-webkit-mask: url('assets/images/full-wave.svg') center / contain no-repeat; mask: url('assets/images/full-wave.svg') center / contain no-repeat;" aria-hidden="true"></div>
                 </div>
             </div>
@@ -563,7 +704,7 @@ require_once __DIR__ . '/partials/header.php';
             <!-- Service 1 -->
             <div class="group">
                 <div class="h-52 w-full overflow-hidden mb-6">
-                    <img src="assets/images/PFDS.jpg" alt="Life raft inspection and repacking" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <img src="assets/images/j9/life-raft-inspection.webp" alt="Life raft inspection and repacking" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                 </div>
                 <h3 class="font-oswald text-lg font-bold text-spartan-navy tracking-widest uppercase mb-3">Life Raft Inspection & Repack</h3>
                 <p class="text-sm text-slate-600 font-light leading-relaxed mb-5">
@@ -578,7 +719,7 @@ require_once __DIR__ . '/partials/header.php';
             <!-- Service 2 -->
             <div class="group">
                 <div class="h-52 w-full overflow-hidden mb-6">
-                    <img src="assets/images/spartan-2.png" alt="Immersion suit testing" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <img src="assets/images/j9/immersion-suit-testing.webp" alt="Immersion suit testing" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                 </div>
                 <h3 class="font-oswald text-lg font-bold text-spartan-navy tracking-widest uppercase mb-3">Immersion Suit Testing</h3>
                 <p class="text-sm text-slate-600 font-light leading-relaxed mb-5">
@@ -593,7 +734,7 @@ require_once __DIR__ . '/partials/header.php';
             <!-- Service 3 -->
             <div class="group">
                 <div class="h-52 w-full overflow-hidden mb-6">
-                    <img src="assets/images/spartan-3.png" alt="Rope splicing and custom rigging" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <img src="assets/images/j9/service-splicing.webp" alt="Rope and rigging supplies being packed in a Spartan shop" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                 </div>
                 <h3 class="font-oswald text-lg font-bold text-spartan-navy tracking-widest uppercase mb-3">Splicing & Custom Rigging</h3>
                 <p class="text-sm text-slate-600 font-light leading-relaxed mb-5">
@@ -608,7 +749,7 @@ require_once __DIR__ . '/partials/header.php';
             <!-- Service 4 -->
             <div class="group">
                 <div class="h-52 w-full overflow-hidden mb-6">
-                    <img src="assets/images/hero.png" alt="Certified pull testing" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <img src="assets/images/j9/service-pull-testing.webp" alt="Certified pull testing" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                 </div>
                 <h3 class="font-oswald text-lg font-bold text-spartan-navy tracking-widest uppercase mb-3">Certified Pull Testing</h3>
                 <p class="text-sm text-slate-600 font-light leading-relaxed mb-5">
@@ -623,7 +764,7 @@ require_once __DIR__ . '/partials/header.php';
             <!-- Service 5 -->
             <div class="group">
                 <div class="h-52 w-full overflow-hidden mb-6">
-                    <img src="assets/images/spartan-4.png" alt="Compliance inspections" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <img src="assets/images/j9/service-compliance.webp" alt="Marine compliance inspection support" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                 </div>
                 <h3 class="font-oswald text-lg font-bold text-spartan-navy tracking-widest uppercase mb-3">Compliance Inspections</h3>
                 <p class="text-sm text-slate-600 font-light leading-relaxed mb-5">
@@ -638,7 +779,7 @@ require_once __DIR__ . '/partials/header.php';
             <!-- Service 6 -->
             <div class="group">
                 <div class="h-52 w-full overflow-hidden mb-6">
-                    <img src="assets/images/EQUIPMENT.jpg" alt="Vessel and fleet outfitting" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <img src="assets/images/j9/service-fleet-outfitting.webp" alt="Vessel and fleet outfitting support" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                 </div>
                 <h3 class="font-oswald text-lg font-bold text-spartan-navy tracking-widest uppercase mb-3">Vessel & Fleet Outfitting</h3>
                 <p class="text-sm text-slate-600 font-light leading-relaxed mb-5">
@@ -668,7 +809,7 @@ require_once __DIR__ . '/partials/header.php';
                 <!-- Who-we-serve Aisle 1: On the water -->
                 <a href="contact.php" class="relative group h-[440px] overflow-hidden bg-spartan-charcoal">
                     <div class="absolute inset-0">
-                        <img src="assets/images/hero.png" alt="Commercial fishing vessel at sea" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 ease-in-out brightness-[0.6]">
+                        <img src="assets/images/j9/commercial-fishing.webp" alt="Commercial fishing customers and gear" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 ease-in-out brightness-[0.6]">
                         <div class="absolute inset-0 bg-gradient-to-t from-spartan-navy/95 via-transparent to-transparent"></div>
                     </div>
                     <div class="absolute inset-x-0 bottom-0 p-8">
@@ -685,7 +826,7 @@ require_once __DIR__ . '/partials/header.php';
                 <!-- Who-we-serve Aisle 2: In the yard -->
                 <a href="contact.php" class="relative group h-[440px] overflow-hidden bg-spartan-charcoal">
                     <div class="absolute inset-0">
-                        <img src="assets/images/spartan-2.png" alt="Shipyard and industrial crew" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 ease-in-out brightness-[0.6]">
+                        <img src="assets/images/j9/department-industrial-shipyard.webp" alt="Shipyard and industrial marine supplies" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 ease-in-out brightness-[0.6]">
                         <div class="absolute inset-0 bg-gradient-to-t from-spartan-navy/95 via-transparent to-transparent"></div>
                     </div>
                     <div class="absolute inset-x-0 bottom-0 p-8">
@@ -728,7 +869,7 @@ require_once __DIR__ . '/partials/header.php';
                 </div>
                 <div class="border-l-2 border-spartan-teal pl-5">
                     <span class="font-oswald text-3xl md:text-4xl font-bold text-white block leading-none">10,000+</span>
-                    <span class="text-[11px] text-slate-400 font-light tracking-wide mt-2 block">SKUs stocked across three locations</span>
+                    <span class="text-[11px] text-slate-400 font-light tracking-wide mt-2 block">SKUs stocked across Atlantic Canada</span>
                 </div>
                 <div class="border-l-2 border-spartan-teal pl-5">
                     <span class="font-oswald text-3xl md:text-4xl font-bold text-white block leading-none">48 HR</span>
@@ -781,7 +922,9 @@ require_once __DIR__ . '/partials/header.php';
                 </div>
                 <div class="space-y-2">
                     <span class="font-oswald text-[9px] font-bold text-spartan-charcoal tracking-widest uppercase">MARINE SAFETY / SURVIVAL</span>
-                    <h3 class="font-oswald text-sm md:text-base font-bold text-spartan-navy uppercase tracking-normal leading-tight min-h-[44px]">COASTLINE SOLAS IMMERSION SUIT, UNIVERSAL ADULT</h3>
+                    <h3 class="font-oswald text-sm md:text-base font-bold text-spartan-navy uppercase tracking-normal leading-tight min-h-[44px]">
+                        <a href="product-single.php?slug=coastline-solas-immersion-suit" class="hover:text-spartan-teal transition-colors">COASTLINE SOLAS IMMERSION SUIT, UNIVERSAL ADULT</a>
+                    </h3>
                     <div class="flex items-center justify-between border-t border-slate-100 pt-3">
                         <span class="font-sans text-sm font-bold text-slate-800">$689.00 <span class="text-[9.5px] text-slate-400 font-normal">CAD</span></span>
                         <button onclick="addToCart('Coastline SOLAS Immersion Suit, Universal Adult', 689.00, 'assets/images/jacket.webp')" class="bg-spartan-teal text-white hover:bg-spartan-teal-light hover:text-spartan-navy py-1.5 px-3 text-[8px] font-bold tracking-widest transition-colors rounded-none uppercase">
@@ -794,10 +937,10 @@ require_once __DIR__ . '/partials/header.php';
             <!-- Product 2: Pot Warp Rope -->
             <div class="space-y-4 group product-card-element transition-all duration-300 hover:bg-slate-50 p-2" data-category="rope">
                 <div class="relative bg-white border border-slate-100 rounded-none h-60 flex items-center justify-center overflow-hidden">
-                    <img src="assets/images/spartan-3.png" alt="Sinking pot warp rope coil" class="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out">
+                    <img src="assets/images/j9/marine-rigging.webp" alt="Sinking pot warp rope coil" class="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out">
                     <span class="absolute top-3 left-3 bg-spartan-navy text-white text-[8px] px-2 py-0.5 font-mono font-bold tracking-wider uppercase">BEST SELLER</span>
                     <div class="absolute inset-0 bg-spartan-navy/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                        <button onclick="addToCart('Sinking Pot Warp, 3/8 in x 1,200 ft Coil', 189.00, 'assets/images/spartan-3.png')" class="bg-spartan-teal text-white hover:bg-spartan-teal-light hover:text-spartan-navy px-4 py-2.5 text-[10px] font-bold tracking-widest transition-colors duration-300 uppercase flex items-center space-x-2 rounded-none">
+                        <button onclick="addToCart('Sinking Pot Warp, 3/8 in x 1,200 ft Coil', 189.00, 'assets/images/j9/marine-rigging.webp')" class="bg-spartan-teal text-white hover:bg-spartan-teal-light hover:text-spartan-navy px-4 py-2.5 text-[10px] font-bold tracking-widest transition-colors duration-300 uppercase flex items-center space-x-2 rounded-none">
                             <i class="fa-solid fa-cart-plus text-xs"></i>
                             <span>QUICK ADD</span>
                         </button>
@@ -805,10 +948,12 @@ require_once __DIR__ . '/partials/header.php';
                 </div>
                 <div class="space-y-2">
                     <span class="font-oswald text-[9px] font-bold text-spartan-charcoal tracking-widest uppercase">ROPE & RIGGING / POT WARP</span>
-                    <h3 class="font-oswald text-sm md:text-base font-bold text-spartan-navy uppercase tracking-normal leading-tight min-h-[44px]">SINKING POT WARP 3/8″ × 1,200 FT COIL</h3>
+                    <h3 class="font-oswald text-sm md:text-base font-bold text-spartan-navy uppercase tracking-normal leading-tight min-h-[44px]">
+                        <a href="product-single.php?slug=sinking-pot-warp-38" class="hover:text-spartan-teal transition-colors">SINKING POT WARP 3/8″ × 1,200 FT COIL</a>
+                    </h3>
                     <div class="flex items-center justify-between border-t border-slate-100 pt-3">
                         <span class="font-sans text-sm font-bold text-slate-800">$189.00 <span class="text-[9.5px] text-slate-400 font-normal">CAD</span></span>
-                        <button onclick="addToCart('Sinking Pot Warp, 3/8 in x 1,200 ft Coil', 189.00, 'assets/images/spartan-3.png')" class="bg-spartan-teal text-white hover:bg-spartan-teal-light hover:text-spartan-navy py-1.5 px-3 text-[8px] font-bold tracking-widest transition-colors rounded-none uppercase">
+                        <button onclick="addToCart('Sinking Pot Warp, 3/8 in x 1,200 ft Coil', 189.00, 'assets/images/j9/marine-rigging.webp')" class="bg-spartan-teal text-white hover:bg-spartan-teal-light hover:text-spartan-navy py-1.5 px-3 text-[8px] font-bold tracking-widest transition-colors rounded-none uppercase">
                             ADD TO ORDER
                         </button>
                     </div>
@@ -818,10 +963,10 @@ require_once __DIR__ . '/partials/header.php';
             <!-- Product 3: Lobster Trap Kit -->
             <div class="space-y-4 group product-card-element transition-all duration-300 hover:bg-slate-50 p-2" data-category="fishing">
                 <div class="relative bg-white border border-slate-100 rounded-none h-60 flex items-center justify-center overflow-hidden">
-                    <img src="assets/images/EQUIPMENT.jpg" alt="Lobster trap hardware kit" class="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out">
+                    <img src="assets/images/j9/commercial-fishing.webp" alt="Lobster trap hardware kit" class="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out">
                     <span class="absolute top-3 left-3 bg-spartan-teal text-white text-[8px] px-2 py-0.5 font-mono font-bold tracking-wider uppercase">SEASON STOCK</span>
                     <div class="absolute inset-0 bg-spartan-navy/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                        <button onclick="addToCart('Lobster Trap Kit, Vents, Rings & Bait Bags (25 Pack)', 74.50, 'assets/images/EQUIPMENT.jpg')" class="bg-spartan-teal text-white hover:bg-spartan-teal-light hover:text-spartan-navy px-4 py-2.5 text-[10px] font-bold tracking-widest transition-colors duration-300 uppercase flex items-center space-x-2 rounded-none">
+                        <button onclick="addToCart('Lobster Trap Kit, Vents, Rings & Bait Bags (25 Pack)', 74.50, 'assets/images/j9/commercial-fishing.webp')" class="bg-spartan-teal text-white hover:bg-spartan-teal-light hover:text-spartan-navy px-4 py-2.5 text-[10px] font-bold tracking-widest transition-colors duration-300 uppercase flex items-center space-x-2 rounded-none">
                             <i class="fa-solid fa-cart-plus text-xs"></i>
                             <span>QUICK ADD</span>
                         </button>
@@ -829,10 +974,12 @@ require_once __DIR__ . '/partials/header.php';
                 </div>
                 <div class="space-y-2">
                     <span class="font-oswald text-[9px] font-bold text-spartan-charcoal tracking-widest uppercase">FISHING GEAR / LOBSTER</span>
-                    <h3 class="font-oswald text-sm md:text-base font-bold text-spartan-navy uppercase tracking-normal leading-tight min-h-[44px]">LOBSTER TRAP KIT: VENTS, RINGS & BAIT BAGS (25 PK)</h3>
+                    <h3 class="font-oswald text-sm md:text-base font-bold text-spartan-navy uppercase tracking-normal leading-tight min-h-[44px]">
+                        <a href="product-single.php?slug=lobster-trap-kit" class="hover:text-spartan-teal transition-colors">LOBSTER TRAP KIT: VENTS, RINGS & BAIT BAGS (25 PK)</a>
+                    </h3>
                     <div class="flex items-center justify-between border-t border-slate-100 pt-3">
                         <span class="font-sans text-sm font-bold text-slate-800">$74.50 <span class="text-[9.5px] text-slate-400 font-normal">CAD</span></span>
-                        <button onclick="addToCart('Lobster Trap Kit, Vents, Rings & Bait Bags (25 Pack)', 74.50, 'assets/images/EQUIPMENT.jpg')" class="bg-spartan-teal text-white hover:bg-spartan-teal-light hover:text-spartan-navy py-1.5 px-3 text-[8px] font-bold tracking-widest transition-colors rounded-none uppercase">
+                        <button onclick="addToCart('Lobster Trap Kit, Vents, Rings & Bait Bags (25 Pack)', 74.50, 'assets/images/j9/commercial-fishing.webp')" class="bg-spartan-teal text-white hover:bg-spartan-teal-light hover:text-spartan-navy py-1.5 px-3 text-[8px] font-bold tracking-widest transition-colors rounded-none uppercase">
                             ADD TO ORDER
                         </button>
                     </div>
@@ -853,7 +1000,9 @@ require_once __DIR__ . '/partials/header.php';
                 </div>
                 <div class="space-y-2">
                     <span class="font-oswald text-[9px] font-bold text-spartan-charcoal tracking-widest uppercase">MARINE SAFETY / FLOTATION</span>
-                    <h3 class="font-oswald text-sm md:text-base font-bold text-spartan-navy uppercase tracking-normal leading-tight min-h-[44px]">STORMWATCH COMMERCIAL FLOAT JACKET</h3>
+                    <h3 class="font-oswald text-sm md:text-base font-bold text-spartan-navy uppercase tracking-normal leading-tight min-h-[44px]">
+                        <a href="product-single.php?slug=stormwatch-float-jacket" class="hover:text-spartan-teal transition-colors">STORMWATCH COMMERCIAL FLOAT JACKET</a>
+                    </h3>
                     <div class="flex items-center justify-between border-t border-slate-100 pt-3">
                         <div class="flex items-baseline space-x-1.5">
                             <span class="font-sans text-sm font-bold text-slate-800">$149.99 <span class="text-[9.5px] text-slate-400 font-normal">CAD</span></span>
@@ -869,10 +1018,10 @@ require_once __DIR__ . '/partials/header.php';
             <!-- Product 5: Deck Boot -->
             <div class="space-y-4 group product-card-element transition-all duration-300 hover:bg-slate-50 p-2" data-category="workwear">
                 <div class="relative bg-white border border-slate-100 rounded-none h-60 flex items-center justify-center overflow-hidden p-6">
-                    <img src="assets/images/the-boots.png" alt="Fierce Frontier waterproof deck boot" class="h-full w-auto object-contain group-hover:scale-105 transition-transform duration-500 ease-in-out">
+                    <img src="assets/images/j9/marine-footwear.webp" alt="Fierce Frontier waterproof deck boot" class="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out">
                     <span class="absolute top-3 left-3 bg-spartan-navy text-white text-[8px] px-2 py-0.5 font-mono font-bold tracking-wider uppercase">BEST SELLER</span>
                     <div class="absolute inset-0 bg-spartan-navy/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                        <button onclick="addToCart('Fierce Frontier Waterproof Deck Boot', 129.00, 'assets/images/the-boots.png')" class="bg-spartan-teal text-white hover:bg-spartan-teal-light hover:text-spartan-navy px-4 py-2.5 text-[10px] font-bold tracking-widest transition-colors duration-300 uppercase flex items-center space-x-2 rounded-none">
+                        <button onclick="addToCart('Fierce Frontier Waterproof Deck Boot', 129.00, 'assets/images/j9/marine-footwear.webp')" class="bg-spartan-teal text-white hover:bg-spartan-teal-light hover:text-spartan-navy px-4 py-2.5 text-[10px] font-bold tracking-widest transition-colors duration-300 uppercase flex items-center space-x-2 rounded-none">
                             <i class="fa-solid fa-cart-plus text-xs"></i>
                             <span>QUICK ADD</span>
                         </button>
@@ -880,10 +1029,12 @@ require_once __DIR__ . '/partials/header.php';
                 </div>
                 <div class="space-y-2">
                     <span class="font-oswald text-[9px] font-bold text-spartan-charcoal tracking-widest uppercase">WORKWEAR / FOOTWEAR</span>
-                    <h3 class="font-oswald text-sm md:text-base font-bold text-spartan-navy uppercase tracking-normal leading-tight min-h-[44px]">FIERCE FRONTIER WATERPROOF DECK BOOT</h3>
+                    <h3 class="font-oswald text-sm md:text-base font-bold text-spartan-navy uppercase tracking-normal leading-tight min-h-[44px]">
+                        <a href="product-single.php?slug=fierce-frontier-deck-boot" class="hover:text-spartan-teal transition-colors">FIERCE FRONTIER WATERPROOF DECK BOOT</a>
+                    </h3>
                     <div class="flex items-center justify-between border-t border-slate-100 pt-3">
                         <span class="font-sans text-sm font-bold text-slate-800">$129.00 <span class="text-[9.5px] text-slate-400 font-normal">CAD</span></span>
-                        <button onclick="addToCart('Fierce Frontier Waterproof Deck Boot', 129.00, 'assets/images/the-boots.png')" class="bg-spartan-teal text-white hover:bg-spartan-teal-light hover:text-spartan-navy py-1.5 px-3 text-[8px] font-bold tracking-widest transition-colors rounded-none uppercase">
+                        <button onclick="addToCart('Fierce Frontier Waterproof Deck Boot', 129.00, 'assets/images/j9/marine-footwear.webp')" class="bg-spartan-teal text-white hover:bg-spartan-teal-light hover:text-spartan-navy py-1.5 px-3 text-[8px] font-bold tracking-widest transition-colors rounded-none uppercase">
                             ADD TO ORDER
                         </button>
                     </div>
@@ -893,10 +1044,10 @@ require_once __DIR__ . '/partials/header.php';
             <!-- Product 6: Wire Rope -->
             <div class="space-y-4 group product-card-element transition-all duration-300 hover:bg-slate-50 p-2" data-category="rope">
                 <div class="relative bg-white border border-slate-100 rounded-none h-60 flex items-center justify-center overflow-hidden">
-                    <img src="assets/images/hero.png" alt="Galvanized wire rope on vessel rigging" class="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out">
+                    <img src="assets/images/j9/marine-rigging.webp" alt="Galvanized wire rope on vessel rigging" class="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out">
                     <span class="absolute top-3 left-3 bg-spartan-navy text-white text-[8px] px-2 py-0.5 font-mono font-bold tracking-wider uppercase">CUT TO LENGTH</span>
                     <div class="absolute inset-0 bg-spartan-navy/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                        <button onclick="addToCart('Galvanized Wire Rope, 5/16 in, Per Foot', 2.35, 'assets/images/hero.png')" class="bg-spartan-teal text-white hover:bg-spartan-teal-light hover:text-spartan-navy px-4 py-2.5 text-[10px] font-bold tracking-widest transition-colors duration-300 uppercase flex items-center space-x-2 rounded-none">
+                        <button onclick="addToCart('Galvanized Wire Rope, 5/16 in, Per Foot', 2.35, 'assets/images/j9/marine-rigging.webp')" class="bg-spartan-teal text-white hover:bg-spartan-teal-light hover:text-spartan-navy px-4 py-2.5 text-[10px] font-bold tracking-widest transition-colors duration-300 uppercase flex items-center space-x-2 rounded-none">
                             <i class="fa-solid fa-cart-plus text-xs"></i>
                             <span>QUICK ADD</span>
                         </button>
@@ -904,10 +1055,12 @@ require_once __DIR__ . '/partials/header.php';
                 </div>
                 <div class="space-y-2">
                     <span class="font-oswald text-[9px] font-bold text-spartan-charcoal tracking-widest uppercase">ROPE & RIGGING / WIRE ROPE</span>
-                    <h3 class="font-oswald text-sm md:text-base font-bold text-spartan-navy uppercase tracking-normal leading-tight min-h-[44px]">GALVANIZED WIRE ROPE 5/16″, CUT TO LENGTH</h3>
+                    <h3 class="font-oswald text-sm md:text-base font-bold text-spartan-navy uppercase tracking-normal leading-tight min-h-[44px]">
+                        <a href="product-single.php?slug=galvanized-wire-rope-516" class="hover:text-spartan-teal transition-colors">GALVANIZED WIRE ROPE 5/16″, CUT TO LENGTH</a>
+                    </h3>
                     <div class="flex items-center justify-between border-t border-slate-100 pt-3">
                         <span class="font-sans text-sm font-bold text-slate-800">$2.35<span class="text-[9.5px] text-slate-400 font-normal">/FT CAD</span></span>
-                        <button onclick="addToCart('Galvanized Wire Rope, 5/16 in, Per Foot', 2.35, 'assets/images/hero.png')" class="bg-spartan-teal text-white hover:bg-spartan-teal-light hover:text-spartan-navy py-1.5 px-3 text-[8px] font-bold tracking-widest transition-colors rounded-none uppercase">
+                        <button onclick="addToCart('Galvanized Wire Rope, 5/16 in, Per Foot', 2.35, 'assets/images/j9/marine-rigging.webp')" class="bg-spartan-teal text-white hover:bg-spartan-teal-light hover:text-spartan-navy py-1.5 px-3 text-[8px] font-bold tracking-widest transition-colors rounded-none uppercase">
                             ADD TO ORDER
                         </button>
                     </div>
@@ -927,7 +1080,9 @@ require_once __DIR__ . '/partials/header.php';
                 </div>
                 <div class="space-y-2">
                     <span class="font-oswald text-[9px] font-bold text-spartan-charcoal tracking-widest uppercase">WORKWEAR / GLOVES</span>
-                    <h3 class="font-oswald text-sm md:text-base font-bold text-spartan-navy uppercase tracking-normal leading-tight min-h-[44px]">DOCKLINE HEAVY GRIP GLOVES, 3 PAIR PACK</h3>
+                    <h3 class="font-oswald text-sm md:text-base font-bold text-spartan-navy uppercase tracking-normal leading-tight min-h-[44px]">
+                        <a href="product-single.php?slug=dockline-grip-gloves" class="hover:text-spartan-teal transition-colors">DOCKLINE HEAVY GRIP GLOVES, 3 PAIR PACK</a>
+                    </h3>
                     <div class="flex items-center justify-between border-t border-slate-100 pt-3">
                         <span class="font-sans text-sm font-bold text-slate-800">$34.99 <span class="text-[9.5px] text-slate-400 font-normal">CAD</span></span>
                         <button onclick="addToCart('Dockline Heavy Grip Gloves (3 Pair)', 34.99, 'assets/images/gloves.jpg')" class="bg-spartan-teal text-white hover:bg-spartan-teal-light hover:text-spartan-navy py-1.5 px-3 text-[8px] font-bold tracking-widest transition-colors rounded-none uppercase">
@@ -940,10 +1095,10 @@ require_once __DIR__ . '/partials/header.php';
             <!-- Product 8: Trap Buoys -->
             <div class="space-y-4 group product-card-element transition-all duration-300 hover:bg-slate-50 p-2" data-category="fishing">
                 <div class="relative bg-white border border-slate-100 rounded-none h-60 flex items-center justify-center overflow-hidden">
-                    <img src="assets/images/spartan-4.png" alt="Trap buoys and deck floats" class="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out">
+                    <img src="assets/images/j9/other-buoys-floats.webp" alt="Trap buoys and deck floats" class="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out">
                     <span class="absolute top-3 left-3 bg-spartan-teal text-white text-[8px] px-2 py-0.5 font-mono font-bold tracking-wider uppercase">SEASON STOCK</span>
                     <div class="absolute inset-0 bg-spartan-navy/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                        <button onclick="addToCart('Hi-Vis Trap Buoy, 11 in x 18 in (10 Pack)', 118.00, 'assets/images/spartan-4.png')" class="bg-spartan-teal text-white hover:bg-spartan-teal-light hover:text-spartan-navy px-4 py-2.5 text-[10px] font-bold tracking-widest transition-colors duration-300 uppercase flex items-center space-x-2 rounded-none">
+                        <button onclick="addToCart('Hi-Vis Trap Buoy, 11 in x 18 in (10 Pack)', 118.00, 'assets/images/j9/other-buoys-floats.webp')" class="bg-spartan-teal text-white hover:bg-spartan-teal-light hover:text-spartan-navy px-4 py-2.5 text-[10px] font-bold tracking-widest transition-colors duration-300 uppercase flex items-center space-x-2 rounded-none">
                             <i class="fa-solid fa-cart-plus text-xs"></i>
                             <span>QUICK ADD</span>
                         </button>
@@ -951,10 +1106,12 @@ require_once __DIR__ . '/partials/header.php';
                 </div>
                 <div class="space-y-2">
                     <span class="font-oswald text-[9px] font-bold text-spartan-charcoal tracking-widest uppercase">FISHING GEAR / BUOYS</span>
-                    <h3 class="font-oswald text-sm md:text-base font-bold text-spartan-navy uppercase tracking-normal leading-tight min-h-[44px]">HI-VIS TRAP BUOY 11″ × 18″ (10 PACK)</h3>
+                    <h3 class="font-oswald text-sm md:text-base font-bold text-spartan-navy uppercase tracking-normal leading-tight min-h-[44px]">
+                        <a href="product-single.php?slug=hi-vis-trap-buoy" class="hover:text-spartan-teal transition-colors">HI-VIS TRAP BUOY 11″ × 18″ (10 PACK)</a>
+                    </h3>
                     <div class="flex items-center justify-between border-t border-slate-100 pt-3">
                         <span class="font-sans text-sm font-bold text-slate-800">$118.00 <span class="text-[9.5px] text-slate-400 font-normal">CAD</span></span>
-                        <button onclick="addToCart('Hi-Vis Trap Buoy, 11 in x 18 in (10 Pack)', 118.00, 'assets/images/spartan-4.png')" class="bg-spartan-teal text-white hover:bg-spartan-teal-light hover:text-spartan-navy py-1.5 px-3 text-[8px] font-bold tracking-widest transition-colors rounded-none uppercase">
+                        <button onclick="addToCart('Hi-Vis Trap Buoy, 11 in x 18 in (10 Pack)', 118.00, 'assets/images/j9/other-buoys-floats.webp')" class="bg-spartan-teal text-white hover:bg-spartan-teal-light hover:text-spartan-navy py-1.5 px-3 text-[8px] font-bold tracking-widest transition-colors rounded-none uppercase">
                             ADD TO ORDER
                         </button>
                     </div>
@@ -1075,7 +1232,7 @@ require_once __DIR__ . '/partials/header.php';
                 <a href="blog-single.php" class="group flex flex-col justify-between bg-white border border-slate-200/65 overflow-hidden transition-all duration-300 hover:bg-slate-50/50">
                     <div>
                         <div class="h-48 w-full overflow-hidden bg-spartan-navy relative">
-                            <img src="assets/images/PFDS.jpg" alt="SOLAS life rafts" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 ease-in-out">
+                            <img src="assets/images/j9/life-raft-inspection.webp" alt="SOLAS life rafts" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 ease-in-out">
                         </div>
                         <div class="p-8 space-y-3">
                             <div class="flex items-center justify-between text-[9px] font-mono tracking-wider text-slate-400">
@@ -1102,7 +1259,7 @@ require_once __DIR__ . '/partials/header.php';
                 <a href="blog-single.php" class="group flex flex-col justify-between bg-white border border-slate-200/65 overflow-hidden transition-all duration-300 hover:bg-slate-50/50">
                     <div>
                         <div class="h-48 w-full overflow-hidden bg-spartan-navy relative">
-                            <img src="assets/images/spartan-3.png" alt="Rigging wire rope swaging" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 ease-in-out">
+                            <img src="assets/images/j9/marine-rigging.webp" alt="Rope and rigging supplies organized in a Spartan shop" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 ease-in-out">
                         </div>
                         <div class="p-8 space-y-3">
                             <div class="flex items-center justify-between text-[9px] font-mono tracking-wider text-slate-400">
@@ -1129,7 +1286,7 @@ require_once __DIR__ . '/partials/header.php';
                 <a href="blog-single.php" class="group flex flex-col justify-between bg-white border border-slate-200/65 overflow-hidden transition-all duration-300 hover:bg-slate-50/50">
                     <div>
                         <div class="h-48 w-full overflow-hidden bg-spartan-navy relative">
-                            <img src="assets/images/EQUIPMENT.jpg" alt="Commercial fishing gear" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 ease-in-out">
+                            <img src="assets/images/j9/commercial-fishing.webp" alt="Commercial fisherman repairing trap gear at sea" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 ease-in-out">
                         </div>
                         <div class="p-8 space-y-3">
                             <div class="flex items-center justify-between text-[9px] font-mono tracking-wider text-slate-400">
@@ -1177,9 +1334,9 @@ require_once __DIR__ . '/partials/header.php';
                     <span>Book a Service</span>
                     <i class="fa-solid fa-arrow-right text-[11px] ml-2.5"></i>
                 </a>
-                <a href="tel:+19024630000" class="border border-white/70 hover:border-white bg-transparent text-white py-3.5 px-7 text-xs font-bold tracking-[0.2em] flex items-center rounded-none hover:bg-white/10 transition-all duration-300 uppercase">
+                <a href="<?php echo site_escape($site['phone_href']); ?>" class="border border-white/70 hover:border-white bg-transparent text-white py-3.5 px-7 text-xs font-bold tracking-[0.2em] flex items-center rounded-none hover:bg-white/10 transition-all duration-300 uppercase">
                     <i class="fa-solid fa-phone text-[11px] mr-2.5"></i>
-                    <span>1-902-463-0000</span>
+                    <span><?php echo site_escape($site['phone']); ?></span>
                 </a>
             </div>
         </div>
@@ -1305,7 +1462,7 @@ require_once __DIR__ . '/partials/header.php';
 
     <!-- ======================================================= -->
     <!-- ================== CONTACT SECTION ==================== -->
-    <!-- Reusable contact block with locations                   -->
+    <!-- Lead inquiry block                                      -->
     <!-- ======================================================= -->
     <section id="contact-section" class="py-20 md:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-14 select-text">
@@ -1314,7 +1471,7 @@ require_once __DIR__ . '/partials/header.php';
             <div class="flex flex-col justify-start">
                 <div class="w-14 h-4 bg-spartan-teal mb-5" style="-webkit-mask: url('assets/images/full-wave.svg') center / contain no-repeat; mask: url('assets/images/full-wave.svg') center / contain no-repeat;" aria-hidden="true"></div>
                 <span class="font-oswald text-xs font-bold text-spartan-teal tracking-[0.25em] uppercase block mb-3">CONTACT US</span>
-                <h2 class="font-oswald text-3xl font-bold tracking-widest text-spartan-navy uppercase leading-tight mb-6">SEND A INQUIRY</h2>
+                <h2 class="font-oswald text-3xl font-bold tracking-widest text-spartan-navy uppercase leading-tight mb-6">SEND AN INQUIRY</h2>
                 
                 <form onsubmit="event.preventDefault(); showToast('MESSAGE SENT', 'Thank you! A Spartan marine specialist will contact you shortly.'); this.reset();" class="space-y-5 max-w-lg">
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -1358,70 +1515,52 @@ require_once __DIR__ . '/partials/header.php';
                 </form>
             </div>
 
-            <!-- Right: Locations & Info -->
-            <div class="flex flex-col justify-start space-y-6">
-                <!-- General Contacts Box -->
-                <div class="bg-slate-50 border border-slate-100 p-6 space-y-4">
-                    <h3 class="font-oswald text-base font-bold text-spartan-navy tracking-wider uppercase">GENERAL ENQUIRIES</h3>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
-                        <div class="space-y-1">
-                            <span class="text-slate-400 block uppercase tracking-wider font-mono text-[9px]">Phone / Toll Free</span>
-                            <a href="tel:+19024630000" class="hover:text-spartan-teal transition-colors font-bold text-spartan-navy text-sm">1-902-463-0000</a>
-                        </div>
-                        <div class="space-y-1">
-                            <span class="text-slate-400 block uppercase tracking-wider font-mono text-[9px]">Email Address</span>
-                            <a href="mailto:info@spartanmarine.ca" class="hover:text-spartan-teal transition-colors font-bold text-spartan-navy text-sm">info@spartanmarine.ca</a>
-                        </div>
-                        <div class="space-y-1 sm:col-span-2">
-                            <span class="text-slate-400 block uppercase tracking-wider font-mono text-[9px]">Operating Hours</span>
-                            <span class="font-medium text-slate-700">Mon - Fri: 7:00 - 17:00 | Sat: 8:00 - 12:00 (Atlantic)</span>
-                        </div>
-                    </div>
-                </div>
+            <!-- Right: Lead support -->
+            <div class="flex flex-col justify-start">
+                <div class="bg-spartan-navy text-white p-8 lg:p-10 relative overflow-hidden">
+                    <div class="absolute -right-20 -bottom-10 w-[360px] h-32 bg-spartan-teal opacity-10 pointer-events-none" style="-webkit-mask: url('assets/images/full-wave.svg') center / contain no-repeat; mask: url('assets/images/full-wave.svg') center / contain no-repeat;" aria-hidden="true"></div>
+                    <div class="relative z-10">
+                        <span class="font-oswald text-[10px] font-bold text-spartan-teal tracking-[0.25em] uppercase block mb-3">GET THE RIGHT GEAR FASTER</span>
+                        <h3 class="font-oswald text-2xl md:text-3xl font-bold tracking-widest uppercase leading-tight mb-4">Tell us what you need. We will route it to the right Spartan team.</h3>
+                        <p class="text-sm text-slate-300 font-light leading-relaxed max-w-xl mb-8">
+                            Send product questions, service requests, quote needs, or vessel supply lists. A Spartan specialist will follow up with availability, pricing, and next steps.
+                        </p>
 
-                <!-- Locations List -->
-                <div class="divide-y divide-slate-100 border-y border-slate-100">
-                    <!-- Location 1 -->
-                    <div class="py-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                        <div>
-                            <div class="flex items-center space-x-3 mb-2">
-                                <h3 class="font-oswald text-lg font-bold text-spartan-navy tracking-[0.12em] uppercase">Dartmouth, NS</h3>
-                                <span class="bg-spartan-teal text-white text-[8px] px-2 py-0.5 font-mono font-bold tracking-wider uppercase">HQ + SERVICE CENTRE</span>
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8">
+                            <div class="border border-white/10 bg-white/[0.04] p-4">
+                                <span class="block font-oswald text-[10px] font-bold text-spartan-teal tracking-[0.2em] uppercase mb-2">1. Send</span>
+                                <p class="text-xs text-slate-300 font-light leading-relaxed">Share the product, service, vessel, or deadline.</p>
                             </div>
-                            <p class="text-xs text-slate-500 font-light">124 Windmill Road, Dartmouth, NS · <a href="tel:+19024630000" class="hover:text-spartan-teal transition-colors">1-902-463-0000</a></p>
-                        </div>
-                        <a href="#" class="text-spartan-teal hover:text-spartan-navy text-[10px] font-bold tracking-[0.2em] inline-flex items-center uppercase transition-colors shrink-0">
-                            <span>Directions</span>
-                            <i class="fa-solid fa-arrow-right text-[10px] ml-1.5"></i>
-                        </a>
-                    </div>
-                    <!-- Location 2 -->
-                    <div class="py-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                        <div>
-                            <div class="flex items-center space-x-3 mb-2">
-                                <h3 class="font-oswald text-lg font-bold text-spartan-navy tracking-[0.12em] uppercase">Yarmouth, NS</h3>
-                                <span class="bg-spartan-navy text-white text-[8px] px-2 py-0.5 font-mono font-bold tracking-wider uppercase">FISHING SUPPLY</span>
+                            <div class="border border-white/10 bg-white/[0.04] p-4">
+                                <span class="block font-oswald text-[10px] font-bold text-spartan-teal tracking-[0.2em] uppercase mb-2">2. Review</span>
+                                <p class="text-xs text-slate-300 font-light leading-relaxed">We check stock, fit, specs, and service requirements.</p>
                             </div>
-                            <p class="text-xs text-slate-500 font-light">38 Water Street, Yarmouth, NS · <a href="tel:+19027420000" class="hover:text-spartan-teal transition-colors">1-902-742-0000</a></p>
-                        </div>
-                        <a href="#" class="text-spartan-teal hover:text-spartan-navy text-[10px] font-bold tracking-[0.2em] inline-flex items-center uppercase transition-colors shrink-0">
-                            <span>Directions</span>
-                            <i class="fa-solid fa-arrow-right text-[10px] ml-1.5"></i>
-                        </a>
-                    </div>
-                    <!-- Location 3 -->
-                    <div class="py-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                        <div>
-                            <div class="flex items-center space-x-3 mb-2">
-                                <h3 class="font-oswald text-lg font-bold text-spartan-navy tracking-[0.12em] uppercase">St. John's, NL</h3>
-                                <span class="bg-spartan-navy text-white text-[8px] px-2 py-0.5 font-mono font-bold tracking-wider uppercase">OFFSHORE & INDUSTRIAL</span>
+                            <div class="border border-white/10 bg-white/[0.04] p-4">
+                                <span class="block font-oswald text-[10px] font-bold text-spartan-teal tracking-[0.2em] uppercase mb-2">3. Confirm</span>
+                                <p class="text-xs text-slate-300 font-light leading-relaxed">Get pricing, timing, and pickup or delivery options.</p>
                             </div>
-                            <p class="text-xs text-slate-500 font-light">210 Harbour Drive, St. John's, NL · <a href="tel:+17095790000" class="hover:text-spartan-teal transition-colors">1-709-579-0000</a></p>
                         </div>
-                        <a href="#" class="text-spartan-teal hover:text-spartan-navy text-[10px] font-bold tracking-[0.2em] inline-flex items-center uppercase transition-colors shrink-0">
-                            <span>Directions</span>
-                            <i class="fa-solid fa-arrow-right text-[10px] ml-1.5"></i>
-                        </a>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <a href="<?php echo site_escape($site['phone_href']); ?>" class="group border border-white/15 bg-white text-spartan-navy p-5 hover:bg-spartan-teal-light transition-colors">
+                                <span class="text-slate-500 block uppercase tracking-wider font-mono text-[9px] mb-1">Call Spartan</span>
+                                <span class="font-bold text-lg group-hover:text-spartan-navy"><?php echo site_escape($site['phone']); ?></span>
+                            </a>
+                            <a href="mailto:<?php echo site_escape($site['email']); ?>" class="group border border-white/15 bg-white text-spartan-navy p-5 hover:bg-spartan-teal-light transition-colors">
+                                <span class="text-slate-500 block uppercase tracking-wider font-mono text-[9px] mb-1">Email</span>
+                                <span class="font-bold text-base break-words group-hover:text-spartan-navy"><?php echo site_escape($site['email']); ?></span>
+                            </a>
+                        </div>
+
+                        <div class="mt-6 border-t border-white/10 pt-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                            <p class="text-xs text-slate-300 font-light">
+                                <?php echo site_escape($site['hours']); ?> Atlantic
+                            </p>
+                            <a href="contact.php" class="inline-flex items-center text-[10px] font-bold tracking-[0.2em] text-spartan-teal uppercase hover:text-white transition-colors">
+                                <span>Contact Page</span>
+                                <i class="fa-solid fa-arrow-right text-[10px] ml-2"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>

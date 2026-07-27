@@ -46,13 +46,15 @@
             <div class="py-7 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                 <div>
                     <div class="flex items-center space-x-3 mb-2">
-                        <h3 class="font-oswald text-lg font-bold text-spartan-navy tracking-[0.12em] uppercase"><?php echo $loc['city']; ?></h3>
-                        <span class="<?php echo $loc['badge_style'] === 'teal' ? 'bg-spartan-teal' : 'bg-spartan-navy'; ?> text-white text-[8px] px-2 py-0.5 font-mono font-bold tracking-wider uppercase"><?php echo $loc['badge']; ?></span>
+                        <h3 class="font-oswald text-lg font-bold text-spartan-navy tracking-[0.12em] uppercase">
+                            <a href="<?php echo site_escape(site_location_url($loc)); ?>" class="hover:text-spartan-teal transition-colors"><?php echo site_escape($loc['city']); ?></a>
+                        </h3>
+                        <span class="<?php echo $loc['badge_style'] === 'teal' ? 'bg-spartan-teal' : 'bg-spartan-navy'; ?> text-white text-[8px] px-2 py-0.5 font-mono font-bold tracking-wider uppercase"><?php echo site_escape($loc['badge']); ?></span>
                     </div>
-                    <p class="text-xs text-slate-500 font-light"><?php echo $loc['address']; ?> · <a href="<?php echo $loc['phone_href']; ?>" class="hover:text-spartan-teal transition-colors"><?php echo $loc['phone']; ?></a></p>
+                    <p class="text-xs text-slate-500 font-light"><?php echo site_escape($loc['address']); ?> · <a href="<?php echo site_escape($loc['phone_href']); ?>" class="hover:text-spartan-teal transition-colors"><?php echo site_escape($loc['phone_label'] ?? $loc['phone']); ?></a></p>
                 </div>
-                <a href="locations.php" class="text-spartan-teal hover:text-spartan-navy text-[10px] font-bold tracking-[0.2em] inline-flex items-center uppercase transition-colors shrink-0">
-                    <span>Directions</span>
+                <a href="<?php echo site_escape(site_location_url($loc)); ?>" class="text-spartan-teal hover:text-spartan-navy text-[10px] font-bold tracking-[0.2em] inline-flex items-center uppercase transition-colors shrink-0">
+                    <span>Details</span>
                     <i class="fa-solid fa-arrow-right text-[10px] ml-1.5"></i>
                 </a>
             </div>

@@ -5,27 +5,36 @@
  *
  * Expects $hero = [
  *   'title'      => string (required)
+ *   'eyebrow'    => string (optional)
  *   'subtitle'   => string (optional)
- *   'image'      => string (optional, defaults to spartan-2.png)
+ *   'image'      => string (optional, defaults to j9/spartan-storefront-exterior.webp)
  *   'breadcrumbs'=> array of ['label' => ..., 'url' => ...] (last item has no url)
- *   'size'       => 'default' | 'short'  (short = compact hero for shop/utility pages)
+ *   'size'       => 'default' | 'short' | 'tall'  (short = compact hero for shop/utility pages)
+ *   'show_breadcrumbs' => bool (optional, defaults to true)
  * ];
  */
-$hero_image = $hero['image'] ?? 'assets/images/spartan-2.png';
+$hero_image = $hero['image'] ?? 'assets/images/j9/spartan-storefront-exterior.webp';
 $hero_crumbs = $hero['breadcrumbs'] ?? [['label' => 'Home', 'url' => 'index.php'], ['label' => $hero['title']]];
-$hero_short = ($hero['size'] ?? 'default') === 'short';
-$hero_height = $hero_short ? 'h-[240px] md:h-[300px]' : 'h-[380px] md:h-[450px]';
-$hero_title_size = $hero_short ? 'text-3xl sm:text-4xl md:text-5xl' : 'text-4xl sm:text-5xl md:text-6xl';
+$hero_show_breadcrumbs = $hero['show_breadcrumbs'] ?? true;
+$hero_size = $hero['size'] ?? 'default';
+$hero_short = $hero_size === 'short';
+$hero_tall = $hero_size === 'tall';
+$hero_height = $hero_short ? 'h-[240px] md:h-[300px]' : ($hero_tall ? 'h-[640px] md:h-[680px] lg:h-[720px]' : 'h-[380px] md:h-[450px]');
+$hero_title_size = $hero_short ? 'text-3xl sm:text-4xl md:text-5xl' : ($hero_tall ? 'text-3xl sm:text-4xl md:text-5xl lg:text-6xl' : 'text-4xl sm:text-5xl md:text-6xl');
+$hero_content_width = $hero_tall ? 'max-w-6xl' : 'max-w-4xl';
+$hero_subtitle_width = $hero_tall ? 'max-w-4xl' : 'max-w-2xl';
+$hero_title_text = strip_tags((string) ($hero['title'] ?? ''));
 ?>
 <section class="relative <?php echo $hero_height; ?> w-full overflow-hidden bg-spartan-navy flex items-center justify-center">
     <!-- Background Image -->
     <div class="absolute inset-0 z-0">
-        <img src="<?php echo $hero_image; ?>" alt="<?php echo htmlspecialchars(strip_tags($hero['title'])); ?>" class="w-full h-full object-cover object-center filter brightness-[0.6] contrast-[1.05]">
+        <img src="<?php echo site_escape($hero_image); ?>" alt="<?php echo site_escape($hero_title_text); ?>" class="w-full h-full object-cover object-center">
         <div class="absolute inset-0 bg-gradient-to-b from-spartan-navy/15 via-spartan-navy/45 to-spartan-navy/85"></div>
     </div>
 
     <!-- Centered Content -->
-    <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center <?php echo $hero_short ? 'space-y-3 mt-4' : 'space-y-5 mt-8'; ?> select-text">
+    <div class="relative z-10 <?php echo $hero_content_width; ?> mx-auto px-4 sm:px-6 lg:px-8 text-center <?php echo $hero_short ? 'space-y-3 mt-4' : 'space-y-5 mt-8'; ?> select-text">
+        <?php if ($hero_show_breadcrumbs): ?>
         <!-- Breadcrumbs -->
         <nav class="flex items-center justify-center space-x-2 text-[10px] md:text-xs font-mono font-bold tracking-widest text-spartan-teal uppercase">
             <?php foreach ($hero_crumbs as $i => $crumb): ?>
@@ -37,16 +46,23 @@ $hero_title_size = $hero_short ? 'text-3xl sm:text-4xl md:text-5xl' : 'text-4xl 
                 <?php endif; ?>
             <?php endforeach; ?>
         </nav>
+        <?php endif; ?>
+
+        <?php if (!empty($hero['eyebrow'])): ?>
+        <span class="font-oswald text-[10px] sm:text-xs font-bold text-spartan-teal-light tracking-[0.28em] uppercase block">
+            <?php echo site_escape($hero['eyebrow']); ?>
+        </span>
+        <?php endif; ?>
 
         <!-- Page Heading -->
         <h1 class="font-oswald <?php echo $hero_title_size; ?> font-bold uppercase tracking-wider text-white leading-tight">
-            <?php echo $hero['title']; ?>
+            <?php echo site_escape($hero['title']); ?>
         </h1>
 
         <?php if (!empty($hero['subtitle'])): ?>
         <!-- Brief Page Subtitle -->
-        <p class="font-sans text-xs sm:text-sm <?php echo $hero_short ? '' : 'md:text-base'; ?> text-slate-300 leading-relaxed max-w-2xl mx-auto font-light">
-            <?php echo $hero['subtitle']; ?>
+        <p class="font-sans text-xs sm:text-sm <?php echo $hero_short ? '' : 'md:text-base'; ?> text-slate-300 leading-relaxed <?php echo $hero_subtitle_width; ?> mx-auto font-light">
+            <?php echo site_escape($hero['subtitle']); ?>
         </p>
         <?php endif; ?>
 

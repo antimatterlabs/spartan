@@ -1,11 +1,12 @@
 <?php
 $page_title = 'Terms & Conditions | Spartan Industrial Marine';
+$active_nav = 'resources';
 require_once __DIR__ . '/partials/header.php';
 
 $hero = [
     'title' => 'Terms & Conditions',
     'subtitle' => 'The legal details for orders, servicing, and use of this site. Last updated July 2026.',
-    'image' => 'assets/images/spartan-3.png',
+    'image' => 'assets/images/j9/service-compliance.webp',
     'breadcrumbs' => [
         ['label' => 'Home', 'url' => 'index.php'],
         ['label' => 'Terms & Conditions'],

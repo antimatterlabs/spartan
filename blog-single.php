@@ -1,5 +1,6 @@
 <?php
 $page_title = 'How Often Does Your Life Raft Actually Need Servicing? | Spartan Industrial Marine';
+$active_nav = 'resources';
 require_once __DIR__ . '/partials/header.php';
 
 $post = $site_posts[0];

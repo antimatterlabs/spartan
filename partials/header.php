@@ -5,20 +5,200 @@
  *
  * Expects (optional):
  *   $page_title  - string page title
- *   $active_nav  - 'products' | 'services' | 'contact'
+ *   $active_nav  - 'home' | 'products' | 'services' | 'brands' | 'resources' | 'about' | 'faq' | 'locations' | 'contact'
  */
 require_once __DIR__ . '/data.php';
 
 $page_title = $page_title ?? 'Spartan Industrial Marine | Commercial Marine Supply & Certified Service';
+$meta_description = $meta_description ?? 'Rope, rigging, safety equipment, commercial fishing gear, and certified life raft and immersion suit servicing for the people who work on the water. Atlantic Canada.';
 $active_nav = $active_nav ?? '';
+
+if (!function_exists('shop_category_link')) {
+    function shop_category_link($label) {
+        return [
+            'label' => $label,
+            'url' => site_product_category_url($label),
+        ];
+    }
+}
+
+$shop_menu_columns = [
+    [
+        [
+            'title' => 'Rope, Line & Nets',
+            'links' => array_map('shop_category_link', [
+                'Rope',
+                'Twine',
+                'Nets',
+                'Net Needles',
+                'Fishing Line',
+                'Leadlines',
+                'Shock Cord',
+            ]),
+        ],
+    ],
+    [
+        [
+            'title' => 'Rigging Hardware',
+            'links' => array_map('shop_category_link', [
+                'Hooks',
+                'Shackles',
+                'Sleeves',
+                'Turnbuckles',
+                'Links',
+                'Clips',
+                'Snaps',
+                'Swivels',
+                'Thimbles',
+                'Chain',
+                'Tie-Down Straps',
+                'Load Binders',
+                'Hammerlocks',
+                'Eye Bolts',
+                'Eye Nuts',
+            ]),
+        ],
+    ],
+    [
+        [
+            'title' => 'Workwear & Footwear',
+            'links' => array_map('shop_category_link', [
+                'Boots',
+                'Insoles',
+                'Boot Bands',
+                'Jackets',
+                'Foul Weather Jackets',
+                'Pants',
+                'Foul Weather Pants',
+                'Gloves',
+                'Bibs',
+                'Belts',
+                'Belt Extender',
+                'Base Layer Bottoms',
+                'Base Layer Tops',
+                'Leggings',
+                'Hoodies',
+                'Balaclavas',
+                'Aprons',
+                'Kneepads',
+                'Hairnets',
+                'Duffle Bags',
+            ]),
+        ],
+    ],
+    [
+        [
+            'title' => 'Safety, Buoys & Survival',
+            'links' => array_map('shop_category_link', [
+                'Buoys',
+                'Fenders',
+                'PFDs',
+                'Immersion Suits',
+                'Life Rafts',
+                'Re-Arm Kits',
+                'Marine Pyrotechnics',
+                'Personal Locator Beacons',
+                'EPIRBs',
+                'Reflective Tape',
+                'Lights',
+                'Markers',
+            ]),
+        ],
+    ],
+    [
+        [
+            'title' => 'Fishing & Trap Gear',
+            'links' => array_map('shop_category_link', [
+                'Knives',
+                'Fishing Lures',
+                'Gangion',
+                'Lobster Bands',
+                'Lobster Trap Components',
+                'Crabpot Cones',
+                'Fish Boxes',
+                'Lobster Crackers and Forks',
+                'Bait Jars',
+                'Lobster Gauges',
+                'Lobster Pot Escape Hatches',
+                'Scallop Bags',
+                'Scallop Knives',
+                'Sinkers',
+            ]),
+        ],
+    ],
+    [
+        [
+            'title' => 'Maintenance & Supplies',
+            'links' => array_map('shop_category_link', [
+                'Marine Paint',
+                'Nails',
+                'Brushes',
+                'Cleaners',
+                'Flax Packing',
+                'Cutting Tools',
+                'Fuel Additives',
+                'Grease',
+                'Screws',
+                'Staples',
+                'Anti-Fatigue Mats',
+                'Bleach',
+                'Boat Hooks',
+                'Buttons',
+                'Clip Tools',
+                'Latch Kits',
+                'Lubricants',
+                'Scraper',
+                'Sharpeners',
+                'Wipe Cloths',
+                'Zipper Lubricants',
+            ]),
+        ],
+    ],
+];
+
+foreach ($shop_menu_columns as &$shop_menu_column) {
+    foreach ($shop_menu_column as &$shop_menu_group) {
+        $shop_group_meta = site_product_group_by_label($shop_menu_group['title'] ?? '');
+        if ($shop_group_meta !== null) {
+            $shop_menu_group['url'] = site_product_group_url($shop_group_meta['slug']);
+            $shop_menu_group['slug'] = $shop_group_meta['slug'];
+        }
+    }
+}
+unset($shop_menu_column, $shop_menu_group, $shop_group_meta);
+
+$marine_service_menu = [
+    ['label' => 'Inspections & Repairs', 'url' => 'services.php'],
+    ['label' => 'Rental Equipment', 'url' => 'services.php'],
+    ['label' => 'Product Recall', 'url' => 'services.php'],
+];
+
+$resource_menu = [
+    ['label' => 'Definitions & Warnings', 'url' => 'terms.php'],
+    ['label' => 'Industry Articles', 'url' => 'blog.php'],
+    ['label' => 'FAQs', 'url' => 'faq.php'],
+    ['label' => 'Safety & Training', 'url' => 'services.php'],
+    ['label' => 'CertTracker', 'url' => 'contact.php', 'highlight' => true],
+];
+
+$about_menu = [
+    ['label' => 'Why Spartan', 'url' => 'about.php'],
+    ['label' => 'Careers', 'url' => 'contact.php'],
+];
 ?>
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo $page_title; ?></title>
-    <meta name="description" content="Rope, rigging, safety equipment, commercial fishing gear, and certified life raft and immersion suit servicing for the people who work on the water. Atlantic Canada.">
+    <title><?php echo site_escape($page_title); ?></title>
+    <meta name="description" content="<?php echo site_escape($meta_description); ?>">
+    <?php if (!empty($canonical_url)): ?>
+    <link rel="canonical" href="<?php echo site_escape($canonical_url); ?>">
+    <?php endif; ?>
+    <?php if (!empty($head_extra)): ?>
+    <?php echo $head_extra; ?>
+    <?php endif; ?>
 
     <!-- Preconnect & Prefetch -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -114,15 +294,15 @@ $active_nav = $active_nav ?? '';
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center space-y-1.5 sm:space-y-0 text-center font-sans">
             <a href="locations.php" class="hover:text-spartan-teal-light transition-colors flex items-center space-x-2">
                 <i class="fa-solid fa-location-dot text-spartan-teal-light text-xs"></i>
-                <span>3 LOCATIONS ACROSS ATLANTIC CANADA</span>
+                <span><?php echo count($site_locations); ?> LOCATIONS ACROSS ATLANTIC CANADA</span>
             </a>
             <a href="services.php" class="hover:text-spartan-teal-light transition-colors flex items-center space-x-2">
                 <i class="fa-solid fa-certificate text-spartan-teal-light text-xs"></i>
                 <span>TRANSPORT CANADA CERTIFIED SERVICE CENTRE</span>
             </a>
-            <a href="tel:+19024630000" class="hover:text-spartan-teal-light transition-colors flex items-center space-x-2">
+            <a href="<?php echo $site['phone_href']; ?>" class="hover:text-spartan-teal-light transition-colors flex items-center space-x-2">
                 <i class="fa-solid fa-phone text-spartan-teal-light text-xs"></i>
-                <span>TOLL FREE: 1-902-463-0000</span>
+                <span>CALL: <?php echo site_escape($site['phone']); ?></span>
             </a>
         </div>
     </div>
@@ -136,40 +316,89 @@ $active_nav = $active_nav ?? '';
             </a>
 
             <!-- Navigation Links -->
-            <nav class="hidden lg:flex items-center space-x-2 xl:space-x-6 text-xs font-bold tracking-[0.15em] text-white">
-                <!-- Products Menu Link with Hover trigger -->
-                <div class="relative group" id="products-menu-trigger">
-                    <a href="products.php" class="px-3 py-2 <?php echo $active_nav === 'products' ? 'text-spartan-teal' : ''; ?> hover:text-spartan-teal transition-colors flex items-center space-x-1 uppercase focus:outline-none">
-                        <span>Products</span>
+            <nav class="hidden lg:flex items-center space-x-1 xl:space-x-3 text-[11px] font-bold tracking-[0.13em] text-white">
+                <div class="relative group" data-mega-trigger="shop-online-menu">
+                    <a href="products.php" class="px-3 py-2 <?php echo in_array($active_nav, ['products', 'brands'], true) ? 'text-spartan-teal' : ''; ?> hover:text-spartan-teal transition-colors flex items-center space-x-1 uppercase focus:outline-none">
+                        <span>Shop Online</span>
                         <i class="fa-solid fa-chevron-down text-[9px] ml-1 transition-transform duration-200 group-hover:rotate-180"></i>
                     </a>
                 </div>
 
-                <!-- Services Menu Link with Hover trigger -->
-                <div class="relative group" id="services-menu-trigger">
+                <div class="relative group" data-mega-trigger="marine-services-menu">
                     <a href="services.php" class="px-3 py-2 <?php echo $active_nav === 'services' ? 'text-spartan-teal' : ''; ?> hover:text-spartan-teal transition-colors flex items-center space-x-1 uppercase focus:outline-none">
-                        <span>Services</span>
+                        <span>Marine Services</span>
                         <i class="fa-solid fa-chevron-down text-[9px] ml-1 transition-transform duration-200 group-hover:rotate-180"></i>
                     </a>
+                    <div id="marine-services-menu" data-mega-panel class="absolute left-0 top-full w-72 bg-white text-spartan-charcoal border border-slate-200 shadow-2xl transition-all duration-200 origin-top transform scale-y-0 opacity-0 pointer-events-none z-50">
+                        <div class="py-2">
+                            <?php foreach ($marine_service_menu as $item): ?>
+                            <a href="<?php echo site_escape($item['url']); ?>" class="block px-5 py-3 text-sm font-semibold text-spartan-navy hover:bg-spartan-light-gray hover:text-spartan-teal transition-colors">
+                                <?php echo site_escape($item['label']); ?>
+                            </a>
+                            <?php endforeach; ?>
+                        </div>
+                    </div>
                 </div>
 
-                <a href="brands.php" class="px-3 py-2 <?php echo $active_nav === 'brands' ? 'text-spartan-teal' : ''; ?> hover:text-spartan-teal transition-colors uppercase">Brands</a>
-                <a href="about.php" class="px-3 py-2 <?php echo $active_nav === 'about' ? 'text-spartan-teal' : ''; ?> hover:text-spartan-teal transition-colors uppercase">About Us</a>
-                <a href="faq.php" class="px-3 py-2 <?php echo $active_nav === 'faq' ? 'text-spartan-teal' : ''; ?> hover:text-spartan-teal transition-colors uppercase">FAQ</a>
-                <a href="contact.php" class="px-3 py-2 <?php echo $active_nav === 'contact' ? 'text-spartan-teal' : ''; ?> hover:text-spartan-teal transition-colors uppercase">Contact</a>
+                <div class="relative group" data-mega-trigger="locations-menu">
+                    <a href="locations.php" class="px-3 py-2 <?php echo $active_nav === 'locations' ? 'text-spartan-teal' : ''; ?> hover:text-spartan-teal transition-colors flex items-center space-x-1 uppercase focus:outline-none">
+                        <span>Locations</span>
+                        <i class="fa-solid fa-chevron-down text-[9px] ml-1 transition-transform duration-200 group-hover:rotate-180"></i>
+                    </a>
+                    <div id="locations-menu" data-mega-panel class="absolute left-0 top-full w-80 bg-white text-spartan-charcoal border border-slate-200 shadow-2xl transition-all duration-200 origin-top transform scale-y-0 opacity-0 pointer-events-none z-50">
+                        <div class="py-2">
+                            <?php foreach ($site_locations as $loc): ?>
+                            <a href="<?php echo site_escape(site_location_url($loc)); ?>" class="block px-5 py-3 text-sm font-semibold text-spartan-navy hover:bg-spartan-light-gray hover:text-spartan-teal transition-colors">
+                                <?php echo site_escape($loc['city']); ?><?php echo ($loc['branch_name'] ?? '') === 'Head Office' ? ' (Head office)' : ''; ?>
+                            </a>
+                            <?php endforeach; ?>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative group" data-mega-trigger="resources-menu">
+                    <a href="blog.php" class="px-3 py-2 <?php echo in_array($active_nav, ['resources', 'faq'], true) ? 'text-spartan-teal' : ''; ?> hover:text-spartan-teal transition-colors flex items-center space-x-1 uppercase focus:outline-none">
+                        <span>Resources</span>
+                        <i class="fa-solid fa-chevron-down text-[9px] ml-1 transition-transform duration-200 group-hover:rotate-180"></i>
+                    </a>
+                    <div id="resources-menu" data-mega-panel class="absolute left-0 top-full w-72 bg-white text-spartan-charcoal border border-slate-200 shadow-2xl transition-all duration-200 origin-top transform scale-y-0 opacity-0 pointer-events-none z-50">
+                        <div class="py-2">
+                            <?php foreach ($resource_menu as $item): ?>
+                            <a href="<?php echo site_escape($item['url']); ?>" class="<?php echo !empty($item['highlight']) ? 'bg-spartan-navy text-white hover:bg-black' : 'text-spartan-navy hover:bg-spartan-light-gray hover:text-spartan-teal'; ?> block px-5 py-3 text-sm font-semibold transition-colors">
+                                <?php echo site_escape($item['label']); ?>
+                            </a>
+                            <?php endforeach; ?>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative group" data-mega-trigger="about-menu">
+                    <a href="about.php" class="px-3 py-2 <?php echo $active_nav === 'about' ? 'text-spartan-teal' : ''; ?> hover:text-spartan-teal transition-colors flex items-center space-x-1 uppercase focus:outline-none">
+                        <span>About</span>
+                        <i class="fa-solid fa-chevron-down text-[9px] ml-1 transition-transform duration-200 group-hover:rotate-180"></i>
+                    </a>
+                    <div id="about-menu" data-mega-panel class="absolute right-0 top-full w-60 bg-white text-spartan-charcoal border border-slate-200 shadow-2xl transition-all duration-200 origin-top transform scale-y-0 opacity-0 pointer-events-none z-50">
+                        <div class="py-2">
+                            <?php foreach ($about_menu as $item): ?>
+                            <a href="<?php echo site_escape($item['url']); ?>" class="block px-5 py-3 text-sm font-semibold text-spartan-navy hover:bg-spartan-light-gray hover:text-spartan-teal transition-colors">
+                                <?php echo site_escape($item['label']); ?>
+                            </a>
+                            <?php endforeach; ?>
+                        </div>
+                    </div>
+                </div>
             </nav>
 
             <!-- Navigation Controls (Right Side) -->
-            <div class="flex items-center space-x-4 xl:space-x-6 text-white shrink-0">
+            <div class="flex items-center space-x-3 xl:space-x-4 text-white shrink-0">
+                <a href="contact.php" class="hidden lg:inline-flex items-center bg-spartan-teal text-white py-3 px-5 text-[10px] font-bold tracking-[0.18em] uppercase hover:bg-spartan-teal-light hover:text-spartan-navy transition-colors">
+                    <span>Talk to Spartan</span>
+                </a>
+
                 <!-- Search Button -->
                 <button onclick="toggleSearch()" class="p-2 hover:text-spartan-teal transition-colors" aria-label="Search">
                     <i class="fa-solid fa-magnifying-glass text-lg"></i>
                 </button>
-
-                <!-- Profile Link -->
-                <a href="#" class="p-2 hover:text-spartan-teal transition-colors hidden sm:block" aria-label="Account">
-                    <i class="fa-regular fa-user text-lg"></i>
-                </a>
 
                 <!-- Cart Button -->
                 <button onclick="toggleCart()" class="p-2 hover:text-spartan-teal transition-colors relative" aria-label="Cart">
@@ -184,119 +413,76 @@ $active_nav = $active_nav ?? '';
             </div>
         </div>
 
-        <!-- ================= MEGA MENU: PRODUCTS ================= -->
-        <div id="products-mega-menu" class="absolute left-0 right-0 bg-spartan-navy border-b border-slate-800 py-10 px-8 transition-all duration-300 origin-top transform scale-y-0 opacity-0 pointer-events-none z-40">
-            <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-8">
-                <!-- Column 1: Marine Safety -->
-                <div>
-                    <h3 class="font-oswald text-xs font-bold text-spartan-teal tracking-[0.2em] uppercase mb-4">MARINE SAFETY</h3>
-                    <ul class="space-y-3 text-[13px] text-slate-300 font-medium">
-                        <li><a href="products.php?cat=safety" class="hover:text-white transition-colors">Immersion Suits</a></li>
-                        <li><a href="products.php?cat=safety" class="hover:text-white transition-colors">PFDs & Commercial Lifejackets</a></li>
-                        <li><a href="products.php?cat=safety" class="hover:text-white transition-colors">Life Rafts & Cradles</a></li>
-                        <li><a href="products.php?cat=safety" class="hover:text-white transition-colors">Flares & Distress Signals</a></li>
-                        <li><a href="products.php?cat=safety" class="hover:text-white transition-colors">EPIRBs & PLBs</a></li>
-                    </ul>
-                </div>
-                <!-- Column 2: Rope & Rigging -->
-                <div>
-                    <h3 class="font-oswald text-xs font-bold text-spartan-teal tracking-[0.2em] uppercase mb-4">ROPE & RIGGING</h3>
-                    <ul class="space-y-3 text-[13px] text-slate-300 font-medium">
-                        <li><a href="products.php?cat=rope" class="hover:text-white transition-colors">Pot Warp & Sinking Rope</a></li>
-                        <li><a href="products.php?cat=rope" class="hover:text-white transition-colors">Wire Rope & Cable</a></li>
-                        <li><a href="products.php?cat=rope" class="hover:text-white transition-colors">Chain, Shackles & Hooks</a></li>
-                        <li><a href="products.php?cat=rope" class="hover:text-white transition-colors">Mooring & Dock Lines</a></li>
-                        <li><a href="products.php?cat=rope" class="hover:text-white transition-colors">Blocks & Lifting Hardware</a></li>
-                    </ul>
-                </div>
-                <!-- Column 3: Commercial Fishing -->
-                <div>
-                    <h3 class="font-oswald text-xs font-bold text-spartan-teal tracking-[0.2em] uppercase mb-4">COMMERCIAL FISHING</h3>
-                    <ul class="space-y-3 text-[13px] text-slate-300 font-medium">
-                        <li><a href="products.php?cat=fishing" class="hover:text-white transition-colors">Lobster & Crab Gear</a></li>
-                        <li><a href="products.php?cat=fishing" class="hover:text-white transition-colors">Buoys & Highflyers</a></li>
-                        <li><a href="products.php?cat=fishing" class="hover:text-white transition-colors">Bait Bags, Totes & Tubs</a></li>
-                        <li><a href="products.php?cat=fishing" class="hover:text-white transition-colors">Trawl & Net Hardware</a></li>
-                        <li><a href="products.php?cat=fishing" class="hover:text-white transition-colors">Aquaculture Supplies</a></li>
-                    </ul>
-                </div>
-                <!-- Column 4: Workwear -->
-                <div>
-                    <h3 class="font-oswald text-xs font-bold text-spartan-teal tracking-[0.2em] uppercase mb-4">WORKWEAR & FOOTWEAR</h3>
-                    <ul class="space-y-3 text-[13px] text-slate-300 font-medium">
-                        <li><a href="products.php?cat=workwear" class="hover:text-white transition-colors">Deck Boots</a></li>
-                        <li><a href="products.php?cat=workwear" class="hover:text-white transition-colors">Rain Gear, Bibs & Oilskins</a></li>
-                        <li><a href="products.php?cat=workwear" class="hover:text-white transition-colors">Gloves</a></li>
-                        <li><a href="products.php?cat=workwear" class="hover:text-white transition-colors">Hi-Vis & Float Jackets</a></li>
-                        <li><a href="products.php?cat=workwear" class="hover:text-white transition-colors">Thermal Layers</a></li>
-                    </ul>
-                </div>
-                <!-- Column 5: Featured Callout -->
-                <div class="relative overflow-hidden group border border-slate-700/50">
-                    <img src="assets/images/spartan-3.png" alt="Rigging and rope stock" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 absolute inset-0 brightness-[0.4]">
-                    <div class="relative z-10 p-6 h-full flex flex-col justify-between min-h-[180px]">
-                        <div>
-                            <span class="bg-spartan-teal text-white text-[8px] font-bold px-2 py-0.5 tracking-wider uppercase inline-block mb-2">IN STOCK</span>
-                            <h4 class="font-oswald text-sm font-bold text-white tracking-wide uppercase">SEASON ROPE ORDERS, CUT TO LENGTH</h4>
-                        </div>
-                        <a href="products.php?cat=rope" class="inline-flex items-center text-[10px] font-bold text-spartan-teal tracking-[0.2em] hover:text-white transition-colors uppercase">
-                            <span>SHOP ROPE</span>
-                            <i class="fa-solid fa-chevron-right text-[9px] ml-1.5"></i>
+        <!-- ================= MEGA MENU: SHOP ONLINE ================= -->
+        <div id="shop-online-menu" data-mega-panel class="absolute left-0 right-0 bg-white text-spartan-charcoal border-b border-slate-200 shadow-2xl transition-all duration-300 origin-top transform scale-y-0 opacity-0 pointer-events-none z-40 max-h-[calc(100vh-8rem)] overflow-y-auto">
+            <div class="max-w-[1500px] mx-auto grid grid-cols-1 xl:grid-cols-[240px_minmax(0,1fr)]">
+                <div class="bg-spartan-light-gray border-b xl:border-b-0 xl:border-r border-slate-200 p-6">
+                    <h3 class="font-oswald text-sm font-bold text-spartan-navy tracking-[0.2em] uppercase mb-5">Shop Online</h3>
+                    <div class="space-y-4 text-xs font-bold tracking-[0.12em] uppercase">
+                        <a href="brands.php" class="group relative block h-32 overflow-hidden bg-spartan-navy text-white">
+                            <img src="assets/images/j9/marine-rigging.webp" alt="" class="absolute inset-0 h-full w-full object-cover opacity-45 group-hover:scale-105 transition-transform duration-500">
+                            <span class="absolute inset-0 bg-[#0A4070]/85"></span>
+                            <span class="relative z-10 flex h-full flex-col justify-between p-5">
+                                <span class="font-oswald text-3xl font-bold italic tracking-wide leading-none">PAUL</span>
+                                <span class="max-w-[9rem] text-[10px] leading-relaxed tracking-[0.18em]">Built For Serious Work</span>
+                                <i class="fa-solid fa-arrow-right absolute right-5 bottom-5 text-sm text-white/80 transition-transform duration-300 group-hover:translate-x-1"></i>
+                            </span>
                         </a>
+                        <a href="products.php?cat=workwear" class="group relative block h-32 overflow-hidden bg-[#F45B22] text-white">
+                            <img src="assets/images/j9/spartan-workwear-woman.webp" alt="" class="absolute inset-0 h-full w-full object-cover opacity-45 group-hover:scale-105 transition-transform duration-500">
+                            <span class="absolute inset-0 bg-[#F45B22]/85"></span>
+                            <span class="relative z-10 flex h-full flex-col justify-between p-5">
+                                <span class="font-oswald text-2xl font-bold italic tracking-wide leading-none">FIERCE<br><span class="text-base tracking-[0.2em] not-italic">WORKWEAR</span></span>
+                                <span class="max-w-[10rem] text-[10px] leading-relaxed tracking-[0.16em]">Gear That Works Hard</span>
+                                <i class="fa-solid fa-arrow-right absolute right-5 bottom-5 text-sm text-white/80 transition-transform duration-300 group-hover:translate-x-1"></i>
+                            </span>
+                        </a>
+                        <a href="brands.php" class="inline-flex items-center text-[10px] font-bold tracking-[0.22em] text-spartan-teal uppercase hover:text-spartan-navy transition-colors">
+                            <span>View All Brands</span>
+                            <i class="fa-solid fa-arrow-right text-[10px] ml-2"></i>
+                        </a>
+                        <div class="pt-3 border-t border-slate-200">
+                            <a href="products.php" class="flex items-center justify-between bg-yellow-300 px-4 py-3 text-spartan-navy hover:bg-yellow-200 transition-colors">
+                                <span>On Sale</span>
+                                <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-6 lg:p-8">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-6 gap-x-8 xl:gap-x-10 gap-y-8">
+                        <?php foreach ($shop_menu_columns as $column): ?>
+                        <div class="space-y-8">
+                            <?php foreach ($column as $group): ?>
+                            <div>
+                                <h4 class="font-oswald text-sm font-bold text-spartan-navy uppercase tracking-wide mb-2">
+                                    <?php if (!empty($group['url'])): ?>
+                                    <a href="<?php echo site_escape($group['url']); ?>" class="hover:text-spartan-teal hover:underline underline-offset-4 transition-colors">
+                                        <?php echo site_escape($group['title']); ?>
+                                    </a>
+                                    <?php else: ?>
+                                    <?php echo site_escape($group['title']); ?>
+                                    <?php endif; ?>
+                                </h4>
+                                <ul class="space-y-1.5 text-[13px] leading-tight">
+                                    <?php foreach (($group['links'] ?? []) as $link): ?>
+                                    <li>
+                                        <a href="<?php echo site_escape($link['url']); ?>" class="<?php echo !empty($link['strong']) ? 'font-bold text-spartan-navy' : 'text-slate-700'; ?> hover:text-spartan-teal hover:underline underline-offset-4 transition-colors">
+                                            <?php echo site_escape($link['label']); ?>
+                                        </a>
+                                    </li>
+                                    <?php endforeach; ?>
+                                </ul>
+                            </div>
+                            <?php endforeach; ?>
+                        </div>
+                        <?php endforeach; ?>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- ================= MEGA MENU: SERVICES ================= -->
-        <div id="services-mega-menu" class="absolute left-0 right-0 bg-spartan-navy border-b border-slate-800 py-10 px-8 transition-all duration-300 origin-top transform scale-y-0 opacity-0 pointer-events-none z-40">
-            <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
-                <!-- Column 1: Safety Servicing -->
-                <div>
-                    <h3 class="font-oswald text-xs font-bold text-spartan-teal tracking-[0.2em] uppercase mb-4">SAFETY SERVICING</h3>
-                    <ul class="space-y-3 text-[13px] text-slate-300 font-medium">
-                        <li><a href="service-single.php" class="hover:text-white transition-colors">Life Raft Inspection & Repack</a></li>
-                        <li><a href="service-single.php" class="hover:text-white transition-colors">Immersion Suit Testing</a></li>
-                        <li><a href="service-single.php" class="hover:text-white transition-colors">Inflatable PFD Servicing</a></li>
-                        <li><a href="service-single.php" class="hover:text-white transition-colors">Hydrostatic Release Replacement</a></li>
-                    </ul>
-                </div>
-                <!-- Column 2: Rigging Shop -->
-                <div>
-                    <h3 class="font-oswald text-xs font-bold text-spartan-teal tracking-[0.2em] uppercase mb-4">RIGGING SHOP</h3>
-                    <ul class="space-y-3 text-[13px] text-slate-300 font-medium">
-                        <li><a href="service-single.php" class="hover:text-white transition-colors">Wire Rope Splicing & Pressing</a></li>
-                        <li><a href="service-single.php" class="hover:text-white transition-colors">Synthetic Rope Assemblies</a></li>
-                        <li><a href="service-single.php" class="hover:text-white transition-colors">Certified Pull Testing to 100 t</a></li>
-                        <li><a href="service-single.php" class="hover:text-white transition-colors">Mooring System Builds</a></li>
-                    </ul>
-                </div>
-                <!-- Column 3: Compliance & Fleet -->
-                <div>
-                    <h3 class="font-oswald text-xs font-bold text-spartan-teal tracking-[0.2em] uppercase mb-4">COMPLIANCE & FLEET</h3>
-                    <ul class="space-y-3 text-[13px] text-slate-300 font-medium">
-                        <li><a href="service-single.php" class="hover:text-white transition-colors">Transport Canada Compliance Checks</a></li>
-                        <li><a href="service-single.php" class="hover:text-white transition-colors">SOLAS Equipment Inspections</a></li>
-                        <li><a href="service-single.php" class="hover:text-white transition-colors">Vessel Safety Outfitting</a></li>
-                        <li><a href="contact.php" class="hover:text-white transition-colors">Fleet & Commercial Accounts</a></li>
-                    </ul>
-                </div>
-                <!-- Column 4: Promotional Asset -->
-                <div class="bg-spartan-navy-light p-6 relative overflow-hidden flex flex-col justify-between border border-slate-700/50">
-                    <div class="absolute -right-16 -bottom-16 w-48 h-48 bg-spartan-teal opacity-10" style="-webkit-mask: url('assets/images/full-wave.svg') center / contain no-repeat; mask: url('assets/images/full-wave.svg') center / contain no-repeat;" aria-hidden="true"></div>
-                    <div>
-                        <h4 class="font-oswald text-sm font-bold text-white tracking-wider uppercase mb-2">CERTIFIED TECHNICIANS</h4>
-                        <p class="text-xs text-slate-300 leading-relaxed font-light">
-                            All servicing is performed by OEM-trained, Transport Canada certified technicians. Typical raft turnaround: 48 hours.
-                        </p>
-                    </div>
-                    <a href="services.php" class="mt-4 inline-flex items-center text-[10px] font-bold text-spartan-teal tracking-[0.2em] hover:text-spartan-teal-light transition-colors uppercase">
-                        <span>VIEW ALL SERVICES</span>
-                        <i class="fa-solid fa-chevron-right text-[9px] ml-1.5"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
     </header>
 
     <!-- ================= MOBILE MENU DRAWER ================= -->
@@ -311,21 +497,17 @@ $active_nav = $active_nav ?? '';
                 </div>
 
                 <nav class="mt-8 flex flex-col space-y-4 font-oswald text-lg font-bold tracking-[0.15em] text-white uppercase">
-                    <a href="products.php" class="hover:text-spartan-teal transition-colors py-2 border-b border-slate-800/40">Products</a>
-                    <a href="services.php" class="hover:text-spartan-teal transition-colors py-2 border-b border-slate-800/40">Services</a>
-                    <a href="brands.php" class="hover:text-spartan-teal transition-colors py-2 border-b border-slate-800/40">Brands</a>
-                    <a href="about.php" class="hover:text-spartan-teal transition-colors py-2 border-b border-slate-800/40">About Us</a>
-                    <a href="faq.php" class="hover:text-spartan-teal transition-colors py-2 border-b border-slate-800/40">FAQ</a>
-                    <a href="blog.php" class="hover:text-spartan-teal transition-colors py-2 border-b border-slate-800/40">Blog</a>
+                    <a href="products.php" class="hover:text-spartan-teal transition-colors py-2 border-b border-slate-800/40">Shop Online</a>
+                    <a href="services.php" class="hover:text-spartan-teal transition-colors py-2 border-b border-slate-800/40">Marine Services</a>
                     <a href="locations.php" class="hover:text-spartan-teal transition-colors py-2 border-b border-slate-800/40">Locations</a>
-                    <a href="contact.php" class="hover:text-spartan-teal transition-colors py-2 border-b border-slate-800/40">Contact</a>
+                    <a href="blog.php" class="hover:text-spartan-teal transition-colors py-2 border-b border-slate-800/40">Resources</a>
+                    <a href="about.php" class="hover:text-spartan-teal transition-colors py-2 border-b border-slate-800/40">About</a>
                 </nav>
             </div>
 
             <div class="border-t border-slate-800 pt-6 space-y-4">
-                <a href="#" class="flex items-center space-x-3 text-white hover:text-spartan-teal transition-colors">
-                    <i class="fa-regular fa-user text-base"></i>
-                    <span class="text-xs font-bold tracking-[0.1em] uppercase">My Account</span>
+                <a href="contact.php" class="flex items-center justify-center bg-spartan-teal text-white py-3 px-5 hover:bg-spartan-teal-light hover:text-spartan-navy transition-colors">
+                    <span class="text-xs font-bold tracking-[0.18em] uppercase">Talk to Spartan</span>
                 </a>
                 <p class="text-[10px] text-slate-500 font-mono tracking-widest uppercase">
                     READY WHEN CONDITIONS TURN

@@ -5,7 +5,7 @@ require_once __DIR__ . '/partials/header.php';
 $hero = [
     'title' => 'Your Order',
     'subtitle' => 'Review your order, then check out or send it to the counter for pickup.',
-    'image' => 'assets/images/EQUIPMENT.jpg',
+    'image' => 'assets/images/j9/spartan-warehouse-fulfillment.webp',
     'breadcrumbs' => [
         ['label' => 'Home', 'url' => 'index.php'],
         ['label' => 'Cart'],
@@ -104,7 +104,7 @@ $cart_shipping = 0.00;
                         <span>Checkout</span>
                     </button>
                     <p class="text-[10px] text-slate-500 font-light leading-relaxed">
-                        Commercial and fleet account discounts apply automatically at checkout. Counter pickup available at all three locations.
+                        Commercial and fleet account discounts apply automatically at checkout. Counter pickup available through Spartan branches.
                     </p>
                 </div>
 
