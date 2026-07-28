@@ -171,96 +171,47 @@ $site_services = [
         'title' => 'Life Raft Inspection & Repack',
         'image' => 'assets/images/j9/life-raft-inspection.webp',
         'cta' => 'Book Inspection',
-        'desc' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.',
+        'desc' => 'Annual inspection, deployment testing, repacking, emergency pack checks, and documentation for commercial marine life raft compliance.',
     ],
     [
         'slug' => 'immersion-suit-testing',
         'title' => 'Immersion Suit Testing',
         'image' => 'assets/images/j9/immersion-suit-testing.webp',
         'cta' => 'Schedule Testing',
-        'desc' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.',
+        'desc' => 'Pressure testing, seam checks, zipper inspection, leakage assessment, and certification support for immersion suits used in harsh marine conditions.',
     ],
     [
         'slug' => 'splicing-custom-rigging',
         'title' => 'Splicing & Custom Rigging',
         'image' => 'assets/images/j9/service-splicing.webp',
         'cta' => 'Request Assembly',
-        'desc' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.',
+        'desc' => 'Custom rope, wire, and rigging assemblies built for the way your vessel, yard, or fleet actually works.',
     ],
     [
         'slug' => 'certified-pull-testing',
         'title' => 'Certified Pull Testing',
         'image' => 'assets/images/j9/service-pull-testing.webp',
         'cta' => 'Book Testing',
-        'desc' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.',
+        'desc' => 'Proof-load testing, inspection records, and tag verification for lifting, rigging, and safety equipment that needs documented capacity.',
     ],
     [
         'slug' => 'compliance-inspections',
         'title' => 'Compliance Inspections',
         'image' => 'assets/images/j9/other-marine-life-safety.webp',
         'cta' => 'Book Pre-Survey Check',
-        'desc' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.',
+        'desc' => 'Pre-survey checks and certification support to help crews stay ready for Transport Canada and industry inspection requirements.',
     ],
     [
         'slug' => 'vessel-fleet-outfitting',
         'title' => 'Vessel & Fleet Outfitting',
         'image' => 'assets/images/j9/service-fleet-outfitting.webp',
         'cta' => 'Request a Quote',
-        'desc' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.',
+        'desc' => 'Safety gear, service coordination, and stocked marine supplies prepared for commercial vessels, fleets, and working crews.',
     ],
 ];
 
 /* ---------- Blog posts ---------- */
-$site_posts = [
-    [
-        'slug' => 'life-raft-service-schedule',
-        'title' => 'How Often Does Your Life Raft Actually Need Servicing?',
-        'category' => 'Marine Safety',
-        'date' => 'June 18, 2026',
-        'image' => 'assets/images/j9/life-raft-inspection.webp',
-        'excerpt' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    ],
-    [
-        'slug' => 'sink-vs-float-pot-warp',
-        'title' => 'Choosing Pot Warp: Sink Rope vs Float Rope',
-        'category' => 'Gear Guides',
-        'date' => 'June 4, 2026',
-        'image' => 'assets/images/j9/department-rope-rigging.webp',
-        'excerpt' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    ],
-    [
-        'slug' => 'immersion-suit-storage',
-        'title' => 'Immersion Suit Care Between Seasons',
-        'category' => 'Marine Safety',
-        'date' => 'May 22, 2026',
-        'image' => 'assets/images/j9/immersion-suit-testing.webp',
-        'excerpt' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    ],
-    [
-        'slug' => 'what-inspectors-check',
-        'title' => 'What Transport Canada Looks For at Survey',
-        'category' => 'Compliance',
-        'date' => 'May 8, 2026',
-        'image' => 'assets/images/j9/service-compliance.webp',
-        'excerpt' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    ],
-    [
-        'slug' => 'wire-vs-synthetic-assemblies',
-        'title' => 'Wire vs Synthetic: Choosing Rigging Assemblies',
-        'category' => 'Gear Guides',
-        'date' => 'April 24, 2026',
-        'image' => 'assets/images/j9/marine-rigging.webp',
-        'excerpt' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    ],
-    [
-        'slug' => 'season-prep-checklist',
-        'title' => 'The Pre-Season Gear Checklist for Lobster Crews',
-        'category' => 'Commercial Fishing',
-        'date' => 'April 10, 2026',
-        'image' => 'assets/images/j9/other-scallop-fishing.webp',
-        'excerpt' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    ],
-];
+$site_posts = require __DIR__ . '/blog-posts.php';
 
 /* ---------- Brands ---------- */
 $site_brands = [
@@ -1671,6 +1622,94 @@ $site_locations = [
         'blurb' => 'Spartan head office, marine safety service support, and Atlantic Canada customer service from Dartmouth.',
         'intro' => 'The Dartmouth head office supports commercial, industrial, and recreational marine customers across Atlantic Canada with safety equipment, service coordination, product support, and branch assistance.',
         'services' => ['Head office support', 'Marine life safety equipment', 'Inspection and repair coordination', 'Commercial account support'],
+        'local_page' => [
+            'page_title' => 'Marine Supplies in Dartmouth, NS | Spartan Industrial Marine',
+            'meta_description' => 'Source commercial marine supplies in Dartmouth, NS. Our Burnside warehouse offers heavy rigging, fishing gear, expert support, and certified local safety services.',
+            'hero_title' => 'Marine Supplies Dartmouth, NS',
+            'hero_eyebrow' => 'Dartmouth, NS',
+            'hero_subtitle' => 'Serving the local fleet, industrial sites, and commercial fishermen from our full-service Dartmouth safety centre. Drop off your gear, pick up supplies, or book a mobile technician.',
+            'intro_heading' => 'Your Local Marine Equipment, Services & Supplies Hub',
+            'intro_text' => 'Spartan’s Dartmouth branch gives commercial crews, industrial sites, shipyards, and regional operators a local counter for stocked marine supplies, service intake, and technical support.',
+            'product_heading' => 'Product Catalogue & Supplies',
+            'product_subtext' => 'Our Dartmouth warehouse stocks a complete range of industrial marine hardware. If we do not have your exact item on the shelf, we can source it rapidly through our regional network.',
+            'product_cta_label' => 'Shop Dartmouth Inventory',
+            'product_cta_url' => 'products.php',
+            'product_cards' => [
+                [
+                    'title' => 'Ropes & Twines',
+                    'text' => 'High-strength wire rope, synthetic lines, and twines for industrial rigging.',
+                    'url' => 'products.php?group=rope-line-nets',
+                    'image' => 'assets/images/j9/marine-rigging.webp',
+                ],
+                [
+                    'title' => 'Commercial Fishing Gear',
+                    'text' => 'Industrial trawl nets, performance sensors, and hardware built to last.',
+                    'url' => 'products.php?group=fishing-trap-gear',
+                    'image' => 'assets/images/j9/commercial-fishing.webp',
+                ],
+                [
+                    'title' => 'Rainwear & Marine Operations Workwear',
+                    'text' => 'Heavy-duty, weather-resistant protective clothing tailored for rough industrial crews.',
+                    'url' => 'products.php?group=workwear-footwear',
+                    'image' => 'assets/images/j9/department-workwear.webp',
+                ],
+                [
+                    'title' => 'Marine Safety Equipment',
+                    'text' => 'Transport Canada approved liferafts, survival suits, and emergency beacons.',
+                    'url' => 'products.php?group=safety-buoys-survival',
+                    'image' => 'assets/images/j9/marine-safety.webp',
+                ],
+            ],
+            'service_heading' => 'Certified Local Service & Mobile Inspections',
+            'service_subtext' => 'Dartmouth houses one of our primary full-service safety centres, offering complete testing, certified repair work, and rapid turnaround times.',
+            'service_cta_label' => 'Book Dartmouth Services',
+            'service_cta_url' => 'contact.php',
+            'service_items' => [
+                [
+                    'title' => 'Certified Marine Safety Inspections',
+                    'text' => 'Full in-shop testing and compliance certifications for liferafts, immersion suits, emergency beacons, and rigging gear.',
+                    'image' => 'assets/images/j9/life-raft-inspection.webp',
+                ],
+                [
+                    'title' => 'Mobile Inspector Fleet',
+                    'text' => 'Fully equipped service trucks dispatched from Burnside to deliver on-site inspections directly to your vessel or shipyard.',
+                    'image' => 'assets/images/spartan-dock-worker.png',
+                ],
+                [
+                    'title' => 'Factory-Authorized Repairs',
+                    'text' => 'Certified repair work and genuine parts replacement for major hardware brands like Crosby, Kito, and Columbus McKinnon.',
+                    'image' => 'assets/images/j9/service-pull-testing.webp',
+                ],
+                [
+                    'title' => 'Equipment Rental Pickup',
+                    'text' => 'Local collection and drop-off coordination for your pre-certified fleet rental gear.',
+                    'image' => 'assets/images/j9/spartan-warehouse-fulfillment.webp',
+                ],
+                [
+                    'title' => 'CertTracker Document Syncing',
+                    'text' => 'Instant digital logging of your local inspection paperwork straight to your online account.',
+                    'image' => 'assets/images/j9/service-compliance.webp',
+                ],
+            ],
+            'faqs' => [
+                [
+                    'q' => 'Can your mobile team service commercial vessels docked at the Port of Halifax?',
+                    'a' => 'Yes. Our certified mobile safety trucks regularly travel directly to all major container, breakbulk, and industrial terminals across the Port of Halifax, including the PSA Atlantic Hub, Fairview Cove, and the Richmond Terminals. We can sync with your vessel’s port call schedule to minimize downtime.',
+                ],
+                [
+                    'q' => 'Where is your Dartmouth shop located, and is there room for heavy freight transport?',
+                    'a' => 'Our primary safety centre and warehouse are located at 120 Thornhill Drive in the Burnside Industrial Park. Our facility features a commercial-grade yard with dedicated bays and loading docks designed to accommodate heavy freight trucks, flatbeds, and commercial transport vehicles for seamless equipment drop-off and pickup.',
+                ],
+                [
+                    'q' => 'Does the Dartmouth location handle emergency compliance repairs for container lines and tug fleets?',
+                    'a' => 'Yes. As our regional head office and primary full-service safety hub, our Dartmouth facility maintains a large inventory of factory-authorized parts and a dedicated technical crew. We provide rapid turnaround times for commercial shipping lines, regional tug operations, and industrial marine fleets requiring urgent Transport Canada certifications.',
+                ],
+                [
+                    'q' => 'Can bulk commercial fishing and rigging supplies be ordered from Dartmouth for regional delivery?',
+                    'a' => 'Absolutely. In addition to local warehouse pickups in Burnside, the Dartmouth hub serves as our primary logistics base for shipping commercial fishing gear, wire rope, and heavy rigging hardware directly to ports and shipyards across Nova Scotia.',
+                ],
+            ],
+        ],
     ],
     [
         'slug' => 'sydney-ns',
@@ -1826,6 +1865,22 @@ $site_locations = [
 
 function site_escape($value) {
     return htmlspecialchars((string) $value, ENT_QUOTES, 'UTF-8');
+}
+
+function site_post_url($post) {
+    return 'blog-single.php?post=' . rawurlencode((string) ($post['slug'] ?? ''));
+}
+
+function site_find_post($slug) {
+    global $site_posts;
+
+    foreach ($site_posts as $post) {
+        if (($post['slug'] ?? '') === $slug) {
+            return $post;
+        }
+    }
+
+    return null;
 }
 
 function site_location_map_query($location) {

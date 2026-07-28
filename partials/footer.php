@@ -30,8 +30,8 @@ $footer_menu_sections = [
         'title' => 'Services',
         'links' => [
             ['label' => 'Inspections & Repairs', 'url' => 'services.php'],
-            ['label' => 'Rental Equipment', 'url' => 'services.php'],
-            ['label' => 'Product Recall', 'url' => 'services.php'],
+            ['label' => 'Rental Equipment', 'url' => 'rental-equipment.php'],
+            ['label' => 'Safety & Training', 'url' => 'training-courses.php'],
         ],
     ],
     [
@@ -39,8 +39,7 @@ $footer_menu_sections = [
         'links' => [
             ['label' => 'Definitions & Warnings', 'url' => 'terms.php'],
             ['label' => 'Industry Articles', 'url' => 'blog.php'],
-            ['label' => 'Safety & Training', 'url' => 'services.php'],
-            ['label' => 'CertTracker', 'url' => 'contact.php'],
+            ['label' => 'CertTracker', 'url' => 'certtracker.php'],
             ['label' => 'FAQs', 'url' => 'faq.php'],
         ],
     ],

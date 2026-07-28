@@ -169,16 +169,15 @@ unset($shop_menu_column, $shop_menu_group, $shop_group_meta);
 
 $marine_service_menu = [
     ['label' => 'Inspections & Repairs', 'url' => 'services.php'],
-    ['label' => 'Rental Equipment', 'url' => 'services.php'],
-    ['label' => 'Product Recall', 'url' => 'services.php'],
+    ['label' => 'Rental Equipment', 'url' => 'rental-equipment.php'],
+    ['label' => 'Safety & Training', 'url' => 'training-courses.php'],
 ];
 
 $resource_menu = [
     ['label' => 'Definitions & Warnings', 'url' => 'terms.php'],
     ['label' => 'Industry Articles', 'url' => 'blog.php'],
     ['label' => 'FAQs', 'url' => 'faq.php'],
-    ['label' => 'Safety & Training', 'url' => 'services.php'],
-    ['label' => 'CertTracker', 'url' => 'contact.php', 'highlight' => true],
+    ['label' => 'CertTracker', 'url' => 'certtracker.php', 'highlight' => true],
 ];
 
 $about_menu = [

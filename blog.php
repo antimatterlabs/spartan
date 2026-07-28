@@ -1,11 +1,12 @@
 <?php
-$page_title = 'Blog & Guides | Spartan Industrial Marine';
+$page_title = 'Industry Articles & News | Spartan Industrial Marine';
+$meta_description = 'Read Spartan Industrial Marine articles and news about commercial fishing supplies, vessel safety requirements, recalls, and marine operations across Atlantic Canada.';
 $active_nav = 'resources';
 require_once __DIR__ . '/partials/header.php';
 
 $hero = [
-    'title' => 'Blog & Guides',
-    'subtitle' => 'Practical gear guides, service schedules, and compliance advice from the people behind the counter.',
+    'title' => 'Industry Articles & News',
+    'subtitle' => 'Commercial fishing updates, compliance guidance, safety recalls, and practical marine operations advice from Spartan.',
     'image' => 'assets/images/j9/marine-rigging.webp',
     'breadcrumbs' => [
         ['label' => 'Home', 'url' => 'index.php'],
@@ -20,7 +21,7 @@ $other_posts = array_slice($site_posts, 1);
 
     <!-- Featured post -->
     <section class="py-16 md:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <a href="blog-single.php" class="grid grid-cols-1 md:grid-cols-2 bg-spartan-navy group overflow-hidden select-text">
+        <a href="<?php echo site_escape(site_post_url($featured_post)); ?>" class="grid grid-cols-1 md:grid-cols-2 bg-spartan-navy group overflow-hidden select-text">
             <div class="relative h-[300px] md:h-auto md:min-h-[400px] overflow-hidden">
                 <img src="<?php echo $featured_post['image']; ?>" alt="<?php echo htmlspecialchars($featured_post['title']); ?>" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 brightness-90">
             </div>
@@ -51,17 +52,17 @@ $other_posts = array_slice($site_posts, 1);
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-14 select-text">
             <?php foreach ($other_posts as $post): ?>
             <article class="group">
-                <a href="blog-single.php" class="block h-52 w-full overflow-hidden mb-6">
+                <a href="<?php echo site_escape(site_post_url($post)); ?>" class="block h-52 w-full overflow-hidden mb-6">
                     <img src="<?php echo $post['image']; ?>" alt="<?php echo htmlspecialchars($post['title']); ?>" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                 </a>
                 <span class="font-mono text-[10px] text-slate-400 tracking-widest uppercase block mb-2"><?php echo $post['category']; ?> · <?php echo $post['date']; ?></span>
                 <h3 class="font-oswald text-lg font-bold text-spartan-navy tracking-widest uppercase leading-tight mb-3">
-                    <a href="blog-single.php" class="hover:text-spartan-teal transition-colors"><?php echo $post['title']; ?></a>
+                    <a href="<?php echo site_escape(site_post_url($post)); ?>" class="hover:text-spartan-teal transition-colors"><?php echo $post['title']; ?></a>
                 </h3>
                 <p class="text-sm text-slate-600 font-light leading-relaxed mb-5">
                     <?php echo $post['excerpt']; ?>
                 </p>
-                <a href="blog-single.php" class="text-spartan-teal hover:text-spartan-navy text-[10px] font-bold tracking-[0.2em] inline-flex items-center uppercase transition-colors">
+                <a href="<?php echo site_escape(site_post_url($post)); ?>" class="text-spartan-teal hover:text-spartan-navy text-[10px] font-bold tracking-[0.2em] inline-flex items-center uppercase transition-colors">
                     <span>Read Article</span>
                     <i class="fa-solid fa-arrow-right text-[10px] ml-1.5 transition-transform duration-300 group-hover:translate-x-1"></i>
                 </a>

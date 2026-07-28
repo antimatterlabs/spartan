@@ -11,6 +11,10 @@
  *   'breadcrumbs'=> array of ['label' => ..., 'url' => ...] (last item has no url)
  *   'size'       => 'default' | 'short' | 'tall'  (short = compact hero for shop/utility pages)
  *   'show_breadcrumbs' => bool (optional, defaults to true)
+ *   'button_label' => string (optional)
+ *   'button_url'   => string (optional)
+ *   'secondary_button_label' => string (optional)
+ *   'secondary_button_url'   => string (optional)
  * ];
  */
 $hero_image = $hero['image'] ?? 'assets/images/j9/spartan-storefront-exterior.webp';
@@ -64,6 +68,23 @@ $hero_title_text = strip_tags((string) ($hero['title'] ?? ''));
         <p class="font-sans text-xs sm:text-sm <?php echo $hero_short ? '' : 'md:text-base'; ?> text-slate-300 leading-relaxed <?php echo $hero_subtitle_width; ?> mx-auto font-light">
             <?php echo site_escape($hero['subtitle']); ?>
         </p>
+        <?php endif; ?>
+
+        <?php if (!empty($hero['button_label']) || !empty($hero['secondary_button_label'])): ?>
+        <div class="flex flex-wrap justify-center gap-3 pt-1">
+            <?php if (!empty($hero['button_label'])): ?>
+            <a href="<?php echo site_escape($hero['button_url'] ?? '#'); ?>" class="inline-flex items-center bg-spartan-teal text-white py-3.5 px-7 text-xs font-bold tracking-[0.2em] uppercase hover:bg-spartan-teal-light hover:text-spartan-navy transition-colors">
+                <span><?php echo site_escape($hero['button_label']); ?></span>
+                <i class="fa-solid fa-arrow-right text-[11px] ml-2.5"></i>
+            </a>
+            <?php endif; ?>
+            <?php if (!empty($hero['secondary_button_label'])): ?>
+            <a href="<?php echo site_escape($hero['secondary_button_url'] ?? '#'); ?>" class="inline-flex items-center border border-white/70 text-white py-3.5 px-7 text-xs font-bold tracking-[0.2em] uppercase hover:bg-white hover:text-spartan-navy transition-colors">
+                <span><?php echo site_escape($hero['secondary_button_label']); ?></span>
+                <i class="fa-solid fa-arrow-right text-[11px] ml-2.5"></i>
+            </a>
+            <?php endif; ?>
+        </div>
         <?php endif; ?>
 
         <?php if (!$hero_short): ?>

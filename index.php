@@ -1,5 +1,6 @@
 <?php
-$page_title = 'Spartan Industrial Marine | Commercial Marine Supply & Certified Service';
+$page_title = 'Marine Supplies You Can Trust | Spartan Industrial Marine';
+$meta_description = 'More than marine supplies. Explore trusted products and expert services for commercial, industrial, and military operations to stay ready for the job.';
 $active_nav = 'home';
 require_once __DIR__ . '/partials/header.php';
 ?>
@@ -10,7 +11,7 @@ require_once __DIR__ . '/partials/header.php';
     <section class="relative h-[700px] md:h-[800px] w-full overflow-hidden bg-spartan-navy">
         <!-- Hero Background Image -->
         <div class="absolute inset-0 z-0">
-            <img src="assets/images/hero-upscale.jpg" alt="Commercial marine gear built for harsh weather" class="w-full h-full object-cover object-top contrast-[1.05]">
+            <img src="assets/images/hero-upscale.jpg" alt="Commercial marine gear built for harsh weather" class="w-full h-full object-cover object-top">
             <div class="absolute inset-0 bg-gradient-to-r from-spartan-navy/85 from-[30%] via-spartan-navy/55 via-[48%] to-transparent to-[70%]"></div>
             <div class="absolute inset-0 bg-gradient-to-t from-spartan-navy via-transparent to-transparent opacity-60"></div>
         </div>
@@ -20,15 +21,15 @@ require_once __DIR__ . '/partials/header.php';
             <div class="max-w-2xl text-white space-y-6">
                 <div class="flex items-center space-x-2.5">
                     <span class="h-px w-8 bg-spartan-teal"></span>
-                    <span class="font-oswald text-[10px] md:text-xs font-bold text-spartan-teal tracking-[0.3em] uppercase">COMMERCIAL MARINE SUPPLY & SERVICE · ATLANTIC CANADA</span>
+                    <span class="font-oswald text-[10px] md:text-xs font-bold text-spartan-teal tracking-[0.3em] uppercase">Commercial Marine Supplies & Services</span>
                 </div>
 
-                <h1 class="font-oswald text-4xl sm:text-5xl md:text-6xl lg:text-[70px] font-bold uppercase tracking-wider leading-[1.05] text-white select-text">
-                    Gear Built<br>For Harsh<br>Weather.
+                <h1 class="font-oswald text-3xl sm:text-4xl md:text-5xl lg:text-[58px] font-bold uppercase tracking-wider leading-[1.08] text-white select-text">
+                    A Trusted Partner<br>For Harsh Offshore<br>Conditions
                 </h1>
 
                 <p class="font-sans text-base md:text-lg text-slate-300 leading-relaxed max-w-xl font-light select-text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor.
+                    Equip your vessel with industry-leading supplies and clothing, or schedule rapid Transport Canada inspections, liferaft servicing, and custom rigging, all in one place.
                 </p>
 
                 <div class="flex flex-wrap gap-4 pt-2">
@@ -66,7 +67,7 @@ require_once __DIR__ . '/partials/header.php';
                         <i class="fa-solid fa-life-ring text-xl"></i>
                     </div>
                     <h3 class="font-oswald text-base font-bold text-spartan-navy tracking-wider uppercase mb-3">Liferaft Servicing</h3>
-                    <p class="text-sm text-slate-600 font-light leading-relaxed mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor.</p>
+                    <p class="text-sm text-slate-600 font-light leading-relaxed mb-4">Transport Canada inspection, repack, and certification support for fleets that cannot afford downtime.</p>
                 </div>
                 <span class="inline-flex items-center text-xs font-bold tracking-wider text-spartan-teal group-hover:text-spartan-navy transition-colors mt-4 uppercase">
                     <span>EXPLORE SERVICES</span>
@@ -81,7 +82,7 @@ require_once __DIR__ . '/partials/header.php';
                         <i class="fa-solid fa-link text-xl"></i>
                     </div>
                     <h3 class="font-oswald text-base font-bold text-spartan-navy tracking-wider uppercase mb-3">Rigging & Splicing</h3>
-                    <p class="text-sm text-slate-600 font-light leading-relaxed mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor.</p>
+                    <p class="text-sm text-slate-600 font-light leading-relaxed mb-4">Wire rope fabrication, synthetic rope splicing, and certified assemblies built for working vessels.</p>
                 </div>
                 <span class="inline-flex items-center text-xs font-bold tracking-wider text-spartan-teal group-hover:text-spartan-navy transition-colors mt-4 uppercase">
                     <span>EXPLORE SERVICES</span>
@@ -96,10 +97,10 @@ require_once __DIR__ . '/partials/header.php';
                         <i class="fa-solid fa-shield-halved text-xl"></i>
                     </div>
                     <h3 class="font-oswald text-base font-bold text-spartan-navy tracking-wider uppercase mb-3">Vessel Compliance</h3>
-                    <p class="text-sm text-slate-600 font-light leading-relaxed mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor.</p>
+                    <p class="text-sm text-slate-600 font-light leading-relaxed mb-4">Pre-survey support, safety audits, and compliance guidance aligned with Transport Canada requirements.</p>
                 </div>
                 <span class="inline-flex items-center text-xs font-bold tracking-wider text-spartan-teal group-hover:text-spartan-navy transition-colors mt-4 uppercase">
-                    <span>EXPLORE Compliance</span>
+                    <span>EXPLORE COMPLIANCE</span>
                     <i class="fa-solid fa-arrow-right text-[10px] ml-1.5 transition-transform duration-300 group-hover:translate-x-1.5"></i>
                 </span>
             </a>
@@ -111,7 +112,7 @@ require_once __DIR__ . '/partials/header.php';
                         <i class="fa-solid fa-warehouse text-xl"></i>
                     </div>
                     <h3 class="font-oswald text-base font-bold text-spartan-navy tracking-wider uppercase mb-3">Commercial Stock</h3>
-                    <p class="text-sm text-slate-600 font-light leading-relaxed mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor.</p>
+                    <p class="text-sm text-slate-600 font-light leading-relaxed mb-4">Marine supplies, workwear, deck hardware, and fleet consumables ready for pickup or account orders.</p>
                 </div>
                 <span class="inline-flex items-center text-xs font-bold tracking-wider text-spartan-teal group-hover:text-spartan-navy transition-colors mt-4 uppercase">
                     <span>SHOP INVENTORY</span>
@@ -568,7 +569,7 @@ require_once __DIR__ . '/partials/header.php';
                 <div class="absolute inset-x-0 bottom-0 p-8">
                     <span class="font-oswald text-[10px] font-bold text-spartan-teal tracking-[0.25em] uppercase block mb-2">SEASON PREP</span>
                     <h3 class="font-oswald text-3xl font-bold tracking-wider text-white uppercase leading-tight mb-3">Gear Up Before<br>The Season Opens</h3>
-                    <p class="text-sm text-slate-300 font-light mb-6 max-w-[280px]">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor.</p>
+                    <p class="text-sm text-slate-300 font-light mb-6 max-w-[280px]">Stock commercial fishing gear, buoys, rope, gloves, and deck supplies before weather and demand tighten lead times.</p>
                     <span class="inline-flex bg-spartan-teal text-white py-3 px-6 text-xs font-bold tracking-[0.2em] uppercase group-hover:bg-spartan-teal-light group-hover:text-spartan-navy transition-colors">
                         Shop Fishing Gear
                     </span>
@@ -584,7 +585,7 @@ require_once __DIR__ . '/partials/header.php';
                 <div class="absolute inset-x-0 bottom-0 p-8">
                     <span class="font-oswald text-[10px] font-bold text-spartan-teal tracking-[0.25em] uppercase block mb-2">MARINE SAFETY</span>
                     <h3 class="font-oswald text-3xl font-bold tracking-wider text-white uppercase leading-tight mb-3">Certified Kit For<br>Every Crew Member</h3>
-                    <p class="text-sm text-slate-300 font-light mb-6 max-w-[280px]">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor.</p>
+                    <p class="text-sm text-slate-300 font-light mb-6 max-w-[280px]">Find PFDs, immersion suits, life rafts, distress signals, and emergency gear selected for commercial marine work.</p>
                     <span class="inline-flex bg-spartan-teal text-white py-3 px-6 text-xs font-bold tracking-[0.2em] uppercase group-hover:bg-spartan-teal-light group-hover:text-spartan-navy transition-colors">
                         Shop Safety
                     </span>
@@ -647,10 +648,10 @@ require_once __DIR__ . '/partials/header.php';
                     <div class="w-14 h-4 bg-spartan-teal mb-5" style="-webkit-mask: url('assets/images/full-wave.svg') center / contain no-repeat; mask: url('assets/images/full-wave.svg') center / contain no-repeat;" aria-hidden="true"></div>
                     <span class="font-oswald text-[10px] font-bold text-spartan-teal tracking-[0.25em] uppercase block mb-3">CERTIFIED SERVICE CENTRE</span>
                     <h3 class="font-oswald text-2xl md:text-3xl font-bold tracking-wider text-spartan-navy uppercase leading-tight mb-4">
-                        Lorem Ipsum Dolor Sit Amet
+                        Rapid Service For Gear That Cannot Fail
                     </h3>
                     <p class="text-sm text-slate-600 font-light leading-relaxed mb-8 max-w-md">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+                        Schedule Transport Canada inspections, liferaft servicing, immersion suit testing, and custom rigging through local service teams that understand offshore deadlines.
                     </p>
                     <div>
                         <a href="services.php" class="inline-flex items-center bg-spartan-navy text-white py-3.5 px-7 text-xs font-bold tracking-[0.2em] uppercase hover:bg-spartan-charcoal transition-colors">
@@ -667,10 +668,10 @@ require_once __DIR__ . '/partials/header.php';
                     <div class="w-14 h-4 bg-spartan-teal mb-5" style="-webkit-mask: url('assets/images/full-wave.svg') center / contain no-repeat; mask: url('assets/images/full-wave.svg') center / contain no-repeat;" aria-hidden="true"></div>
                     <span class="font-oswald text-[10px] font-bold text-spartan-teal tracking-[0.25em] uppercase block mb-3">FLEET & COMMERCIAL ACCOUNTS</span>
                     <h3 class="font-oswald text-2xl md:text-3xl font-bold tracking-wider text-spartan-navy uppercase leading-tight mb-4">
-                        Lorem Ipsum Dolor Sit Amet
+                        Commercial Supply Without The Guesswork
                     </h3>
                     <p class="text-sm text-slate-600 font-light leading-relaxed mb-8 max-w-md">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+                        Source workwear, deck hardware, safety equipment, and fleet consumables through a procurement-ready catalogue built for commercial fishing, aquaculture, industrial, and military operations.
                     </p>
                     <div>
                         <a href="contact.php" class="inline-flex items-center border border-spartan-navy text-spartan-navy py-3.5 px-7 text-xs font-bold tracking-[0.2em] uppercase hover:bg-spartan-navy hover:text-white transition-colors">
@@ -708,7 +709,7 @@ require_once __DIR__ . '/partials/header.php';
                 </div>
                 <h3 class="font-oswald text-lg font-bold text-spartan-navy tracking-widest uppercase mb-3">Life Raft Inspection & Repack</h3>
                 <p class="text-sm text-slate-600 font-light leading-relaxed mb-5">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor.
+                    Certified deployment testing and regulatory safety fleet recertification.
                 </p>
                 <button onclick="requestService('Life Raft Inspection & Repack')" class="text-spartan-teal hover:text-spartan-navy text-[10px] font-bold tracking-[0.2em] inline-flex items-center uppercase transition-colors">
                     <span>Book Inspection</span>
@@ -723,7 +724,7 @@ require_once __DIR__ . '/partials/header.php';
                 </div>
                 <h3 class="font-oswald text-lg font-bold text-spartan-navy tracking-widest uppercase mb-3">Immersion Suit Testing</h3>
                 <p class="text-sm text-slate-600 font-light leading-relaxed mb-5">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor.
+                    Pressure and integrity testing to protect your crew in offshore operations.
                 </p>
                 <button onclick="requestService('Immersion Suit Testing')" class="text-spartan-teal hover:text-spartan-navy text-[10px] font-bold tracking-[0.2em] inline-flex items-center uppercase transition-colors">
                     <span>Schedule Testing</span>
@@ -738,7 +739,7 @@ require_once __DIR__ . '/partials/header.php';
                 </div>
                 <h3 class="font-oswald text-lg font-bold text-spartan-navy tracking-widest uppercase mb-3">Splicing & Custom Rigging</h3>
                 <p class="text-sm text-slate-600 font-light leading-relaxed mb-5">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor.
+                    Heavy wire rope fabrication and high-performance synthetic rope splicing.
                 </p>
                 <button onclick="requestService('Splicing & Custom Rigging')" class="text-spartan-teal hover:text-spartan-navy text-[10px] font-bold tracking-[0.2em] inline-flex items-center uppercase transition-colors">
                     <span>Request Assembly</span>
@@ -753,7 +754,7 @@ require_once __DIR__ . '/partials/header.php';
                 </div>
                 <h3 class="font-oswald text-lg font-bold text-spartan-navy tracking-widest uppercase mb-3">Certified Pull Testing</h3>
                 <p class="text-sm text-slate-600 font-light leading-relaxed mb-5">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor.
+                    Proof load testing to verify industrial rigging and asset load capacity.
                 </p>
                 <button onclick="requestService('Certified Pull Testing')" class="text-spartan-teal hover:text-spartan-navy text-[10px] font-bold tracking-[0.2em] inline-flex items-center uppercase transition-colors">
                     <span>Book Testing</span>
@@ -768,7 +769,7 @@ require_once __DIR__ . '/partials/header.php';
                 </div>
                 <h3 class="font-oswald text-lg font-bold text-spartan-navy tracking-widest uppercase mb-3">Compliance Inspections</h3>
                 <p class="text-sm text-slate-600 font-light leading-relaxed mb-5">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor.
+                    Technical expertise keeping fleets fully aligned with Transport Canada rules.
                 </p>
                 <button onclick="requestService('Compliance Inspections')" class="text-spartan-teal hover:text-spartan-navy text-[10px] font-bold tracking-[0.2em] inline-flex items-center uppercase transition-colors">
                     <span>Book Pre-Survey Check</span>
@@ -783,7 +784,7 @@ require_once __DIR__ . '/partials/header.php';
                 </div>
                 <h3 class="font-oswald text-lg font-bold text-spartan-navy tracking-widest uppercase mb-3">Vessel & Fleet Outfitting</h3>
                 <p class="text-sm text-slate-600 font-light leading-relaxed mb-5">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor.
+                    Procurement-ready deck hardware, commercial safety kits, and industrial supplies.
                 </p>
                 <button onclick="requestService('Vessel & Fleet Outfitting')" class="text-spartan-teal hover:text-spartan-navy text-[10px] font-bold tracking-[0.2em] inline-flex items-center uppercase transition-colors">
                     <span>Request a Quote</span>
@@ -815,7 +816,7 @@ require_once __DIR__ . '/partials/header.php';
                     <div class="absolute inset-x-0 bottom-0 p-8">
                         <span class="font-oswald text-[10px] font-bold text-spartan-teal tracking-[0.25em] uppercase block mb-2">ON THE WATER</span>
                         <h3 class="font-oswald text-2xl font-bold tracking-wider text-white uppercase leading-tight mb-3">Fishing, Aquaculture & Offshore</h3>
-                        <p class="text-xs text-slate-300 font-light mb-6 max-w-[300px]">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor.</p>
+                        <p class="text-xs text-slate-300 font-light mb-6 max-w-[300px]">Commercial supplies, safety gear, workwear, and rigging support for crews working in cold, wet, high-pressure conditions.</p>
                         <span class="inline-flex items-center text-[10px] font-bold tracking-[0.2em] text-spartan-teal group-hover:text-spartan-teal-light transition-colors uppercase">
                             <span>Talk To Us</span>
                             <i class="fa-solid fa-arrow-right text-[10px] ml-1.5 transition-transform duration-300 group-hover:translate-x-1"></i>
@@ -832,7 +833,7 @@ require_once __DIR__ . '/partials/header.php';
                     <div class="absolute inset-x-0 bottom-0 p-8">
                         <span class="font-oswald text-[10px] font-bold text-spartan-teal tracking-[0.25em] uppercase block mb-2">IN THE YARD</span>
                         <h3 class="font-oswald text-2xl font-bold tracking-wider text-white uppercase leading-tight mb-3">Shipyards, Industrial & Government</h3>
-                        <p class="text-xs text-slate-300 font-light mb-6 max-w-[300px]">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor.</p>
+                        <p class="text-xs text-slate-300 font-light mb-6 max-w-[300px]">Procurement-ready safety equipment, custom assemblies, and fleet consumables for complex operational schedules.</p>
                         <span class="inline-flex items-center text-[10px] font-bold tracking-[0.2em] text-spartan-teal group-hover:text-spartan-teal-light transition-colors uppercase">
                             <span>Talk To Us</span>
                             <i class="fa-solid fa-arrow-right text-[10px] ml-1.5 transition-transform duration-300 group-hover:translate-x-1"></i>
@@ -864,12 +865,12 @@ require_once __DIR__ . '/partials/header.php';
             <!-- Stats row -->
             <div class="mt-14 grid grid-cols-2 lg:grid-cols-4 gap-8 select-text">
                 <div class="border-l-2 border-spartan-teal pl-5">
-                    <span class="font-oswald text-3xl md:text-4xl font-bold text-white block leading-none">40+</span>
-                    <span class="text-[11px] text-slate-400 font-light tracking-wide mt-2 block">Years of combined experience on the water</span>
+                    <span class="font-oswald text-3xl md:text-4xl font-bold text-white block leading-none">45+</span>
+                    <span class="text-[11px] text-slate-400 font-light tracking-wide mt-2 block">Years serving Atlantic Canadian fleets</span>
                 </div>
                 <div class="border-l-2 border-spartan-teal pl-5">
-                    <span class="font-oswald text-3xl md:text-4xl font-bold text-white block leading-none">10,000+</span>
-                    <span class="text-[11px] text-slate-400 font-light tracking-wide mt-2 block">SKUs stocked across Atlantic Canada</span>
+                    <span class="font-oswald text-3xl md:text-4xl font-bold text-white block leading-none">7</span>
+                    <span class="text-[11px] text-slate-400 font-light tracking-wide mt-2 block">Active locations across Atlantic Canada</span>
                 </div>
                 <div class="border-l-2 border-spartan-teal pl-5">
                     <span class="font-oswald text-3xl md:text-4xl font-bold text-white block leading-none">48 HR</span>
@@ -1131,76 +1132,64 @@ require_once __DIR__ . '/partials/header.php';
                 <span class="font-oswald text-xs font-bold text-spartan-teal tracking-[0.25em] uppercase block mb-3">TESTIMONIALS</span>
                 <h2 class="font-oswald text-3xl md:text-4xl font-bold tracking-widest text-spartan-navy uppercase leading-tight">TRUSTED BY ATLANTIC MARINERS</h2>
                 <p class="text-sm text-slate-500 font-light mt-3 max-w-lg mx-auto">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Real crews and fleet operators rely on Spartan for responsive service, stocked branches, and practical support when conditions are working against them.
                 </p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Review 1 -->
+                <!-- Testimonial 1 -->
                 <div class="border border-slate-200/80 p-8 space-y-6 flex flex-col justify-between hover:border-slate-300 transition-colors bg-white">
                     <div class="space-y-4">
-                        <div class="flex items-center space-x-1 text-spartan-teal text-[11px]">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
+                        <div class="h-10 w-10 bg-spartan-light-gray text-spartan-teal flex items-center justify-center">
+                            <i class="fa-solid fa-quote-left text-sm"></i>
                         </div>
                         <p class="text-slate-700 font-light leading-relaxed text-sm">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+                            "Owning four boats in the commercial fishery industry, I appreciate the knowledge and dedication the staff put into supplying me with the products and services I require whenever I may require them."
                         </p>
                     </div>
                     <div class="pt-4 border-t border-slate-100">
-                        <h4 class="font-oswald text-sm font-bold text-spartan-navy tracking-wider uppercase">CAPT. JONATHAN LANDRY</h4>
-                        <span class="text-[10px] text-slate-400 block tracking-wider uppercase mt-0.5">F/V Sea Rover · Yarmouth, NS</span>
+                        <h4 class="font-oswald text-sm font-bold text-spartan-navy tracking-wider uppercase">HERB NASH</h4>
+                        <span class="text-[10px] text-slate-400 block tracking-wider uppercase mt-0.5">Crab/Lobster Fisherman, Glace Bay, NS</span>
                         <span class="inline-flex items-center text-[9px] font-bold text-spartan-teal tracking-widest uppercase mt-2">
-                            <i class="fa-solid fa-anchor text-[8px] mr-1.5"></i> FLEET ACCOUNT
+                            <i class="fa-solid fa-anchor text-[8px] mr-1.5"></i> SPARTAN SYDNEY
                         </span>
                     </div>
                 </div>
 
-                <!-- Review 2 -->
+                <!-- Testimonial 2 -->
                 <div class="border border-slate-200/80 p-8 space-y-6 flex flex-col justify-between hover:border-slate-300 transition-colors bg-white">
                     <div class="space-y-4">
-                        <div class="flex items-center space-x-1 text-spartan-teal text-[11px]">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
+                        <div class="h-10 w-10 bg-spartan-light-gray text-spartan-teal flex items-center justify-center">
+                            <i class="fa-solid fa-quote-left text-sm"></i>
                         </div>
                         <p class="text-slate-700 font-light leading-relaxed text-sm">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+                            "Spartan has always taken a personal approach to looking after our vessels in any port they have been working out of. Spartan's ability to supply our requirements has always been a big part of our long term relationship."
                         </p>
                     </div>
                     <div class="pt-4 border-t border-slate-100">
-                        <h4 class="font-oswald text-sm font-bold text-spartan-navy tracking-wider uppercase">SARAH MCALLISTER</h4>
-                        <span class="text-[10px] text-slate-400 block tracking-wider uppercase mt-0.5">Operations Director, Fundy Salmon Co.</span>
+                        <h4 class="font-oswald text-sm font-bold text-spartan-navy tracking-wider uppercase">MARK GOURDREAU</h4>
+                        <span class="text-[10px] text-slate-400 block tracking-wider uppercase mt-0.5">Procurement Specialist, Atlantic Towing Ltd, Dartmouth, NS</span>
                         <span class="inline-flex items-center text-[9px] font-bold text-spartan-teal tracking-widest uppercase mt-2">
-                            <i class="fa-solid fa-anchor text-[8px] mr-1.5"></i> VERIFIED ACCOUNT
+                            <i class="fa-solid fa-anchor text-[8px] mr-1.5"></i> SPARTAN DARTMOUTH
                         </span>
                     </div>
                 </div>
 
-                <!-- Review 3 -->
-                <div class="border border-slate-200/80 p-8 space-y-6 flex flex-col justify-between hover:border-slate-300 transition-colors bg-white">
+                <!-- Trust Card -->
+                <div class="border border-slate-200/80 p-8 space-y-6 flex flex-col justify-between hover:border-slate-300 transition-colors bg-spartan-navy text-white">
                     <div class="space-y-4">
-                        <div class="flex items-center space-x-1 text-spartan-teal text-[11px]">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
+                        <div class="h-10 w-10 bg-white/10 text-spartan-teal flex items-center justify-center">
+                            <i class="fa-solid fa-location-dot text-sm"></i>
                         </div>
-                        <p class="text-slate-700 font-light leading-relaxed text-sm">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+                        <p class="text-slate-300 font-light leading-relaxed text-sm">
+                            Seven active branches across Atlantic Canada keep Spartan close to working ports, stocked for commercial buyers, and ready to route service requests to the right local team.
                         </p>
                     </div>
-                    <div class="pt-4 border-t border-slate-100">
-                        <h4 class="font-oswald text-sm font-bold text-spartan-navy tracking-wider uppercase">MARKUS NIELSEN</h4>
-                        <span class="text-[10px] text-slate-400 block tracking-wider uppercase mt-0.5">Fleet Engineer, Atlantic Tug & Barge</span>
+                    <div class="pt-4 border-t border-white/10">
+                        <h4 class="font-oswald text-sm font-bold text-white tracking-wider uppercase">LOCAL SUPPORT NETWORK</h4>
+                        <span class="text-[10px] text-slate-400 block tracking-wider uppercase mt-0.5">Products, service, and compliance help</span>
                         <span class="inline-flex items-center text-[9px] font-bold text-spartan-teal tracking-widest uppercase mt-2">
-                            <i class="fa-solid fa-anchor text-[8px] mr-1.5"></i> COMMERCIAL CUSTOMER
+                            <i class="fa-solid fa-anchor text-[8px] mr-1.5"></i> ATLANTIC CANADA
                         </span>
                     </div>
                 </div>
@@ -1228,22 +1217,22 @@ require_once __DIR__ . '/partials/header.php';
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Article 1 -->
-                <a href="blog-single.php" class="group flex flex-col justify-between bg-white border border-slate-200/65 overflow-hidden transition-all duration-300 hover:bg-slate-50/50">
+                <?php foreach (array_slice($site_posts, 0, 3) as $home_post): ?>
+                <a href="<?php echo site_escape(site_post_url($home_post)); ?>" class="group flex flex-col justify-between bg-white border border-slate-200/65 overflow-hidden transition-all duration-300 hover:bg-slate-50/50">
                     <div>
                         <div class="h-48 w-full overflow-hidden bg-spartan-navy relative">
-                            <img src="assets/images/j9/life-raft-inspection.webp" alt="SOLAS life rafts" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 ease-in-out">
+                            <img src="<?php echo site_escape($home_post['image']); ?>" alt="<?php echo site_escape($home_post['title']); ?>" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 ease-in-out">
                         </div>
                         <div class="p-8 space-y-3">
                             <div class="flex items-center justify-between text-[9px] font-mono tracking-wider text-slate-400">
-                                <span>SAFETY COMPLIANCE</span>
-                                <span>JUNE 18, 2026</span>
+                                <span><?php echo site_escape($home_post['category']); ?></span>
+                                <span><?php echo site_escape($home_post['date']); ?></span>
                             </div>
                             <h3 class="font-oswald text-lg font-bold text-spartan-navy uppercase tracking-wider group-hover:text-spartan-teal transition-colors leading-snug">
-                                Transport Canada Life Raft Regs: What Changed?
+                                <?php echo site_escape($home_post['title']); ?>
                             </h3>
                             <p class="text-xs text-slate-500 font-light leading-relaxed">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor.
+                                <?php echo site_escape($home_post['excerpt']); ?>
                             </p>
                         </div>
                     </div>
@@ -1254,60 +1243,7 @@ require_once __DIR__ . '/partials/header.php';
                         </span>
                     </div>
                 </a>
-
-                <!-- Article 2 -->
-                <a href="blog-single.php" class="group flex flex-col justify-between bg-white border border-slate-200/65 overflow-hidden transition-all duration-300 hover:bg-slate-50/50">
-                    <div>
-                        <div class="h-48 w-full overflow-hidden bg-spartan-navy relative">
-                            <img src="assets/images/j9/marine-rigging.webp" alt="Rope and rigging supplies organized in a Spartan shop" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 ease-in-out">
-                        </div>
-                        <div class="p-8 space-y-3">
-                            <div class="flex items-center justify-between text-[9px] font-mono tracking-wider text-slate-400">
-                                <span>RIGGING GUIDE</span>
-                                <span>MAY 24, 2026</span>
-                            </div>
-                            <h3 class="font-oswald text-lg font-bold text-spartan-navy uppercase tracking-wider group-hover:text-spartan-teal transition-colors leading-snug">
-                                Wire Swaging vs. Socketing: Choosing Ends
-                            </h3>
-                            <p class="text-xs text-slate-500 font-light leading-relaxed">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="px-8 pb-8 pt-2">
-                        <span class="inline-flex items-center text-[9px] font-bold text-spartan-teal group-hover:text-spartan-navy transition-colors tracking-widest uppercase">
-                            <span>READ ARTICLE</span>
-                            <i class="fa-solid fa-arrow-right text-[8px] ml-1.5 transition-transform duration-300 group-hover:translate-x-1"></i>
-                        </span>
-                    </div>
-                </a>
-
-                <!-- Article 3 -->
-                <a href="blog-single.php" class="group flex flex-col justify-between bg-white border border-slate-200/65 overflow-hidden transition-all duration-300 hover:bg-slate-50/50">
-                    <div>
-                        <div class="h-48 w-full overflow-hidden bg-spartan-navy relative">
-                            <img src="assets/images/j9/commercial-fishing.webp" alt="Commercial fisherman repairing trap gear at sea" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 ease-in-out">
-                        </div>
-                        <div class="p-8 space-y-3">
-                            <div class="flex items-center justify-between text-[9px] font-mono tracking-wider text-slate-400">
-                                <span>INDUSTRY INSIGHT</span>
-                                <span>JUNE 30, 2026</span>
-                            </div>
-                            <h3 class="font-oswald text-lg font-bold text-spartan-navy uppercase tracking-wider group-hover:text-spartan-teal transition-colors leading-snug">
-                                Fall Prep: Trap Sourcing & Sizing Timelines
-                            </h3>
-                            <p class="text-xs text-slate-500 font-light leading-relaxed">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="px-8 pb-8 pt-2">
-                        <span class="inline-flex items-center text-[9px] font-bold text-spartan-teal group-hover:text-spartan-navy transition-colors tracking-widest uppercase">
-                            <span>READ ARTICLE</span>
-                            <i class="fa-solid fa-arrow-right text-[8px] ml-1.5 transition-transform duration-300 group-hover:translate-x-1"></i>
-                        </span>
-                    </div>
-                </a>
+                <?php endforeach; ?>
             </div>
         </div>
     </section>
@@ -1326,7 +1262,7 @@ require_once __DIR__ . '/partials/header.php';
                     Don't wait for survey week.
                 </h2>
                 <p class="text-sm text-white/90 font-light leading-relaxed max-w-xl">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    Book liferaft servicing, immersion suit testing, compliance inspections, and custom rigging before the next vessel deadline is already on deck.
                 </p>
             </div>
             <div class="flex flex-wrap gap-4 shrink-0">
@@ -1381,7 +1317,7 @@ require_once __DIR__ . '/partials/header.php';
                 <span class="font-oswald text-xs font-bold text-spartan-teal tracking-[0.25em] uppercase block mb-3">KNOWLEDGE BASE</span>
                 <h2 class="font-oswald text-3xl md:text-4xl font-bold tracking-widest text-spartan-navy uppercase leading-tight">FREQUENTLY ASKED QUESTIONS</h2>
                 <p class="text-sm text-slate-500 font-light mt-3 max-w-lg mx-auto">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Answers for crews, buyers, and fleet managers sourcing marine gear or service support across Atlantic Canada.
                 </p>
             </div>
 
@@ -1455,116 +1391,56 @@ require_once __DIR__ . '/partials/header.php';
                         Yes, our Dartmouth HQ is fully equipped to program, test, and recertify Cospas-Sarsat EPIRBs (Emergency Position Indicating Radio Beacons) and PLBs (Personal Locator Beacons). We program country-specific MMSI protocols, perform battery replacements, verify GPS signals, and register the beacon data directly with the Canadian Beacon Registry.
                     </div>
                 </details>
-            </div>
-        </div>
-    </section>
 
-
-    <!-- ======================================================= -->
-    <!-- ================== CONTACT SECTION ==================== -->
-    <!-- Lead inquiry block                                      -->
-    <!-- ======================================================= -->
-    <section id="contact-section" class="py-20 md:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-14 select-text">
-
-            <!-- Left: Contact Form -->
-            <div class="flex flex-col justify-start">
-                <div class="w-14 h-4 bg-spartan-teal mb-5" style="-webkit-mask: url('assets/images/full-wave.svg') center / contain no-repeat; mask: url('assets/images/full-wave.svg') center / contain no-repeat;" aria-hidden="true"></div>
-                <span class="font-oswald text-xs font-bold text-spartan-teal tracking-[0.25em] uppercase block mb-3">CONTACT US</span>
-                <h2 class="font-oswald text-3xl font-bold tracking-widest text-spartan-navy uppercase leading-tight mb-6">SEND AN INQUIRY</h2>
-                
-                <form onsubmit="event.preventDefault(); showToast('MESSAGE SENT', 'Thank you! A Spartan marine specialist will contact you shortly.'); this.reset();" class="space-y-5 max-w-lg">
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <div class="space-y-1.5">
-                            <label for="contact-name" class="font-oswald text-[10px] font-bold tracking-wider text-slate-500 uppercase">Full Name *</label>
-                            <input type="text" id="contact-name" required placeholder="John Doe" class="w-full bg-slate-50 border border-slate-200/80 focus:border-spartan-teal focus:bg-white px-4 py-3 text-xs outline-none rounded-none transition-all">
-                        </div>
-                        <div class="space-y-1.5">
-                            <label for="contact-email" class="font-oswald text-[10px] font-bold tracking-wider text-slate-500 uppercase">Work Email *</label>
-                            <input type="email" id="contact-email" required placeholder="john@vessel.com" class="w-full bg-slate-50 border border-slate-200/80 focus:border-spartan-teal focus:bg-white px-4 py-3 text-xs outline-none rounded-none transition-all">
-                        </div>
+                <!-- FAQ Item 6 -->
+                <details class="group bg-white border border-slate-200/60 p-6 transition-all duration-300 [&_summary::-webkit-details-marker]:hidden open:border-spartan-teal/30">
+                    <summary class="flex items-center justify-between cursor-pointer focus:outline-none">
+                        <h3 class="font-oswald text-base font-bold text-spartan-navy tracking-wider uppercase">Where are your branches located, and do you offer dockside delivery to Atlantic ports?</h3>
+                        <span class="relative h-5 w-5 shrink-0">
+                            <i class="fa-solid fa-plus absolute inset-0 text-slate-400 group-open:opacity-0 transition-opacity duration-300"></i>
+                            <i class="fa-solid fa-minus absolute inset-0 text-spartan-teal opacity-0 group-open:opacity-100 transition-opacity duration-300"></i>
+                        </span>
+                    </summary>
+                    <div class="mt-4 text-sm text-slate-600 font-light leading-relaxed border-t border-slate-100 pt-4">
+                        Our head office and primary service facility is located at 120 Thornhill Drive in Dartmouth, NS. We also operate active regional branches in Sydney, Yarmouth, Barrington Passage, Caraquet, Charlottetown, and Paradise. We can coordinate reliable local pickup, dockside delivery, and hot-shot transport to regional commercial slips, processing facilities, and shipyards.
                     </div>
+                </details>
 
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <div class="space-y-1.5">
-                            <label for="contact-company" class="font-oswald text-[10px] font-bold tracking-wider text-slate-500 uppercase">Company / Vessel</label>
-                            <input type="text" id="contact-company" placeholder="e.g. Atlantic FV" class="w-full bg-slate-50 border border-slate-200/80 focus:border-spartan-teal focus:bg-white px-4 py-3 text-xs outline-none rounded-none transition-all">
-                        </div>
-                        <div class="space-y-1.5">
-                            <label for="contact-dept" class="font-oswald text-[10px] font-bold tracking-wider text-slate-500 uppercase">Department *</label>
-                            <select id="contact-dept" required class="w-full bg-slate-50 border border-slate-200/80 focus:border-spartan-teal focus:bg-white px-4 py-3 text-xs outline-none rounded-none transition-all cursor-pointer">
-                                <option value="" disabled selected>Select Department...</option>
-                                <option value="safety">SOLAS Liferaft Servicing</option>
-                                <option value="rigging">Rigging & Splicing</option>
-                                <option value="compliance">Compliance Audit Request</option>
-                                <option value="sales">Commercial Gear Sales</option>
-                                <option value="other">General Inquiry</option>
-                            </select>
-                        </div>
+                <!-- FAQ Item 7 -->
+                <details class="group bg-white border border-slate-200/60 p-6 transition-all duration-300 [&_summary::-webkit-details-marker]:hidden open:border-spartan-teal/30">
+                    <summary class="flex items-center justify-between cursor-pointer focus:outline-none">
+                        <h3 class="font-oswald text-base font-bold text-spartan-navy tracking-wider uppercase">Can we purchase bulk commercial supplies, deck hardware, and fleet consumables online?</h3>
+                        <span class="relative h-5 w-5 shrink-0">
+                            <i class="fa-solid fa-plus absolute inset-0 text-slate-400 group-open:opacity-0 transition-opacity duration-300"></i>
+                            <i class="fa-solid fa-minus absolute inset-0 text-spartan-teal opacity-0 group-open:opacity-100 transition-opacity duration-300"></i>
+                        </span>
+                    </summary>
+                    <div class="mt-4 text-sm text-slate-600 font-light leading-relaxed border-t border-slate-100 pt-4">
+                        Yes. Our e-commerce platform is custom-built for commercial fishing, aquaculture, and industrial procurement. Registered corporate accounts can log in directly to buy commercial deck hardware, zinc anodes, institutional safety kits, and heavy rigging supplies in bulk. Custom volume-based price tiering can apply automatically at checkout for eligible accounts.
                     </div>
+                </details>
 
-                    <div class="space-y-1.5">
-                        <label for="contact-msg" class="font-oswald text-[10px] font-bold tracking-wider text-slate-500 uppercase">Message *</label>
-                        <textarea id="contact-msg" required rows="4" placeholder="How can we help you? Describe your gear, vessel, or service required..." class="w-full bg-slate-50 border border-slate-200/80 focus:border-spartan-teal focus:bg-white px-4 py-3 text-xs outline-none rounded-none transition-all resize-none"></textarea>
+                <!-- FAQ Item 8 -->
+                <details class="group bg-white border border-slate-200/60 p-6 transition-all duration-300 [&_summary::-webkit-details-marker]:hidden open:border-spartan-teal/30">
+                    <summary class="flex items-center justify-between cursor-pointer focus:outline-none">
+                        <h3 class="font-oswald text-base font-bold text-spartan-navy tracking-wider uppercase">Do you stock complete safety and emergency rescue kits for commercial fleet compliance?</h3>
+                        <span class="relative h-5 w-5 shrink-0">
+                            <i class="fa-solid fa-plus absolute inset-0 text-slate-400 group-open:opacity-0 transition-opacity duration-300"></i>
+                            <i class="fa-solid fa-minus absolute inset-0 text-spartan-teal opacity-0 group-open:opacity-100 transition-opacity duration-300"></i>
+                        </span>
+                    </summary>
+                    <div class="mt-4 text-sm text-slate-600 font-light leading-relaxed border-t border-slate-100 pt-4">
+                        Yes. We supply fully integrated, commercial-grade emergency rescue and safety packages tailored to Transport Canada and SOLAS regulations. Required safety equipment varies based on location and vessel type, but inventory can include visual distress signals, heavy-duty sound signaling devices, fixed or handheld VHF marine radios, compliance checklists, and vessel outfitting logs.
                     </div>
-
-                    <button type="submit" class="w-full sm:w-auto bg-spartan-teal text-white py-3.5 px-8 text-xs font-bold tracking-[0.2em] flex items-center justify-center hover:bg-spartan-teal-light hover:text-spartan-navy transition-all duration-300 uppercase rounded-none">
-                        <span>SEND INQUIRY</span>
-                        <i class="fa-solid fa-arrow-right text-[11px] ml-2.5"></i>
-                    </button>
-                </form>
+                </details>
             </div>
 
-            <!-- Right: Lead support -->
-            <div class="flex flex-col justify-start">
-                <div class="bg-spartan-navy text-white p-8 lg:p-10 relative overflow-hidden">
-                    <div class="absolute -right-20 -bottom-10 w-[360px] h-32 bg-spartan-teal opacity-10 pointer-events-none" style="-webkit-mask: url('assets/images/full-wave.svg') center / contain no-repeat; mask: url('assets/images/full-wave.svg') center / contain no-repeat;" aria-hidden="true"></div>
-                    <div class="relative z-10">
-                        <span class="font-oswald text-[10px] font-bold text-spartan-teal tracking-[0.25em] uppercase block mb-3">GET THE RIGHT GEAR FASTER</span>
-                        <h3 class="font-oswald text-2xl md:text-3xl font-bold tracking-widest uppercase leading-tight mb-4">Tell us what you need. We will route it to the right Spartan team.</h3>
-                        <p class="text-sm text-slate-300 font-light leading-relaxed max-w-xl mb-8">
-                            Send product questions, service requests, quote needs, or vessel supply lists. A Spartan specialist will follow up with availability, pricing, and next steps.
-                        </p>
-
-                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8">
-                            <div class="border border-white/10 bg-white/[0.04] p-4">
-                                <span class="block font-oswald text-[10px] font-bold text-spartan-teal tracking-[0.2em] uppercase mb-2">1. Send</span>
-                                <p class="text-xs text-slate-300 font-light leading-relaxed">Share the product, service, vessel, or deadline.</p>
-                            </div>
-                            <div class="border border-white/10 bg-white/[0.04] p-4">
-                                <span class="block font-oswald text-[10px] font-bold text-spartan-teal tracking-[0.2em] uppercase mb-2">2. Review</span>
-                                <p class="text-xs text-slate-300 font-light leading-relaxed">We check stock, fit, specs, and service requirements.</p>
-                            </div>
-                            <div class="border border-white/10 bg-white/[0.04] p-4">
-                                <span class="block font-oswald text-[10px] font-bold text-spartan-teal tracking-[0.2em] uppercase mb-2">3. Confirm</span>
-                                <p class="text-xs text-slate-300 font-light leading-relaxed">Get pricing, timing, and pickup or delivery options.</p>
-                            </div>
-                        </div>
-
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <a href="<?php echo site_escape($site['phone_href']); ?>" class="group border border-white/15 bg-white text-spartan-navy p-5 hover:bg-spartan-teal-light transition-colors">
-                                <span class="text-slate-500 block uppercase tracking-wider font-mono text-[9px] mb-1">Call Spartan</span>
-                                <span class="font-bold text-lg group-hover:text-spartan-navy"><?php echo site_escape($site['phone']); ?></span>
-                            </a>
-                            <a href="mailto:<?php echo site_escape($site['email']); ?>" class="group border border-white/15 bg-white text-spartan-navy p-5 hover:bg-spartan-teal-light transition-colors">
-                                <span class="text-slate-500 block uppercase tracking-wider font-mono text-[9px] mb-1">Email</span>
-                                <span class="font-bold text-base break-words group-hover:text-spartan-navy"><?php echo site_escape($site['email']); ?></span>
-                            </a>
-                        </div>
-
-                        <div class="mt-6 border-t border-white/10 pt-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
-                            <p class="text-xs text-slate-300 font-light">
-                                <?php echo site_escape($site['hours']); ?> Atlantic
-                            </p>
-                            <a href="contact.php" class="inline-flex items-center text-[10px] font-bold tracking-[0.2em] text-spartan-teal uppercase hover:text-white transition-colors">
-                                <span>Contact Page</span>
-                                <i class="fa-solid fa-arrow-right text-[10px] ml-2"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+            <div class="mt-12 text-center">
+                <a href="contact.php" class="inline-flex items-center justify-center bg-spartan-teal text-white py-4 px-8 text-xs font-bold tracking-[0.2em] uppercase hover:bg-spartan-navy transition-colors">
+                    <span>Contact Spartan</span>
+                    <i class="fa-solid fa-arrow-right text-[11px] ml-2.5"></i>
+                </a>
             </div>
-
         </div>
     </section>
 
@@ -1580,7 +1456,7 @@ require_once __DIR__ . '/partials/header.php';
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 select-text">
             <h2 class="font-oswald text-xs font-bold text-spartan-teal tracking-[0.3em] uppercase mb-4">READY WHEN CONDITIONS TURN</h2>
             <p class="font-oswald text-2xl md:text-3xl font-bold tracking-widest uppercase leading-snug max-w-3xl mx-auto">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                More than marine supplies: Spartan keeps commercial, industrial, and offshore operations equipped, compliant, and ready for the job.
             </p>
         </div>
     </section>
