@@ -2,6 +2,75 @@
 
 return [
     [
+        'slug' => 'canada-shipping-act-fleet-compliance',
+        'title' => 'Canada Shipping Act: Is Your Fleet Compliant?',
+        'meta_title' => 'Canada Shipping Act: Is Your Fleet Compliant? | Spartan Industrial Marine',
+        'meta_description' => 'Does your fleet meet the Canada Shipping Act standards? Review your hardware requirements, verify your vessel certifications, and pass your next audit.',
+        'category' => 'Compliance',
+        'date' => 'July 29, 2026',
+        'date_iso' => '2026-07-29',
+        'image' => 'assets/images/j9/service-compliance.webp',
+        'excerpt' => 'A practical look at Canada Shipping Act compliance, certified hardware, Transport Canada inspection readiness, and fleet safety documentation.',
+        'author' => 'Spartan Safety Team',
+        'author_role' => 'Marine Safety & Compliance Support',
+        'author_bio' => 'Inspection, safety equipment, and compliance support for commercial fleets across Atlantic Canada.',
+        'read_time' => '5 min read',
+        'body' => <<<'HTML'
+<p>Operating a commercial vessel in Canadian waters requires absolute regulatory diligence. Sourcing the wrong hardware can paralyze your operations. This guide breaks down the core safety rules you must follow to keep your industrial marine fleet fully compliant and clear of costly port detentions.</p>
+
+<h2>What Is the Canada Shipping Act?</h2>
+<p>The Canada Shipping Act, 2001 (CSA 2001) is the core federal legislation governing maritime safety and environmental protection while promoting efficient, competitive marine transportation. To enforce strict compliance across commercial fleets, the Act requires all vessels to be registered unless explicitly exempted, and grants the Minister authority to regulate shore-based oil handling facilities. Ultimately, this framework aligns Canadian maritime law with strict international standards, ensuring safe shipping operations nationwide.</p>
+
+<h3>The Financial Toll of Non-Compliance</h3>
+<p>Transport Canada has dramatically escalated its enforcement actions under the Act [Oceans Protection Plan]. The days of receiving minor warnings for outdated gear are gone. Through recent legislative overhauls under the Oceans Protection Plan, the maximum Administrative Monetary Penalty (AMP) has skyrocketed from $25,000 to up to $250,000 per violation.</p>
+<p>Transport Canada categorizes these violations into three distinct enforcement tiers:</p>
+<ul>
+    <li><strong>Minor Violations:</strong> Administrative oversights or failing to log specific operational entries.</li>
+    <li><strong>Medium Violations:</strong> Failing to meet strict pollution response or personnel credentialing benchmarks.</li>
+    <li><strong>Serious Violations:</strong> Operating with uncertified machinery, improper gas storage, or inadequate fire safety systems that directly threaten crew safety.</li>
+</ul>
+
+<h3>Authorized Representatives Carry Personal Liability</h3>
+<p>Managing vessel compliance requires an appointed Authorized Representative (AR), but this role carries immense legal exposure. Under Bill C-47 amendments to the Act, legal and financial liabilities fall directly on the AR, making them jointly liable alongside the shipowner. To reinforce these rules, Transport Canada possesses full statutory powers to immediately detain any unsafe vessel at port.</p>
+<p>Because of this intense personal liability exposure, ensuring that every piece of physical equipment on board is fully certified is a top priority.</p>
+
+<h2>How to Pass Your Next Transport Canada Inspection</h2>
+<p>The most effective strategy to safeguard your fleet and eliminate the threat of a $250,000 fine is to proactively upgrade your equipment. At Spartan Marine, we understand that passing an inspection requires absolute accuracy in your component documentation. To streamline this process, we align our inventory to ensure your vessels meet these four vital equipment checkpoints with total reliability.</p>
+
+<h3>1. Class-Approved Fire Safety</h3>
+<p>The Act mandates strict fire detection and extinguishing capabilities for all commercial hulls. Vessels must carry fully certified, class-approved marine fire suppression systems. Relying on outdated or unrated extinguishers will trigger an immediate inspection failure, defeating the primary purposes of your on-board safety protocols.</p>
+
+<h3>2. Certified Life-Saving Appliances</h3>
+<p>From commercial trawlers to tugboats, rigid standards dictate the type, quantity, and certification of on-board life-saving gear. This includes Transport Canada-approved immersion suits, commercial life rafts, and emergency signaling electronics. For your convenience, our team can help you bundle these required items to ensure complete, single-source fleet readiness.</p>
+
+<h3>3. Machinery and Hull Integrity</h3>
+<p>Under the Vessel Construction and Equipment Regulations (VCER), vessels over 24 meters must meet exact structural standards. Because the Act mandates rigorous inspections of both ships and cargo, critical components like steering gear, valves, and bulkheads must carry valid class certifications, such as ABS, DNV, or Lloyd's Register.</p>
+
+<h3>4. Crew Certification, Training, and Arctic Safety</h3>
+<p>For fleets operating north, your hardware must comply with specialized regulations for Arctic shipping safety to endure extreme environments. Beyond physical assets, the CSA 2001 mandates rigid requirements for crew certification and safety training. Through our sister company, we offer comprehensive Hercules SLR Marine Training Courses designed to help your team exceed federal safety baselines.</p>
+
+<h2>Prevent Port Delays: Order Certified Spares Today</h2>
+<p>The fastest way to pass your next Transport Canada inspection is to source pre-certified components that come with clear manufacturer paperwork. Do not let supply chain delays tie up your vessels and be prepared for future audits. <a href="products.php">Browse our certified marine products online</a> to secure immediate replacement hardware. Our industrial marine inventory is ready to ship directly to Atlantic Canadian ports, eliminating costly operational downtime. Need more support? Consult a Spartan Marine expert to review your complex fleet compliance or crew training needs, and ensure your operations match the latest federal standards.</p>
+
+<h2>Frequently Asked Questions</h2>
+
+<h3>What is the history of the Canada Shipping Act?</h3>
+<p>The original Canada Shipping Act was first passed in 1934 and came into force in 1936. Major revisions to the Act occurred in 1948 regarding ship certification, and again in 1956 to incorporate environmental law. Later on, in 1985, the Canada Shipping Act was redrafted into the modern framework we use today: the Canada Shipping Act, 2001.</p>
+
+<h3>What is the focus of Part II of the Canada Shipping Act, 2001?</h3>
+<p>Part II of the Act focuses strictly on registration, listing, and commercial flagging. Under these rules, any person acting as the Authorized Representative must maintain valid safety documents on board. These official records must be readily available if transport officers board your vessel to conduct a compliance search or inspection.</p>
+
+<h3>Does the Act impact commercial fisheries and environmental safety?</h3>
+<p>Yes. The Act dictates safety parameters that directly impact commercial fisheries and industrial fleets, particularly regarding pollution prevention. For detailed guidelines on maintaining certified safety equipment, you can review the official regulatory documents listed directly on the Government of Canada's page.</p>
+
+<h3>What is the Shipping Conferences Exemption Act?</h3>
+<p>The Shipping Conferences Exemption Act (SCEA) is a dedicated law that exempts ocean liner cartels and international shipping alliances from specific provisions of Canada's Competition Act. It regulates international ocean freight pricing and cargo allocation rules rather than physical vessel safety equipment.</p>
+
+<h3>Do the Small Vessel Regulations apply to industrial fleets?</h3>
+<p>Yes, but only under specific thresholds. While primarily focused on pleasure craft, the Small Vessel Regulations strictly govern small commercial workboats and passenger vessels under 15 gross tonnage. If your fleet includes small industrial tugs, tenders, or workboats, they must match the specific life-saving and firefighting equipment requirements outlined in this framework.</p>
+HTML,
+    ],
+    [
         'slug' => 'mackerel-as-bait-dfo-quota',
         'title' => 'Mackerel as Bait: How the New DFO Quota Affects Fishing Operations',
         'meta_title' => 'Mackerel as Bait & New DFO Quota | Spartan Industrial Marine',

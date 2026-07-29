@@ -340,9 +340,9 @@ $footer_menu_sections = [
             // Homepage-style tab buttons (id="tab-xxx")
             document.querySelectorAll('[id^="tab-"]').forEach(btn => {
                 if (filterType === 'category' && btn.id === `tab-${filterValue}`) {
-                    btn.className = "bg-spartan-navy text-white px-4 py-2 hover:bg-spartan-teal transition-colors";
+                    btn.className = "bg-spartan-navy text-white border border-spartan-navy px-4 py-2 ring-2 ring-spartan-teal ring-offset-2 ring-offset-white shadow-sm transition-colors";
                 } else {
-                    btn.className = "bg-spartan-light-gray text-slate-700 px-4 py-2 hover:bg-spartan-teal hover:text-white transition-colors";
+                    btn.className = "bg-white border border-slate-200 text-slate-700 px-4 py-2 hover:border-spartan-teal hover:text-spartan-navy transition-colors";
                 }
             });
 

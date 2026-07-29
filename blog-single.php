@@ -57,6 +57,8 @@ $head_extra = '<style>
 .article-content li { padding-left: 0.25rem; line-height: 1.75; font-weight: 300; }
 .article-content li + li { margin-top: 0.7rem; }
 .article-content strong { color: #0d1f2a; font-weight: 700; }
+.article-content a { color: #00B3A6; font-weight: 600; text-decoration: underline; text-underline-offset: 0.2em; }
+.article-content a:hover { color: #0d1f2a; }
 .article-content table { width: 100%; min-width: 640px; border-collapse: collapse; font-size: 0.9rem; color: #334155; }
 .article-content th { background: #0d1f2a; color: #fff; font-family: "Oswald", sans-serif; letter-spacing: 0.12em; text-transform: uppercase; font-size: 0.76rem; text-align: left; padding: 1rem; }
 .article-content td { border: 1px solid #dbe4ee; padding: 1rem; vertical-align: top; line-height: 1.55; }
