@@ -13,159 +13,23 @@ $page_title = $page_title ?? 'Spartan Industrial Marine | Commercial Marine Supp
 $meta_description = $meta_description ?? 'Rope, rigging, safety equipment, commercial fishing gear, and certified life raft and immersion suit servicing for the people who work on the water. Atlantic Canada.';
 $active_nav = $active_nav ?? '';
 
-if (!function_exists('shop_category_link')) {
-    function shop_category_link($label) {
-        return [
-            'label' => $label,
-            'url' => site_product_category_url($label),
-        ];
-    }
+$shop_menu_preview_limit = 6;
+$shop_menu_columns = [];
+foreach ($site_product_category_groups as $shop_group_slug => $shop_group) {
+    $shop_menu_columns[] = [
+        [
+            'title' => $shop_group['label'],
+            'url' => site_product_group_url($shop_group_slug),
+            'slug' => $shop_group_slug,
+            'links' => array_map(function ($label) {
+                return [
+                    'label' => $label,
+                    'url' => site_product_category_url($label),
+                ];
+            }, $shop_group['categories'] ?? []),
+        ],
+    ];
 }
-
-$shop_menu_columns = [
-    [
-        [
-            'title' => 'Rope, Line & Nets',
-            'links' => array_map('shop_category_link', [
-                'Rope',
-                'Twine',
-                'Nets',
-                'Net Needles',
-                'Fishing Line',
-                'Leadlines',
-                'Shock Cord',
-            ]),
-        ],
-    ],
-    [
-        [
-            'title' => 'Rigging Hardware',
-            'links' => array_map('shop_category_link', [
-                'Hooks',
-                'Shackles',
-                'Sleeves',
-                'Turnbuckles',
-                'Links',
-                'Clips',
-                'Snaps',
-                'Swivels',
-                'Thimbles',
-                'Chain',
-                'Tie-Down Straps',
-                'Load Binders',
-                'Hammerlocks',
-                'Eye Bolts',
-                'Eye Nuts',
-            ]),
-        ],
-    ],
-    [
-        [
-            'title' => 'Workwear & Footwear',
-            'links' => array_map('shop_category_link', [
-                'Boots',
-                'Insoles',
-                'Boot Bands',
-                'Jackets',
-                'Foul Weather Jackets',
-                'Pants',
-                'Foul Weather Pants',
-                'Gloves',
-                'Bibs',
-                'Belts',
-                'Belt Extender',
-                'Base Layer Bottoms',
-                'Base Layer Tops',
-                'Leggings',
-                'Hoodies',
-                'Balaclavas',
-                'Aprons',
-                'Kneepads',
-                'Hairnets',
-                'Duffle Bags',
-            ]),
-        ],
-    ],
-    [
-        [
-            'title' => 'Safety, Buoys & Survival',
-            'links' => array_map('shop_category_link', [
-                'Buoys',
-                'Fenders',
-                'PFDs',
-                'Immersion Suits',
-                'Life Rafts',
-                'Re-Arm Kits',
-                'Marine Pyrotechnics',
-                'Personal Locator Beacons',
-                'EPIRBs',
-                'Reflective Tape',
-                'Lights',
-                'Markers',
-            ]),
-        ],
-    ],
-    [
-        [
-            'title' => 'Fishing & Trap Gear',
-            'links' => array_map('shop_category_link', [
-                'Knives',
-                'Fishing Lures',
-                'Gangion',
-                'Lobster Bands',
-                'Lobster Trap Components',
-                'Crabpot Cones',
-                'Fish Boxes',
-                'Lobster Crackers and Forks',
-                'Bait Jars',
-                'Lobster Gauges',
-                'Lobster Pot Escape Hatches',
-                'Scallop Bags',
-                'Scallop Knives',
-                'Sinkers',
-            ]),
-        ],
-    ],
-    [
-        [
-            'title' => 'Maintenance & Supplies',
-            'links' => array_map('shop_category_link', [
-                'Marine Paint',
-                'Nails',
-                'Brushes',
-                'Cleaners',
-                'Flax Packing',
-                'Cutting Tools',
-                'Fuel Additives',
-                'Grease',
-                'Screws',
-                'Staples',
-                'Anti-Fatigue Mats',
-                'Bleach',
-                'Boat Hooks',
-                'Buttons',
-                'Clip Tools',
-                'Latch Kits',
-                'Lubricants',
-                'Scraper',
-                'Sharpeners',
-                'Wipe Cloths',
-                'Zipper Lubricants',
-            ]),
-        ],
-    ],
-];
-
-foreach ($shop_menu_columns as &$shop_menu_column) {
-    foreach ($shop_menu_column as &$shop_menu_group) {
-        $shop_group_meta = site_product_group_by_label($shop_menu_group['title'] ?? '');
-        if ($shop_group_meta !== null) {
-            $shop_menu_group['url'] = site_product_group_url($shop_group_meta['slug']);
-            $shop_menu_group['slug'] = $shop_group_meta['slug'];
-        }
-    }
-}
-unset($shop_menu_column, $shop_menu_group, $shop_group_meta);
 
 $marine_service_menu = [
     ['label' => 'Inspections & Repairs', 'url' => 'services.php'],
@@ -177,6 +41,7 @@ $resource_menu = [
     ['label' => 'Definitions & Warnings', 'url' => 'terms.php'],
     ['label' => 'Industry Articles', 'url' => 'blog.php'],
     ['label' => 'FAQs', 'url' => 'faq.php'],
+    ['label' => 'Sitemap', 'url' => 'sitemap.php'],
     ['label' => 'CertTracker', 'url' => 'certtracker.php', 'highlight' => true],
 ];
 
@@ -414,26 +279,24 @@ $about_menu = [
 
         <!-- ================= MEGA MENU: SHOP ONLINE ================= -->
         <div id="shop-online-menu" data-mega-panel class="absolute left-0 right-0 bg-white text-spartan-charcoal border-b border-slate-200 shadow-2xl transition-all duration-300 origin-top transform scale-y-0 opacity-0 pointer-events-none z-40 max-h-[calc(100vh-8rem)] overflow-y-auto">
-            <div class="max-w-[1500px] mx-auto grid grid-cols-1 xl:grid-cols-[240px_minmax(0,1fr)]">
-                <div class="bg-spartan-light-gray border-b xl:border-b-0 xl:border-r border-slate-200 p-6">
-                    <h3 class="font-oswald text-sm font-bold text-spartan-navy tracking-[0.2em] uppercase mb-5">Shop Online</h3>
-                    <div class="space-y-4 text-xs font-bold tracking-[0.12em] uppercase">
-                        <a href="brands.php" class="group relative block h-32 overflow-hidden bg-spartan-navy text-white">
+            <div class="max-w-[1500px] mx-auto grid grid-cols-1 xl:grid-cols-[220px_minmax(0,1fr)] items-start">
+                <div class="bg-spartan-light-gray border-b xl:border-b-0 xl:border-r border-slate-200 p-5">
+                    <h3 class="font-oswald text-sm font-bold text-spartan-navy tracking-[0.2em] uppercase mb-4">Shop Online</h3>
+                    <div class="space-y-3 text-xs font-bold tracking-[0.12em] uppercase">
+                        <a href="brands.php" class="group relative block h-24 overflow-hidden bg-spartan-navy text-white">
                             <img src="assets/images/j9/marine-rigging.webp" alt="" class="absolute inset-0 h-full w-full object-cover opacity-45 group-hover:scale-105 transition-transform duration-500">
                             <span class="absolute inset-0 bg-[#0A4070]/85"></span>
-                            <span class="relative z-10 flex h-full flex-col justify-between p-5">
+                            <span class="relative z-10 flex h-full items-center justify-between p-5">
                                 <span class="font-oswald text-3xl font-bold italic tracking-wide leading-none">PAUL</span>
-                                <span class="max-w-[9rem] text-[10px] leading-relaxed tracking-[0.18em]">Built For Serious Work</span>
-                                <i class="fa-solid fa-arrow-right absolute right-5 bottom-5 text-sm text-white/80 transition-transform duration-300 group-hover:translate-x-1"></i>
+                                <i class="fa-solid fa-arrow-right text-sm text-white/80 transition-transform duration-300 group-hover:translate-x-1"></i>
                             </span>
                         </a>
-                        <a href="products.php?cat=workwear" class="group relative block h-32 overflow-hidden bg-[#F45B22] text-white">
+                        <a href="products.php?cat=workwear" class="group relative block h-24 overflow-hidden bg-[#F45B22] text-white">
                             <img src="assets/images/j9/spartan-workwear-woman.webp" alt="" class="absolute inset-0 h-full w-full object-cover opacity-45 group-hover:scale-105 transition-transform duration-500">
                             <span class="absolute inset-0 bg-[#F45B22]/85"></span>
-                            <span class="relative z-10 flex h-full flex-col justify-between p-5">
+                            <span class="relative z-10 flex h-full items-center justify-between p-5">
                                 <span class="font-oswald text-2xl font-bold italic tracking-wide leading-none">FIERCE<br><span class="text-base tracking-[0.2em] not-italic">WORKWEAR</span></span>
-                                <span class="max-w-[10rem] text-[10px] leading-relaxed tracking-[0.16em]">Gear That Works Hard</span>
-                                <i class="fa-solid fa-arrow-right absolute right-5 bottom-5 text-sm text-white/80 transition-transform duration-300 group-hover:translate-x-1"></i>
+                                <i class="fa-solid fa-arrow-right text-sm text-white/80 transition-transform duration-300 group-hover:translate-x-1"></i>
                             </span>
                         </a>
                         <a href="brands.php" class="inline-flex items-center text-[10px] font-bold tracking-[0.22em] text-spartan-teal uppercase hover:text-spartan-navy transition-colors">
@@ -455,7 +318,7 @@ $about_menu = [
                         <div class="space-y-8">
                             <?php foreach ($column as $group): ?>
                             <div>
-                                <h4 class="font-oswald text-sm font-bold text-spartan-navy uppercase tracking-wide mb-2">
+                                <h4 class="font-oswald text-sm font-bold text-spartan-navy uppercase tracking-wide mb-3">
                                     <?php if (!empty($group['url'])): ?>
                                     <a href="<?php echo site_escape($group['url']); ?>" class="hover:text-spartan-teal hover:underline underline-offset-4 transition-colors">
                                         <?php echo site_escape($group['title']); ?>
@@ -464,14 +327,26 @@ $about_menu = [
                                     <?php echo site_escape($group['title']); ?>
                                     <?php endif; ?>
                                 </h4>
-                                <ul class="space-y-1.5 text-[13px] leading-tight">
-                                    <?php foreach (($group['links'] ?? []) as $link): ?>
+                                <?php
+                                    $shop_group_links = $group['links'] ?? [];
+                                    $shop_group_preview_links = array_slice($shop_group_links, 0, $shop_menu_preview_limit);
+                                ?>
+                                <ul class="space-y-2 text-sm leading-6">
+                                    <?php foreach ($shop_group_preview_links as $link): ?>
                                     <li>
                                         <a href="<?php echo site_escape($link['url']); ?>" class="<?php echo !empty($link['strong']) ? 'font-bold text-spartan-navy' : 'text-slate-700'; ?> hover:text-spartan-teal hover:underline underline-offset-4 transition-colors">
                                             <?php echo site_escape($link['label']); ?>
                                         </a>
                                     </li>
                                     <?php endforeach; ?>
+                                    <?php if (!empty($group['url']) && count($shop_group_links) > $shop_menu_preview_limit): ?>
+                                    <li class="pt-1.5">
+                                        <a href="<?php echo site_escape($group['url']); ?>" class="inline-flex items-center font-oswald text-[10px] font-bold tracking-[0.2em] uppercase text-spartan-teal hover:text-spartan-navy transition-colors">
+                                            <span>View More</span>
+                                            <i class="fa-solid fa-arrow-right text-[9px] ml-2"></i>
+                                        </a>
+                                    </li>
+                                    <?php endif; ?>
                                 </ul>
                             </div>
                             <?php endforeach; ?>

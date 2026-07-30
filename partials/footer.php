@@ -41,6 +41,7 @@ $footer_menu_sections = [
             ['label' => 'Industry Articles', 'url' => 'blog.php'],
             ['label' => 'CertTracker', 'url' => 'certtracker.php'],
             ['label' => 'FAQs', 'url' => 'faq.php'],
+            ['label' => 'Sitemap', 'url' => 'sitemap.php'],
         ],
     ],
 ];
@@ -116,6 +117,7 @@ $footer_menu_sections = [
             <div class="flex space-x-6 mt-4 sm:mt-0 text-slate-500">
                 <a href="terms.php" class="hover:text-spartan-teal transition-colors">Privacy Policy</a>
                 <a href="terms.php" class="hover:text-spartan-teal transition-colors">Terms & Conditions</a>
+                <a href="sitemap.php" class="hover:text-spartan-teal transition-colors">Sitemap</a>
             </div>
         </div>
     </footer>
