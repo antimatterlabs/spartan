@@ -22,8 +22,8 @@ $footer_menu_sections = [
             ['label' => 'Catalogue', 'url' => 'products.php'],
             ['label' => 'Top Sellers', 'url' => 'products.php'],
             ['label' => 'On Sale', 'url' => 'products.php'],
-            ['label' => 'PAUL', 'url' => 'brands.php', 'class' => 'font-bold text-[#7DC4FF]'],
-            ['label' => 'Fierce Workwear', 'url' => 'products.php?cat=workwear', 'class' => 'font-bold italic text-[#FF6B00]'],
+            ['label' => 'PAUL', 'url' => site_brand_url('paul')],
+            ['label' => 'Fierce Workwear', 'url' => site_brand_url('fierce-workwear')],
         ],
     ],
     [

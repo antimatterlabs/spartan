@@ -14,6 +14,7 @@ $pc_url = site_product_url($product);
 $pc_display_name = html_entity_decode(strip_tags($product['name']), ENT_QUOTES, 'UTF-8');
 $pc_quote_url = 'contact.php?product=' . rawurlencode($pc_display_name);
 $pc_brand_slug = $product['brand_slug'] ?? site_brand_slug($product['vendor'] ?? '');
+$pc_has_variants = count($product['variants'] ?? []) > 1;
 ?>
 <div class="space-y-4 group product-card-element transition-all duration-300 hover:bg-slate-50 p-2" data-category="<?php echo site_escape($product['category']); ?>" data-group="<?php echo site_escape($product['category_group'] ?? ''); ?>" data-brand="<?php echo site_escape($pc_brand_slug); ?>">
     <div class="relative bg-white border border-slate-100 rounded-none h-60 flex items-center justify-center overflow-hidden <?php echo !empty($product['contain']) ? 'p-6' : ''; ?>">
@@ -25,7 +26,12 @@ $pc_brand_slug = $product['brand_slug'] ?? site_brand_slug($product['vendor'] ??
 
         <!-- Quick Add hover overlay -->
         <div class="absolute inset-0 bg-spartan-navy/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-            <?php if ($pc_has_price): ?>
+            <?php if ($pc_has_variants): ?>
+            <a href="<?php echo site_escape($pc_url); ?>" class="relative z-10 bg-spartan-navy text-white hover:bg-spartan-teal px-4 py-2.5 text-[10px] font-bold tracking-widest transition-colors duration-300 uppercase flex items-center space-x-2 rounded-none">
+                <i class="fa-solid fa-list-check text-xs"></i>
+                <span>VIEW OPTIONS</span>
+            </a>
+            <?php elseif ($pc_has_price): ?>
             <button onclick="addToCart('<?php echo $pc_js_name; ?>', <?php echo number_format($pc_price, 2, '.', ''); ?>, '<?php echo $pc_js_image; ?>')" class="relative z-10 bg-spartan-teal text-white hover:bg-spartan-teal-light hover:text-spartan-navy px-4 py-2.5 text-[10px] font-bold tracking-widest transition-colors duration-300 uppercase flex items-center space-x-2 rounded-none">
                 <i class="fa-solid fa-cart-plus text-xs"></i>
                 <span>QUICK ADD</span>
@@ -39,7 +45,6 @@ $pc_brand_slug = $product['brand_slug'] ?? site_brand_slug($product['vendor'] ??
         </div>
     </div>
     <div class="space-y-2">
-        <span class="font-oswald text-[9px] font-bold text-spartan-charcoal tracking-widest uppercase"><?php echo site_escape($product['category_label']); ?></span>
         <h3 class="font-oswald text-sm md:text-base font-bold text-spartan-navy uppercase tracking-normal leading-tight min-h-[44px]">
             <a href="<?php echo site_escape($pc_url); ?>" class="hover:text-spartan-teal transition-colors"><?php echo site_escape(strtoupper($pc_display_name)); ?></a>
         </h3>
@@ -54,7 +59,11 @@ $pc_brand_slug = $product['brand_slug'] ?? site_brand_slug($product['vendor'] ??
                 <span class="font-sans text-xs font-bold text-slate-700 uppercase tracking-[0.12em]">Request Quote</span>
                 <?php endif; ?>
             </div>
-            <?php if ($pc_has_price): ?>
+            <?php if ($pc_has_variants): ?>
+            <a href="<?php echo site_escape($pc_url); ?>" class="bg-spartan-navy text-white hover:bg-spartan-teal py-1.5 px-3 text-[8px] font-bold tracking-widest transition-colors rounded-none uppercase">
+                VIEW OPTIONS
+            </a>
+            <?php elseif ($pc_has_price): ?>
             <button onclick="addToCart('<?php echo $pc_js_name; ?>', <?php echo number_format($pc_price, 2, '.', ''); ?>, '<?php echo $pc_js_image; ?>')" class="bg-spartan-teal text-white hover:bg-spartan-teal-light hover:text-spartan-navy py-1.5 px-3 text-[8px] font-bold tracking-widest transition-colors rounded-none uppercase">
                 ADD TO ORDER
             </button>

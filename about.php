@@ -95,7 +95,6 @@ require_once __DIR__ . '/components/page-hero.php';
     <section class="py-20 md:py-28 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 select-text">
             <div class="max-w-3xl mb-10">
-                <div class="w-14 h-4 bg-spartan-teal mb-5" style="-webkit-mask: url('assets/images/full-wave.svg') center / contain no-repeat; mask: url('assets/images/full-wave.svg') center / contain no-repeat;" aria-hidden="true"></div>
                 <h2 class="font-oswald text-3xl md:text-4xl font-bold tracking-widest text-spartan-navy uppercase leading-tight mb-5">Our Values</h2>
                 <p class="text-sm text-slate-600 font-light leading-relaxed">
                     At Spartan Industrial Marine, we understand that safety and compliance are non-negotiable for your bottom line. Every product we engineer, piece of gear we supply, and life-saving appliance we service is backed by an unwavering commitment to operational excellence.
@@ -133,7 +132,6 @@ require_once __DIR__ . '/components/page-hero.php';
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 select-text">
             <div class="grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-10 lg:gap-14 items-stretch mb-12 lg:mb-14">
                 <div class="lg:py-8">
-                    <div class="w-14 h-4 bg-spartan-teal mb-5" style="-webkit-mask: url('assets/images/full-wave.svg') center / contain no-repeat; mask: url('assets/images/full-wave.svg') center / contain no-repeat;" aria-hidden="true"></div>
                     <h2 class="font-oswald text-3xl md:text-4xl font-bold tracking-widest text-spartan-navy uppercase leading-tight mb-5">Over 45 Years of Keeping Atlantic Canada’s Fleets Moving</h2>
                     <div class="space-y-5 text-base text-slate-600 font-light leading-relaxed">
                         <p>For more than four decades, Spartan Industrial Marine has been the trusted backbone of the East Coast’s maritime economy. What began as a local commitment to regional fishermen has grown into a powerhouse network of seven strategic branches spanning Atlantic Canada.</p>
@@ -221,7 +219,7 @@ require_once __DIR__ . '/components/page-hero.php';
             <div class="relative bg-spartan-light-gray px-6 sm:px-10 lg:px-16 xl:px-24 py-16 md:py-20 min-h-[380px] flex items-center overflow-hidden">
                 <div class="absolute right-0 bottom-0 h-36 w-[420px] bg-white opacity-60 pointer-events-none" style="-webkit-mask: url('assets/images/right-wave.svg') right bottom / contain no-repeat; mask: url('assets/images/right-wave.svg') right bottom / contain no-repeat;" aria-hidden="true"></div>
                 <div class="max-w-xl lg:ml-auto relative z-10">
-                    <span class="font-oswald text-[10px] font-bold text-spartan-teal tracking-[0.25em] uppercase block mb-4">Products</span>
+                    <span class="font-oswald text-xs md:text-sm font-bold text-spartan-teal tracking-[0.32em] uppercase block mb-4">Products</span>
                     <h2 class="font-oswald text-3xl md:text-4xl font-bold tracking-widest text-spartan-navy uppercase leading-tight mb-5">Keep Your Operations Moving and Compliant</h2>
                     <p class="text-base text-slate-600 font-light leading-relaxed mb-8">Explore thousands of certified safety products, workwear, specialized commercial fishing gear, and custom rigging solutions available for rapid regional delivery.</p>
                     <a href="products.php" class="inline-flex items-center bg-spartan-navy text-white py-3.5 px-7 text-xs font-bold tracking-[0.2em] uppercase hover:bg-spartan-charcoal transition-colors">
@@ -234,7 +232,7 @@ require_once __DIR__ . '/components/page-hero.php';
             <div class="relative bg-spartan-navy text-white px-6 sm:px-10 lg:px-16 xl:px-24 py-16 md:py-20 min-h-[380px] flex items-center overflow-hidden">
                 <div class="absolute -right-8 top-8 h-44 w-[500px] bg-spartan-teal opacity-[0.07] pointer-events-none" style="-webkit-mask: url('assets/images/right-wave.svg') right center / contain no-repeat; mask: url('assets/images/right-wave.svg') right center / contain no-repeat;" aria-hidden="true"></div>
                 <div class="max-w-xl relative z-10">
-                    <span class="font-oswald text-[10px] font-bold text-spartan-teal tracking-[0.25em] uppercase block mb-4">Services</span>
+                    <span class="font-oswald text-xs md:text-sm font-bold text-spartan-teal tracking-[0.32em] uppercase block mb-4">Services</span>
                     <h2 class="font-oswald text-3xl md:text-4xl font-bold tracking-widest uppercase leading-tight mb-5">Book a Marine Safety Service</h2>
                     <p class="text-base text-slate-300 font-light leading-relaxed mb-8">Schedule mandatory liferaft servicing, immersion suit testing, certified vessel inspections, or request a custom gear manufacturing audit from our local technical teams.</p>
                     <a href="services.php" class="inline-flex items-center bg-spartan-teal text-white py-3.5 px-7 text-xs font-bold tracking-[0.2em] uppercase hover:bg-spartan-teal-light hover:text-spartan-navy transition-colors">

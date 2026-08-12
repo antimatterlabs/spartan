@@ -78,8 +78,7 @@ $faqs = [
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 select-text">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
                 <div class="lg:col-span-7">
-                    <div class="w-14 h-4 bg-spartan-teal mb-6" style="-webkit-mask: url('assets/images/full-wave.svg') center / contain no-repeat; mask: url('assets/images/full-wave.svg') center / contain no-repeat;" aria-hidden="true"></div>
-                    <span class="font-oswald text-[10px] font-bold text-spartan-teal tracking-[0.3em] uppercase block mb-4">Certified rental gear</span>
+                    <span class="font-oswald text-xs md:text-sm font-bold text-spartan-teal tracking-[0.32em] uppercase block mb-4">Certified rental gear</span>
                     <h2 class="font-oswald text-3xl md:text-5xl font-bold tracking-wider text-spartan-navy uppercase leading-tight mb-6">
                         Bridge the gap without buying new.
                     </h2>
@@ -113,7 +112,7 @@ $faqs = [
                     <img src="assets/images/j9/spartan-warehouse-fulfillment.webp" alt="Marine rental gear prepared for deployment" class="absolute inset-0 w-full h-full object-cover">
                     <div class="absolute inset-0 bg-gradient-to-t from-spartan-navy/85 via-spartan-navy/20 to-transparent"></div>
                     <div class="absolute bottom-0 inset-x-0 p-8">
-                        <span class="font-oswald text-[10px] font-bold text-spartan-teal tracking-[0.25em] uppercase block mb-3">Ready for deployment</span>
+                        <span class="font-oswald text-xs md:text-sm font-bold text-spartan-teal tracking-[0.32em] uppercase block mb-4">Ready for deployment</span>
                         <p class="text-lg text-white font-medium leading-relaxed">
                             Certified gear, practical rental terms, and local support when your schedule cannot wait.
                         </p>
@@ -127,7 +126,7 @@ $faqs = [
     <section class="py-16 md:py-24 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 select-text">
             <div class="max-w-3xl mb-12">
-                <span class="font-oswald text-[10px] font-bold text-spartan-teal tracking-[0.3em] uppercase block mb-4">What you can rent</span>
+                <span class="font-oswald text-xs md:text-sm font-bold text-spartan-teal tracking-[0.32em] uppercase block mb-4">What you can rent</span>
                 <h2 class="font-oswald text-3xl md:text-5xl font-bold tracking-wider text-spartan-navy uppercase leading-tight mb-5">
                     Fully serviced, stamped, and ready.
                 </h2>
@@ -155,7 +154,7 @@ $faqs = [
     <section class="bg-spartan-light-gray py-16 md:py-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 select-text">
             <div class="max-w-3xl mb-12">
-                <span class="font-oswald text-[10px] font-bold text-spartan-teal tracking-[0.3em] uppercase block mb-4">How rentals work</span>
+                <span class="font-oswald text-xs md:text-sm font-bold text-spartan-teal tracking-[0.32em] uppercase block mb-4">How rentals work</span>
                 <h2 class="font-oswald text-3xl md:text-5xl font-bold tracking-wider text-spartan-navy uppercase leading-tight mb-5">
                     Get your gear and get to work.
                 </h2>
@@ -180,7 +179,7 @@ $faqs = [
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 select-text">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
                 <div class="lg:col-span-4">
-                    <span class="font-oswald text-[10px] font-bold text-spartan-teal tracking-[0.3em] uppercase block mb-4">Need something specific?</span>
+                    <span class="font-oswald text-xs md:text-sm font-bold text-spartan-teal tracking-[0.32em] uppercase block mb-4">Need something specific?</span>
                     <h2 class="font-oswald text-3xl md:text-4xl font-bold tracking-wider text-spartan-navy uppercase leading-tight mb-5">
                         Ask the nearest branch.
                     </h2>
@@ -215,7 +214,7 @@ $faqs = [
     <section class="bg-spartan-light-gray py-16 md:py-24">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 select-text">
             <div class="text-center mb-12">
-                <span class="font-oswald text-[10px] font-bold text-spartan-teal tracking-[0.3em] uppercase block mb-4">FAQ</span>
+                <span class="font-oswald text-xs md:text-sm font-bold text-spartan-teal tracking-[0.32em] uppercase block mb-4">FAQ</span>
                 <h2 class="font-oswald text-3xl md:text-4xl font-bold tracking-wider text-spartan-navy uppercase leading-tight">
                     Rental questions
                 </h2>

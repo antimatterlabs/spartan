@@ -96,8 +96,7 @@ $faqs = [
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="max-w-4xl select-text">
                 <div>
-                    <div class="w-14 h-4 bg-spartan-teal mb-6" style="-webkit-mask: url('assets/images/full-wave.svg') center / contain no-repeat; mask: url('assets/images/full-wave.svg') center / contain no-repeat;" aria-hidden="true"></div>
-                    <span class="font-oswald text-[10px] font-bold text-spartan-teal tracking-[0.3em] uppercase block mb-4">Inspection, repair, and records</span>
+                    <span class="font-oswald text-xs md:text-sm font-bold text-spartan-teal tracking-[0.32em] uppercase block mb-4">Inspection, repair, and records</span>
                     <h2 class="font-oswald text-3xl md:text-5xl font-bold tracking-wider text-spartan-navy uppercase leading-tight mb-6">
                         Stay compliant without chasing paperwork.
                     </h2>
@@ -137,7 +136,7 @@ $faqs = [
             <div class="bg-white border border-slate-200 px-6 py-8 md:px-10 md:py-10">
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
                     <div class="lg:col-span-4">
-                        <span class="font-oswald text-[10px] font-bold text-spartan-teal tracking-[0.28em] uppercase block mb-3">Authorized repair support</span>
+                        <span class="font-oswald text-xs md:text-sm font-bold text-spartan-teal tracking-[0.32em] uppercase block mb-4">Authorized repair support</span>
                         <h2 class="font-oswald text-2xl md:text-3xl font-bold text-spartan-navy uppercase tracking-wider leading-tight">
                             Brand-certified repair centre for:
                         </h2>
@@ -160,7 +159,7 @@ $faqs = [
     <section class="bg-spartan-light-gray py-16 md:py-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 select-text">
             <div class="max-w-3xl mb-12">
-                <span class="font-oswald text-[10px] font-bold text-spartan-teal tracking-[0.3em] uppercase block mb-4">How it works</span>
+                <span class="font-oswald text-xs md:text-sm font-bold text-spartan-teal tracking-[0.32em] uppercase block mb-4">How it works</span>
                 <h2 class="font-oswald text-3xl md:text-5xl font-bold tracking-wider text-spartan-navy uppercase leading-tight mb-5">
                     The inspection process
                 </h2>
@@ -191,7 +190,7 @@ $faqs = [
                     <div class="absolute -bottom-3 left-8 right-8 h-16 bg-spartan-teal/70" style="-webkit-mask: url('assets/images/full-wave.svg') center / contain no-repeat; mask: url('assets/images/full-wave.svg') center / contain no-repeat;" aria-hidden="true"></div>
                 </div>
                 <div class="p-9 md:p-12 lg:p-14 flex flex-col justify-center">
-                    <span class="font-oswald text-[10px] font-bold text-spartan-teal tracking-[0.3em] uppercase block mb-4">Flexible service access</span>
+                    <span class="font-oswald text-xs md:text-sm font-bold text-spartan-teal tracking-[0.32em] uppercase block mb-4">Flexible service access</span>
                     <h2 class="font-oswald text-3xl md:text-4xl font-bold tracking-wider uppercase leading-tight mb-5">
                         Mobile on-site visits or in-shop service
                     </h2>
@@ -219,7 +218,7 @@ $faqs = [
     <section class="bg-white pb-16 md:pb-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 select-text">
             <div class="max-w-3xl mb-12">
-                <span class="font-oswald text-[10px] font-bold text-spartan-teal tracking-[0.3em] uppercase block mb-4">Inspection categories</span>
+                <span class="font-oswald text-xs md:text-sm font-bold text-spartan-teal tracking-[0.32em] uppercase block mb-4">Inspection categories</span>
                 <h2 class="font-oswald text-3xl md:text-5xl font-bold tracking-wider text-spartan-navy uppercase leading-tight mb-5">
                     Safety equipment we inspect & repair
                 </h2>
@@ -250,7 +249,7 @@ $faqs = [
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center select-text">
                 <div>
-                    <span class="font-oswald text-[10px] font-bold text-spartan-teal tracking-[0.3em] uppercase block mb-4">Digital compliance tracking</span>
+                    <span class="font-oswald text-xs md:text-sm font-bold text-spartan-teal tracking-[0.32em] uppercase block mb-4">Digital compliance tracking</span>
                     <h2 class="font-oswald text-3xl md:text-5xl font-bold tracking-wider uppercase leading-tight mb-5">
                         Never miss a compliance deadline again.
                     </h2>
@@ -293,7 +292,7 @@ $faqs = [
     <section class="bg-white py-16 md:py-24">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 select-text">
             <div class="text-center mb-12">
-                <span class="font-oswald text-[10px] font-bold text-spartan-teal tracking-[0.3em] uppercase block mb-4">FAQ</span>
+                <span class="font-oswald text-xs md:text-sm font-bold text-spartan-teal tracking-[0.32em] uppercase block mb-4">FAQ</span>
                 <h2 class="font-oswald text-3xl md:text-4xl font-bold tracking-wider text-spartan-navy uppercase leading-tight">
                     Marine inspection questions
                 </h2>

@@ -73,7 +73,7 @@ $faqs = [
             <div class="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_minmax(360px,0.82fr)] gap-12 lg:gap-16 items-center select-text">
                 <div>
                     <div class="w-14 h-4 bg-spartan-teal mb-6" style="-webkit-mask: url('assets/images/full-wave.svg') center / contain no-repeat; mask: url('assets/images/full-wave.svg') center / contain no-repeat;" aria-hidden="true"></div>
-                    <span class="font-oswald text-xs font-bold text-spartan-teal tracking-[0.25em] uppercase block mb-4">CERTTracker</span>
+                    <span class="font-oswald text-xs md:text-sm font-bold text-spartan-teal tracking-[0.32em] uppercase block mb-4">CERTTracker</span>
                     <h1 class="font-oswald text-4xl md:text-5xl lg:text-6xl font-bold tracking-widest uppercase leading-tight mb-6">
                         Certification Tracking Software for Marine Operations
                     </h1>
@@ -157,7 +157,7 @@ $faqs = [
     <section class="py-20 md:py-24 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 select-text">
             <div class="max-w-3xl mb-12">
-                <span class="font-oswald text-xs font-bold text-spartan-teal tracking-[0.25em] uppercase block mb-3">How it works</span>
+                <span class="font-oswald text-xs md:text-sm font-bold text-spartan-teal tracking-[0.32em] uppercase block mb-4">How it works</span>
                 <h2 class="font-oswald text-3xl md:text-4xl font-bold tracking-widest text-spartan-navy uppercase leading-tight mb-5">The 3-Step Process</h2>
                 <p class="text-sm md:text-base text-slate-600 font-light leading-relaxed">
                     Never miss a safety inspection. From setup to compliance, CertTracker simplifies every step of your inspection management process so you can spend less time on paperwork and more time keeping operations moving.
@@ -181,8 +181,7 @@ $faqs = [
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 select-text">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center">
                 <div>
-                    <div class="w-14 h-4 bg-spartan-teal mb-5" style="-webkit-mask: url('assets/images/full-wave.svg') center / contain no-repeat; mask: url('assets/images/full-wave.svg') center / contain no-repeat;" aria-hidden="true"></div>
-                    <span class="font-oswald text-xs font-bold text-spartan-teal tracking-[0.25em] uppercase block mb-3">Digital compliance</span>
+                    <span class="font-oswald text-xs md:text-sm font-bold text-spartan-teal tracking-[0.32em] uppercase block mb-4">Digital compliance</span>
                     <h2 class="font-oswald text-3xl md:text-4xl font-bold tracking-widest text-spartan-navy uppercase leading-tight mb-5">From Paper Records to Digital Compliance</h2>
                     <p class="text-sm md:text-base text-slate-600 font-light leading-relaxed">
                         Replace paper files, spreadsheets, and manual reminders with one secure digital platform. Keep inspection records organized, accessible, and ready whenever your team or an auditor needs them.
@@ -200,7 +199,7 @@ $faqs = [
                         </ul>
                     </div>
                     <div class="bg-spartan-navy text-white p-7">
-                        <span class="font-oswald text-[10px] font-bold text-spartan-teal tracking-[0.25em] uppercase block mb-4">The CertTracker way</span>
+                        <span class="font-oswald text-xs md:text-sm font-bold text-spartan-teal tracking-[0.32em] uppercase block mb-4">The CertTracker way</span>
                         <ul class="space-y-3 text-sm text-slate-300 font-light leading-relaxed">
                             <li class="flex gap-3"><i class="fa-solid fa-check text-spartan-teal mt-1"></i><span>24/7 cloud access</span></li>
                             <li class="flex gap-3"><i class="fa-solid fa-check text-spartan-teal mt-1"></i><span>Proactive email alerts</span></li>
@@ -217,7 +216,7 @@ $faqs = [
     <section class="py-20 md:py-24 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 select-text">
             <div class="max-w-3xl mb-12">
-                <span class="font-oswald text-xs font-bold text-spartan-teal tracking-[0.25em] uppercase block mb-3">One platform</span>
+                <span class="font-oswald text-xs md:text-sm font-bold text-spartan-teal tracking-[0.32em] uppercase block mb-4">One platform</span>
                 <h2 class="font-oswald text-3xl md:text-4xl font-bold tracking-widest text-spartan-navy uppercase leading-tight mb-5">Purpose-Built for Marine Inspection Management</h2>
                 <p class="text-sm md:text-base text-slate-600 font-light leading-relaxed">
                     From automated reminders and digital certificates to reporting and RFID integration, CertTracker gives your team the tools to manage equipment inspections with confidence. All from one secure, cloud-based platform.
@@ -239,7 +238,7 @@ $faqs = [
     <section class="py-20 md:py-24 bg-spartan-light-gray">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 select-text">
             <div class="text-center mb-12">
-                <span class="font-oswald text-xs font-bold text-spartan-teal tracking-[0.25em] uppercase block mb-3">Questions</span>
+                <span class="font-oswald text-xs md:text-sm font-bold text-spartan-teal tracking-[0.32em] uppercase block mb-4">Questions</span>
                 <h2 class="font-oswald text-3xl md:text-4xl font-bold tracking-widest text-spartan-navy uppercase leading-tight">Frequently Asked Questions</h2>
             </div>
 

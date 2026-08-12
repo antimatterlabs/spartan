@@ -32,11 +32,10 @@ require_once __DIR__ . '/components/page-hero.php';
                 </div>
                 <div class="p-8 flex flex-col justify-between flex-grow">
                     <div>
-                        <div class="flex items-center justify-between mb-4">
+                        <div class="mb-4">
                             <h3 class="font-oswald text-lg font-bold text-spartan-navy tracking-[0.12em] uppercase">
                                 <a href="<?php echo site_escape(site_location_url($loc)); ?>" class="hover:text-spartan-teal transition-colors"><?php echo site_escape($loc['city']); ?></a>
                             </h3>
-                            <span class="<?php echo $loc['badge_style'] === 'teal' ? 'bg-spartan-teal' : 'bg-spartan-navy'; ?> text-white text-[8px] px-2 py-0.5 font-mono font-bold tracking-wider uppercase"><?php echo site_escape($loc['badge']); ?></span>
                         </div>
                         <p class="text-xs text-slate-600 font-light leading-relaxed mb-6"><?php echo site_escape($loc['blurb']); ?></p>
                         <ul class="space-y-3 text-xs text-slate-500 font-light">
@@ -78,8 +77,5 @@ require_once __DIR__ . '/components/page-hero.php';
             ?>
         </div>
     </section>
-
-    <!-- Contact block -->
-    <?php require_once __DIR__ . '/components/contact-block.php'; ?>
 
 <?php require_once __DIR__ . '/partials/footer.php'; ?>

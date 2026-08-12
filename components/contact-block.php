@@ -9,8 +9,7 @@
 
         <!-- Left: Contact content -->
         <div class="flex flex-col justify-center">
-            <div class="w-14 h-4 bg-spartan-teal mb-5" style="-webkit-mask: url('assets/images/full-wave.svg') center / contain no-repeat; mask: url('assets/images/full-wave.svg') center / contain no-repeat;" aria-hidden="true"></div>
-            <span class="font-oswald text-xs font-bold text-spartan-teal tracking-[0.25em] uppercase block mb-3">CONTACT</span>
+            <span class="font-oswald text-xs md:text-sm font-bold text-spartan-teal tracking-[0.32em] uppercase block mb-4">CONTACT</span>
             <h2 class="font-oswald text-3xl md:text-4xl font-bold tracking-widest text-spartan-navy uppercase leading-tight mb-5">TALK TO A REAL PERSON</h2>
             <p class="text-sm text-slate-600 font-light leading-relaxed mb-8 max-w-md">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.

@@ -17,7 +17,7 @@ require_once __DIR__ . '/partials/header.php';
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start select-text">
                 <div>
                     <div class="w-14 h-4 bg-spartan-teal mb-6" style="-webkit-mask: url('assets/images/full-wave.svg') center / contain no-repeat; mask: url('assets/images/full-wave.svg') center / contain no-repeat;" aria-hidden="true"></div>
-                    <span class="font-oswald text-xs font-bold text-spartan-teal tracking-[0.25em] uppercase block mb-4">CONTACT SPARTAN</span>
+                    <span class="font-oswald text-xs md:text-sm font-bold text-spartan-teal tracking-[0.32em] uppercase block mb-4">CONTACT SPARTAN</span>
                     <h1 class="font-oswald text-3xl md:text-4xl lg:text-5xl font-bold tracking-widest text-white uppercase leading-tight mb-6">
                         Talk to Someone Who Understands Marine Operations
                     </h1>

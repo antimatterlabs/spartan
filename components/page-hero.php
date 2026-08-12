@@ -23,13 +23,14 @@ $hero_show_breadcrumbs = $hero['show_breadcrumbs'] ?? true;
 $hero_size = $hero['size'] ?? 'default';
 $hero_short = $hero_size === 'short';
 $hero_tall = $hero_size === 'tall';
-$hero_height = $hero_short ? 'h-[240px] md:h-[300px]' : ($hero_tall ? 'h-[640px] md:h-[680px] lg:h-[720px]' : 'h-[380px] md:h-[450px]');
+$hero_min_height = $hero['height_class'] ?? ($hero_short ? 'min-h-[280px]' : ($hero_tall ? 'min-h-[620px] md:min-h-[680px]' : 'min-h-[420px]'));
+$hero_padding = $hero_short ? 'py-20 md:py-24' : ($hero_tall ? 'py-28 md:py-36' : 'py-24 md:py-32');
 $hero_title_size = $hero_short ? 'text-3xl sm:text-4xl md:text-5xl' : ($hero_tall ? 'text-3xl sm:text-4xl md:text-5xl lg:text-6xl' : 'text-4xl sm:text-5xl md:text-6xl');
 $hero_content_width = $hero_tall ? 'max-w-6xl' : 'max-w-4xl';
-$hero_subtitle_width = $hero_tall ? 'max-w-4xl' : 'max-w-2xl';
+$hero_subtitle_width = $hero_tall ? 'max-w-5xl' : 'max-w-3xl';
 $hero_title_text = strip_tags((string) ($hero['title'] ?? ''));
 ?>
-<section class="relative <?php echo $hero_height; ?> w-full overflow-hidden bg-spartan-navy flex items-center justify-center">
+<section class="relative <?php echo $hero_min_height; ?> <?php echo $hero_padding; ?> w-full overflow-hidden bg-spartan-navy flex items-center justify-center">
     <!-- Background Image -->
     <div class="absolute inset-0 z-0">
         <img src="<?php echo site_escape($hero_image); ?>" alt="<?php echo site_escape($hero_title_text); ?>" class="w-full h-full object-cover object-center">
@@ -37,10 +38,10 @@ $hero_title_text = strip_tags((string) ($hero['title'] ?? ''));
     </div>
 
     <!-- Centered Content -->
-    <div class="relative z-10 <?php echo $hero_content_width; ?> mx-auto px-4 sm:px-6 lg:px-8 text-center <?php echo $hero_short ? 'space-y-3 mt-4' : 'space-y-5 mt-8'; ?> select-text">
+    <div class="relative z-10 <?php echo $hero_content_width; ?> mx-auto px-4 sm:px-6 lg:px-8 text-center select-text">
         <?php if ($hero_show_breadcrumbs): ?>
         <!-- Breadcrumbs -->
-        <nav class="flex items-center justify-center space-x-2 text-[10px] md:text-xs font-mono font-bold tracking-widest text-spartan-teal uppercase">
+        <nav class="flex items-center justify-center space-x-2 text-xs md:text-sm font-mono font-bold tracking-widest text-spartan-teal uppercase <?php echo !empty($hero['eyebrow']) ? 'mb-5' : 'mb-6'; ?>">
             <?php foreach ($hero_crumbs as $i => $crumb): ?>
                 <?php if ($i > 0): ?><span class="text-slate-500 font-light">/</span><?php endif; ?>
                 <?php if (!empty($crumb['url'])): ?>
@@ -53,19 +54,19 @@ $hero_title_text = strip_tags((string) ($hero['title'] ?? ''));
         <?php endif; ?>
 
         <?php if (!empty($hero['eyebrow'])): ?>
-        <span class="font-oswald text-[10px] sm:text-xs font-bold text-spartan-teal-light tracking-[0.28em] uppercase block">
+        <span class="font-oswald text-xs md:text-sm font-bold text-spartan-teal-light tracking-[0.32em] uppercase block mb-6">
             <?php echo site_escape($hero['eyebrow']); ?>
         </span>
         <?php endif; ?>
 
         <!-- Page Heading -->
-        <h1 class="font-oswald <?php echo $hero_title_size; ?> font-bold uppercase tracking-wider text-white leading-tight">
+        <h1 class="font-oswald <?php echo $hero_title_size; ?> font-bold uppercase tracking-wider text-white leading-tight <?php echo !empty($hero['subtitle']) ? ($hero_short ? 'mb-5' : 'mb-7') : ''; ?>">
             <?php echo site_escape($hero['title']); ?>
         </h1>
 
         <?php if (!empty($hero['subtitle'])): ?>
         <!-- Brief Page Subtitle -->
-        <p class="font-sans text-xs sm:text-sm <?php echo $hero_short ? '' : 'md:text-base'; ?> text-slate-300 leading-relaxed <?php echo $hero_subtitle_width; ?> mx-auto font-light">
+        <p class="font-sans text-base <?php echo $hero_short ? 'md:text-lg' : 'md:text-xl'; ?> text-slate-200 leading-relaxed <?php echo $hero_subtitle_width; ?> mx-auto font-light">
             <?php echo site_escape($hero['subtitle']); ?>
         </p>
         <?php endif; ?>
@@ -89,8 +90,8 @@ $hero_title_text = strip_tags((string) ($hero['title'] ?? ''));
 
         <?php if (!$hero_short): ?>
         <!-- Small Wave Divider Accent -->
-        <div class="flex justify-center pt-2">
-            <div class="w-12 h-3 bg-spartan-teal" style="-webkit-mask: url('assets/images/full-wave.svg') center / contain no-repeat; mask: url('assets/images/full-wave.svg') center / contain no-repeat;" aria-hidden="true"></div>
+        <div class="flex justify-center pt-6 md:pt-8">
+            <div class="w-16 h-4 bg-spartan-teal" style="-webkit-mask: url('assets/images/full-wave.svg') center / contain no-repeat; mask: url('assets/images/full-wave.svg') center / contain no-repeat;" aria-hidden="true"></div>
         </div>
         <?php endif; ?>
     </div>

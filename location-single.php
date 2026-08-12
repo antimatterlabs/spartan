@@ -242,7 +242,7 @@ $faqs = $local_page['faqs'] ?? [
     <section class="bg-white py-16 md:py-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 select-text">
             <div class="max-w-3xl mb-12">
-                <span class="font-oswald text-[10px] font-bold text-spartan-teal tracking-[0.3em] uppercase block mb-4">Local catalogue</span>
+                <span class="font-oswald text-xs md:text-sm font-bold text-spartan-teal tracking-[0.32em] uppercase block mb-4">Local catalogue</span>
                 <h2 class="font-oswald text-3xl md:text-5xl font-bold tracking-wider text-spartan-navy uppercase leading-tight mb-5">
                     <?php echo site_escape($product_heading); ?>
                 </h2>
@@ -290,7 +290,7 @@ $faqs = $local_page['faqs'] ?? [
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 select-text">
             <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-12">
                 <div class="max-w-3xl">
-                    <span class="font-oswald text-[10px] font-bold text-spartan-teal tracking-[0.3em] uppercase block mb-4">Service centre</span>
+                    <span class="font-oswald text-xs md:text-sm font-bold text-spartan-teal tracking-[0.32em] uppercase block mb-4">Service centre</span>
                     <h2 class="font-oswald text-3xl md:text-5xl font-bold tracking-wider text-spartan-navy uppercase leading-tight mb-5">
                         <?php echo site_escape($service_heading); ?>
                     </h2>
@@ -340,7 +340,7 @@ $faqs = $local_page['faqs'] ?? [
     <section class="bg-spartan-light-gray py-16 md:py-24">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 select-text">
             <div class="text-center mb-12">
-                <span class="font-oswald text-[10px] font-bold text-spartan-teal tracking-[0.3em] uppercase block mb-4">Local FAQ</span>
+                <span class="font-oswald text-xs md:text-sm font-bold text-spartan-teal tracking-[0.32em] uppercase block mb-4">Local FAQ</span>
                 <h2 class="font-oswald text-3xl md:text-4xl font-bold tracking-wider text-spartan-navy uppercase leading-tight">
                     <?php echo site_escape($faq_heading); ?>
                 </h2>

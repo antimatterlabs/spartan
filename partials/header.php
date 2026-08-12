@@ -32,7 +32,7 @@ foreach ($site_product_category_groups as $shop_group_slug => $shop_group) {
 }
 
 $marine_service_menu = [
-    ['label' => 'Inspections & Repairs', 'url' => 'services.php'],
+    ['label' => 'Services', 'url' => 'services.php'],
     ['label' => 'Rental Equipment', 'url' => 'rental-equipment.php'],
     ['label' => 'Safety & Training', 'url' => 'training-courses.php'],
 ];
@@ -41,8 +41,7 @@ $resource_menu = [
     ['label' => 'Definitions & Warnings', 'url' => 'terms.php'],
     ['label' => 'Industry Articles', 'url' => 'blog.php'],
     ['label' => 'FAQs', 'url' => 'faq.php'],
-    ['label' => 'Sitemap', 'url' => 'sitemap.php'],
-    ['label' => 'CertTracker', 'url' => 'certtracker.php', 'highlight' => true],
+    ['label' => 'CertTracker', 'url' => 'certtracker.php'],
 ];
 
 $about_menu = [
@@ -189,10 +188,10 @@ $about_menu = [
                 </div>
 
                 <div class="relative group" data-mega-trigger="marine-services-menu">
-                    <a href="services.php" class="px-3 py-2 <?php echo $active_nav === 'services' ? 'text-spartan-teal' : ''; ?> hover:text-spartan-teal transition-colors flex items-center space-x-1 uppercase focus:outline-none">
+                    <span class="px-3 py-2 <?php echo $active_nav === 'services' ? 'text-spartan-teal' : ''; ?> hover:text-spartan-teal transition-colors flex items-center space-x-1 uppercase cursor-default select-none">
                         <span>Marine Services</span>
                         <i class="fa-solid fa-chevron-down text-[9px] ml-1 transition-transform duration-200 group-hover:rotate-180"></i>
-                    </a>
+                    </span>
                     <div id="marine-services-menu" data-mega-panel class="absolute left-0 top-full w-72 bg-white text-spartan-charcoal border border-slate-200 shadow-2xl transition-all duration-200 origin-top transform scale-y-0 opacity-0 pointer-events-none z-50">
                         <div class="py-2">
                             <?php foreach ($marine_service_menu as $item): ?>
@@ -221,10 +220,10 @@ $about_menu = [
                 </div>
 
                 <div class="relative group" data-mega-trigger="resources-menu">
-                    <a href="blog.php" class="px-3 py-2 <?php echo in_array($active_nav, ['resources', 'faq'], true) ? 'text-spartan-teal' : ''; ?> hover:text-spartan-teal transition-colors flex items-center space-x-1 uppercase focus:outline-none">
+                    <span class="px-3 py-2 <?php echo in_array($active_nav, ['resources', 'faq'], true) ? 'text-spartan-teal' : ''; ?> hover:text-spartan-teal transition-colors flex items-center space-x-1 uppercase cursor-default select-none">
                         <span>Resources</span>
                         <i class="fa-solid fa-chevron-down text-[9px] ml-1 transition-transform duration-200 group-hover:rotate-180"></i>
-                    </a>
+                    </span>
                     <div id="resources-menu" data-mega-panel class="absolute left-0 top-full w-72 bg-white text-spartan-charcoal border border-slate-200 shadow-2xl transition-all duration-200 origin-top transform scale-y-0 opacity-0 pointer-events-none z-50">
                         <div class="py-2">
                             <?php foreach ($resource_menu as $item): ?>
@@ -236,20 +235,10 @@ $about_menu = [
                     </div>
                 </div>
 
-                <div class="relative group" data-mega-trigger="about-menu">
+                <div class="relative group">
                     <a href="about.php" class="px-3 py-2 <?php echo $active_nav === 'about' ? 'text-spartan-teal' : ''; ?> hover:text-spartan-teal transition-colors flex items-center space-x-1 uppercase focus:outline-none">
                         <span>About</span>
-                        <i class="fa-solid fa-chevron-down text-[9px] ml-1 transition-transform duration-200 group-hover:rotate-180"></i>
                     </a>
-                    <div id="about-menu" data-mega-panel class="absolute right-0 top-full w-60 bg-white text-spartan-charcoal border border-slate-200 shadow-2xl transition-all duration-200 origin-top transform scale-y-0 opacity-0 pointer-events-none z-50">
-                        <div class="py-2">
-                            <?php foreach ($about_menu as $item): ?>
-                            <a href="<?php echo site_escape($item['url']); ?>" class="block px-5 py-3 text-sm font-semibold text-spartan-navy hover:bg-spartan-light-gray hover:text-spartan-teal transition-colors">
-                                <?php echo site_escape($item['label']); ?>
-                            </a>
-                            <?php endforeach; ?>
-                        </div>
-                    </div>
                 </div>
             </nav>
 
@@ -283,7 +272,7 @@ $about_menu = [
                 <div class="bg-spartan-light-gray border-b xl:border-b-0 xl:border-r border-slate-200 p-5">
                     <h3 class="font-oswald text-sm font-bold text-spartan-navy tracking-[0.2em] uppercase mb-4">Shop Online</h3>
                     <div class="space-y-3 text-xs font-bold tracking-[0.12em] uppercase">
-                        <a href="brands.php" class="group relative block h-24 overflow-hidden bg-spartan-navy text-white">
+                        <a href="<?php echo site_escape(site_brand_url('paul')); ?>" class="group relative block h-24 overflow-hidden bg-spartan-navy text-white">
                             <img src="assets/images/j9/marine-rigging.webp" alt="" class="absolute inset-0 h-full w-full object-cover opacity-45 group-hover:scale-105 transition-transform duration-500">
                             <span class="absolute inset-0 bg-[#0A4070]/85"></span>
                             <span class="relative z-10 flex h-full items-center justify-between p-5">
@@ -291,7 +280,7 @@ $about_menu = [
                                 <i class="fa-solid fa-arrow-right text-sm text-white/80 transition-transform duration-300 group-hover:translate-x-1"></i>
                             </span>
                         </a>
-                        <a href="products.php?cat=workwear" class="group relative block h-24 overflow-hidden bg-[#F45B22] text-white">
+                        <a href="<?php echo site_escape(site_brand_url('fierce-workwear')); ?>" class="group relative block h-24 overflow-hidden bg-[#F45B22] text-white">
                             <img src="assets/images/j9/spartan-workwear-woman.webp" alt="" class="absolute inset-0 h-full w-full object-cover opacity-45 group-hover:scale-105 transition-transform duration-500">
                             <span class="absolute inset-0 bg-[#F45B22]/85"></span>
                             <span class="relative z-10 flex h-full items-center justify-between p-5">

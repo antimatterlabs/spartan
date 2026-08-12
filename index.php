@@ -268,7 +268,6 @@ $home_department_cards = [
                     </div>
                 </div>
                 <div class="flex flex-col flex-1 space-y-2">
-                    <span class="font-oswald text-[9px] font-bold text-spartan-charcoal tracking-widest uppercase">MARINE SAFETY / SURVIVAL</span>
                     <h3 class="font-oswald text-[18px] md:text-xl font-bold text-spartan-navy uppercase tracking-normal leading-tight min-h-[64px]">
                         <a href="product-single.php?slug=coastline-solas-immersion-suit" class="hover:text-spartan-teal transition-colors">COASTLINE SOLAS IMMERSION SUIT</a>
                     </h3>
@@ -296,7 +295,6 @@ $home_department_cards = [
                     </div>
                 </div>
                 <div class="flex flex-col flex-1 space-y-2">
-                    <span class="font-oswald text-[9px] font-bold text-spartan-charcoal tracking-widest uppercase">ROPE & RIGGING / POT WARP</span>
                     <h3 class="font-oswald text-[18px] md:text-xl font-bold text-spartan-navy uppercase tracking-normal leading-tight min-h-[64px]">
                         <a href="product-single.php?slug=sinking-pot-warp-38" class="hover:text-spartan-teal transition-colors">SINKING POT WARP 3/8″ × 1,200 FT</a>
                     </h3>
@@ -317,22 +315,21 @@ $home_department_cards = [
                     <img src="assets/images/j9/marine-footwear.webp" alt="Commercial deck boots" class="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out">
                     <span class="absolute top-3 left-3 bg-spartan-teal text-white text-[8px] px-2 py-0.5 font-mono font-bold tracking-wider uppercase">SIZES AVAILABLE</span>
                     <div class="absolute inset-0 bg-spartan-navy/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                        <a href="product-single.php?slug=fierce-frontier-deck-boot" class="bg-spartan-navy text-white hover:bg-spartan-teal px-4 py-2.5 text-[10px] font-bold tracking-widest transition-colors duration-300 uppercase flex items-center space-x-2 rounded-none">
+                        <a href="product-single.php?slug=fierce-frontier-boots" class="bg-spartan-navy text-white hover:bg-spartan-teal px-4 py-2.5 text-[10px] font-bold tracking-widest transition-colors duration-300 uppercase flex items-center space-x-2 rounded-none">
                             <i class="fa-solid fa-list-check text-xs"></i>
                             <span>VIEW OPTIONS</span>
                         </a>
                     </div>
                 </div>
                 <div class="flex flex-col flex-1 space-y-2">
-                    <span class="font-oswald text-[9px] font-bold text-spartan-charcoal tracking-widest uppercase">FOOTWEAR / DECK BOOTS</span>
                     <h3 class="font-oswald text-[18px] md:text-xl font-bold text-spartan-navy uppercase tracking-normal leading-tight min-h-[64px]">
-                        <a href="product-single.php?slug=fierce-frontier-deck-boot" class="hover:text-spartan-teal transition-colors">SPARTAN COMMERCIAL DECK BOOTS</a>
+                        <a href="product-single.php?slug=fierce-frontier-boots" class="hover:text-spartan-teal transition-colors">FIERCE FRONTIER BOOTS</a>
                     </h3>
                     <div class="mt-auto border-t border-slate-100 pt-4 space-y-3">
                         <div class="flex flex-col items-start gap-2">
-                            <span class="font-sans text-lg font-bold text-slate-800">$139.50 <span class="text-[10px] text-slate-400 font-normal">CAD</span></span>
+                            <span class="font-sans text-sm font-bold text-slate-700 uppercase tracking-[0.12em]">Request Quote</span>
                         </div>
-                        <a href="product-single.php?slug=fierce-frontier-deck-boot" class="block w-full text-center bg-spartan-navy text-white hover:bg-spartan-teal py-3 px-3 text-[10px] font-bold tracking-widest transition-colors rounded-none uppercase">
+                        <a href="product-single.php?slug=fierce-frontier-boots" class="block w-full text-center bg-spartan-navy text-white hover:bg-spartan-teal py-3 px-3 text-[10px] font-bold tracking-widest transition-colors rounded-none uppercase">
                             VIEW OPTIONS
                         </a>
                     </div>
@@ -352,7 +349,6 @@ $home_department_cards = [
                     </div>
                 </div>
                 <div class="flex flex-col flex-1 space-y-2">
-                    <span class="font-oswald text-[9px] font-bold text-spartan-charcoal tracking-widest uppercase">WORKWEAR / FLOTATION</span>
                     <h3 class="font-oswald text-[18px] md:text-xl font-bold text-spartan-navy uppercase tracking-normal leading-tight min-h-[64px]">
                         <a href="product-single.php?slug=stormwatch-float-jacket" class="hover:text-spartan-teal transition-colors">HIGH-VIS LOBSTER FLOAT JACKET</a>
                     </h3>
@@ -380,7 +376,6 @@ $home_department_cards = [
                     </div>
                 </div>
                 <div class="flex flex-col flex-1 space-y-2">
-                    <span class="font-oswald text-[9px] font-bold text-spartan-charcoal tracking-widest uppercase">COMMERCIAL FISHING / HARDWARE</span>
                     <h3 class="font-oswald text-[18px] md:text-xl font-bold text-spartan-navy uppercase tracking-normal leading-tight min-h-[64px]">
                         <a href="product-single.php?slug=lobster-trap-kit" class="hover:text-spartan-teal transition-colors">LOBSTER TRAP HARDWARE KIT</a>
                     </h3>
@@ -408,7 +403,6 @@ $home_department_cards = [
                     </div>
                 </div>
                 <div class="flex flex-col flex-1 space-y-2">
-                    <span class="font-oswald text-[9px] font-bold text-spartan-charcoal tracking-widest uppercase">WORKWEAR / FOUL WEATHER</span>
                     <h3 class="font-oswald text-[18px] md:text-xl font-bold text-spartan-navy uppercase tracking-normal leading-tight min-h-[64px]">
                         <a href="product-single.php?slug=noreaster-rain-bibs" class="hover:text-spartan-teal transition-colors">COMMERCIAL PRO BIB PANTS</a>
                     </h3>
@@ -436,7 +430,6 @@ $home_department_cards = [
                     </div>
                 </div>
                 <div class="flex flex-col flex-1 space-y-2">
-                    <span class="font-oswald text-[9px] font-bold text-spartan-charcoal tracking-widest uppercase">ROPE & RIGGING / WIRE ROPE</span>
                     <h3 class="font-oswald text-[18px] md:text-xl font-bold text-spartan-navy uppercase tracking-normal leading-tight min-h-[64px]">
                         <a href="product-single.php?slug=galvanized-wire-rope-516" class="hover:text-spartan-teal transition-colors">GALVANIZED WIRE ROPE 5/16″</a>
                     </h3>
@@ -464,7 +457,6 @@ $home_department_cards = [
                     </div>
                 </div>
                 <div class="flex flex-col flex-1 space-y-2">
-                    <span class="font-oswald text-[9px] font-bold text-spartan-charcoal tracking-widest uppercase">FISHING GEAR / BUOYS</span>
                     <h3 class="font-oswald text-[18px] md:text-xl font-bold text-spartan-navy uppercase tracking-normal leading-tight min-h-[64px]">
                         <a href="product-single.php?slug=hi-vis-trap-buoy" class="hover:text-spartan-teal transition-colors">HI-VIS TRAP BUOY 11″ × 18″</a>
                     </h3>
@@ -685,7 +677,7 @@ $home_department_cards = [
     <section id="reviews-section" class="py-20 md:py-24 bg-white border-t border-slate-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 select-text">
             <div class="text-center mb-16">
-                <span class="font-oswald text-xs font-bold text-spartan-teal tracking-[0.25em] uppercase block mb-3">TESTIMONIALS</span>
+                <span class="font-oswald text-xs md:text-sm font-bold text-spartan-teal tracking-[0.32em] uppercase block mb-4">TESTIMONIALS</span>
                 <h2 class="font-oswald text-3xl md:text-4xl font-bold tracking-widest text-spartan-navy uppercase leading-tight">TRUSTED BY ATLANTIC MARINERS</h2>
                 <p class="text-sm text-slate-500 font-light mt-3 max-w-lg mx-auto">
                     Real crews and fleet operators rely on Spartan for responsive service, stocked branches, and practical support when conditions are working against them.
@@ -761,7 +753,7 @@ $home_department_cards = [
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 select-text">
             <div class="flex flex-col md:flex-row md:items-end justify-between mb-16">
                 <div>
-                    <span class="font-oswald text-xs font-bold text-spartan-teal tracking-[0.25em] uppercase block mb-3">LOGBOOK & RESOURCES</span>
+                    <span class="font-oswald text-xs md:text-sm font-bold text-spartan-teal tracking-[0.32em] uppercase block mb-4">LOGBOOK & RESOURCES</span>
                     <h2 class="font-oswald text-3xl md:text-4xl font-bold tracking-widest text-spartan-navy uppercase leading-tight">NEWS & TECHNICAL ARTICLES</h2>
                 </div>
                 <div class="mt-6 md:mt-0">
@@ -841,7 +833,7 @@ $home_department_cards = [
     <section id="faq-section" class="py-20 md:py-24 bg-spartan-light-gray border-b border-slate-200">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 select-text">
             <div class="text-center mb-16">
-                <span class="font-oswald text-xs font-bold text-spartan-teal tracking-[0.25em] uppercase block mb-3">KNOWLEDGE BASE</span>
+                <span class="font-oswald text-xs md:text-sm font-bold text-spartan-teal tracking-[0.32em] uppercase block mb-4">KNOWLEDGE BASE</span>
                 <h2 class="font-oswald text-3xl md:text-4xl font-bold tracking-widest text-spartan-navy uppercase leading-tight">FREQUENTLY ASKED QUESTIONS</h2>
                 <p class="text-sm text-slate-500 font-light mt-3 max-w-lg mx-auto">
                     Answers for crews, buyers, and fleet managers sourcing marine gear or service support across Atlantic Canada.

@@ -40,7 +40,7 @@ function sitemap_link_list($links) {
     <!-- Sitemap hero -->
     <section class="bg-white border-b border-slate-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 md:py-16 select-text">
-            <span class="font-oswald text-[10px] font-bold text-spartan-teal tracking-[0.3em] uppercase block mb-4">Site Index</span>
+            <span class="font-oswald text-xs md:text-sm font-bold text-spartan-teal tracking-[0.32em] uppercase block mb-4">Site Index</span>
             <h1 class="font-oswald text-4xl md:text-5xl font-bold tracking-widest uppercase text-spartan-navy leading-tight mb-4">Sitemap</h1>
         </div>
     </section>
@@ -85,7 +85,7 @@ function sitemap_link_list($links) {
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 select-text">
             <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-5 mb-8">
                 <div>
-                    <span class="font-oswald text-[10px] font-bold text-spartan-teal tracking-[0.3em] uppercase block mb-3">Products</span>
+                    <span class="font-oswald text-xs md:text-sm font-bold text-spartan-teal tracking-[0.32em] uppercase block mb-4">Products</span>
                     <h2 class="font-oswald text-3xl md:text-4xl font-bold tracking-widest uppercase text-spartan-navy leading-tight">Product Departments</h2>
                 </div>
                 <a href="products.php" class="inline-flex w-fit items-center text-[10px] font-bold tracking-[0.2em] uppercase text-spartan-teal hover:text-spartan-navy transition-colors">

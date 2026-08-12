@@ -135,6 +135,15 @@ $pd_group_name = $product['category_group_name'] ?? '';
 $pd_category_name = $product['category_name'] ?? ($product['category_label'] ?? '');
 $pd_category_url = site_product_category_url_for_product($product);
 $pd_brand = site_product_brand_for_product($product);
+$pd_normalize_breadcrumb = static function ($label) {
+    $label = strtolower(html_entity_decode(strip_tags((string) $label), ENT_QUOTES, 'UTF-8'));
+    $label = str_replace(['&', '/'], ' ', $label);
+    $parts = preg_split('/[^a-z0-9]+/', $label, -1, PREG_SPLIT_NO_EMPTY);
+    sort($parts);
+    return implode('-', array_unique($parts));
+};
+$pd_show_category_breadcrumb = $pd_category_name !== ''
+    && ($pd_group_name === '' || $pd_normalize_breadcrumb($pd_category_name) !== $pd_normalize_breadcrumb($pd_group_name));
 
 require_once __DIR__ . '/partials/header.php';
 ?>
@@ -149,13 +158,13 @@ require_once __DIR__ . '/partials/header.php';
                 <span class="text-slate-400 font-light">/</span>
                 <?php if ($pd_group_slug !== '' && $pd_group_name !== ''): ?>
                 <a href="<?php echo site_escape(site_product_group_url($pd_group_slug)); ?>" class="hover:text-spartan-navy transition-colors"><?php echo site_escape($pd_group_name); ?></a>
+                <?php if ($pd_show_category_breadcrumb): ?>
                 <span class="text-slate-400 font-light">/</span>
                 <?php endif; ?>
-                <?php if ($pd_category_name !== ''): ?>
+                <?php endif; ?>
+                <?php if ($pd_show_category_breadcrumb): ?>
                 <a href="<?php echo site_escape($pd_category_url); ?>" class="hover:text-spartan-navy transition-colors"><?php echo site_escape($pd_category_name); ?></a>
-                <span class="text-slate-400 font-light">/</span>
                 <?php endif; ?>
-                <span class="text-slate-500"><?php echo site_escape($pd_display_name); ?></span>
             </nav>
         </div>
     </div>
@@ -166,16 +175,13 @@ require_once __DIR__ . '/partials/header.php';
 
             <!-- Gallery -->
             <div class="space-y-4">
-                <div class="relative bg-white border border-slate-100 h-[420px] md:h-[520px] flex items-center justify-center p-10 overflow-hidden">
+                <div class="relative bg-white border border-slate-100 h-[360px] md:h-[520px] flex items-center justify-center overflow-hidden">
                     <img id="product-main-image" src="<?php echo site_escape($product['image']); ?>" alt="<?php echo site_escape($pd_display_name); ?>" class="<?php echo !empty($product['contain']) ? 'h-full w-auto object-contain' : 'h-full w-full object-cover'; ?>">
-                    <?php if (!empty($product['badge'])): ?>
-                    <span class="absolute top-4 left-4 bg-spartan-navy text-white text-[8px] px-2 py-0.5 font-mono font-bold tracking-wider uppercase"><?php echo site_escape($product['badge']); ?></span>
-                    <?php endif; ?>
                 </div>
-                <div class="grid grid-cols-4 gap-4">
+                <div class="grid grid-cols-4 gap-2 md:gap-4">
                     <?php $thumbs = [$product['image'], 'assets/images/j9/immersion-suit-testing.webp', 'assets/images/j9/marine-safety.webp', 'assets/images/j9/life-raft-inspection.webp']; ?>
                     <?php foreach ($thumbs as $i => $thumb): ?>
-                    <button onclick="document.getElementById('product-main-image').src='<?php echo site_escape($thumb); ?>'" class="border <?php echo $i === 0 ? 'border-spartan-teal' : 'border-slate-100 hover:border-spartan-teal'; ?> h-24 flex items-center justify-center p-2 bg-white transition-colors">
+                    <button onclick="document.getElementById('product-main-image').src='<?php echo site_escape($thumb); ?>'" class="border <?php echo $i === 0 ? 'border-spartan-teal' : 'border-slate-100 hover:border-spartan-teal'; ?> h-20 md:h-24 flex items-center justify-center bg-white overflow-hidden transition-colors">
                         <img src="<?php echo site_escape($thumb); ?>" alt="Product view <?php echo $i + 1; ?>" class="h-full w-full object-cover">
                     </button>
                     <?php endforeach; ?>
@@ -184,36 +190,32 @@ require_once __DIR__ . '/partials/header.php';
 
             <!-- Details -->
             <div class="flex flex-col justify-center">
-                <span class="font-oswald text-[10px] font-bold text-spartan-teal tracking-[0.25em] uppercase block mb-3"><?php echo site_escape($product['category_label']); ?></span>
+                <span class="font-oswald text-xs md:text-sm font-bold text-spartan-teal tracking-[0.32em] uppercase block mb-4"><?php echo site_escape($product['category_label']); ?></span>
                 <h1 class="font-oswald text-3xl md:text-4xl font-bold tracking-wider text-spartan-navy uppercase leading-tight mb-4">
                     <?php echo site_escape($pd_display_name); ?>
                 </h1>
+                <?php if ($pd_has_price): ?>
                 <div class="flex items-baseline space-x-3 mb-6">
-                    <?php if ($pd_has_price): ?>
                     <span class="font-sans text-2xl font-bold text-slate-800">$<?php echo number_format($pd_price, 2); ?> <span class="text-xs text-slate-400 font-normal"><?php echo site_escape($product['price_suffix'] ?? ''); ?> CAD</span></span>
-                    <span class="inline-flex items-center text-[10px] font-bold tracking-widest text-spartan-teal uppercase"><i class="fa-solid fa-circle-check mr-1.5"></i>In Stock, All Locations</span>
-                    <?php else: ?>
-                    <span class="font-sans text-xl font-bold text-slate-800 uppercase tracking-[0.08em]">Request Quote</span>
-                    <span class="inline-flex items-center text-[10px] font-bold tracking-widest text-spartan-teal uppercase"><i class="fa-solid fa-circle-info mr-1.5"></i>Counter Pricing</span>
-                    <?php endif; ?>
+                    <span class="inline-flex items-center text-xs font-bold tracking-wider text-spartan-teal uppercase"><i class="fa-solid fa-circle-check mr-1.5"></i>In Stock, All Locations</span>
                 </div>
+                <?php endif; ?>
                 <p class="text-sm text-slate-600 font-light leading-relaxed mb-8 max-w-lg">
                     <?php echo site_escape($product['desc']); ?>
                 </p>
 
                 <?php
                 $pd_detail_rows = array_filter([
-                    'SKU' => $pd_selected_sku ?: ($product['sku'] ?? ''),
                     'Brand' => $pd_brand['label'] ?? ($product['brand_name'] ?? ($product['vendor'] ?? '')),
-                    'Collection' => $product['collection'] ?? '',
-                    'Product Type' => $product['product_type'] ?? '',
                 ]);
                 ?>
                 <?php if (!empty($pd_detail_rows)): ?>
                 <div class="max-w-md border-y border-slate-100 divide-y divide-slate-100 mb-8">
                     <?php foreach ($pd_detail_rows as $label => $value): ?>
-                    <div class="py-3 grid grid-cols-[110px_1fr] gap-4">
-                        <span class="font-oswald text-[10px] font-bold text-spartan-navy tracking-[0.2em] uppercase"><?php echo site_escape($label); ?></span>
+                    <div class="py-3 <?php echo $label === 'Brand' ? '' : 'grid grid-cols-[110px_1fr] gap-4'; ?>">
+                        <?php if ($label !== 'Brand'): ?>
+                        <span class="font-oswald text-xs font-bold text-spartan-navy tracking-[0.18em] uppercase"><?php echo site_escape($label); ?></span>
+                        <?php endif; ?>
                         <span class="text-sm text-slate-600 font-light">
                             <?php if ($label === 'Brand' && !empty($pd_brand['slug']) && ($pd_brand['count'] ?? 0) > 0): ?>
                             <a href="<?php echo site_escape(site_brand_url($pd_brand['slug'])); ?>" class="hover:text-spartan-teal hover:underline underline-offset-4 transition-colors"><?php echo site_escape($value); ?></a>
@@ -233,7 +235,7 @@ require_once __DIR__ . '/partials/header.php';
                         <?php foreach ($pd_variant_picker_groups as $picker_group): ?>
                         <div>
                             <div class="flex items-baseline justify-between gap-4 mb-2">
-                                <span class="font-oswald text-[10px] font-bold text-spartan-navy tracking-[0.2em] uppercase">
+                                <span class="font-oswald text-xs font-bold text-spartan-navy tracking-[0.18em] uppercase">
                                     <?php echo site_escape($picker_group['name']); ?>
                                 </span>
                                 <?php if (($picker_group['selected'] ?? '') !== ''): ?>
@@ -270,7 +272,7 @@ require_once __DIR__ . '/partials/header.php';
 
                     <?php if ($pd_has_price): ?>
                     <div>
-                        <label class="font-oswald text-[10px] font-bold text-spartan-navy tracking-[0.2em] uppercase block mb-2">Quantity</label>
+                        <label class="font-oswald text-xs font-bold text-spartan-navy tracking-[0.18em] uppercase block mb-2">Quantity</label>
                         <input id="product-qty" type="number" min="1" value="1" class="w-28 border border-slate-200 bg-white text-sm text-slate-700 px-4 py-3 outline-none focus:border-spartan-teal rounded-none">
                     </div>
                     <?php else: ?>
@@ -290,10 +292,10 @@ require_once __DIR__ . '/partials/header.php';
                         <span>Add to Order</span>
                     </button>
                     <?php else: ?>
-                    <a href="<?php echo site_escape($pd_quote_url); ?>" class="bg-spartan-teal text-white py-4 px-10 text-xs font-bold tracking-[0.2em] uppercase hover:bg-spartan-teal-light hover:text-spartan-navy transition-colors flex items-center space-x-2.5">
+                    <button type="button" onclick="openProductQuoteModal()" class="bg-spartan-teal text-white py-4 px-10 text-xs font-bold tracking-[0.2em] uppercase hover:bg-spartan-teal-light hover:text-spartan-navy transition-colors flex items-center space-x-2.5">
                         <i class="fa-solid fa-circle-info text-sm"></i>
                         <span>Request Quote</span>
-                    </a>
+                    </button>
                     <?php endif; ?>
                     <a href="contact.php" class="border border-spartan-navy text-spartan-navy py-4 px-8 text-xs font-bold tracking-[0.2em] uppercase hover:bg-spartan-navy hover:text-white transition-colors flex items-center">
                         Ask About Fleet Pricing
@@ -301,7 +303,7 @@ require_once __DIR__ . '/partials/header.php';
                 </div>
 
                 <!-- Trust points -->
-                <ul class="space-y-3 text-xs text-slate-600 font-light border-t border-slate-100 pt-6">
+                <ul class="space-y-3 text-sm text-slate-600 font-light leading-relaxed border-t border-slate-100 pt-6">
                     <li class="flex items-center space-x-3"><i class="fa-solid fa-truck text-spartan-teal"></i><span>Free shipping over $150 across Atlantic Canada. Same-day counter pickup.</span></li>
                     <li class="flex items-center space-x-3"><i class="fa-solid fa-certificate text-spartan-teal"></i><span>Transport Canada approved. Annual testing available in-house.</span></li>
                     <li class="flex items-center space-x-3"><i class="fa-solid fa-phone text-spartan-teal"></i><span>Sizing questions? Call <?php echo $site['phone']; ?> and talk to someone who has worn one.</span></li>
@@ -334,7 +336,7 @@ require_once __DIR__ . '/partials/header.php';
                     }
                     foreach ($specs as $label => $value): ?>
                     <div class="py-3.5 grid grid-cols-2 gap-4">
-                        <span class="font-oswald text-[10px] font-bold text-spartan-navy tracking-[0.2em] uppercase"><?php echo site_escape($label); ?></span>
+                        <span class="font-oswald text-xs font-bold text-spartan-navy tracking-[0.18em] uppercase"><?php echo site_escape($label); ?></span>
                         <span class="text-sm text-slate-600 font-light"><?php echo site_escape($value); ?></span>
                     </div>
                     <?php endforeach; ?>
@@ -368,5 +370,97 @@ require_once __DIR__ . '/partials/header.php';
     ];
     require_once __DIR__ . '/components/cta-band.php';
     ?>
+
+    <?php if (!$pd_has_price): ?>
+    <!-- Product quote modal -->
+    <div id="product-quote-modal" class="fixed inset-0 z-[100] hidden" role="dialog" aria-modal="true" aria-labelledby="product-quote-title">
+        <button type="button" onclick="closeProductQuoteModal()" class="absolute inset-0 w-full h-full bg-spartan-navy/75" aria-label="Close quote form"></button>
+        <div class="relative z-10 flex min-h-full items-center justify-center p-4 md:p-8 pointer-events-none">
+            <div class="w-full max-w-2xl max-h-[calc(100vh-2rem)] overflow-y-auto bg-white border border-slate-200 shadow-[0_24px_80px_rgba(4,18,26,0.3)] pointer-events-auto">
+                <div class="flex items-start justify-between gap-6 border-b border-slate-100 p-6 md:p-8">
+                    <div>
+                        <span class="font-oswald text-xs font-bold text-spartan-teal tracking-[0.32em] uppercase block mb-3">Product Enquiry</span>
+                        <h2 id="product-quote-title" class="font-oswald text-2xl md:text-3xl font-bold tracking-widest text-spartan-navy uppercase leading-tight">Request A Quote</h2>
+                    </div>
+                    <button type="button" onclick="closeProductQuoteModal()" class="w-11 h-11 shrink-0 border border-slate-200 text-spartan-navy hover:bg-spartan-navy hover:text-white transition-colors flex items-center justify-center" aria-label="Close quote form">
+                        <i class="fa-solid fa-xmark text-lg"></i>
+                    </button>
+                </div>
+
+                <form onsubmit="submitProductQuote(event)" class="p-6 md:p-8 space-y-5">
+                    <div class="bg-spartan-light-gray border border-slate-100 p-4">
+                        <span class="font-oswald text-xs font-bold text-spartan-navy tracking-[0.18em] uppercase block mb-2">Product</span>
+                        <strong class="font-oswald text-lg text-spartan-navy uppercase tracking-wide block"><?php echo site_escape($pd_display_name); ?></strong>
+                        <?php if ($pd_selected_summary !== '' || $pd_selected_sku !== ''): ?>
+                        <span class="text-sm text-slate-600 font-light block mt-1">
+                            <?php echo site_escape($pd_selected_summary); ?><?php echo $pd_selected_sku !== '' ? ' / SKU ' . site_escape($pd_selected_sku) : ''; ?>
+                        </span>
+                        <?php endif; ?>
+                        <input type="hidden" name="product" value="<?php echo site_escape($pd_quote_product_name); ?>">
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                        <div>
+                            <label for="quote-name" class="font-oswald text-xs font-bold text-spartan-navy tracking-[0.18em] uppercase block mb-2">Name *</label>
+                            <input id="quote-name" name="name" type="text" required autocomplete="name" class="w-full border border-slate-200 bg-white text-sm text-slate-700 px-4 py-3 outline-none focus:border-spartan-teal rounded-none" placeholder="Your name">
+                        </div>
+                        <div>
+                            <label for="quote-email" class="font-oswald text-xs font-bold text-spartan-navy tracking-[0.18em] uppercase block mb-2">Email *</label>
+                            <input id="quote-email" name="email" type="email" required autocomplete="email" class="w-full border border-slate-200 bg-white text-sm text-slate-700 px-4 py-3 outline-none focus:border-spartan-teal rounded-none" placeholder="you@company.ca">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                        <div>
+                            <label for="quote-phone" class="font-oswald text-xs font-bold text-spartan-navy tracking-[0.18em] uppercase block mb-2">Phone</label>
+                            <input id="quote-phone" name="phone" type="tel" autocomplete="tel" class="w-full border border-slate-200 bg-white text-sm text-slate-700 px-4 py-3 outline-none focus:border-spartan-teal rounded-none" placeholder="Best number to reach you">
+                        </div>
+                        <div>
+                            <label for="quote-quantity" class="font-oswald text-xs font-bold text-spartan-navy tracking-[0.18em] uppercase block mb-2">Quantity</label>
+                            <input id="quote-quantity" name="quantity" type="number" min="1" value="1" class="w-full border border-slate-200 bg-white text-sm text-slate-700 px-4 py-3 outline-none focus:border-spartan-teal rounded-none">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="quote-message" class="font-oswald text-xs font-bold text-spartan-navy tracking-[0.18em] uppercase block mb-2">Message</label>
+                        <textarea id="quote-message" name="message" rows="4" class="w-full border border-slate-200 bg-white text-sm text-slate-700 px-4 py-3 outline-none focus:border-spartan-teal rounded-none" placeholder="Tell us about quantities, timing, delivery, or pickup needs."></textarea>
+                    </div>
+
+                    <div class="flex flex-col-reverse sm:flex-row sm:items-center sm:justify-end gap-3 pt-2">
+                        <button type="button" onclick="closeProductQuoteModal()" class="border border-slate-300 text-spartan-navy py-3.5 px-7 text-xs font-bold tracking-[0.18em] uppercase hover:border-spartan-navy transition-colors">Cancel</button>
+                        <button type="submit" class="bg-spartan-teal text-white py-3.5 px-8 text-xs font-bold tracking-[0.18em] uppercase hover:bg-spartan-teal-light hover:text-spartan-navy transition-colors">Send Quote Request</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openProductQuoteModal() {
+            const modal = document.getElementById('product-quote-modal');
+            modal.classList.remove('hidden');
+            document.body.classList.add('overflow-hidden');
+            window.setTimeout(() => document.getElementById('quote-name')?.focus(), 50);
+        }
+
+        function closeProductQuoteModal() {
+            document.getElementById('product-quote-modal')?.classList.add('hidden');
+            document.body.classList.remove('overflow-hidden');
+        }
+
+        function submitProductQuote(event) {
+            event.preventDefault();
+            event.currentTarget.reset();
+            closeProductQuoteModal();
+            showToastMessage('QUOTE REQUEST SENT', 'A Spartan team member will follow up with pricing and availability.');
+        }
+
+        document.addEventListener('keydown', function (event) {
+            if (event.key === 'Escape' && !document.getElementById('product-quote-modal')?.classList.contains('hidden')) {
+                closeProductQuoteModal();
+            }
+        });
+    </script>
+    <?php endif; ?>
 
 <?php require_once __DIR__ . '/partials/footer.php'; ?>

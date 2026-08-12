@@ -29,9 +29,8 @@ $sm_btn_classes = $sm_btn_style === 'outline'
     </div>
     <!-- Content side -->
     <div class="p-10 md:p-14 flex flex-col justify-center <?php echo $sm_reverse ? 'order-2 md:order-1' : ''; ?>">
-        <div class="w-14 h-4 bg-spartan-teal mb-5" style="-webkit-mask: url('assets/images/full-wave.svg') center / contain no-repeat; mask: url('assets/images/full-wave.svg') center / contain no-repeat;" aria-hidden="true"></div>
         <?php if (!empty($sm['eyebrow'])): ?>
-        <span class="font-oswald text-[10px] font-bold text-spartan-teal tracking-[0.25em] uppercase block mb-3"><?php echo $sm['eyebrow']; ?></span>
+        <span class="font-oswald text-xs md:text-sm font-bold text-spartan-teal tracking-[0.32em] uppercase block mb-4"><?php echo $sm['eyebrow']; ?></span>
         <?php endif; ?>
         <h3 class="font-oswald text-2xl md:text-3xl font-bold tracking-wider text-spartan-navy uppercase leading-tight mb-4">
             <?php echo $sm['title']; ?>

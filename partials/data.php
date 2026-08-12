@@ -217,6 +217,7 @@ $site_posts = require __DIR__ . '/blog-posts.php';
 $site_brands = [
     'VIKING', 'MUSTANG SURVIVAL', 'GUY COTTEN', 'XTRATUF', 'GRUNDÉNS', 'CROSBY',
     'HELLY HANSEN', 'ACR ELECTRONICS', 'SAMSON ROPE', 'STORMLINE', 'POLYFORM', 'HAMMAR',
+    'PAUL', 'FIERCE WORKWEAR',
 ];
 
 $site_brand_display_aliases = [
@@ -367,7 +368,28 @@ function site_brand_url($brand_slug) {
     return 'products.php?brand=' . rawurlencode((string) $brand_slug);
 }
 
+function site_product_brand_override($product) {
+    $name = site_catalog_clean_value($product['name'] ?? '');
+
+    if ($name !== '' && preg_match('/\bfierce\b/i', $name)) {
+        return [
+            'name' => 'Fierce Workwear',
+            'slug' => site_brand_slug('Fierce Workwear'),
+        ];
+    }
+
+    return null;
+}
+
 function site_attach_product_brand($product) {
+    $override = site_product_brand_override($product);
+    if ($override !== null) {
+        $product['brand_name'] = $override['name'];
+        $product['brand_slug'] = $override['slug'];
+
+        return $product;
+    }
+
     $vendor = site_catalog_clean_value($product['vendor'] ?? '');
     if ($vendor === '') {
         return $product;
@@ -402,12 +424,12 @@ function site_build_brand_catalog($brands, $products) {
 
     foreach ($products as $product) {
         $vendor = site_catalog_clean_value($product['vendor'] ?? '');
-        if ($vendor === '') {
+        $label = $product['brand_name'] ?? site_brand_display_label($vendor);
+        $slug = $product['brand_slug'] ?? site_brand_slug($label);
+        if ($label === '' || $slug === '') {
             continue;
         }
 
-        $label = $product['brand_name'] ?? site_brand_display_label($vendor);
-        $slug = $product['brand_slug'] ?? site_brand_slug($label);
         if (!isset($catalog[$slug])) {
             $catalog[$slug] = [
                 'slug' => $slug,
@@ -419,7 +441,9 @@ function site_build_brand_catalog($brands, $products) {
         }
 
         $catalog[$slug]['count']++;
-        $catalog[$slug]['vendors'][$vendor] = true;
+        if ($vendor !== '') {
+            $catalog[$slug]['vendors'][$vendor] = true;
+        }
 
         $category = $product['category_group_name'] ?? ($product['category_name'] ?? '');
         if ($category !== '') {
@@ -1942,6 +1966,11 @@ function site_product_variant_url($product, $variant_sku = '') {
 
 function site_product_by_slug($slug) {
     global $site_products;
+
+    $slug_aliases = [
+        'fierce-frontier-deck-boot' => 'fierce-frontier-boots',
+    ];
+    $slug = $slug_aliases[$slug] ?? $slug;
 
     foreach ($site_products as $product) {
         if (($product['slug'] ?? '') === $slug) {
