@@ -10,10 +10,8 @@ $hero = [
     'image' => 'assets/images/j9/spartan-store-interior.webp',
     'button_label' => 'Talk to Our Team',
     'button_url' => 'contact.php',
-    'breadcrumbs' => [
-        ['label' => 'Home', 'url' => 'index.php'],
-        ['label' => 'FAQ'],
-    ],
+    'show_breadcrumbs' => false,
+    'overlay_class' => 'bg-gradient-to-b from-spartan-navy/55 via-spartan-navy/70 to-spartan-navy/90',
 ];
 require_once __DIR__ . '/components/page-hero.php';
 
@@ -22,7 +20,7 @@ $rope_url = site_product_group_url('rope-line-nets');
 $fierce_url = 'search.php?q=' . rawurlencode('Fierce Workwear');
 $immersion_suits_url = site_product_category_url('Immersion Suits');
 $locations_by_province = [
-    'Nova Scotia (NS)' => ['dartmouth-ns', 'sydney-ns', 'yarmouth-ns', 'barrington-passage-ns'],
+    'Nova Scotia (NS)' => ['dartmouth-ns', 'sydney-ns', 'yarmouth-ns'],
     'Newfoundland and Labrador (NL)' => ['paradise-nl'],
     'New Brunswick (NB)' => ['caraquet-nb'],
     'Prince Edward Island (PEI)' => ['charlottetown-pei'],
@@ -71,15 +69,15 @@ $faq_items = [
     ],
     [
         'q' => 'Do you provide marine inspections and repair services?',
-        'a' => 'Yes. Spartan Marine offers <a href="services.php" class="font-bold text-spartan-teal hover:text-spartan-navy transition-colors">inspections, testing, repairs, certifications, and other marine support services</a> to help keep vessels operating safely and in compliance with industry standards.',
+        'a' => 'Yes. Spartan Marine offers <a href="inspection-services.php" class="font-bold text-spartan-teal hover:text-spartan-navy transition-colors">inspections, testing, repairs, certifications, and other marine support services</a> to help keep vessels operating safely and in compliance with industry standards.',
     ],
     [
         'q' => 'What is CertTracker and how does it benefit vessel operators?',
         'a' => '<a href="certtracker.php" class="font-bold text-spartan-teal hover:text-spartan-navy transition-colors">CertTracker</a> is our free, 100% web-based certificate tracking system that grants you 24/7 access to your current and past equipment inspection certificates from any computer. It eliminates downtime caused by expired paperwork, tracks historical assets, and sends proactive notifications when your equipment is due for its next inspection, even for products you did not buy from us.',
     ],
     [
-        'q' => 'Can Spartan Marine manufacture custom fishing gear and rigging?',
-        'a' => 'Absolutely. Spartan Marine specializes in custom solutions, including netting, trawls, traps, rigging, and other commercial fishing equipment designed to meet your specific operational needs.',
+        'q' => 'Does Spartan handle lobster and crab trap production?',
+        'a' => 'Yes. Spartan produces lobster and crab traps. Share the trap type, quantity, specifications, and required timing through our <a href="production.php" class="font-bold text-spartan-teal hover:text-spartan-navy transition-colors">trap production form</a>, and our team will follow up.',
     ],
     [
         'q' => 'Where are Spartan Marine locations?',

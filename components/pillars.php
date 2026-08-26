@@ -5,8 +5,8 @@
 $pillars = [
     ['icon' => 'fa-anchor', 'title' => 'Reliability', 'text' => 'Harshest environments demand proven performance. We deliver certified, battle-tested marine safety gear that never fails.'],
     ['icon' => 'fa-compass', 'title' => 'Expertise', 'text' => 'Decades of deep maritime knowledge. We guide your fleet through complex Transport Canada and DFO regulations.'],
-    ['icon' => 'fa-screwdriver-wrench', 'title' => 'Service', 'text' => 'Your schedule is our priority. Our rapid-turnaround maintenance ensures you pass every inspection seamlessly.'],
-    ['icon' => 'fa-warehouse', 'title' => 'Readiness', 'text' => 'Always stocked, local, and prepared. We deploy inventory and rapid service tech teams when you need them.'],
+    ['icon' => 'fa-screwdriver-wrench', 'title' => 'Service', 'text' => 'Contact Spartan with the equipment type, manufacturer, and service history to confirm the correct inspection path.'],
+    ['icon' => 'fa-warehouse', 'title' => 'Readiness', 'text' => 'Six Atlantic Canada locations connect customers with stocked products, local pickup, and service intake.'],
 ];
 ?>
 <section class="bg-white">

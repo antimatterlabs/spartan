@@ -20,6 +20,7 @@ $footer_menu_sections = [
         'title' => 'Products',
         'links' => [
             ['label' => 'Catalogue', 'url' => 'products.php'],
+            ['label' => 'Trap Production', 'url' => 'production.php'],
             ['label' => 'Top Sellers', 'url' => 'products.php'],
             ['label' => 'On Sale', 'url' => 'products.php'],
             ['label' => 'PAUL', 'url' => site_brand_url('paul')],
@@ -29,7 +30,7 @@ $footer_menu_sections = [
     [
         'title' => 'Services',
         'links' => [
-            ['label' => 'Inspections & Repairs', 'url' => 'services.php'],
+            ['label' => 'Inspection Services', 'url' => 'inspection-services.php'],
             ['label' => 'Rental Equipment', 'url' => 'rental-equipment.php'],
             ['label' => 'Safety & Training', 'url' => 'training-courses.php'],
         ],
@@ -189,15 +190,55 @@ $footer_menu_sections = [
         }
 
         // Toggle Mobile Menu Side drawer
+        function openMobileShopMenu() {
+            const panel = document.getElementById('mobile-shop-panel');
+            const primary = document.getElementById('mobile-menu-primary');
+            const trigger = document.querySelector('[aria-controls="mobile-shop-panel"]');
+            if (!panel || !primary) return;
+
+            primary.setAttribute('inert', '');
+            primary.setAttribute('aria-hidden', 'true');
+            panel.removeAttribute('inert');
+            panel.setAttribute('aria-hidden', 'false');
+            panel.classList.remove('translate-x-full', 'pointer-events-none');
+            panel.classList.add('translate-x-0', 'pointer-events-auto');
+            if (trigger) trigger.setAttribute('aria-expanded', 'true');
+
+            setTimeout(() => {
+                panel.querySelector('[aria-label="Back to main menu"]')?.focus();
+            }, 300);
+        }
+
+        function closeMobileShopMenu(restoreFocus = true) {
+            const panel = document.getElementById('mobile-shop-panel');
+            const primary = document.getElementById('mobile-menu-primary');
+            const trigger = document.querySelector('[aria-controls="mobile-shop-panel"]');
+            if (!panel || !primary) return;
+
+            panel.classList.add('translate-x-full', 'pointer-events-none');
+            panel.classList.remove('translate-x-0', 'pointer-events-auto');
+            panel.setAttribute('inert', '');
+            panel.setAttribute('aria-hidden', 'true');
+            primary.removeAttribute('inert');
+            primary.setAttribute('aria-hidden', 'false');
+            if (trigger) trigger.setAttribute('aria-expanded', 'false');
+
+            if (restoreFocus && trigger) {
+                setTimeout(() => trigger.focus(), 300);
+            }
+        }
+
         function toggleMobileMenu() {
             const menu = document.getElementById('mobile-menu');
             const inner = document.getElementById('mobile-menu-inner');
             if (menu.classList.contains('opacity-0')) {
+                closeMobileShopMenu(false);
                 menu.classList.remove('opacity-0', 'pointer-events-none');
                 menu.classList.add('opacity-100', 'pointer-events-all');
                 inner.classList.remove('translate-x-full');
                 inner.classList.add('translate-x-0');
             } else {
+                closeMobileShopMenu(false);
                 menu.classList.add('opacity-0', 'pointer-events-none');
                 menu.classList.remove('opacity-100', 'pointer-events-all');
                 inner.classList.add('translate-x-full');

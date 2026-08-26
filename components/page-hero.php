@@ -15,6 +15,9 @@
  *   'button_url'   => string (optional)
  *   'secondary_button_label' => string (optional)
  *   'secondary_button_url'   => string (optional)
+ *   'button_spacing_class'   => string (optional, defaults to pt-1)
+ *   'wave_color_class'       => string (optional, defaults to text-white)
+ *   'overlay_class'          => string (optional, defaults to the standard navy gradient)
  * ];
  */
 $hero_image = $hero['image'] ?? 'assets/images/j9/spartan-storefront-exterior.webp';
@@ -28,13 +31,16 @@ $hero_padding = $hero_short ? 'py-20 md:py-24' : ($hero_tall ? 'py-28 md:py-36' 
 $hero_title_size = $hero_short ? 'text-3xl sm:text-4xl md:text-5xl' : ($hero_tall ? 'text-3xl sm:text-4xl md:text-5xl lg:text-6xl' : 'text-4xl sm:text-5xl md:text-6xl');
 $hero_content_width = $hero_tall ? 'max-w-6xl' : 'max-w-4xl';
 $hero_subtitle_width = $hero_tall ? 'max-w-5xl' : 'max-w-3xl';
+$hero_button_spacing = $hero['button_spacing_class'] ?? 'pt-1';
+$hero_wave_color = $hero['wave_color_class'] ?? 'text-white';
+$hero_overlay_class = $hero['overlay_class'] ?? 'bg-gradient-to-b from-spartan-navy/15 via-spartan-navy/45 to-spartan-navy/85';
 $hero_title_text = strip_tags((string) ($hero['title'] ?? ''));
 ?>
 <section class="relative <?php echo $hero_min_height; ?> <?php echo $hero_padding; ?> w-full overflow-hidden bg-spartan-navy flex items-center justify-center">
     <!-- Background Image -->
     <div class="absolute inset-0 z-0">
         <img src="<?php echo site_escape($hero_image); ?>" alt="<?php echo site_escape($hero_title_text); ?>" class="w-full h-full object-cover object-center">
-        <div class="absolute inset-0 bg-gradient-to-b from-spartan-navy/15 via-spartan-navy/45 to-spartan-navy/85"></div>
+        <div class="absolute inset-0 <?php echo site_escape($hero_overlay_class); ?>"></div>
     </div>
 
     <!-- Centered Content -->
@@ -72,7 +78,7 @@ $hero_title_text = strip_tags((string) ($hero['title'] ?? ''));
         <?php endif; ?>
 
         <?php if (!empty($hero['button_label']) || !empty($hero['secondary_button_label'])): ?>
-        <div class="flex flex-wrap justify-center gap-3 pt-1">
+        <div class="flex flex-wrap justify-center gap-3 <?php echo site_escape($hero_button_spacing); ?>">
             <?php if (!empty($hero['button_label'])): ?>
             <a href="<?php echo site_escape($hero['button_url'] ?? '#'); ?>" class="inline-flex items-center bg-spartan-teal text-white py-3.5 px-7 text-xs font-bold tracking-[0.2em] uppercase hover:bg-spartan-teal-light hover:text-spartan-navy transition-colors">
                 <span><?php echo site_escape($hero['button_label']); ?></span>
@@ -98,7 +104,7 @@ $hero_title_text = strip_tags((string) ($hero['title'] ?? ''));
 
     <!-- Stretched Wave Mask Divider (blends into white body) -->
     <div class="absolute bottom-0 inset-x-0 z-10 overflow-hidden leading-[0] pointer-events-none">
-        <svg viewBox="0 0 176.23 11.78" preserveAspectRatio="none" class="relative block w-full h-8 md:h-12 text-white fill-current">
+        <svg viewBox="0 0 176.23 11.78" preserveAspectRatio="none" class="relative block w-full h-8 md:h-12 <?php echo site_escape($hero_wave_color); ?> fill-current">
             <path d="M175.37,11.19S152.97,0,121.72,0c-26.26,0-36.05,6.77-71.07,6.77C25.36,6.77,6.95,2.88,1.14,1.46c-.55-.13-.99-.18-1.14-.14l.04,10.46h176.19l-.86-.59Z"></path>
         </svg>
     </div>

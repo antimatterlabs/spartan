@@ -44,7 +44,7 @@ return [
 <p>From commercial trawlers to tugboats, rigid standards dictate the type, quantity, and certification of on-board life-saving gear. This includes Transport Canada-approved immersion suits, commercial life rafts, and emergency signaling electronics. For your convenience, our team can help you bundle these required items to ensure complete, single-source fleet readiness.</p>
 
 <h3>3. Machinery and Hull Integrity</h3>
-<p>Under the Vessel Construction and Equipment Regulations (VCER), vessels over 24 meters must meet exact structural standards. Because the Act mandates rigorous inspections of both ships and cargo, critical components like steering gear, valves, and bulkheads must carry valid class certifications, such as ABS, DNV, or Lloyd's Register.</p>
+<p>Under the Vessel Construction and Equipment Regulations (VCER), vessels over 24 meters must meet exact structural standards. Because the Act mandates rigorous inspections of both ships and cargo, critical components like steering gear, valves, and bulkheads may require valid classification documentation for the vessel and service involved.</p>
 
 <h3>4. Crew Certification, Training, and Arctic Safety</h3>
 <p>For fleets operating north, your hardware must comply with specialized regulations for Arctic shipping safety to endure extreme environments. Beyond physical assets, the CSA 2001 mandates rigid requirements for crew certification and safety training. Through our sister company, we offer comprehensive Hercules SLR Marine Training Courses designed to help your team exceed federal safety baselines.</p>

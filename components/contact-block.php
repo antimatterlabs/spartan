@@ -33,7 +33,7 @@
                     <span>Send a Message</span>
                     <i class="fa-solid fa-arrow-right text-[11px] ml-2.5"></i>
                 </a>
-                <a href="services.php" class="inline-flex items-center border border-spartan-navy text-spartan-navy py-3.5 px-7 text-xs font-bold tracking-[0.2em] uppercase hover:bg-spartan-navy hover:text-white transition-colors">
+                <a href="inspection-services.php" class="inline-flex items-center border border-spartan-navy text-spartan-navy py-3.5 px-7 text-xs font-bold tracking-[0.2em] uppercase hover:bg-spartan-navy hover:text-white transition-colors">
                     <span>Book a Service</span>
                 </a>
             </div>

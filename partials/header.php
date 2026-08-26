@@ -5,7 +5,7 @@
  *
  * Expects (optional):
  *   $page_title  - string page title
- *   $active_nav  - 'home' | 'products' | 'services' | 'brands' | 'resources' | 'about' | 'faq' | 'locations' | 'contact'
+ *   $active_nav  - 'home' | 'products' | 'services' | 'production' | 'brands' | 'resources' | 'about' | 'faq' | 'locations' | 'contact'
  */
 require_once __DIR__ . '/data.php';
 
@@ -32,9 +32,17 @@ foreach ($site_product_category_groups as $shop_group_slug => $shop_group) {
 }
 
 $marine_service_menu = [
-    ['label' => 'Services', 'url' => 'services.php'],
+    ['label' => 'Inspection Services', 'url' => 'inspection-services.php'],
     ['label' => 'Rental Equipment', 'url' => 'rental-equipment.php'],
     ['label' => 'Safety & Training', 'url' => 'training-courses.php'],
+];
+
+$priority_shop_links = [
+    ['label' => 'Foul Weather Clothing', 'url' => 'search.php?q=' . rawurlencode('foul weather')],
+    ['label' => 'Gloves', 'url' => site_product_category_url('Gloves')],
+    ['label' => 'Boots', 'url' => site_product_category_url('Boots')],
+    ['label' => 'Lobster & Crab Trap Supplies', 'url' => site_product_group_url('fishing-trap-gear')],
+    ['label' => 'Rope, Net & Twine', 'url' => site_product_group_url('rope-line-nets')],
 ];
 
 $resource_menu = [
@@ -42,11 +50,7 @@ $resource_menu = [
     ['label' => 'Industry Articles', 'url' => 'blog.php'],
     ['label' => 'FAQs', 'url' => 'faq.php'],
     ['label' => 'CertTracker', 'url' => 'certtracker.php'],
-];
-
-$about_menu = [
-    ['label' => 'Why Spartan', 'url' => 'about.php'],
-    ['label' => 'Careers', 'url' => 'contact.php'],
+    ['label' => 'About Spartan', 'url' => 'about.php'],
 ];
 ?>
 <!DOCTYPE html>
@@ -148,6 +152,11 @@ $about_menu = [
             100% { transform: scale(1); }
         }
         .badge-pop { animation: pop 0.3s ease-out; }
+
+        /* Native mobile navigation accordions */
+        .mobile-nav-details > summary { list-style: none; }
+        .mobile-nav-details > summary::-webkit-details-marker { display: none; }
+        .mobile-nav-details[open] .mobile-nav-chevron { transform: rotate(180deg); }
     </style>
 </head>
 <body class="bg-white text-spartan-charcoal min-h-screen font-sans">
@@ -159,9 +168,9 @@ $about_menu = [
                 <i class="fa-solid fa-location-dot text-spartan-teal-light text-xs"></i>
                 <span><?php echo count($site_locations); ?> LOCATIONS ACROSS ATLANTIC CANADA</span>
             </a>
-            <a href="services.php" class="hover:text-spartan-teal-light transition-colors flex items-center space-x-2">
+            <a href="inspection-services.php" class="hover:text-spartan-teal-light transition-colors flex items-center space-x-2">
                 <i class="fa-solid fa-certificate text-spartan-teal-light text-xs"></i>
-                <span>TRANSPORT CANADA CERTIFIED SERVICE CENTRE</span>
+                <span>TRANSPORT CANADA CERTIFIED SERVICE CENTER</span>
             </a>
             <a href="<?php echo $site['phone_href']; ?>" class="hover:text-spartan-teal-light transition-colors flex items-center space-x-2">
                 <i class="fa-solid fa-phone text-spartan-teal-light text-xs"></i>
@@ -179,15 +188,15 @@ $about_menu = [
             </a>
 
             <!-- Navigation Links -->
-            <nav class="hidden lg:flex items-center space-x-1 xl:space-x-3 text-[11px] font-bold tracking-[0.13em] text-white">
-                <div class="relative group" data-mega-trigger="shop-online-menu">
+            <nav class="hidden lg:flex h-full items-center space-x-1 xl:space-x-3 text-[11px] font-bold tracking-[0.13em] text-white">
+                <div class="relative group h-full flex items-center" data-mega-trigger="shop-online-menu">
                     <a href="products.php" class="px-3 py-2 <?php echo in_array($active_nav, ['products', 'brands'], true) ? 'text-spartan-teal' : ''; ?> hover:text-spartan-teal transition-colors flex items-center space-x-1 uppercase focus:outline-none">
-                        <span>Shop Online</span>
+                        <span>Shop</span>
                         <i class="fa-solid fa-chevron-down text-[9px] ml-1 transition-transform duration-200 group-hover:rotate-180"></i>
                     </a>
                 </div>
 
-                <div class="relative group" data-mega-trigger="marine-services-menu">
+                <div class="relative group h-full flex items-center" data-mega-trigger="marine-services-menu">
                     <span class="px-3 py-2 <?php echo $active_nav === 'services' ? 'text-spartan-teal' : ''; ?> hover:text-spartan-teal transition-colors flex items-center space-x-1 uppercase cursor-default select-none">
                         <span>Marine Services</span>
                         <i class="fa-solid fa-chevron-down text-[9px] ml-1 transition-transform duration-200 group-hover:rotate-180"></i>
@@ -203,7 +212,13 @@ $about_menu = [
                     </div>
                 </div>
 
-                <div class="relative group" data-mega-trigger="locations-menu">
+                <div class="relative group h-full flex items-center">
+                    <a href="production.php" class="px-3 py-2 <?php echo $active_nav === 'production' ? 'text-spartan-teal' : ''; ?> hover:text-spartan-teal transition-colors flex items-center space-x-1 uppercase focus:outline-none">
+                        <span>Trap Production</span>
+                    </a>
+                </div>
+
+                <div class="relative group h-full flex items-center" data-mega-trigger="locations-menu">
                     <a href="locations.php" class="px-3 py-2 <?php echo $active_nav === 'locations' ? 'text-spartan-teal' : ''; ?> hover:text-spartan-teal transition-colors flex items-center space-x-1 uppercase focus:outline-none">
                         <span>Locations</span>
                         <i class="fa-solid fa-chevron-down text-[9px] ml-1 transition-transform duration-200 group-hover:rotate-180"></i>
@@ -219,8 +234,8 @@ $about_menu = [
                     </div>
                 </div>
 
-                <div class="relative group" data-mega-trigger="resources-menu">
-                    <span class="px-3 py-2 <?php echo in_array($active_nav, ['resources', 'faq'], true) ? 'text-spartan-teal' : ''; ?> hover:text-spartan-teal transition-colors flex items-center space-x-1 uppercase cursor-default select-none">
+                <div class="relative group h-full flex items-center" data-mega-trigger="resources-menu">
+                    <span class="px-3 py-2 <?php echo in_array($active_nav, ['resources', 'faq', 'about'], true) ? 'text-spartan-teal' : ''; ?> hover:text-spartan-teal transition-colors flex items-center space-x-1 uppercase cursor-default select-none">
                         <span>Resources</span>
                         <i class="fa-solid fa-chevron-down text-[9px] ml-1 transition-transform duration-200 group-hover:rotate-180"></i>
                     </span>
@@ -235,11 +250,6 @@ $about_menu = [
                     </div>
                 </div>
 
-                <div class="relative group">
-                    <a href="about.php" class="px-3 py-2 <?php echo $active_nav === 'about' ? 'text-spartan-teal' : ''; ?> hover:text-spartan-teal transition-colors flex items-center space-x-1 uppercase focus:outline-none">
-                        <span>About</span>
-                    </a>
-                </div>
             </nav>
 
             <!-- Navigation Controls (Right Side) -->
@@ -266,11 +276,10 @@ $about_menu = [
             </div>
         </div>
 
-        <!-- ================= MEGA MENU: SHOP ONLINE ================= -->
+        <!-- ================= MEGA MENU: SHOP ================= -->
         <div id="shop-online-menu" data-mega-panel class="absolute left-0 right-0 bg-white text-spartan-charcoal border-b border-slate-200 shadow-2xl transition-all duration-300 origin-top transform scale-y-0 opacity-0 pointer-events-none z-40 max-h-[calc(100vh-8rem)] overflow-y-auto">
-            <div class="max-w-[1500px] mx-auto grid grid-cols-1 xl:grid-cols-[220px_minmax(0,1fr)] items-start">
-                <div class="bg-spartan-light-gray border-b xl:border-b-0 xl:border-r border-slate-200 p-5">
-                    <h3 class="font-oswald text-sm font-bold text-spartan-navy tracking-[0.2em] uppercase mb-4">Shop Online</h3>
+            <div class="max-w-[1500px] mx-auto grid grid-cols-1 lg:grid-cols-[200px_minmax(0,1fr)] xl:grid-cols-[210px_minmax(0,1fr)] items-stretch">
+                <div class="bg-spartan-light-gray border-b lg:border-b-0 lg:border-r border-slate-200 p-5">
                     <div class="space-y-3 text-xs font-bold tracking-[0.12em] uppercase">
                         <a href="<?php echo site_escape(site_brand_url('paul')); ?>" class="group relative block h-24 overflow-hidden bg-spartan-navy text-white">
                             <img src="assets/images/j9/marine-rigging.webp" alt="" class="absolute inset-0 h-full w-full object-cover opacity-45 group-hover:scale-105 transition-transform duration-500">
@@ -288,59 +297,82 @@ $about_menu = [
                                 <i class="fa-solid fa-arrow-right text-sm text-white/80 transition-transform duration-300 group-hover:translate-x-1"></i>
                             </span>
                         </a>
-                        <a href="brands.php" class="inline-flex items-center text-[10px] font-bold tracking-[0.22em] text-spartan-teal uppercase hover:text-spartan-navy transition-colors">
-                            <span>View All Brands</span>
-                            <i class="fa-solid fa-arrow-right text-[10px] ml-2"></i>
+                        <a href="brands.php" class="group flex w-full items-center justify-between border border-spartan-teal/60 bg-white px-4 py-3 text-[10px] font-bold tracking-[0.2em] text-spartan-navy uppercase hover:bg-spartan-teal hover:text-white transition-colors">
+                            <span>Shop by Brand</span>
+                            <i class="fa-solid fa-arrow-right text-[10px] ml-2 text-spartan-teal group-hover:text-white transition-colors" aria-hidden="true"></i>
                         </a>
-                        <div class="pt-3 border-t border-slate-200">
-                            <a href="products.php" class="flex items-center justify-between bg-yellow-300 px-4 py-3 text-spartan-navy hover:bg-yellow-200 transition-colors">
-                                <span>On Sale</span>
-                                <i class="fa-solid fa-arrow-right text-[10px]"></i>
-                            </a>
-                        </div>
+                        <a href="products.php" class="flex items-center justify-between bg-yellow-300 px-4 py-3 text-spartan-navy hover:bg-yellow-200 transition-colors">
+                            <span>On Sale</span>
+                            <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </a>
                     </div>
                 </div>
 
-                <div class="p-6 lg:p-8">
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-6 gap-x-8 xl:gap-x-10 gap-y-8">
-                        <?php foreach ($shop_menu_columns as $column): ?>
-                        <div class="space-y-8">
-                            <?php foreach ($column as $group): ?>
-                            <div>
-                                <h4 class="font-oswald text-sm font-bold text-spartan-navy uppercase tracking-wide mb-3">
-                                    <?php if (!empty($group['url'])): ?>
-                                    <a href="<?php echo site_escape($group['url']); ?>" class="hover:text-spartan-teal hover:underline underline-offset-4 transition-colors">
+                <div class="p-6 lg:p-5 xl:p-7 grid grid-cols-1 lg:grid-cols-[190px_minmax(0,1fr)] xl:grid-cols-[200px_minmax(0,1fr)] gap-8 lg:gap-6 xl:gap-8">
+                    <aside class="lg:border-r lg:border-slate-200 lg:pr-6 xl:pr-8">
+                        <h3 class="font-oswald text-base font-bold text-spartan-navy tracking-[0.18em] uppercase">Most Popular</h3>
+                        <nav class="mt-4 border-y border-slate-200 divide-y divide-slate-200" aria-label="Most popular product categories">
+                            <?php foreach ($priority_shop_links as $priority_link): ?>
+                            <a href="<?php echo site_escape($priority_link['url']); ?>" class="group flex items-center justify-between gap-3 py-3.5 font-oswald text-xs font-bold uppercase tracking-wide text-spartan-navy hover:text-spartan-teal transition-colors">
+                                <span><?php echo site_escape($priority_link['label']); ?></span>
+                                <i class="fa-solid fa-arrow-right text-[9px] text-spartan-teal transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true"></i>
+                            </a>
+                            <?php endforeach; ?>
+                        </nav>
+                        <a href="products.php" class="mt-4 inline-flex items-center font-oswald text-[10px] font-bold tracking-[0.2em] uppercase text-spartan-teal hover:text-spartan-navy transition-colors">
+                            <span>Shop All Products</span>
+                            <i class="fa-solid fa-arrow-right text-[9px] ml-2" aria-hidden="true"></i>
+                        </a>
+                    </aside>
+
+                    <div>
+                        <div class="flex items-end justify-between gap-4 border-b border-slate-200 pb-4 mb-6">
+                            <h3 class="font-oswald text-base font-bold text-spartan-navy tracking-[0.18em] uppercase">Browse Departments</h3>
+                            <a href="products.php" class="hidden sm:inline-flex items-center font-oswald text-[10px] font-bold tracking-[0.2em] uppercase text-spartan-teal hover:text-spartan-navy transition-colors">
+                                <span>All Products</span>
+                                <i class="fa-solid fa-arrow-right text-[9px] ml-2" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-6 gap-x-8 xl:gap-x-7 gap-y-8">
+                            <?php foreach ($shop_menu_columns as $column): ?>
+                            <div class="space-y-8">
+                                <?php foreach ($column as $group): ?>
+                                <div>
+                                    <h4 class="font-oswald text-[13px] 2xl:text-sm font-bold text-spartan-navy uppercase tracking-wide mb-3">
+                                        <?php if (!empty($group['url'])): ?>
+                                        <a href="<?php echo site_escape($group['url']); ?>" class="hover:text-spartan-teal transition-colors">
+                                            <?php echo site_escape($group['title']); ?>
+                                        </a>
+                                        <?php else: ?>
                                         <?php echo site_escape($group['title']); ?>
-                                    </a>
-                                    <?php else: ?>
-                                    <?php echo site_escape($group['title']); ?>
-                                    <?php endif; ?>
-                                </h4>
-                                <?php
-                                    $shop_group_links = $group['links'] ?? [];
-                                    $shop_group_preview_links = array_slice($shop_group_links, 0, $shop_menu_preview_limit);
-                                ?>
-                                <ul class="space-y-2 text-sm leading-6">
-                                    <?php foreach ($shop_group_preview_links as $link): ?>
-                                    <li>
-                                        <a href="<?php echo site_escape($link['url']); ?>" class="<?php echo !empty($link['strong']) ? 'font-bold text-spartan-navy' : 'text-slate-700'; ?> hover:text-spartan-teal hover:underline underline-offset-4 transition-colors">
-                                            <?php echo site_escape($link['label']); ?>
-                                        </a>
-                                    </li>
-                                    <?php endforeach; ?>
-                                    <?php if (!empty($group['url']) && count($shop_group_links) > $shop_menu_preview_limit): ?>
-                                    <li class="pt-1.5">
-                                        <a href="<?php echo site_escape($group['url']); ?>" class="inline-flex items-center font-oswald text-[10px] font-bold tracking-[0.2em] uppercase text-spartan-teal hover:text-spartan-navy transition-colors">
-                                            <span>View More</span>
-                                            <i class="fa-solid fa-arrow-right text-[9px] ml-2"></i>
-                                        </a>
-                                    </li>
-                                    <?php endif; ?>
-                                </ul>
+                                        <?php endif; ?>
+                                    </h4>
+                                    <?php
+                                        $shop_group_links = $group['links'] ?? [];
+                                        $shop_group_preview_links = array_slice($shop_group_links, 0, $shop_menu_preview_limit);
+                                    ?>
+                                    <ul class="space-y-2 text-sm leading-6">
+                                        <?php foreach ($shop_group_preview_links as $link): ?>
+                                        <li>
+                                            <a href="<?php echo site_escape($link['url']); ?>" class="<?php echo !empty($link['strong']) ? 'font-bold text-spartan-navy' : 'text-slate-700'; ?> hover:text-spartan-teal hover:underline underline-offset-4 transition-colors">
+                                                <?php echo site_escape($link['label']); ?>
+                                            </a>
+                                        </li>
+                                        <?php endforeach; ?>
+                                        <?php if (!empty($group['url']) && count($shop_group_links) > $shop_menu_preview_limit): ?>
+                                        <li class="pt-1.5">
+                                            <a href="<?php echo site_escape($group['url']); ?>" class="inline-flex items-center font-oswald text-[10px] font-bold tracking-[0.2em] uppercase text-spartan-teal hover:text-spartan-navy transition-colors">
+                                                <span>View More</span>
+                                                <i class="fa-solid fa-arrow-right text-[9px] ml-2" aria-hidden="true"></i>
+                                            </a>
+                                        </li>
+                                        <?php endif; ?>
+                                    </ul>
+                                </div>
+                                <?php endforeach; ?>
                             </div>
                             <?php endforeach; ?>
                         </div>
-                        <?php endforeach; ?>
                     </div>
                 </div>
             </div>
@@ -350,25 +382,62 @@ $about_menu = [
 
     <!-- ================= MOBILE MENU DRAWER ================= -->
     <div id="mobile-menu" class="fixed inset-0 z-50 bg-spartan-navy/90 backdrop-blur-md transition-all duration-300 opacity-0 pointer-events-none">
-        <div class="fixed top-0 bottom-0 right-0 w-80 max-w-full bg-spartan-navy border-l border-slate-800 p-6 flex flex-col justify-between transition-transform duration-300 translate-x-full" id="mobile-menu-inner">
-            <div>
-                <div class="flex items-center justify-between pb-6 border-b border-slate-800">
-                    <img src="assets/images/Spartan Industrial Marine White.png" alt="Spartan Industrial Marine" class="h-12 object-contain">
-                    <button onclick="toggleMobileMenu()" class="p-2 text-white hover:text-spartan-teal" aria-label="Close menu">
-                        <i class="fa-solid fa-xmark text-2xl"></i>
-                    </button>
-                </div>
-
-                <nav class="mt-8 flex flex-col space-y-4 font-oswald text-lg font-bold tracking-[0.15em] text-white uppercase">
-                    <a href="products.php" class="hover:text-spartan-teal transition-colors py-2 border-b border-slate-800/40">Shop Online</a>
-                    <a href="services.php" class="hover:text-spartan-teal transition-colors py-2 border-b border-slate-800/40">Marine Services</a>
-                    <a href="locations.php" class="hover:text-spartan-teal transition-colors py-2 border-b border-slate-800/40">Locations</a>
-                    <a href="blog.php" class="hover:text-spartan-teal transition-colors py-2 border-b border-slate-800/40">Resources</a>
-                    <a href="about.php" class="hover:text-spartan-teal transition-colors py-2 border-b border-slate-800/40">About</a>
-                </nav>
+        <div class="fixed top-0 bottom-0 right-0 w-80 max-w-full bg-spartan-navy border-l border-slate-800 p-6 flex flex-col overflow-hidden transition-transform duration-300 translate-x-full" id="mobile-menu-inner">
+            <div id="mobile-menu-primary" class="min-h-0 flex flex-1 flex-col">
+            <div class="shrink-0 flex items-center justify-between pb-6 border-b border-slate-800">
+                <img src="assets/images/Spartan Industrial Marine White.png" alt="Spartan Industrial Marine" class="h-12 object-contain">
+                <button onclick="toggleMobileMenu()" class="p-2 text-white hover:text-spartan-teal" aria-label="Close menu">
+                    <i class="fa-solid fa-xmark text-2xl"></i>
+                </button>
             </div>
 
-            <div class="border-t border-slate-800 pt-6 space-y-4">
+            <nav class="mt-4 min-h-0 flex-1 overflow-y-auto pr-1 font-oswald font-bold text-white uppercase" aria-label="Mobile navigation">
+                <button type="button" onclick="openMobileShopMenu()" aria-controls="mobile-shop-panel" aria-expanded="false" class="flex w-full items-center justify-between gap-4 py-4 border-b border-slate-800/70 text-left text-lg tracking-[0.15em] hover:text-spartan-teal transition-colors">
+                    <span>Shop</span>
+                    <i class="fa-solid fa-chevron-right text-[10px]" aria-hidden="true"></i>
+                </button>
+
+                <details class="mobile-nav-details border-b border-slate-800/70" <?php echo $active_nav === 'services' ? 'open' : ''; ?>>
+                    <summary class="flex cursor-pointer items-center justify-between gap-4 py-4 text-lg tracking-[0.15em] hover:text-spartan-teal transition-colors">
+                        <span>Marine Services</span>
+                        <i class="mobile-nav-chevron fa-solid fa-chevron-down text-[10px] transition-transform duration-200" aria-hidden="true"></i>
+                    </summary>
+                    <div class="mb-4 ml-1 border-l border-slate-700 pl-4 space-y-1">
+                        <?php foreach ($marine_service_menu as $item): ?>
+                        <a href="<?php echo site_escape($item['url']); ?>" class="block py-2 text-sm tracking-[0.1em] text-slate-300 hover:text-spartan-teal transition-colors"><?php echo site_escape($item['label']); ?></a>
+                        <?php endforeach; ?>
+                    </div>
+                </details>
+
+                <a href="production.php" class="block py-4 border-b border-slate-800/70 text-lg tracking-[0.15em] hover:text-spartan-teal transition-colors">Trap Production</a>
+
+                <details class="mobile-nav-details border-b border-slate-800/70" <?php echo $active_nav === 'locations' ? 'open' : ''; ?>>
+                    <summary class="flex cursor-pointer items-center justify-between gap-4 py-4 text-lg tracking-[0.15em] hover:text-spartan-teal transition-colors">
+                        <span>Locations</span>
+                        <i class="mobile-nav-chevron fa-solid fa-chevron-down text-[10px] transition-transform duration-200" aria-hidden="true"></i>
+                    </summary>
+                    <div class="mb-4 ml-1 border-l border-slate-700 pl-4 space-y-1">
+                        <a href="locations.php" class="block py-2 text-sm tracking-[0.1em] text-slate-300 hover:text-spartan-teal transition-colors">All Locations</a>
+                        <?php foreach ($site_locations as $loc): ?>
+                        <a href="<?php echo site_escape(site_location_url($loc)); ?>" class="block py-2 text-sm tracking-[0.1em] text-slate-300 hover:text-spartan-teal transition-colors"><?php echo site_escape($loc['city']); ?></a>
+                        <?php endforeach; ?>
+                    </div>
+                </details>
+
+                <details class="mobile-nav-details border-b border-slate-800/70" <?php echo in_array($active_nav, ['resources', 'faq', 'about'], true) ? 'open' : ''; ?>>
+                    <summary class="flex cursor-pointer items-center justify-between gap-4 py-4 text-lg tracking-[0.15em] hover:text-spartan-teal transition-colors">
+                        <span>Resources</span>
+                        <i class="mobile-nav-chevron fa-solid fa-chevron-down text-[10px] transition-transform duration-200" aria-hidden="true"></i>
+                    </summary>
+                    <div class="mb-4 ml-1 border-l border-slate-700 pl-4 space-y-1">
+                        <?php foreach ($resource_menu as $item): ?>
+                        <a href="<?php echo site_escape($item['url']); ?>" class="block py-2 text-sm tracking-[0.1em] text-slate-300 hover:text-spartan-teal transition-colors"><?php echo site_escape($item['label']); ?></a>
+                        <?php endforeach; ?>
+                    </div>
+                </details>
+            </nav>
+
+            <div class="shrink-0 mt-5 border-t border-slate-800 pt-5 space-y-4">
                 <a href="contact.php" class="flex items-center justify-center bg-spartan-teal text-white py-3 px-5 hover:bg-spartan-teal-light hover:text-spartan-navy transition-colors">
                     <span class="text-xs font-bold tracking-[0.18em] uppercase">Talk to Spartan</span>
                 </a>
@@ -376,6 +445,75 @@ $about_menu = [
                     READY WHEN CONDITIONS TURN
                 </p>
             </div>
+            </div>
+
+            <section id="mobile-shop-panel" class="absolute inset-0 z-20 flex flex-col bg-spartan-navy p-6 translate-x-full pointer-events-none transition-transform duration-300" aria-label="Shop menu" aria-hidden="true" inert>
+                <div class="shrink-0 flex items-center justify-between gap-4 pb-5 border-b border-slate-800">
+                    <button type="button" onclick="closeMobileShopMenu()" class="inline-flex items-center gap-2 py-2 text-xs font-bold tracking-[0.16em] uppercase text-slate-300 hover:text-spartan-teal transition-colors" aria-label="Back to main menu">
+                        <i class="fa-solid fa-arrow-left text-[10px]" aria-hidden="true"></i>
+                        <span>Main Menu</span>
+                    </button>
+                    <button onclick="toggleMobileMenu()" class="p-2 text-white hover:text-spartan-teal transition-colors" aria-label="Close menu">
+                        <i class="fa-solid fa-xmark text-2xl" aria-hidden="true"></i>
+                    </button>
+                </div>
+
+                <div class="min-h-0 flex-1 overflow-y-auto pt-6 pr-1 text-white">
+                    <span class="font-oswald text-[10px] font-bold tracking-[0.25em] uppercase text-spartan-teal block mb-2">Shop Spartan</span>
+                    <h2 class="font-oswald text-3xl font-bold tracking-[0.12em] uppercase">Products</h2>
+
+                    <div class="mt-6 grid grid-cols-1 gap-3">
+                        <a href="products.php" class="flex items-center justify-between bg-spartan-teal px-4 py-3.5 font-oswald text-xs font-bold tracking-[0.16em] uppercase text-white hover:bg-spartan-teal-light hover:text-spartan-navy transition-colors">
+                            <span>Shop All Products</span>
+                            <i class="fa-solid fa-arrow-right text-[10px]" aria-hidden="true"></i>
+                        </a>
+                        <a href="brands.php" class="flex items-center justify-between border border-slate-600 px-4 py-3.5 font-oswald text-xs font-bold tracking-[0.16em] uppercase text-white hover:border-spartan-teal hover:text-spartan-teal transition-colors">
+                            <span>Shop by Brand</span>
+                            <i class="fa-solid fa-arrow-right text-[10px]" aria-hidden="true"></i>
+                        </a>
+                    </div>
+
+                    <div class="mt-8">
+                        <h3 class="font-oswald text-xs font-bold tracking-[0.2em] uppercase text-spartan-teal mb-3">Most Popular</h3>
+                        <div class="border-y border-slate-700 divide-y divide-slate-700">
+                            <?php foreach ($priority_shop_links as $priority_link): ?>
+                            <a href="<?php echo site_escape($priority_link['url']); ?>" class="flex items-center justify-between gap-4 py-3.5 font-oswald text-sm font-bold tracking-[0.08em] uppercase text-white hover:text-spartan-teal transition-colors">
+                                <span><?php echo site_escape($priority_link['label']); ?></span>
+                                <i class="fa-solid fa-chevron-right text-[9px] text-spartan-teal" aria-hidden="true"></i>
+                            </a>
+                            <?php endforeach; ?>
+                        </div>
+                    </div>
+
+                    <div class="mt-8">
+                        <h3 class="font-oswald text-xs font-bold tracking-[0.2em] uppercase text-spartan-teal mb-3">Browse Departments</h3>
+                        <div class="border-t border-slate-700">
+                            <?php foreach ($site_product_category_groups as $mobile_group_slug => $mobile_group): ?>
+                            <details class="mobile-nav-details border-b border-slate-700">
+                                <summary class="flex cursor-pointer items-center justify-between gap-4 py-4 font-oswald text-sm font-bold tracking-[0.08em] uppercase hover:text-spartan-teal transition-colors">
+                                    <span><?php echo site_escape($mobile_group['label']); ?></span>
+                                    <i class="mobile-nav-chevron fa-solid fa-chevron-down text-[9px] transition-transform duration-200" aria-hidden="true"></i>
+                                </summary>
+                                <div class="pb-4 ml-1 border-l border-slate-700 pl-4 space-y-1">
+                                    <a href="<?php echo site_escape(site_product_group_url($mobile_group_slug)); ?>" class="block py-2 text-xs font-bold tracking-[0.1em] uppercase text-spartan-teal hover:text-spartan-teal-light transition-colors">View All <?php echo site_escape($mobile_group['label']); ?></a>
+                                    <?php foreach (($mobile_group['categories'] ?? []) as $mobile_category): ?>
+                                    <a href="<?php echo site_escape(site_product_category_url($mobile_category)); ?>" class="block py-2 text-sm text-slate-300 hover:text-white transition-colors"><?php echo site_escape($mobile_category); ?></a>
+                                    <?php endforeach; ?>
+                                </div>
+                            </details>
+                            <?php endforeach; ?>
+                        </div>
+                    </div>
+
+                    <div class="mt-8 pb-2">
+                        <h3 class="font-oswald text-xs font-bold tracking-[0.2em] uppercase text-spartan-teal mb-3">Featured Brands</h3>
+                        <div class="grid grid-cols-2 gap-3">
+                            <a href="<?php echo site_escape(site_brand_url('paul')); ?>" class="border border-slate-700 px-4 py-4 text-center font-oswald text-sm font-bold tracking-[0.14em] uppercase hover:border-spartan-teal hover:text-spartan-teal transition-colors">PAUL</a>
+                            <a href="<?php echo site_escape(site_brand_url('fierce-workwear')); ?>" class="border border-slate-700 px-4 py-4 text-center font-oswald text-sm font-bold tracking-[0.14em] uppercase hover:border-spartan-teal hover:text-spartan-teal transition-colors">Fierce</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
     </div>
 

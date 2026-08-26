@@ -7,7 +7,6 @@ require_once __DIR__ . '/partials/header.php';
 $certifications = [
     'Transport Canada',
     'DFO Whalesafe compliance',
-    'DNV/Bureau Veritas approvals',
     'ISO certifications',
 ];
 
@@ -20,7 +19,7 @@ $testimonials = [
     ],
     [
         'quote' => 'Spartan has always taken a personal approach to looking after our vessels in any port they have been working out of. Spartan’s ability to supply our requirements... has always been a big part of our long term relationship.',
-        'name' => 'Mark Gourdreau',
+        'name' => 'Mark Goudreau',
         'role' => 'Procurement Specialist, Atlantic Towing Ltd, Dartmouth, NS',
         'branch' => 'Spartan Dartmouth',
     ],
@@ -29,15 +28,15 @@ $testimonials = [
 $trust_reasons = [
     [
         'title' => 'Deep Local Infrastructure',
-        'text' => 'Our 7 regional branches aren’t just sales offices; they are fully stocked inventory hubs and service centers. We keep the region moving with same-day and overnight dispatch to eliminate downtime.',
+        'text' => 'Our six active locations are more than sales offices; they connect customers with stocked products, local service intake, and regional support.',
     ],
     [
         'title' => 'Crafted by Marine Professionals',
         'text' => 'Our team is composed of the very people who rely on this gear. From former ship captains and commercial harvesters to supply chain managers, we bring real-world, hard-earned experience to every safety conversation.',
     ],
     [
-        'title' => 'Custom Manufacturing Capabilities',
-        'text' => "We don’t just sell boxes off a shelf—we engineer solutions. Our local facilities design and manufacture custom rigging, trawls, netting, and specialized compliance gear tailored specifically to your vessel's requirements.",
+        'title' => 'Lobster & Crab Trap Production',
+        'text' => 'Spartan builds lobster and crab traps for commercial fishing operations. Share the trap type, quantity, specifications, and required timing with our production team.',
     ],
     [
         'title' => 'Full-Lifecycle Vessel Support',
@@ -69,10 +68,7 @@ $hero = [
     'image' => 'assets/images/j9/spartan-storefront-exterior.webp',
     'size' => 'tall',
     'show_breadcrumbs' => false,
-    'breadcrumbs' => [
-        ['label' => 'Home', 'url' => 'index.php'],
-        ['label' => 'About'],
-    ],
+    'overlay_class' => 'bg-gradient-to-b from-spartan-navy/55 via-spartan-navy/70 to-spartan-navy/90',
 ];
 require_once __DIR__ . '/components/page-hero.php';
 ?>
@@ -81,7 +77,7 @@ require_once __DIR__ . '/components/page-hero.php';
     <section class="bg-white py-12 md:py-14 overflow-hidden relative">
         <div class="absolute right-0 top-0 h-full w-[520px] bg-slate-200 opacity-40 pointer-events-none" style="-webkit-mask: url('assets/images/right-wave.svg') right center / contain no-repeat; mask: url('assets/images/right-wave.svg') right center / contain no-repeat;" aria-hidden="true"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 select-text relative z-10">
-            <div class="py-8 grid grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-7 items-center">
+            <div class="py-8 grid grid-cols-1 sm:grid-cols-3 gap-x-8 gap-y-7 items-center">
                 <?php foreach ($certifications as $certification): ?>
                 <div class="min-h-[82px] flex items-center justify-center text-center">
                     <span class="font-oswald text-base md:text-lg font-bold tracking-[0.16em] uppercase text-slate-500 leading-snug"><?php echo site_escape($certification); ?></span>
@@ -134,7 +130,7 @@ require_once __DIR__ . '/components/page-hero.php';
                 <div class="lg:py-8">
                     <h2 class="font-oswald text-3xl md:text-4xl font-bold tracking-widest text-spartan-navy uppercase leading-tight mb-5">Over 45 Years of Keeping Atlantic Canada’s Fleets Moving</h2>
                     <div class="space-y-5 text-base text-slate-600 font-light leading-relaxed">
-                        <p>For more than four decades, Spartan Industrial Marine has been the trusted backbone of the East Coast’s maritime economy. What began as a local commitment to regional fishermen has grown into a powerhouse network of seven strategic branches spanning Atlantic Canada.</p>
+                        <p>For more than four decades, Spartan Industrial Marine has been the trusted backbone of the East Coast’s maritime economy. What began as a local commitment to regional fishermen has grown into a network of six active locations spanning Atlantic Canada.</p>
                         <p>We didn’t build our reputation in a boardroom. We built it on the decks of fishing vessels, in the high-density assembly zones of regional shipyards, and alongside offshore supply crews navigating the unpredictable North Atlantic.</p>
                     </div>
                 </div>
@@ -148,8 +144,8 @@ require_once __DIR__ . '/components/page-hero.php';
                             <span class="text-[10px] font-bold tracking-[0.2em] uppercase text-spartan-teal block mt-2">Years Serving Fleets</span>
                         </div>
                         <div>
-                            <span class="font-oswald text-4xl md:text-5xl font-bold tracking-wider leading-none block">7</span>
-                            <span class="text-[10px] font-bold tracking-[0.2em] uppercase text-spartan-teal block mt-2">Regional Branches</span>
+                            <span class="font-oswald text-4xl md:text-5xl font-bold tracking-wider leading-none block"><?php echo count($site_locations); ?></span>
+                            <span class="text-[10px] font-bold tracking-[0.2em] uppercase text-spartan-teal block mt-2">Active Locations</span>
                         </div>
                     </div>
                 </div>
@@ -176,7 +172,7 @@ require_once __DIR__ . '/components/page-hero.php';
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 select-text">
             <div class="max-w-3xl mb-12">
                 <h3 class="font-oswald text-2xl md:text-3xl font-bold tracking-wider text-spartan-navy uppercase leading-tight mb-5">Our Local Services and Supply Hubs</h3>
-                <p class="text-base text-slate-600 font-light leading-relaxed">With seven strategic brick-and-mortar facilities and a dedicated fleet of mobile service technicians, Spartan is positioned exactly where your vessels operate.</p>
+                <p class="text-base text-slate-600 font-light leading-relaxed">With six active locations across Atlantic Canada, Spartan connects working crews with local product support, service intake, and the right regional contact.</p>
             </div>
 
             <div class="grid grid-cols-1 xl:grid-cols-[1.15fr_0.85fr] gap-8 lg:gap-10 items-stretch">
@@ -235,7 +231,7 @@ require_once __DIR__ . '/components/page-hero.php';
                     <span class="font-oswald text-xs md:text-sm font-bold text-spartan-teal tracking-[0.32em] uppercase block mb-4">Services</span>
                     <h2 class="font-oswald text-3xl md:text-4xl font-bold tracking-widest uppercase leading-tight mb-5">Book a Marine Safety Service</h2>
                     <p class="text-base text-slate-300 font-light leading-relaxed mb-8">Schedule mandatory liferaft servicing, immersion suit testing, certified vessel inspections, or request a custom gear manufacturing audit from our local technical teams.</p>
-                    <a href="services.php" class="inline-flex items-center bg-spartan-teal text-white py-3.5 px-7 text-xs font-bold tracking-[0.2em] uppercase hover:bg-spartan-teal-light hover:text-spartan-navy transition-colors">
+                    <a href="inspection-services.php" class="inline-flex items-center bg-spartan-teal text-white py-3.5 px-7 text-xs font-bold tracking-[0.2em] uppercase hover:bg-spartan-teal-light hover:text-spartan-navy transition-colors">
                         <span>Book a Service</span>
                         <i class="fa-solid fa-arrow-right text-[11px] ml-2.5"></i>
                     </a>

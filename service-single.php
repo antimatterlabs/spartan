@@ -9,7 +9,7 @@ $hero = [
     'image' => 'assets/images/j9/life-raft-inspection.webp',
     'breadcrumbs' => [
         ['label' => 'Home', 'url' => 'index.php'],
-        ['label' => 'Services', 'url' => 'services.php'],
+        ['label' => 'Inspection Services', 'url' => 'inspection-services.php'],
         ['label' => 'Life Raft Servicing'],
     ],
 ];
@@ -83,9 +83,9 @@ require_once __DIR__ . '/components/page-hero.php';
                     <div class="absolute -right-12 -bottom-6 w-[300px] h-20 bg-spartan-teal opacity-10 pointer-events-none" style="-webkit-mask: url('assets/images/full-wave.svg') center / contain no-repeat; mask: url('assets/images/full-wave.svg') center / contain no-repeat;" aria-hidden="true"></div>
                     <div class="relative z-10">
                         <span class="font-oswald text-[10px] font-bold text-spartan-teal tracking-[0.25em] uppercase block mb-2">BOOK THIS SERVICE</span>
-                        <h3 class="font-oswald text-xl font-bold text-white tracking-wider uppercase leading-tight mb-4">48 Hour Typical Turnaround</h3>
+                        <h3 class="font-oswald text-xl font-bold text-white tracking-wider uppercase leading-tight mb-4">Confirm Service Timing</h3>
                         <ul class="space-y-3 text-xs text-slate-300 font-light mb-6">
-                            <li class="flex items-center space-x-3"><i class="fa-solid fa-location-dot text-spartan-teal"></i><span>Dartmouth Service Centre</span></li>
+                            <li class="flex items-center space-x-3"><i class="fa-solid fa-location-dot text-spartan-teal"></i><span>Dartmouth Service Center</span></li>
                             <li class="flex items-center space-x-3"><i class="fa-solid fa-phone text-spartan-teal"></i><span><?php echo $site['phone']; ?></span></li>
                             <li class="flex items-center space-x-3"><i class="fa-solid fa-clock text-spartan-teal"></i><span><?php echo $site['hours']; ?></span></li>
                         </ul>
@@ -102,7 +102,7 @@ require_once __DIR__ . '/components/page-hero.php';
                         <?php $other_services = array_slice($site_services, 1); $other_last = count($other_services) - 1; ?>
                         <?php foreach ($other_services as $i => $svc): ?>
                         <li class="<?php echo $i < $other_last ? 'border-b border-slate-100' : ''; ?> py-3 flex items-center justify-between hover:text-spartan-teal transition-colors">
-                            <a href="service-single.php" class="flex-grow"><?php echo $svc['title']; ?></a>
+                            <a href="<?php echo site_escape($svc['url'] ?? 'inspection-services.php'); ?>" class="flex-grow"><?php echo site_escape($svc['title']); ?></a>
                             <i class="fa-solid fa-chevron-right text-[9px] text-spartan-teal"></i>
                         </li>
                         <?php endforeach; ?>

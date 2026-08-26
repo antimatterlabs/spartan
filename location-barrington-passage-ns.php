@@ -1,3 +1,3 @@
 <?php
-$location_slug = 'barrington-passage-ns';
-require __DIR__ . '/location-single.php';
+header('Location: locations.php', true, 301);
+exit;

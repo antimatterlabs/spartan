@@ -16,10 +16,8 @@ $hero = [
     'title' => 'Essential Marine Terminology & Warnings',
     'subtitle' => 'Understand the critical terms, hazards, and safety warnings every marine worker needs to know. From snap-back zones and line bights to confined spaces and deck safety, learn how to recognize risks before they become incidents.',
     'image' => 'assets/images/j9/service-compliance.webp',
-    'breadcrumbs' => [
-        ['label' => 'Home', 'url' => 'index.php'],
-        ['label' => 'Definitions & Warnings'],
-    ],
+    'show_breadcrumbs' => false,
+    'overlay_class' => 'bg-gradient-to-b from-spartan-navy/55 via-spartan-navy/70 to-spartan-navy/90',
 ];
 require_once __DIR__ . '/components/page-hero.php';
 
@@ -107,29 +105,6 @@ function render_term_rows($items) {
     <?php endforeach;
 }
 ?>
-
-    <!-- Topic navigation -->
-    <section class="no-print bg-spartan-light-gray border-b border-slate-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-            <div class="flex flex-col xl:flex-row xl:items-center xl:justify-between gap-6 select-text">
-                <div>
-                    <span class="font-oswald text-[10px] font-bold tracking-[0.28em] uppercase text-spartan-teal block mb-2">Explore Marine Safety Topics</span>
-                    <p class="text-sm text-slate-600 font-light max-w-2xl">Need a copy onboard? Use the printable version to keep this reference with your crew's safety materials.</p>
-                </div>
-                <div class="flex flex-wrap items-center gap-3">
-                    <?php foreach ($topic_links as $link): ?>
-                    <a href="<?php echo site_escape($link['url']); ?>" class="inline-flex items-center border border-slate-300 bg-white px-4 py-3 text-[10px] font-bold tracking-[0.16em] uppercase text-spartan-navy hover:border-spartan-teal hover:text-spartan-teal transition-colors">
-                        <?php echo site_escape($link['label']); ?>
-                    </a>
-                    <?php endforeach; ?>
-                    <button type="button" onclick="window.print()" class="inline-flex items-center bg-spartan-teal px-5 py-3 text-[10px] font-bold tracking-[0.18em] uppercase text-white hover:bg-spartan-navy transition-colors">
-                        <i class="fa-solid fa-download text-[11px] mr-2"></i>
-                        <span>Download Printable Version</span>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <main class="py-16 md:py-24">
         <div class="print-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -3,6 +3,17 @@ $page_title = 'Talk to Our Industry Experts | Spartan Industrial Marine';
 $meta_description = "Need a product, service, repair, or expert advice? Talk to our team at Spartan Industrial Marine. We're here to help you find the right solution.";
 $active_nav = 'contact';
 require_once __DIR__ . '/partials/header.php';
+
+$allowed_needs = [
+    'product' => 'Product quote or availability',
+    'service' => 'Book a service, repair, or inspection',
+    'trap-production' => 'Lobster or crab trap production',
+    'rental' => 'Rental support',
+    'commercial' => 'Commercial or fleet account support',
+    'project' => 'Vessel or project advice',
+    'other' => 'Something else',
+];
+$selected_need = isset($_GET['need']) && array_key_exists($_GET['need'], $allowed_needs) ? $_GET['need'] : '';
 ?>
 
     <!-- Contact hero + lead form -->
@@ -22,7 +33,7 @@ require_once __DIR__ . '/partials/header.php';
                         Talk to Someone Who Understands Marine Operations
                     </h1>
                     <p class="text-base text-slate-200 font-light leading-relaxed max-w-xl mb-0">
-                        Find the right products, repairs, rentals, or services to keep your operation moving. Share your project details and a member of our team will follow up within 24 hours with next steps.
+                        Find the right products, production support, repairs, rentals, or services to keep your operation moving. Share your project details and a member of our team will follow up with next steps.
                     </p>
 
                     <div class="max-w-xl mt-24">
@@ -57,7 +68,7 @@ require_once __DIR__ . '/partials/header.php';
                                 "Spartan has always taken a personal approach to looking after our vessels in any port they have been working out of."
                             </p>
                             <div>
-                                <span class="font-oswald text-sm font-bold text-spartan-navy tracking-wider uppercase block">Mark Gourdreau</span>
+                                <span class="font-oswald text-sm font-bold text-spartan-navy tracking-wider uppercase block">Mark Goudreau</span>
                                 <span class="text-[10px] text-slate-400 tracking-wider uppercase block mt-0.5">Procurement Specialist, Atlantic Towing Ltd</span>
                             </div>
                         </div>
@@ -94,14 +105,11 @@ require_once __DIR__ . '/partials/header.php';
 
                         <div>
                             <label class="font-oswald text-[10px] font-bold text-spartan-navy tracking-[0.2em] uppercase block mb-2">What do you need? *</label>
-                            <select required class="w-full border border-slate-200 bg-white text-sm text-slate-700 px-4 py-3 outline-none focus:border-spartan-teal rounded-none">
+                            <select id="contact-need" name="need" required class="w-full border border-slate-200 bg-white text-sm text-slate-700 px-4 py-3 outline-none focus:border-spartan-teal rounded-none">
                                 <option value="">Select one...</option>
-                                <option>Product quote or availability</option>
-                                <option>Book a service, repair, or inspection</option>
-                                <option>Rental support</option>
-                                <option>Commercial or fleet account support</option>
-                                <option>Vessel or project advice</option>
-                                <option>Something else</option>
+                                <?php foreach ($allowed_needs as $need_value => $need_label): ?>
+                                <option value="<?php echo site_escape($need_value); ?>" <?php echo $selected_need === $need_value ? 'selected' : ''; ?>><?php echo site_escape($need_label); ?></option>
+                                <?php endforeach; ?>
                             </select>
                         </div>
 

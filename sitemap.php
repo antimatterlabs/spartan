@@ -7,14 +7,15 @@ require_once __DIR__ . '/partials/header.php';
 $main_pages = [
     ['label' => 'Home', 'url' => 'index.php'],
     ['label' => 'Shop Products', 'url' => 'products.php'],
-    ['label' => 'Marine Services', 'url' => 'services.php'],
+    ['label' => 'Lobster & Crab Trap Production', 'url' => 'production.php'],
+    ['label' => 'Inspection Services', 'url' => 'inspection-services.php'],
     ['label' => 'Locations', 'url' => 'locations.php'],
     ['label' => 'About Spartan', 'url' => 'about.php'],
     ['label' => 'Contact', 'url' => 'contact.php'],
 ];
 
 $service_pages = [
-    ['label' => 'Inspections & Repairs', 'url' => 'services.php'],
+    ['label' => 'Inspection Services', 'url' => 'inspection-services.php'],
     ['label' => 'Rental Equipment', 'url' => 'rental-equipment.php'],
     ['label' => 'Safety & Training', 'url' => 'training-courses.php'],
     ['label' => 'CERTTracker', 'url' => 'certtracker.php'],

@@ -16,7 +16,7 @@ $cta = array_merge([
     'title' => "Don't wait for survey week.",
     'text' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     'button_label' => 'Book a Service',
-    'button_url' => 'services.php',
+    'button_url' => 'inspection-services.php',
 ], $cta ?? []);
 ?>
 <section class="bg-spartan-teal text-white py-16 overflow-hidden relative">

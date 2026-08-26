@@ -149,28 +149,28 @@ require_once __DIR__ . '/partials/header.php';
 ?>
 
     <!-- Breadcrumb strip (no big hero on product pages) -->
-    <div class="bg-spartan-light-gray border-b border-slate-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-            <nav class="flex items-center space-x-2 text-[10px] md:text-xs font-mono font-bold tracking-widest text-spartan-teal uppercase select-text">
-                <a href="index.php" class="hover:text-spartan-navy transition-colors">HOME</a>
-                <span class="text-slate-400 font-light">/</span>
-                <a href="products.php" class="hover:text-spartan-navy transition-colors">PRODUCTS</a>
-                <span class="text-slate-400 font-light">/</span>
+    <div class="bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-3">
+            <nav class="flex flex-wrap items-center gap-x-2 gap-y-1 font-sans text-[10px] md:text-xs font-normal text-slate-700 select-text" aria-label="Breadcrumb">
+                <a href="index.php" class="hover:text-spartan-teal transition-colors">Home</a>
+                <span class="text-slate-300" aria-hidden="true">/</span>
+                <a href="products.php" class="hover:text-spartan-teal transition-colors">Products</a>
+                <span class="text-slate-300" aria-hidden="true">/</span>
                 <?php if ($pd_group_slug !== '' && $pd_group_name !== ''): ?>
-                <a href="<?php echo site_escape(site_product_group_url($pd_group_slug)); ?>" class="hover:text-spartan-navy transition-colors"><?php echo site_escape($pd_group_name); ?></a>
+                <a href="<?php echo site_escape(site_product_group_url($pd_group_slug)); ?>" class="hover:text-spartan-teal transition-colors"><?php echo site_escape($pd_group_name); ?></a>
                 <?php if ($pd_show_category_breadcrumb): ?>
-                <span class="text-slate-400 font-light">/</span>
+                <span class="text-slate-300" aria-hidden="true">/</span>
                 <?php endif; ?>
                 <?php endif; ?>
                 <?php if ($pd_show_category_breadcrumb): ?>
-                <a href="<?php echo site_escape($pd_category_url); ?>" class="hover:text-spartan-navy transition-colors"><?php echo site_escape($pd_category_name); ?></a>
+                <a href="<?php echo site_escape($pd_category_url); ?>" class="hover:text-spartan-teal transition-colors"><?php echo site_escape($pd_category_name); ?></a>
                 <?php endif; ?>
             </nav>
         </div>
     </div>
 
     <!-- Product detail -->
-    <section class="py-14 md:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section class="pt-8 pb-14 md:pt-10 md:pb-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-14 select-text">
 
             <!-- Gallery -->
@@ -197,7 +197,7 @@ require_once __DIR__ . '/partials/header.php';
                 <?php if ($pd_has_price): ?>
                 <div class="flex items-baseline space-x-3 mb-6">
                     <span class="font-sans text-2xl font-bold text-slate-800">$<?php echo number_format($pd_price, 2); ?> <span class="text-xs text-slate-400 font-normal"><?php echo site_escape($product['price_suffix'] ?? ''); ?> CAD</span></span>
-                    <span class="inline-flex items-center text-xs font-bold tracking-wider text-spartan-teal uppercase"><i class="fa-solid fa-circle-check mr-1.5"></i>In Stock, All Locations</span>
+                    <span class="inline-flex items-center text-xs font-bold tracking-wider text-spartan-teal uppercase"><i class="fa-solid fa-circle-check mr-1.5"></i>In Stock</span>
                 </div>
                 <?php endif; ?>
                 <p class="text-sm text-slate-600 font-light leading-relaxed mb-8 max-w-lg">
@@ -229,6 +229,7 @@ require_once __DIR__ . '/partials/header.php';
                 <?php endif; ?>
 
                 <!-- Options -->
+                <?php if ($pd_has_variants || $pd_has_price): ?>
                 <div class="space-y-5 mb-8 max-w-md">
                     <?php if ($pd_has_variants): ?>
                     <div class="space-y-4">
@@ -236,7 +237,7 @@ require_once __DIR__ . '/partials/header.php';
                         <div>
                             <div class="flex items-baseline justify-between gap-4 mb-2">
                                 <span class="font-oswald text-xs font-bold text-spartan-navy tracking-[0.18em] uppercase">
-                                    <?php echo site_escape($picker_group['name']); ?>
+                                    <?php echo site_escape(strcasecmp($picker_group['name'], 'EU Size') === 0 ? 'Size' : $picker_group['name']); ?>
                                 </span>
                                 <?php if (($picker_group['selected'] ?? '') !== ''): ?>
                                 <span class="text-xs text-slate-500 font-light text-right">
@@ -275,14 +276,9 @@ require_once __DIR__ . '/partials/header.php';
                         <label class="font-oswald text-xs font-bold text-spartan-navy tracking-[0.18em] uppercase block mb-2">Quantity</label>
                         <input id="product-qty" type="number" min="1" value="1" class="w-28 border border-slate-200 bg-white text-sm text-slate-700 px-4 py-3 outline-none focus:border-spartan-teal rounded-none">
                     </div>
-                    <?php else: ?>
-                    <div class="bg-spartan-light-gray border border-slate-100 p-5">
-                        <p class="text-sm text-slate-600 font-light leading-relaxed">
-                            This catalogue item is ready for counter review. Send the product name or SKU to Spartan and the team will confirm pricing, pack size, and availability.
-                        </p>
-                    </div>
                     <?php endif; ?>
                 </div>
+                <?php endif; ?>
 
                 <!-- Actions -->
                 <div class="flex flex-wrap gap-4 mb-10">
@@ -302,12 +298,6 @@ require_once __DIR__ . '/partials/header.php';
                     </a>
                 </div>
 
-                <!-- Trust points -->
-                <ul class="space-y-3 text-sm text-slate-600 font-light leading-relaxed border-t border-slate-100 pt-6">
-                    <li class="flex items-center space-x-3"><i class="fa-solid fa-truck text-spartan-teal"></i><span>Free shipping over $150 across Atlantic Canada. Same-day counter pickup.</span></li>
-                    <li class="flex items-center space-x-3"><i class="fa-solid fa-certificate text-spartan-teal"></i><span>Transport Canada approved. Annual testing available in-house.</span></li>
-                    <li class="flex items-center space-x-3"><i class="fa-solid fa-phone text-spartan-teal"></i><span>Sizing questions? Call <?php echo $site['phone']; ?> and talk to someone who has worn one.</span></li>
-                </ul>
             </div>
         </div>
 
@@ -330,7 +320,7 @@ require_once __DIR__ . '/partials/header.php';
                     if (empty($specs)) {
                         $specs = [
                             'Category' => $product['category_name'] ?? $product['category_label'],
-                            'Availability' => $pd_has_price ? 'In stock, all locations' : 'Confirm with Spartan counter team',
+                            'Availability' => $pd_has_price ? 'In stock' : 'Confirm with Spartan counter team',
                             'Ordering' => $pd_has_price ? 'Available for order request' : 'Quote required',
                         ];
                     }

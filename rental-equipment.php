@@ -1,37 +1,29 @@
 <?php
 $page_title = 'Marine Equipment Rentals | Spartan Industrial Marine';
-$meta_description = 'Rent fully certified marine safety gear, liferafts, immersion suits, and Trawlmaster sensors. Flexible daily to yearly rates across Spartan locations in Atlantic Canada.';
+$meta_description = 'Ask Spartan about marine safety gear, liferaft, and immersion suit rentals. Availability and rental terms vary by equipment and location.';
 $active_nav = 'services';
 require_once __DIR__ . '/partials/header.php';
 
 $hero = [
     'eyebrow' => 'Marine rental services',
-    'title' => 'Marine Equipment Rental Services',
+    'title' => 'Rental Equipment',
     'subtitle' => 'Fill the gaps in your fleet without the cost of buying new. Rent fully maintained, certified equipment by the day, week, month, or year.',
     'image' => 'assets/images/j9/marine-safety.webp',
-    'breadcrumbs' => [
-        ['label' => 'Home', 'url' => 'index.php'],
-        ['label' => 'Marine Services', 'url' => 'services.php'],
-        ['label' => 'Rentals'],
-    ],
+    'show_breadcrumbs' => false,
+    'overlay_class' => 'bg-gradient-to-b from-spartan-navy/55 via-spartan-navy/70 to-spartan-navy/90',
 ];
 require_once __DIR__ . '/components/page-hero.php';
 
 $rental_categories = [
     [
         'title' => 'Liferafts & Immersion Suits',
-        'image' => 'assets/images/j9/life-raft-inspection.webp',
-        'text' => 'Fully compliant survival gear to keep your crew safe and legally covered while your owned gear is in service or your project needs extra capacity.',
+        'image' => 'assets/images/j9/life-raft-service-inspection.webp',
+        'text' => 'Ask about rental options when owned survival gear is being serviced or a project requires additional equipment.',
     ],
     [
         'title' => 'Marine Safety Gear',
         'image' => 'assets/images/j9/other-marine-life-safety.webp',
-        'text' => 'Essential onboard emergency equipment tailored to your vessel type, trip length, operating area, and compliance needs.',
-    ],
-    [
-        'title' => 'Trawlmaster Sensor Systems',
-        'image' => 'assets/images/j9/other-trawling-gear.webp',
-        'text' => 'Advanced trawling sensors to monitor gear performance and support catch efficiency. Not available for rental in New Brunswick.',
+        'text' => 'Contact the nearest branch with the equipment type, dates, vessel details, and receiving location.',
     ],
 ];
 
@@ -56,7 +48,7 @@ $rental_steps = [
 $faqs = [
     [
         'q' => 'How fast can I get my rental equipment?',
-        'a' => 'If the gear is in stock at your local branch, you can often pick it up the same day. For large fleet orders or specialized equipment like Trawlmaster systems, book a few days ahead so everything can be certified and ready for your timeline.',
+        'a' => 'Timing depends on the equipment, current availability, and receiving location. Contact the nearest branch with your requested dates so the team can confirm options.',
     ],
     [
         'q' => 'Can I pick up gear at one location and drop it off at another?',
@@ -73,79 +65,41 @@ $faqs = [
 ];
 ?>
 
-    <!-- Rental lead -->
-    <section class="bg-white py-16 md:py-20 border-b border-slate-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 select-text">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-                <div class="lg:col-span-7">
-                    <span class="font-oswald text-xs md:text-sm font-bold text-spartan-teal tracking-[0.32em] uppercase block mb-4">Certified rental gear</span>
-                    <h2 class="font-oswald text-3xl md:text-5xl font-bold tracking-wider text-spartan-navy uppercase leading-tight mb-6">
-                        Bridge the gap without buying new.
-                    </h2>
-                    <p class="text-base md:text-lg text-slate-600 font-light leading-relaxed max-w-3xl mb-8">
-                        Whether your gear is in the shop or you need extra support for an upcoming project, Spartan rents inspected, maintained, and legally compliant marine equipment for short-term trips and full-season commercial work.
-                    </p>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-9">
-                        <div class="flex gap-3 text-sm text-slate-700 leading-relaxed">
-                            <i class="fa-solid fa-check text-spartan-teal mt-1"></i>
-                            <span>Every rental is inspected and compliant before it leaves our shop.</span>
-                        </div>
-                        <div class="flex gap-3 text-sm text-slate-700 leading-relaxed">
-                            <i class="fa-solid fa-check text-spartan-teal mt-1"></i>
-                            <span>Competitive rates for daily, weekly, monthly, seasonal, or yearly use.</span>
-                        </div>
-                        <div class="flex gap-3 text-sm text-slate-700 leading-relaxed">
-                            <i class="fa-solid fa-check text-spartan-teal mt-1"></i>
-                            <span>Delivery, on-site setup, and crew orientation can be coordinated where available.</span>
-                        </div>
-                        <div class="flex gap-3 text-sm text-slate-700 leading-relaxed">
-                            <i class="fa-solid fa-check text-spartan-teal mt-1"></i>
-                            <span>Pick up or drop off through Spartan branches across Atlantic Canada.</span>
-                        </div>
-                    </div>
-                    <a href="contact.php" class="inline-flex items-center bg-spartan-teal text-white py-3.5 px-7 text-xs font-bold tracking-[0.2em] uppercase hover:bg-spartan-teal-light hover:text-spartan-navy transition-colors">
-                        <span>Request a Rental Quote</span>
-                        <i class="fa-solid fa-arrow-right text-[11px] ml-2.5"></i>
-                    </a>
-                </div>
-                <div class="lg:col-span-5 relative min-h-[420px] bg-spartan-navy overflow-hidden">
-                    <img src="assets/images/j9/spartan-warehouse-fulfillment.webp" alt="Marine rental gear prepared for deployment" class="absolute inset-0 w-full h-full object-cover">
-                    <div class="absolute inset-0 bg-gradient-to-t from-spartan-navy/85 via-spartan-navy/20 to-transparent"></div>
-                    <div class="absolute bottom-0 inset-x-0 p-8">
-                        <span class="font-oswald text-xs md:text-sm font-bold text-spartan-teal tracking-[0.32em] uppercase block mb-4">Ready for deployment</span>
-                        <p class="text-lg text-white font-medium leading-relaxed">
-                            Certified gear, practical rental terms, and local support when your schedule cannot wait.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Rental categories -->
     <section class="py-16 md:py-24 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 select-text">
-            <div class="max-w-3xl mb-12">
-                <span class="font-oswald text-xs md:text-sm font-bold text-spartan-teal tracking-[0.32em] uppercase block mb-4">What you can rent</span>
-                <h2 class="font-oswald text-3xl md:text-5xl font-bold tracking-wider text-spartan-navy uppercase leading-tight mb-5">
-                    Fully serviced, stamped, and ready.
-                </h2>
-                <p class="text-base text-slate-600 font-light leading-relaxed">
-                    Rental availability changes quickly by season and branch. If you need something specific, contact your closest Spartan team and we will help source it.
-                </p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <?php foreach ($rental_categories as $item): ?>
-                    <article class="group bg-white border border-slate-200">
-                        <div class="h-64 overflow-hidden bg-spartan-navy">
-                            <img src="<?php echo site_escape($item['image']); ?>" alt="<?php echo site_escape($item['title']); ?>" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+                <div class="lg:col-span-4 lg:sticky lg:top-32">
+                    <span class="font-oswald text-xs md:text-sm font-bold text-spartan-teal tracking-[0.32em] uppercase block mb-4">Rental equipment</span>
+                    <h2 class="font-oswald text-3xl md:text-5xl font-bold tracking-wider text-spartan-navy uppercase leading-tight mb-5">
+                        Ask about availability.
+                    </h2>
+                    <p class="text-base text-slate-600 font-light leading-relaxed mb-8">
+                        Liferafts, immersion suits, and marine safety gear are available for rent. Availability varies by branch and requested dates.
+                    </p>
+                    <a href="contact.php?need=rental" class="inline-flex items-center bg-spartan-teal text-white py-3.5 px-7 text-xs font-bold tracking-[0.2em] uppercase hover:bg-spartan-navy transition-colors">
+                        <span>Request a Rental</span>
+                        <i class="fa-solid fa-arrow-right text-[11px] ml-2.5" aria-hidden="true"></i>
+                    </a>
+                </div>
+
+                <div class="lg:col-span-8 space-y-6">
+                    <?php foreach ($rental_categories as $item): ?>
+                    <article class="group grid grid-cols-1 sm:grid-cols-[minmax(240px,0.9fr)_minmax(0,1.1fr)] border border-slate-200 bg-white overflow-hidden">
+                        <div class="relative min-h-[260px] overflow-hidden bg-spartan-navy">
+                            <img src="<?php echo site_escape($item['image']); ?>" alt="<?php echo site_escape($item['title']); ?>" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                         </div>
-                        <div class="p-7">
-                            <h3 class="font-oswald text-xl font-bold tracking-widest text-spartan-navy uppercase leading-tight mb-4"><?php echo site_escape($item['title']); ?></h3>
-                            <p class="text-sm text-slate-600 font-light leading-relaxed"><?php echo site_escape($item['text']); ?></p>
+                        <div class="p-7 md:p-9 flex flex-col justify-center">
+                            <h3 class="font-oswald text-2xl font-bold tracking-widest text-spartan-navy uppercase leading-tight mb-4"><?php echo site_escape($item['title']); ?></h3>
+                            <p class="text-sm md:text-base text-slate-600 font-light leading-relaxed mb-6"><?php echo site_escape($item['text']); ?></p>
+                            <a href="contact.php?need=rental" class="inline-flex w-fit items-center font-oswald text-[10px] font-bold tracking-[0.2em] uppercase text-spartan-teal hover:text-spartan-navy transition-colors">
+                                <span>Ask About This Equipment</span>
+                                <i class="fa-solid fa-arrow-right text-[9px] ml-2" aria-hidden="true"></i>
+                            </a>
                         </div>
                     </article>
-                <?php endforeach; ?>
+                    <?php endforeach; ?>
+                </div>
             </div>
         </div>
     </section>

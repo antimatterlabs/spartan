@@ -21,23 +21,23 @@ $pc_has_variants = count($product['variants'] ?? []) > 1;
         <a href="<?php echo site_escape($pc_url); ?>" class="absolute inset-0 z-0" aria-label="View <?php echo site_escape($pc_display_name); ?>"></a>
         <img src="<?php echo site_escape($product['image']); ?>" alt="<?php echo site_escape($pc_display_name); ?>" class="<?php echo !empty($product['contain']) ? 'h-full w-auto object-contain' : 'h-full w-full object-cover'; ?> group-hover:scale-105 transition-transform duration-500 ease-in-out pointer-events-none">
         <?php if (!empty($product['badge'])): ?>
-        <span class="absolute top-3 left-3 <?php echo $pc_badge_bg; ?> text-[8px] px-2 py-0.5 font-mono font-bold tracking-wider uppercase"><?php echo site_escape($product['badge']); ?></span>
+        <span class="absolute top-3 left-3 pointer-events-none <?php echo $pc_badge_bg; ?> text-[8px] px-2 py-0.5 font-mono font-bold tracking-wider uppercase"><?php echo site_escape($product['badge']); ?></span>
         <?php endif; ?>
 
         <!-- Quick Add hover overlay -->
-        <div class="absolute inset-0 bg-spartan-navy/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+        <div class="absolute inset-0 pointer-events-none bg-spartan-navy/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
             <?php if ($pc_has_variants): ?>
-            <a href="<?php echo site_escape($pc_url); ?>" class="relative z-10 bg-spartan-navy text-white hover:bg-spartan-teal px-4 py-2.5 text-[10px] font-bold tracking-widest transition-colors duration-300 uppercase flex items-center space-x-2 rounded-none">
+            <a href="<?php echo site_escape($pc_url); ?>" class="relative z-10 pointer-events-auto bg-spartan-navy text-white hover:bg-spartan-teal px-4 py-2.5 text-[10px] font-bold tracking-widest transition-colors duration-300 uppercase flex items-center space-x-2 rounded-none">
                 <i class="fa-solid fa-list-check text-xs"></i>
                 <span>VIEW OPTIONS</span>
             </a>
             <?php elseif ($pc_has_price): ?>
-            <button onclick="addToCart('<?php echo $pc_js_name; ?>', <?php echo number_format($pc_price, 2, '.', ''); ?>, '<?php echo $pc_js_image; ?>')" class="relative z-10 bg-spartan-teal text-white hover:bg-spartan-teal-light hover:text-spartan-navy px-4 py-2.5 text-[10px] font-bold tracking-widest transition-colors duration-300 uppercase flex items-center space-x-2 rounded-none">
+            <button onclick="addToCart('<?php echo $pc_js_name; ?>', <?php echo number_format($pc_price, 2, '.', ''); ?>, '<?php echo $pc_js_image; ?>')" class="relative z-10 pointer-events-auto bg-spartan-teal text-white hover:bg-spartan-teal-light hover:text-spartan-navy px-4 py-2.5 text-[10px] font-bold tracking-widest transition-colors duration-300 uppercase flex items-center space-x-2 rounded-none">
                 <i class="fa-solid fa-cart-plus text-xs"></i>
                 <span>QUICK ADD</span>
             </button>
             <?php else: ?>
-            <a href="<?php echo site_escape($pc_quote_url); ?>" class="relative z-10 bg-spartan-teal text-white hover:bg-spartan-teal-light hover:text-spartan-navy px-4 py-2.5 text-[10px] font-bold tracking-widest transition-colors duration-300 uppercase flex items-center space-x-2 rounded-none">
+            <a href="<?php echo site_escape($pc_quote_url); ?>" class="relative z-10 pointer-events-auto bg-spartan-teal text-white hover:bg-spartan-teal-light hover:text-spartan-navy px-4 py-2.5 text-[10px] font-bold tracking-widest transition-colors duration-300 uppercase flex items-center space-x-2 rounded-none">
                 <i class="fa-solid fa-circle-info text-xs"></i>
                 <span>REQUEST QUOTE</span>
             </a>

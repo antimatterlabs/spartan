@@ -50,21 +50,9 @@ if ($selected_brand !== null) {
     $selected_filter_label = $site_product_categories[$initial_cat];
 }
 
-$product_breadcrumbs = [
-    ['label' => 'Home', 'url' => 'index.php'],
-    ['label' => 'Products'],
-];
-if ($selected_filter_label !== '') {
-    $product_breadcrumbs = [
-        ['label' => 'Home', 'url' => 'index.php'],
-        ['label' => $selected_brand !== null ? 'Brands' : 'Products', 'url' => $selected_brand !== null ? 'brands.php' : 'products.php'],
-        ['label' => $selected_filter_label],
-    ];
-}
-
 $hero_subtitle = 'Safety equipment, rope and rigging, fishing gear, and workwear. Stocked deep across Atlantic Canada.';
 if ($selected_brand !== null) {
-    $hero_subtitle = number_format($initial_count) . ' catalogue product' . ($initial_count === 1 ? '' : 's') . ' from ' . $selected_brand['label'] . '.';
+    $hero_subtitle = '';
 }
 
 $hero = [
@@ -72,7 +60,8 @@ $hero = [
     'subtitle' => $hero_subtitle,
     'image' => 'assets/images/j9/spartan-warehouse-fulfillment.webp',
     'size' => 'short',
-    'breadcrumbs' => $product_breadcrumbs,
+    'show_breadcrumbs' => false,
+    'overlay_class' => 'bg-gradient-to-b from-spartan-navy/55 via-spartan-navy/70 to-spartan-navy/90',
 ];
 require_once __DIR__ . '/components/page-hero.php';
 ?>

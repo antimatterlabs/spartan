@@ -1,12 +1,12 @@
 <?php
 $page_title = 'Locations | Spartan Industrial Marine';
-$meta_description = 'Find Spartan Industrial Marine locations across Atlantic Canada, including Dartmouth, Sydney, Yarmouth, Barrington Passage, Charlottetown, Paradise, and Caraquet.';
+$meta_description = 'Find Spartan Industrial Marine service centers and service depots in Dartmouth, Sydney, Yarmouth, Charlottetown, Paradise, and Caraquet.';
 $active_nav = 'locations';
 require_once __DIR__ . '/partials/header.php';
 
 $hero = [
-    'title' => 'On The Wharf, Not Across The Country',
-    'subtitle' => 'Branch counters and service-area support across Atlantic Canada for crews, fleets, yards, and marine operators.',
+    'title' => 'Local Marine Support Across Atlantic Canada',
+    'subtitle' => 'Find a Spartan service center or service depot near your crew, vessel, or worksite.',
     'image' => 'assets/images/j9/spartan-storefront-exterior.webp',
     'breadcrumbs' => [
         ['label' => 'Home', 'url' => 'index.php'],
@@ -18,7 +18,7 @@ require_once __DIR__ . '/components/page-hero.php';
 
     <!-- Location cards -->
     <section class="py-16 md:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 select-text">
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 select-text">
             <?php foreach ($site_locations as $loc): ?>
             <div class="border border-slate-200/60 bg-white flex flex-col">
                 <!-- Map placeholder -->
@@ -36,6 +36,7 @@ require_once __DIR__ . '/components/page-hero.php';
                             <h3 class="font-oswald text-lg font-bold text-spartan-navy tracking-[0.12em] uppercase">
                                 <a href="<?php echo site_escape(site_location_url($loc)); ?>" class="hover:text-spartan-teal transition-colors"><?php echo site_escape($loc['city']); ?></a>
                             </h3>
+                            <span class="inline-flex mt-2 bg-spartan-light-gray text-spartan-teal px-2.5 py-1 font-oswald text-[9px] font-bold tracking-[0.2em] uppercase"><?php echo site_escape($loc['badge']); ?></span>
                         </div>
                         <p class="text-xs text-slate-600 font-light leading-relaxed mb-6"><?php echo site_escape($loc['blurb']); ?></p>
                         <ul class="space-y-3 text-xs text-slate-500 font-light">
