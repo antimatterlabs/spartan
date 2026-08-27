@@ -90,6 +90,46 @@ $home_top_products = array_values(array_filter(array_map(function ($slug) {
     return site_product_by_slug($slug);
 }, $home_top_product_slugs)));
 
+$home_popular_product_specs = [
+    ['slug' => 'noreaster-rain-bibs', 'filter' => 'foul-weather', 'featured' => true],
+    ['slug' => 'stormwatch-float-jacket', 'filter' => 'foul-weather', 'featured' => true],
+    ['slug' => 'grundens-neptune-hooded-jacket', 'filter' => 'foul-weather'],
+    ['slug' => 'stormline-heavy-duty-foul-weather-jacket-blue-neon', 'filter' => 'foul-weather'],
+
+    ['slug' => 'dockline-grip-gloves', 'filter' => 'gloves', 'featured' => true],
+    ['slug' => 'showa-660-chemical-resistant-gloves', 'filter' => 'gloves'],
+    ['slug' => 'showa-temres-282-insulated-gloves', 'filter' => 'gloves'],
+    ['slug' => 'jokapolar-cold-wet-grip-gloves-black', 'filter' => 'gloves'],
+
+    ['slug' => 'fierce-frontier-deck-boot', 'filter' => 'boots', 'featured' => true],
+    ['slug' => 'grundens-deck-boss-15-m4-boot', 'filter' => 'boots'],
+    ['slug' => 'dunlop-fieldpro-thermo-full-safety-boot-green', 'filter' => 'boots'],
+    ['slug' => 'fierce-thermo-boots', 'filter' => 'boots'],
+
+    ['slug' => 'lobster-trap-kit', 'filter' => 'trap-supplies', 'featured' => true],
+    ['slug' => 'hi-vis-trap-buoy', 'filter' => 'trap-supplies', 'featured' => true],
+    ['slug' => 'crabpot-cone-44x12-12050408', 'filter' => 'trap-supplies'],
+    ['slug' => 'escape-hatch-1-7-8-trap-plastic-orange-35010062', 'filter' => 'trap-supplies'],
+
+    ['slug' => 'sinking-pot-warp-38', 'filter' => 'rope-net-twine', 'featured' => true],
+    ['slug' => 'galvanized-wire-rope-516', 'filter' => 'rope-net-twine', 'featured' => true],
+    ['slug' => 'braided-twine-normal-nl-3-0-180m-kg-64400', 'filter' => 'rope-net-twine'],
+    ['slug' => 'd-tech-24-12x1-331g-m-r321dy600grc', 'filter' => 'rope-net-twine'],
+];
+
+$home_popular_products = array_values(array_filter(array_map(function ($spec) {
+    $product = site_product_by_slug($spec['slug']);
+    if (!$product) {
+        return null;
+    }
+
+    return [
+        'filter' => $spec['filter'],
+        'featured' => !empty($spec['featured']),
+        'product' => $product,
+    ];
+}, $home_popular_product_specs)));
+
 $home_upcoming_courses = [
     ['label' => 'Overhead Cranes', 'url' => 'https://www.herculeslifting.com/pages/fundamentals-of-overhead-cranes'],
     ['label' => 'Fall Protection', 'url' => 'https://www.herculeslifting.com/pages/fall-protection-training'],
@@ -190,7 +230,7 @@ $home_upcoming_courses = [
                         $home_top_js_name = str_replace(["'", '&Prime;'], ["\\'", ' in'], $home_top_product['name']);
                         $home_top_js_image = str_replace("'", "\\'", $home_top_product['image']);
                         ?>
-                        <article class="group w-[190px] sm:w-[230px] shrink-0 snap-start bg-white border border-slate-200 p-3 flex flex-col">
+                        <article class="group w-[82vw] max-w-[290px] sm:w-[calc((100%_-_1rem)/2)] sm:max-w-none lg:w-[calc((100%_-_3rem)/4)] shrink-0 snap-start bg-white border border-slate-200 p-3 flex flex-col">
                             <a href="<?php echo site_escape($home_top_url); ?>" class="relative h-36 bg-white overflow-hidden flex items-center justify-center mb-4 <?php echo !empty($home_top_product['contain']) ? 'p-3' : ''; ?>" aria-label="View <?php echo site_escape($home_top_name); ?>">
                                 <img src="<?php echo site_escape($home_top_product['image']); ?>" alt="<?php echo site_escape($home_top_name); ?>" class="<?php echo !empty($home_top_product['contain']) ? 'h-full w-auto object-contain' : 'h-full w-full object-cover'; ?> group-hover:scale-105 transition-transform duration-500">
                                 <?php if (!empty($home_top_product['badge'])): ?>
@@ -262,6 +302,80 @@ $home_upcoming_courses = [
             <?php endforeach; ?>
         </div>
     </section>
+
+    <!-- ======================================================= -->
+    <!-- ================== POPULAR PRODUCTS =================== -->
+    <!-- ======================================================= -->
+    <section id="popular-products-section" class="bg-white py-16 md:py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-8 select-text">
+                <div>
+                    <h2 class="font-oswald text-3xl md:text-4xl font-bold tracking-widest text-spartan-navy uppercase leading-none">Popular Products</h2>
+                </div>
+                <a href="products.php" class="inline-flex w-fit items-center bg-spartan-navy text-white py-3 px-5 text-[10px] font-bold tracking-[0.18em] uppercase hover:bg-spartan-teal transition-colors">
+                    <span>View All Products</span>
+                    <i class="fa-solid fa-arrow-right text-[9px] ml-2" aria-hidden="true"></i>
+                </a>
+            </div>
+
+            <div class="flex flex-wrap gap-2 mb-10" aria-label="Filter popular products">
+                <?php foreach ([
+                    'all' => 'All',
+                    'foul-weather' => 'Foul Weather',
+                    'gloves' => 'Gloves',
+                    'boots' => 'Boots',
+                    'trap-supplies' => 'Trap Supplies',
+                    'rope-net-twine' => 'Rope, Net & Twine',
+                ] as $popular_filter => $popular_label): ?>
+                <button
+                    type="button"
+                    data-home-popular-filter="<?php echo site_escape($popular_filter); ?>"
+                    aria-pressed="<?php echo $popular_filter === 'all' ? 'true' : 'false'; ?>"
+                    onclick="filterHomePopularProducts('<?php echo site_escape($popular_filter); ?>', this)"
+                    class="home-popular-filter border px-4 py-2 text-[9px] font-bold tracking-[0.16em] uppercase transition-colors <?php echo $popular_filter === 'all' ? 'bg-spartan-navy border-spartan-navy text-white' : 'bg-white border-slate-300 text-slate-600 hover:border-spartan-teal hover:text-spartan-navy'; ?>"
+                ><?php echo site_escape($popular_label); ?></button>
+                <?php endforeach; ?>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-10 select-text" aria-live="polite">
+                <?php foreach ($home_popular_products as $popular_item): ?>
+                <div
+                    class="home-popular-product<?php echo empty($popular_item['featured']) ? ' hidden' : ''; ?>"
+                    data-home-popular-group="<?php echo site_escape($popular_item['filter']); ?>"
+                    data-home-popular-featured="<?php echo !empty($popular_item['featured']) ? 'true' : 'false'; ?>"
+                >
+                    <?php $product = $popular_item['product']; ?>
+                    <?php include __DIR__ . '/components/product-card.php'; ?>
+                </div>
+                <?php endforeach; ?>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function filterHomePopularProducts(filter, trigger) {
+            const section = document.getElementById('popular-products-section');
+            if (!section) return;
+
+            section.querySelectorAll('.home-popular-product').forEach((item) => {
+                const visible = filter === 'all'
+                    ? item.dataset.homePopularFeatured === 'true'
+                    : item.dataset.homePopularGroup === filter;
+                item.classList.toggle('hidden', !visible);
+            });
+
+            section.querySelectorAll('.home-popular-filter').forEach((button) => {
+                const active = button === trigger;
+                button.setAttribute('aria-pressed', active ? 'true' : 'false');
+                button.classList.toggle('bg-spartan-navy', active);
+                button.classList.toggle('border-spartan-navy', active);
+                button.classList.toggle('text-white', active);
+                button.classList.toggle('bg-white', !active);
+                button.classList.toggle('border-slate-300', !active);
+                button.classList.toggle('text-slate-600', !active);
+            });
+        }
+    </script>
 
     <!-- ======================================================= -->
     <!-- ==================== BRANDS BAND ====================== -->
