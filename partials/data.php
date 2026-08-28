@@ -1629,6 +1629,44 @@ foreach ($site_imported_products as $imported_product) {
     }
 }
 
+/*
+ * Temporary product photography for the prototype. These isolated supplier
+ * images make the featured product grids easier to evaluate and can be
+ * replaced with approved Spartan photography without changing the templates.
+ */
+$site_product_image_overrides = [
+    'fierce-frontier-deck-boot' => 'assets/images/product-placeholders/marine-deck-boots-placeholder.webp',
+    'fierce-frontier-boots' => 'assets/images/product-placeholders/marine-deck-boots-placeholder.webp',
+    'sinking-pot-warp-38' => 'assets/images/product-placeholders/sinking-pot-warp-placeholder.webp',
+    'lobster-trap-kit' => 'assets/images/product-placeholders/commercial-lobster-trap-placeholder.webp',
+    'noreaster-rain-bibs' => 'assets/images/product-placeholders/noreaster-rain-bibs-placeholder.webp',
+    'hi-vis-trap-buoy' => 'assets/images/product-placeholders/hi-vis-trap-buoy-placeholder.webp',
+    'galvanized-wire-rope-516' => 'assets/images/product-placeholders/galvanized-wire-rope-placeholder.webp',
+    'grundens-neptune-hooded-jacket' => 'assets/images/product-placeholders/grundens-neptune-jacket-placeholder.webp',
+    'stormline-heavy-duty-foul-weather-jacket-blue-neon' => 'assets/images/product-placeholders/stormline-heavy-duty-jacket-placeholder.webp',
+    'showa-660-chemical-resistant-gloves' => 'assets/images/product-placeholders/showa-660-gloves-placeholder.webp',
+    'showa-temres-282-insulated-gloves' => 'assets/images/product-placeholders/showa-temres-282-gloves-placeholder.webp',
+    'jokapolar-cold-wet-grip-gloves-black' => 'assets/images/product-placeholders/jokapolar-gloves-placeholder.webp',
+    'grundens-deck-boss-15-m4-boot' => 'assets/images/product-placeholders/grundens-deck-boss-15-placeholder.webp',
+    'dunlop-fieldpro-thermo-full-safety-boot-green' => 'assets/images/product-placeholders/dunlop-fieldpro-thermo-placeholder.webp',
+    'fierce-thermo-boots' => 'assets/images/home-fierce-boots-display.webp',
+    'crabpot-cone-44x12-12050408' => 'assets/images/product-placeholders/crabpot-cone-placeholder.webp',
+    'escape-hatch-1-7-8-trap-plastic-orange-35010062' => 'assets/images/product-placeholders/orange-escape-hatch-placeholder.webp',
+    'braided-twine-normal-nl-3-0-180m-kg-64400' => 'assets/images/product-placeholders/braided-twine-placeholder.webp',
+    'd-tech-24-12x1-331g-m-r321dy600grc' => 'assets/images/product-placeholders/d-tech-rope-placeholder.webp',
+    'knotless-bait-bags' => 'assets/images/product-placeholders/knotless-bait-bags-placeholder.webp',
+    'hydrostatic-release-unit' => 'assets/images/product-placeholders/hammar-h20-placeholder.webp',
+    'galvanized-anchor-chain' => 'assets/images/product-placeholders/galvanized-anchor-chain-placeholder.webp',
+];
+
+foreach ($site_products as $site_product_index => $site_product) {
+    $site_product_slug = $site_product['slug'] ?? '';
+    if (isset($site_product_image_overrides[$site_product_slug])) {
+        $site_products[$site_product_index]['image'] = $site_product_image_overrides[$site_product_slug];
+        $site_products[$site_product_index]['contain'] = true;
+    }
+}
+
 if (!empty($imported_vendors)) {
     $site_brands = array_values(array_unique(array_merge($site_brands, $imported_vendors)));
 }
