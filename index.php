@@ -373,6 +373,10 @@ $home_upcoming_courses = [
                 button.classList.toggle('bg-white', !active);
                 button.classList.toggle('border-slate-300', !active);
                 button.classList.toggle('text-slate-600', !active);
+                button.classList.toggle('hover:text-white', active);
+                button.classList.toggle('hover:border-spartan-navy', active);
+                button.classList.toggle('hover:text-spartan-navy', !active);
+                button.classList.toggle('hover:border-spartan-teal', !active);
             });
         }
     </script>

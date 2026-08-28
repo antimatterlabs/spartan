@@ -60,6 +60,11 @@ $resource_menu = [
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo site_escape($page_title); ?></title>
     <meta name="description" content="<?php echo site_escape($meta_description); ?>">
+    <meta name="theme-color" content="#0b1f29">
+    <link rel="icon" href="assets/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
     <?php if (!empty($canonical_url)): ?>
     <link rel="canonical" href="<?php echo site_escape($canonical_url); ?>">
     <?php endif; ?>
